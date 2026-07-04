@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLS — Cash Loophole System | CTRL + L + $</title>
+<meta name="description" content="Der Shortcut, den dir keiner gezeigt hat: Dein KI-Klon baut Webseiten, du verkaufst sie an lokale Betriebe. KI baut. Du verkaufst. Beide kassieren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #050505; --panel: #0d0c0b; --panel2: #0a0908;
+    --ink: #f2efe8; --muted: rgba(242,239,232,.62); --faint: rgba(242,239,232,.32);
+    --line: rgba(242,239,232,.13); --am: #ff9f1c; --am-soft: rgba(255,159,28,.08);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: 'Archivo', sans-serif; line-height: 1.6;
+    overflow-x: hidden; width: 100%; max-width: 100vw;
+    -webkit-font-smoothing: antialiased;
+  }
+  .anton { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; line-height: .97; letter-spacing: .01em; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  section { position: relative; padding: 140px 0; }
+  @media (max-width: 760px) { section { padding: 90px 0; } }
+  .board {
+    background-image: radial-gradient(rgba(242,239,232,.06) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+  }
+  .kicker { display: flex; align-items: center; gap: 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .34em; text-transform: uppercase; color: var(--muted); margin-bottom: 26px; }
+  .kicker::before { content: ''; width: 44px; height: 3px; background: var(--am); }
+  h2.anton { font-size: clamp(2.4rem, 5vw, 4.2rem); max-width: 1100px; margin-bottom: 22px; }
+  h2 .am { color: var(--am); }
+  .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.2rem); max-width: 680px; }
+  .sub b { color: var(--ink); }
+
+  /* ── Nav: Floating Glass Pill ── */
+  nav {
+    position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+    z-index: 100; display: flex; align-items: center; gap: 28px;
+    background: rgba(10,9,8,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line); border-radius: 999px; padding: 10px 12px 10px 24px;
+    white-space: nowrap;
+  }
+  nav .logo { font-family: 'Anton', sans-serif; font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: .02em; }
+  nav .logo i { color: var(--am); font-style: normal; }
+  nav .links { display: flex; gap: 22px; }
+  nav .links a { color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; transition: color .25s; }
+  nav .links a:hover { color: var(--am); }
+  nav .cta {
+    background: var(--am); color: #0a0806; text-decoration: none; font-weight: 700;
+    font-size: 14px; padding: 11px 22px; border-radius: 999px; transition: transform .25s ease, box-shadow .25s ease;
+  }
+  nav .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,159,28,.35); }
+  @media (max-width: 760px) { nav .links { display: none; } }
+
+  /* ── Hero ── */
+  #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 24px 0; overflow: hidden; }
+  #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 42% at 50% -6%, rgba(255,159,28,.14), transparent 70%); pointer-events: none; }
+  #swarmHero { position: absolute; top: 6%; right: -60px; width: 420px; height: 420px; opacity: .8; pointer-events: none; }
+  @media (max-width: 900px) { #swarmHero { width: 260px; height: 260px; right: -70px; top: 4%; opacity: .5; } }
+
+  .keys { display: flex; align-items: center; gap: 14px; margin-bottom: 44px; }
+  .key {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(15px, 2vw, 21px);
+    letter-spacing: .08em; color: var(--ink);
+    background: linear-gradient(180deg, #171512, #0c0b0a);
+    border: 1px solid rgba(242,239,232,.22); border-radius: 12px;
+    padding: 16px 22px; min-width: 62px;
+    box-shadow: 0 6px 0 #000, 0 6px 0 1px rgba(242,239,232,.14), 0 14px 30px rgba(0,0,0,.5);
+    transition: transform .12s ease, box-shadow .12s ease;
+    user-select: none; cursor: pointer;
+  }
+  .key.pressed, .key:active { transform: translateY(5px); box-shadow: 0 1px 0 #000, 0 1px 0 1px rgba(242,239,232,.14); }
+  .key.dollar { color: #0a0806; background: linear-gradient(180deg, #ffb84d, #f28f00); border-color: rgba(255,159,28,.7); box-shadow: 0 6px 0 #7a4a00, 0 14px 34px rgba(255,159,28,.35); }
+  .key.dollar.pressed, .key.dollar:active { box-shadow: 0 1px 0 #7a4a00; }
+  .keys .plus { color: var(--faint); font-family: 'JetBrains Mono', monospace; font-size: 20px; }
+
+  #hero h1 { font-size: clamp(3rem, 7vw, 6.5rem); max-width: 1200px; color: var(--ink); }
+  #hero h1 .am { color: var(--am); }
+  #hero .sub { margin: 30px auto 42px; max-width: 640px; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+  .cta-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; font-size: 16.5px; padding: 18px 34px; border-radius: 14px; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+  .btn.primary { background: var(--am); color: #0a0806; box-shadow: 0 10px 34px rgba(255,159,28,.28); }
+  .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(255,159,28,.42); }
+  .btn.ghost { border: 1px solid rgba(242,239,232,.25); color: var(--ink); background: rgba(242,239,232,.03); }
+  .btn.ghost:hover { border-color: var(--am); color: var(--am); }
+
+  .marquee { margin-top: 96px; width: 100vw; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 18px 0; }
+  .marquee .track { display: flex; gap: 56px; width: max-content; animation: mq 30s linear infinite; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .3em; text-transform: uppercase; color: var(--faint); }
+  .marquee .track span i { color: var(--am); font-style: normal; margin-left: 56px; }
+  @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── Scrub Text ── */
+  #luecke { padding: 190px 0; }
+  #luecke p { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(1.7rem, 3.6vw, 3.1rem); line-height: 1.25; max-width: 1080px; }
+  #luecke p .w { opacity: .12; }
+  #luecke p .hl { color: var(--am); }
+
+  /* ── Bento ── */
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; grid-auto-flow: dense; gap: 14px; margin-top: 60px; }
+  .cell { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; transition: border-color .3s ease, transform .5s ease; }
+  .cell:hover { border-color: rgba(255,159,28,.45); transform: translateY(-3px); }
+  .cell.a { grid-column: span 2; grid-row: span 2; }
+  .cell.b { grid-column: span 2; }
+  @media (max-width: 900px) { .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; } .cell.a { grid-column: span 2; } .cell.b { grid-column: span 2; } .cell { min-height: 200px; } }
+  .cell .tag { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--am); margin-bottom: 14px; }
+  .cell h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; margin-bottom: 10px; }
+  .cell p { color: var(--muted); font-size: 15px; }
+  .big-num { font-family: 'Anton', sans-serif; font-size: clamp(3rem, 5vw, 4.6rem); color: var(--ink); line-height: 1; }
+  .big-num i { color: var(--am); font-style: normal; }
+
+  .flow-v { display: flex; flex-direction: column; gap: 0; margin-top: 18px; position: relative; }
+  .fnode { display: flex; align-items: center; gap: 16px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; background: var(--panel2); position: relative; }
+  .fnode .n { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--am); min-width: 26px; }
+  .fnode .t { font-weight: 700; font-size: 15.5px; }
+  .fnode .d { color: var(--faint); font-size: 13px; margin-left: auto; text-align: right; }
+  .fnode.hot { border-color: rgba(255,159,28,.5); background: var(--am-soft); }
+  .forb { position: absolute; left: -5px; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--am); box-shadow: 0 0 16px 4px rgba(255,159,28,.5); animation: orbdown 8s ease-in-out infinite; }
+  @keyframes orbdown {
+    0%, 10% { top: 26px; } 22%, 30% { top: 88px; } 42%, 50% { top: 150px; }
+    62%, 70% { top: 212px; } 82%, 92% { top: 274px; } 100% { top: 26px; }
+  }
+
+  .term { background: #060505; border: 1px solid rgba(242,239,232,.18); border-radius: 14px; margin-top: 16px; overflow: hidden; }
+  .term .bar { display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .term .bar b { color: var(--am); font-weight: 500; }
+  .term pre { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.75; color: var(--ink); padding: 16px 18px; white-space: pre-wrap; }
+  .term pre .v { color: var(--am); }
+  .cursor { display: inline-block; width: 8px; height: 15px; background: var(--am); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ── Jarvis Pinned Split ── */
+  #jarvis .split { display: grid; grid-template-columns: 420px 1fr; gap: 80px; align-items: start; }
+  @media (max-width: 980px) { #jarvis .split { grid-template-columns: 1fr; gap: 40px; } }
+  #jarvis .pinbox h2 { font-size: clamp(2.6rem, 4.6vw, 4.4rem); }
+  #jarvis .stack { display: flex; flex-direction: column; gap: 22px; }
+
+  .app { background: var(--panel2); border: 1px solid rgba(242,239,232,.2); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+  .app .abar { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .app .abar .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--am); display: inline-block; margin-right: 10px; animation: ledp 2s ease-in-out infinite; }
+  @keyframes ledp { 50% { box-shadow: 0 0 10px 3px rgba(255,159,28,.55); } }
+  .app .abar .beta { color: var(--am); border: 1px solid var(--am); padding: 3px 9px; font-size: 10px; border-radius: 6px; }
+  .app .abody { display: grid; grid-template-columns: 200px 1fr; }
+  @media (max-width: 640px) { .app .abody { grid-template-columns: 1fr; } .app .mods { display: flex; flex-wrap: wrap; border-right: 0 !important; border-bottom: 1px solid var(--line); } }
+  .app .mods { border-right: 1px solid var(--line); padding: 14px 0; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; position: relative; }
+  .app .mods .m { padding: 11px 18px; color: var(--muted); display: flex; gap: 10px; align-items: center; }
+  .app .mods .m .led { color: var(--am); font-size: 9px; }
+  .app .mods .m.off { color: var(--faint); }
+  .app .mods .m.off .led { color: var(--faint); }
+  .app .mods .m.off em { font-style: normal; font-size: 9px; border: 1px solid var(--line); padding: 2px 6px; margin-left: auto; color: var(--faint); }
+  .app .mods .scan { position: absolute; left: 0; top: 14px; width: 3px; height: 40px; background: var(--am); box-shadow: 0 0 14px 2px rgba(255,159,28,.6); animation: mscan 6s ease-in-out infinite; }
+  @keyframes mscan { 0%,26% { top: 14px; } 33%,59% { top: 56px; } 66%,92% { top: 98px; } 100% { top: 14px; } }
+  .app .chat { padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
+  .app .msg { max-width: 88%; padding: 13px 16px; font-size: 14px; border-radius: 12px; }
+  .app .msg.user { align-self: flex-end; background: rgba(242,239,232,.08); }
+  .app .msg.jarvis { align-self: flex-start; border: 1px solid var(--line); color: var(--muted); }
+  .app .msg.jarvis b { color: var(--ink); }
+  .app .who { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .22em; color: var(--am); margin-bottom: 6px; }
+  .app .prog { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--muted); }
+  .app .track { margin-top: 8px; height: 5px; background: rgba(242,239,232,.1); border-radius: 99px; overflow: hidden; }
+  .app .fill { height: 100%; width: 60%; background: var(--am); animation: fillp 4s ease-in-out infinite alternate; }
+  @keyframes fillp { from { width: 38%; } to { width: 86%; } }
+
+  .modcard { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 28px; display: flex; align-items: baseline; gap: 18px; }
+  .modcard .st { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; color: var(--am); min-width: 66px; }
+  .modcard .st.soon { color: var(--faint); }
+  .modcard h4 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 21px; }
+  .modcard p { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+  /* ── Rechner ── */
+  #rechner .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 54px; }
+  @media (max-width: 900px) { #rechner .calc { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 34px; }
+  .sl { margin-bottom: 26px; }
+  .sl .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .sl label { font-weight: 600; font-size: 15px; }
+  .sl label small { display: block; font-weight: 400; color: var(--faint); font-size: 12px; }
+  .sl output { font-family: 'JetBrains Mono', monospace; font-size: 17px; color: var(--am); }
+  input[type=range] { width: 100%; accent-color: var(--am); height: 26px; cursor: pointer; }
+  .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .res { border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .res.main { border-color: var(--am); background: var(--am-soft); }
+  .res .l { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .res.main .l { color: var(--am); }
+  .res .v { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
+  .goal { margin-top: 14px; border-left: 3px solid var(--am); background: var(--am-soft); padding: 14px 18px; font-size: 14.5px; color: var(--muted); border-radius: 0 12px 12px 0; }
+  .goal b, .goal .am { color: var(--am); font-weight: 700; }
+
+  /* ── Story Stacking ── */
+  #story .scard {
+    position: sticky; top: 110px; background: var(--panel2); border: 1px solid var(--line);
+    border-radius: 22px; padding: clamp(30px, 5vw, 60px); margin-bottom: 26px;
+    display: grid; grid-template-columns: 90px 1fr; gap: 28px; align-items: start;
+    box-shadow: 0 -20px 60px rgba(0,0,0,.5);
+  }
+  #story .scard .yr { font-family: 'JetBrains Mono', monospace; color: var(--am); font-size: 14px; letter-spacing: .1em; padding-top: 10px; }
+  #story .scard h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.6rem); margin-bottom: 12px; }
+  #story .scard p { color: var(--muted); max-width: 640px; font-size: 16px; }
+  #story .scard p b { color: var(--ink); }
+  #story .scard.gold { border-color: rgba(255,159,28,.5); background: linear-gradient(160deg, #14100a, #0a0908); }
+  @media (max-width: 640px) { #story .scard { grid-template-columns: 1fr; gap: 8px; } }
+
+  /* ── Mario / HUD ── */
+  #mario .split { display: grid; grid-template-columns: 460px 1fr; gap: 70px; align-items: center; margin-top: 50px; }
+  @media (max-width: 980px) { #mario .split { grid-template-columns: 1fr; gap: 44px; } }
+  .hud {
+    position: relative; aspect-ratio: 3/4; max-width: 460px; border-radius: 22px; overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(255,159,28,.22), transparent 46%),
+      radial-gradient(circle at 50% 42%, rgba(255,201,96,.14), transparent 26%),
+      linear-gradient(180deg, #12100c, #070605);
+    border: 1px solid rgba(255,159,28,.35);
+  }
+  .hud::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(180deg, rgba(255,159,28,.045) 0 2px, transparent 2px 6px);
+    pointer-events: none;
+  }
+  .hud .scanline { position: absolute; left: 0; right: 0; height: 90px; top: -90px; background: linear-gradient(180deg, transparent, rgba(255,159,28,.14), transparent); animation: hudscan 5s ease-in-out infinite; pointer-events: none; }
+  @keyframes hudscan { 0% { top: -90px; } 50% { top: 100%; } 100% { top: -90px; } }
+  .hud .ring { position: absolute; top: 42%; left: 50%; width: 240px; height: 240px; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,159,28,.5); box-shadow: 0 0 60px rgba(255,159,28,.25), inset 0 0 40px rgba(255,159,28,.12); animation: ringp 3.4s ease-in-out infinite; }
+  @keyframes ringp { 50% { box-shadow: 0 0 90px rgba(255,159,28,.4), inset 0 0 60px rgba(255,159,28,.2); } }
+  .hud .mono-m { position: absolute; top: 42%; left: 50%; transform: translate(-50%, -54%); font-family: 'Anton', sans-serif; font-size: 190px; color: var(--ink); opacity: .92; }
+  .hud .mono-m i { color: var(--am); font-style: normal; }
+  .hud img.real { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; filter: contrast(1.1) saturate(.9); }
+  .hud .corner { position: absolute; width: 34px; height: 34px; border: 2px solid rgba(255,159,28,.75); z-index: 3; }
+  .hud .c1 { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
+  .hud .c2 { top: 14px; right: 14px; border-left: 0; border-bottom: 0; }
+  .hud .c3 { bottom: 14px; left: 14px; border-right: 0; border-top: 0; }
+  .hud .c4 { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+  .hud .data { position: absolute; left: 26px; right: 26px; bottom: 20px; z-index: 3; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; gap: 5px; background: rgba(5,5,5,.55); backdrop-filter: blur(4px); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+  .hud .data b { color: var(--am); font-weight: 500; }
+  .starkline { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.12; margin: 26px 0 18px; }
+  .starkline .sw { display: inline-block; }
+  .starkline .am { color: var(--am); }
+  .bio { color: var(--muted); font-size: 16.5px; max-width: 620px; }
+  .bio b { color: var(--ink); }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: 1fr; } }
+  .stat { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; background: var(--panel); }
+  .stat .v { font-family: 'Anton', sans-serif; font-size: clamp(2rem, 3.4vw, 2.9rem); color: var(--ink); }
+  .stat .v i { color: var(--am); font-style: normal; }
+  .stat .l { color: var(--faint); font-size: 13px; margin-top: 4px; }
+  .stat.hot { border-color: rgba(255,159,28,.5); background: var(--am-soft); }
+
+  /* ── Pricing ── */
+  .scarcity { display: flex; align-items: center; gap: 18px; border: 1px solid rgba(255,159,28,.4); background: var(--am-soft); border-radius: 14px; padding: 16px 22px; margin: 40px 0 46px; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: var(--ink); flex-wrap: wrap; }
+  .scarcity .bar { flex: 1 1 160px; height: 7px; background: rgba(242,239,232,.12); border-radius: 99px; overflow: hidden; }
+  .scarcity .bar i { display: block; height: 100%; width: 62%; background: var(--am); border-radius: 99px; }
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+  @media (max-width: 980px) { .tiers { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+  .tier { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 36px 32px; display: flex; flex-direction: column; position: relative; transition: transform .4s ease, border-color .3s ease; }
+  .tier:hover { transform: translateY(-6px); border-color: rgba(255,159,28,.4); }
+  .tier .name { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 27px; margin-bottom: 4px; }
+  .tier .pos { color: var(--faint); font-size: 13.5px; margin-bottom: 20px; }
+  .tier .price { font-family: 'Anton', sans-serif; font-size: 46px; }
+  .tier .price small { font-family: 'Archivo', sans-serif; font-size: 15px; color: var(--muted); }
+  .tier .per { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--faint); letter-spacing: .16em; margin-bottom: 24px; }
+  .tier ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 30px; }
+  .tier li { font-size: 14.5px; color: var(--muted); padding-left: 24px; position: relative; }
+  .tier li::before { content: '+'; position: absolute; left: 0; color: var(--am); font-family: 'JetBrains Mono', monospace; }
+  .tier li b { color: var(--ink); }
+  .tier .btn { margin-top: auto; justify-content: center; }
+  .tier.featured { border-color: var(--am); background: linear-gradient(170deg, #171006, var(--panel)); transform: scale(1.03); box-shadow: 0 26px 70px rgba(255,159,28,.14); }
+  .tier.featured:hover { transform: scale(1.03) translateY(-6px); }
+  .tier .flag { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--am); color: #0a0806; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .2em; font-weight: 700; padding: 6px 14px; border-radius: 99px; }
+  .guarantee { text-align: center; margin-top: 40px; color: var(--muted); font-size: 14.5px; }
+  .guarantee b { color: var(--ink); }
+
+  /* ── FAQ ── */
+  #faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); margin-bottom: 12px; overflow: hidden; }
+  #faq summary { cursor: pointer; list-style: none; padding: 22px 26px; font-weight: 700; font-size: 16.5px; display: flex; justify-content: space-between; align-items: center; }
+  #faq summary::after { content: '+'; font-family: 'JetBrains Mono', monospace; color: var(--am); font-size: 22px; transition: transform .3s; }
+  #faq details[open] summary::after { transform: rotate(45deg); }
+  #faq .a { padding: 0 26px 22px; color: var(--muted); font-size: 15px; max-width: 760px; }
+  #faq .a b { color: var(--ink); }
+
+  /* ── Final CTA ── */
+  #final { text-align: center; padding: 200px 24px 160px; overflow: hidden; }
+  #final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 45% at 50% 110%, rgba(255,159,28,.16), transparent 70%); pointer-events: none; }
+  #final h2 { font-size: clamp(2.6rem, 6vw, 5.4rem); max-width: 1150px; margin: 0 auto 18px; }
+  #final .keys { justify-content: center; margin: 44px 0; }
+  #final .last { font-family: 'JetBrains Mono', monospace; letter-spacing: .28em; text-transform: uppercase; color: var(--faint); font-size: 12px; margin-top: 46px; }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 0; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+  footer .logo { font-family: 'Anton', sans-serif; font-size: 20px; }
+  footer .logo i { color: var(--am); font-style: normal; }
+  footer .links a { color: var(--faint); text-decoration: none; font-size: 13.5px; margin-left: 22px; }
+  footer .links a:hover { color: var(--am); }
+  footer .claim { width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--faint); }
+</style>
+</head>
+<body class="board">
+
+<nav>
+  <a class="logo" href="#hero">CLS<i>.</i></a>
+  <div class="links">
+    <a href="#system">System</a>
+    <a href="#jarvis">Jarvis</a>
+    <a href="#rechner">Rechner</a>
+    <a href="#mario">Wer ich bin</a>
+    <a href="#preise">Preise</a>
+  </div>
+  <a class="cta" href="#preise">Zugang sichern</a>
+</nav>
+
+<section id="hero">
+  <canvas id="swarmHero" width="840" height="840"></canvas>
+  <div class="keys" id="heroKeys">
+    <span class="key" data-k>CTRL</span><span class="plus">+</span>
+    <span class="key" data-k>L</span><span class="plus">+</span>
+    <span class="key dollar" data-k>$</span>
+  </div>
+  <h1 class="anton" id="heroH1">Der Shortcut, den dir <span class="am">keiner gezeigt hat.</span></h1>
+  <p class="sub">Dein KI-Klon baut Webseiten in Stunden. Du verkaufst sie an lokale Betriebe — <b>Einmalpreis oder monatlicher Retainer.</b> Kein Code. Kein Startkapital. Kein Guru.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="#preise" id="pressBtn">CTRL + L + $ drücken</a>
+    <a class="btn ghost" href="#system">So funktioniert das System</a>
+  </div>
+  <div class="marquee"><div class="track">
+    <span>Handwerker<i>·</i></span><span>Restaurants<i>·</i></span><span>Coaches<i>·</i></span><span>Praxen<i>·</i></span><span>Studios<i>·</i></span><span>Bäckereien<i>·</i></span><span>Kanzleien<i>·</i></span><span>Fahrschulen<i>·</i></span>
+    <span>Handwerker<i>·</i></span><span>Restaurants<i>·</i></span><span>Coaches<i>·</i></span><span>Praxen<i>·</i></span><span>Studios<i>·</i></span><span>Bäckereien<i>·</i></span><span>Kanzleien<i>·</i></span><span>Fahrschulen<i>·</i></span>
+  </div></div>
+</section>
+
+<section id="luecke">
+  <div class="wrap">
+    <p id="scrub">Jeder Markt hat eine Lücke. Unsere: Tausende lokale Betriebe verlieren jeden Tag Kunden über veraltete Webseiten — und niemand liefert die Lösung in der Geschwindigkeit, in der KI das heute kann. <span class="hl">Genau da drückst du CTRL + L + $.</span></p>
+  </div>
+</section>
+
+<section id="system">
+  <div class="wrap">
+    <div class="kicker">Das Cash Loophole System</div>
+    <h2 class="anton">Ein Loop. <span class="am">Fünf Schritte.</span> Jede Woche wiederholbar.</h2>
+    <p class="sub">Kein Theorie-Kurs. Ein Ablauf, den du am Tag 1 startest — und den dein KI-Klon Schritt für Schritt für dich übernimmt.</p>
+    <div class="bento">
+      <div class="cell a">
+        <div class="tag">Das System-Board</div>
+        <h3>So läuft der Loop</h3>
+        <div class="flow-v" style="position:relative">
+          <span class="forb"></span>
+          <div class="fnode"><span class="n">01</span><span class="t">Finden</span><span class="d">Betriebe mit alten Webseiten</span></div>
+          <div class="fnode"><span class="n">02</span><span class="t">Kontakt</span><span class="d">E-Mail + Anruf, persönlich</span></div>
+          <div class="fnode hot"><span class="n">03</span><span class="t">Jarvis baut</span><span class="d">fertige Seite in Stunden</span></div>
+          <div class="fnode"><span class="n">04</span><span class="t">Abschluss</span><span class="d">Demo zeigen, Preis nennen</span></div>
+          <div class="fnode"><span class="n">05</span><span class="t">Rechnung</span><span class="d">einmalig oder Retainer</span></div>
+        </div>
+      </div>
+      <div class="cell b">
+        <div class="tag">Ein Briefing statt Code</div>
+        <div class="term">
+          <div class="bar"><span><b>&#9679;</b> jarvis — briefing</span><span>build</span></div>
+          <pre>Baue eine komplette Webseite für <span class="v">[Betrieb]</span>.
+Ziel: Anrufe + Anfragen. Mobil zuerst.
+Fertig zum Hochladen.<span class="cursor"></span></pre>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="tag">Dein Aufwand</div>
+        <div class="big-num">0 <i>Code</i></div>
+        <p>Du schreibst Briefings und gehst ans Telefon. Mehr nicht.</p>
+      </div>
+      <div class="cell">
+        <div class="tag">Pro Kunde</div>
+        <div class="big-num">~2 <i>Std.</i></div>
+        <p>Aktive Arbeit pro Auftrag — den Rest macht das System.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="jarvis">
+  <div class="wrap split">
+    <div class="pinbox" id="pinbox">
+      <div class="kicker">Jarvis Beta</div>
+      <h2 class="anton">Dein Klon. <span class="am">Nicht dein Kurs.</span></h2>
+      <p class="sub" style="margin-bottom:30px">Du bekommst keinen Video-Ordner. Du bekommst <b>mein komplettes Setup</b> — den KI-Klon, der bei mir jeden Tag Leads findet, Outreach schreibt und Webseiten baut. Fertig zum Übernehmen, gebaut zum Ausbauen.</p>
+      <a class="btn primary" href="#preise">Jarvis übernehmen</a>
+    </div>
+    <div class="stack">
+      <div class="app">
+        <div class="abar"><span><span class="dot"></span>JARVIS — v0.9</span><span class="beta">BETA</span></div>
+        <div class="abody">
+          <div class="mods">
+            <span class="scan"></span>
+            <div class="m"><span class="led">&#9679;</span>Webseiten-Builder</div>
+            <div class="m"><span class="led">&#9679;</span>Lead-Finder</div>
+            <div class="m"><span class="led">&#9679;</span>Outreach</div>
+            <div class="m off"><span class="led">&#9675;</span>Telefon-Assistent<em>BALD</em></div>
+            <div class="m off"><span class="led">&#9675;</span>Rechnungen<em>BALD</em></div>
+          </div>
+          <div class="chat">
+            <div class="msg user">Bau die Seite für Bäckerei Sommer aus Köln. Notizen hängen an.</div>
+            <div class="msg jarvis"><span class="who">JARVIS</span>Verstanden. Struktur steht, Texte übernommen, mobil zuerst. <b>Fertig in ~40 Minuten.</b>
+              <div class="prog">building<span class="cursor" style="height:11px"></span><div class="track"><div class="fill"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modcard"><span class="st">AKTIV</span><div><h4>Webseiten-Builder</h4><p>Briefing rein, fertige One-Page-Seite raus — in 30 bis 60 Minuten, bereit zum Hochladen.</p></div></div>
+      <div class="modcard"><span class="st">AKTIV</span><div><h4>Lead-Finder</h4><p>Sortiert vor, wen du überhaupt anrufst — mit Begründung, warum jede Seite ihren Besitzer Kunden kostet.</p></div></div>
+      <div class="modcard"><span class="st">AKTIV</span><div><h4>Outreach</h4><p>Personalisierte E-Mails, die der Inhaber wirklich liest — plus Telefon-Leitfaden für den Abschluss.</p></div></div>
+      <div class="modcard"><span class="st soon">BALD</span><div><h4>Telefon-Assistent + Rechnungen</h4><p>Die Roadmap läuft. VIP-Mitglieder testen jedes neue Modul zuerst — und stimmen ab, was als Nächstes kommt.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <div class="kicker">Die Rechnung</div>
+    <h2 class="anton">Rechne dir <span class="am">deine Lücke</span> aus.</h2>
+    <p class="sub">Zieh die Regler auf dein Tempo — realistisch, neben dem Job. Das ist keine Fantasie-Mathematik, sondern der Preisrahmen aus dem System.</p>
+    <div class="calc">
+      <div class="panel">
+        <div class="sl"><div class="row"><label>Webseiten pro Monat<small>1–2 ist realistisch neben dem Job</small></label><output id="o1">2</output></div><input type="range" id="s1" min="0" max="8" value="2" oninput="calc()"></div>
+        <div class="sl"><div class="row"><label>Einmalpreis pro Webseite<small>CLS-Rahmen: 400–1.500 &euro;</small></label><output id="o2">800 &euro;</output></div><input type="range" id="s2" min="300" max="1500" step="50" value="800" oninput="calc()"></div>
+        <div class="sl"><div class="row"><label>Retainer-Kunden<small>zahlen jeden Monat weiter</small></label><output id="o3">3</output></div><input type="range" id="s3" min="0" max="15" value="3" oninput="calc()"></div>
+        <div class="sl" style="margin-bottom:6px"><div class="row"><label>Retainer pro Kunde / Monat<small>Pflege, Updates, kleine &Auml;nderungen</small></label><output id="o4">150 &euro;</output></div><input type="range" id="s4" min="50" max="500" step="25" value="150" oninput="calc()"></div>
+      </div>
+      <div>
+        <div class="res-grid">
+          <div class="res main"><div class="l">Pro Monat</div><div class="v" id="rM">–</div></div>
+          <div class="res"><div class="l">Aufs Jahr</div><div class="v" id="rY">–</div></div>
+          <div class="res"><div class="l">Davon wiederkehrend</div><div class="v" id="rR">–</div></div>
+          <div class="res"><div class="l">Pro Woche</div><div class="v" id="rW">–</div></div>
+        </div>
+        <div class="goal" id="goal"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="kicker">Warum es CLS gibt</div>
+    <h2 class="anton">Vom Kinderzimmer mit Schulden <span class="am">zum eigenen System.</span></h2>
+    <div style="height:40px"></div>
+    <div class="scard"><span class="yr">DER ANFANG</span><div><h3>Das Eiscaf&eacute;</h3><p>Meine Eltern kamen aus S&uuml;damerika nach Deutschland — mein Vater mit kaum einem Wort Deutsch. Er baute aus dem Nichts ein Eiscaf&eacute; auf. Andere haben es aus Neid <b>in Tr&uuml;mmer gelegt.</b> Ab da: beide Eltern Vollzeit, Bau am Morgen, Kellnern am Abend.</p></div></div>
+    <div class="scard"><span class="yr">MIT 18</span><div><h3>4 Versuche. 4 mal nichts.</h3><p>Dropshipping, Trading, Memecoins, eigene Modemarke. Vier Businesses, vier Mal Monate Arbeit, vier Mal nichts. <b>F&uuml;nfstellige Schulden im Kinderzimmer</b> und jeden Tag der Gedanke: So kann&rsquo;s nicht weitergehen.</p></div></div>
+    <div class="scard"><span class="yr">DER MOMENT</span><div><h3>Claude baut in Minuten</h3><p>Ich sah, wie eine KI in Minuten eine Webseite baute, f&uuml;r die Agenturen f&uuml;nfstellig kassieren. Erster Gedanke: <b>Genau das brauchen tausende lokale Betriebe</b> — und keiner liefert es ihnen. Erste E-Mails raus. Der erste Auftrag kam. Dann der n&auml;chste.</p></div></div>
+    <div class="scard gold"><span class="yr">HEUTE</span><div><h3>Das Cash Loophole System</h3><p>Das System ist replizierbar: Claude baut, du verkaufst, beide kassieren. CLS ist alles, womit ich angefangen habe — <b>als System zum Ausf&uuml;hren,</b> nicht als Kurs zum Konsumieren. Mein Vater ist &uuml;ber 60. Ich will ihm seine besten Jahre jetzt schenken. Deshalb baue ich das hier.</p></div></div>
+  </div>
+</section>
+
+<section id="mario">
+  <div class="wrap">
+    <div class="kicker">Wer baut das hier</div>
+    <h2 class="anton">Kein Guru. <span class="am">Ein Querdenker mit System.</span></h2>
+    <div class="split">
+      <div class="hud">
+        <img class="real" src="assets/mario-hud.png" alt="Mario" onerror="this.remove()">
+        <span class="scanline"></span>
+        <span class="ring"></span>
+        <span class="mono-m">M<i>.</i></span>
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="data">
+          <span>ID: <b>MARIO</b> &nbsp;&middot;&nbsp; ALTER: <b>21</b> &nbsp;&middot;&nbsp; BASE: <b>DACH</b></span>
+          <span>STATUS: <b>BUILDING</b> &nbsp;&middot;&nbsp; SYSTEM: <b>CLS v1.0</b></span>
+        </div>
+      </div>
+      <div>
+        <p class="bio">Auf die Frage, wer ich ohne das System bin, gibt es nur eine ehrliche Antwort:</p>
+        <div class="starkline" id="starkline">
+          <span class="sw">Querdenker.</span> <span class="sw">Closer.</span> <span class="sw">Systembauer.</span> <span class="sw am">Sohn.</span>
+        </div>
+        <p class="bio">Mit 18 sa&szlig; ich mit <b>f&uuml;nfstelligen Schulden</b> im Kinderzimmer. Heute baue ich Vertriebssysteme, die skalieren — f&uuml;r meine eigenen Marken und f&uuml;r Unternehmen, die mich daf&uuml;r holen. <b>Kein Lambo-Versprechen.</b> Zahlen, Systeme, Umsetzung. Und ein Vater &uuml;ber 60, dem ich seine besten Jahre jetzt schenken will.</p>
+        <div class="stats">
+          <div class="stat hot"><div class="v"><i>&euro;</i><span class="cnt" data-to="3.5" data-dec="1">0</span> Mio<i>+</i></div><div class="l">Cash Collected — eingesammelt in Verk&auml;ufen &uuml;ber alle Systeme</div></div>
+          <div class="stat"><div class="v"><span class="cnt" data-to="28">0</span></div><div class="l">Unternehmen skaliert — vom Setter-Team bis zum kompletten Vertriebs-OS</div></div>
+          <div class="stat"><div class="v"><span class="cnt" data-to="21">0</span></div><div class="l">Jahre alt — angefangen wurde trotzdem</div></div>
+          <div class="stat"><div class="v"><span class="cnt" data-to="4">0</span> <i>Fails</i></div><div class="l">Dropshipping, Trading, Memecoins, Modemarke — das Lehrgeld hinter CLS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="preise">
+  <div class="wrap">
+    <div class="kicker">Zugang</div>
+    <h2 class="anton">W&auml;hle deinen <span class="am">Vorsprung.</span></h2>
+    <div class="scarcity"><span><b>50–100 Pl&auml;tze.</b> Dann schlie&szlig;t der Zugang — sehr wahrscheinlich f&uuml;r Monate.</span><span class="bar"><i></i></span><span>Wer jetzt keinen Vorsprung hat, verpasst ihn.</span></div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="name">Standard</div>
+        <div class="pos">Der Zugang — das komplette System zum Selbst-Ausf&uuml;hren.</div>
+        <div class="price">$98<small> / Monat</small></div>
+        <div class="per">BASE ACCESS</div>
+        <ul>
+          <li><b>Kompletter Classroom</b> — A–Z-Training von Lead bis Lieferung</li>
+          <li>Prompt-Bibliothek mit allen Copy-Paste-Prompts</li>
+          <li>Briefing-Templates — Webseiten in 30–60 Minuten</li>
+          <li>Outreach-Pakete, Verkaufs-Skripte + Einwand-Trainer</li>
+          <li>Branchen-Blueprints &amp; Preisrahmen</li>
+          <li>Community — nicht allein bauen</li>
+        </ul>
+        <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Platz sichern</a>
+      </div>
+      <div class="tier featured">
+        <span class="flag">MEISTGEW&Auml;HLT</span>
+        <div class="name">Premium</div>
+        <div class="pos">Der Klon — Jarvis fertig &uuml;bernehmen statt selbst bauen.</div>
+        <div class="price">$159<small> / Monat</small></div>
+        <div class="per">JARVIS DIREKTZUGANG</div>
+        <ul>
+          <li><b>Alles aus Standard</b></li>
+          <li><b>Jarvis Beta Direktzugang</b> — der Klon als fertiges Setup</li>
+          <li>Webseiten-Builder, Lead-Finder &amp; Outreach sofort einsatzbereit</li>
+          <li>Automatische Jarvis-Updates — jede Verbesserung inklusive</li>
+          <li>Feedback auf deine Seiten &amp; deinen Outreach</li>
+          <li>Live-Q&amp;A-Calls + Priorit&auml;ts-Support</li>
+        </ul>
+        <a class="btn primary" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Jarvis &uuml;bernehmen</a>
+      </div>
+      <div class="tier">
+        <div class="name">VIP</div>
+        <div class="pos">Der Vorsprung — alles zuerst, direkter Draht, mitentscheiden.</div>
+        <div class="price">$249<small> / Monat</small></div>
+        <div class="per">ODER $1.500 / JAHR</div>
+        <ul>
+          <li><b>Alles aus Premium</b></li>
+          <li><b>Coming-Soon-Betas zuerst</b> — Telefon-Assistent, Rechnungs- &amp; Outreach-Agent</li>
+          <li>Early Access auf die DEPLOY-Roadmap</li>
+          <li>Roadmap-Stimme — du entscheidest mit, was als N&auml;chstes kommt</li>
+          <li>Enge Betreuung, bis die Rechnungen laufen</li>
+          <li>VIP-Channel + Platz-Garantie beim Zugangs-Stopp</li>
+        </ul>
+        <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">VIP werden</a>
+      </div>
+    </div>
+    <p class="guarantee"><b>30-Tage-Umsetzungsgarantie:</b> Du setzt die Schritte um — wenn danach nichts funktioniert, setzt mein Team dein Setup kostenlos mit dir auf. Umsetzung erforderlich. Wir helfen Machern, nicht Konsumenten.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:860px">
+    <div class="kicker">Bevor du fragst</div>
+    <h2 class="anton">Die &uuml;blichen <span class="am">Fragen.</span></h2>
+    <div style="height:30px"></div>
+    <details><summary>Muss ich programmieren k&ouml;nnen?</summary><div class="a"><b>Nein.</b> Claude schreibt den Code. Du schreibst Briefings — und daf&uuml;r bekommst du die Vorlagen. Wenn du einen Laptop und ein Telefon bedienen kannst, reicht das.</div></details>
+    <details><summary>Ist das legal? DSGVO?</summary><div class="a"><b>Ja.</b> Du baust und verkaufst Webseiten an echte Unternehmen. Echte Rechnungen, keine Grauzone, keine Datenschutz-Tricks.</div></details>
+    <details><summary>Wie viel Zeit brauche ich?</summary><div class="a"><b>1–2 Stunden am Tag</b> reichen f&uuml;r den Start. Pro Kunde liegt deine aktive Arbeit bei etwa 2 Stunden — den Rest &uuml;bernimmt dein Klon.</div></details>
+    <details><summary>Brauche ich teure Software oder Startkapital?</summary><div class="a"><b>Nein.</b> Laptop, Internet, Claude-Zugang. Kein Lager, kein Ad-Budget, keine Agentur-Kosten.</div></details>
+    <details><summary>Wann sehe ich erste Einnahmen?</summary><div class="a">Erste Termine oft <b>in den ersten 30 Tagen,</b> abgeschlossene Auftr&auml;ge meist in 30–60 Tagen — abh&auml;ngig davon, wie diszipliniert du den Outreach f&auml;hrst. Kein Magic Button. Ein System.</div></details>
+    <details><summary>Was, wenn ich h&auml;ngen bleibe?</summary><div class="a">Daf&uuml;r ist die Community da — plus Feedback und Live-Calls ab Premium. Und wenn du nach 30 Tagen Umsetzung nicht lieferst, <b>bauen wir dein Setup kostenlos mit dir auf.</b></div></details>
+  </div>
+</section>
+
+<section id="final">
+  <h2 class="anton">Eine Webseite kann dein Leben ver&auml;ndern. <span class="am">Mehrere machen dich frei.</span></h2>
+  <div class="keys">
+    <span class="key" data-k>CTRL</span><span class="plus">+</span>
+    <span class="key" data-k>L</span><span class="plus">+</span>
+    <span class="key dollar" data-k>$</span>
+  </div>
+  <a class="btn primary" href="#preise">Zugang zur CLS Community sichern</a>
+  <div class="last">Lass uns bauen. — Mario</div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">CLS<i>.</i></span>
+    <span class="links"><a href="#">Impressum</a><a href="#">Datenschutz</a></span>
+    <span class="claim">&copy; 2026 CLS — Cash Loophole System &nbsp;&middot;&nbsp; KI baut. Du verkaufst. Beide kassieren.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  // Jarvis-Schwarm (Canvas, wie Deck)
+  (function () {
+    var canvas = document.getElementById('swarmHero');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height, N = 90, R = Math.min(W, H) * 0.32;
+    var pts = [];
+    for (var i = 0; i < N; i++) {
+      var y = 1 - (i / (N - 1)) * 2;
+      var rad = Math.sqrt(Math.max(0, 1 - y * y));
+      var th = i * 2.399963;
+      pts.push({ x: Math.cos(th) * rad, y: y, z: Math.sin(th) * rad, ph: Math.random() * 6.28, sp: .5 + Math.random(), sz: (2 + Math.random() * 3) });
+    }
+    function frame(now) {
+      var t = now * 0.001;
+      ctx.clearRect(0, 0, W, H);
+      var rotY = t * .3, rotX = Math.sin(t * .18) * .4, br = 1 + Math.sin(t * .7) * .06;
+      var cx = W / 2, cy = H / 2;
+      var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * .8);
+      g.addColorStop(0, 'rgba(255,170,45,.28)'); g.addColorStop(1, 'rgba(255,159,28,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i], j = 1 + Math.sin(t * p.sp + p.ph) * .13;
+        var x1 = p.x * Math.cos(rotY) + p.z * Math.sin(rotY);
+        var z1 = -p.x * Math.sin(rotY) + p.z * Math.cos(rotY);
+        var y1 = p.y * Math.cos(rotX) - z1 * Math.sin(rotX);
+        var z2 = p.y * Math.sin(rotX) + z1 * Math.cos(rotX);
+        var r = R * br * j, px = cx + x1 * r, py = cy + y1 * r;
+        var d = (z2 + 1) / 2, a = .35 + d * .6, s = p.sz * (.55 + d * .85);
+        var col = d > .55 ? '255,201,96' : '255,159,28';
+        ctx.beginPath(); ctx.fillStyle = 'rgba(' + col + ',' + (a * .2).toFixed(3) + ')'; ctx.arc(px, py, s * 2.6, 0, 6.2832); ctx.fill();
+        ctx.beginPath(); ctx.fillStyle = 'rgba(' + col + ',' + a.toFixed(3) + ')'; ctx.arc(px, py, s, 0, 6.2832); ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  // Rechner
+  var fmt = new Intl.NumberFormat('de-DE');
+  function calc() {
+    var n = +document.getElementById('s1').value, p = +document.getElementById('s2').value,
+        rk = +document.getElementById('s3').value, rp = +document.getElementById('s4').value;
+    document.getElementById('o1').textContent = n;
+    document.getElementById('o2').textContent = fmt.format(p) + ' €';
+    document.getElementById('o3').textContent = rk;
+    document.getElementById('o4').textContent = fmt.format(rp) + ' €';
+    var once = n * p, rec = rk * rp, m = once + rec;
+    document.getElementById('rM').textContent = fmt.format(m) + ' €';
+    document.getElementById('rY').textContent = fmt.format(m * 12) + ' €';
+    document.getElementById('rR').textContent = fmt.format(rec) + ' €';
+    document.getElementById('rW').textContent = fmt.format(Math.round(m / 4.33)) + ' €';
+    var g = document.getElementById('goal');
+    if (m === 0) g.innerHTML = 'Zieh die Regler nach rechts und schau, was passiert.';
+    else if (m < 500) g.innerHTML = 'Du bist bei <b>' + fmt.format(m) + ' €</b>. Das 500-€-Ziel: eine Webseite mehr pro Monat — oder 2–3 Retainer-Kunden.';
+    else if (m < 1500) g.innerHTML = '<b>' + fmt.format(m) + ' € im Monat</b> — das ist das 500–1.500-€-Fenster aus dem CLS-Versprechen. Ab hier entscheidet dein Tempo.';
+    else g.innerHTML = '<b>' + fmt.format(m) + ' € monatlich</b> — auf diesem Niveau ist CLS kein Nebeneinkommen mehr. Jetzt zählt Skalierung: Empfehlungen einsammeln, Retainer stapeln.';
+  }
+  calc();
+
+  // Keycap-Press
+  function pressKeys(keys) {
+    keys.forEach(function (k, i) {
+      setTimeout(function () { k.classList.add('pressed'); setTimeout(function () { k.classList.remove('pressed'); }, 220); }, i * 260);
+    });
+  }
+  document.querySelectorAll('.keys').forEach(function (grp) {
+    grp.addEventListener('click', function () { pressKeys(Array.from(grp.querySelectorAll('[data-k]'))); });
+  });
+  document.getElementById('pressBtn').addEventListener('click', function () {
+    pressKeys(Array.from(document.querySelectorAll('#heroKeys [data-k]')));
+  });
+
+  // GSAP
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Intro
+    var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.from('#heroKeys .key, #heroKeys .plus', { y: -60, opacity: 0, stagger: .09, duration: .7, clearProps: 'transform,opacity' })
+      .from('#heroH1', { y: 40, opacity: 0, duration: .9 }, '-=.2')
+      .from('#hero .sub', { y: 24, opacity: 0, duration: .7 }, '-=.5')
+      .from('#hero .cta-row', { y: 18, opacity: 0, duration: .6 }, '-=.4')
+      .from('#hero .marquee', { opacity: 0, duration: .8 }, '-=.3')
+      .add(function () { pressKeys(Array.from(document.querySelectorAll('#heroKeys [data-k]'))); }, '+=.3');
+
+    // Scrub Text Reveal
+    var scrub = document.getElementById('scrub');
+    scrub.innerHTML = scrub.innerHTML.split(/(<span class="hl">.*?<\/span>)/).map(function (part) {
+      if (part.indexOf('hl') > -1) return part.replace(/(<span class="hl">)(.*?)(<\/span>)/, function (_, a, txt, c) {
+        return a + txt.split(' ').map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ') + c;
+      });
+      return part.split(' ').map(function (w) { return w ? '<span class="w">' + w + '</span>' : ''; }).join(' ');
+    }).join(' ');
+    gsap.to('#scrub .w', {
+      opacity: 1, stagger: .06,
+      scrollTrigger: { trigger: '#luecke', start: 'top 75%', end: 'bottom 55%', scrub: true }
+    });
+
+    // Bento Cells rein
+    gsap.from('.bento .cell', {
+      y: 60, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.bento', start: 'top 80%' }
+    });
+
+    // Jarvis Pinned Split (nur Desktop)
+    ScrollTrigger.matchMedia({
+      '(min-width: 981px)': function () {
+        ScrollTrigger.create({ trigger: '#jarvis .split', start: 'top 120px', end: 'bottom bottom', pin: '#pinbox', pinSpacing: false });
+      }
+    });
+    gsap.from('#jarvis .stack > *', {
+      y: 70, opacity: 0, stagger: .15, duration: .8, ease: 'power2.out',
+      scrollTrigger: { trigger: '#jarvis .stack', start: 'top 78%' }
+    });
+
+    // Rechner + Tiers rein
+    gsap.from('#rechner .calc > *', { y: 50, opacity: 0, stagger: .15, duration: .8, scrollTrigger: { trigger: '#rechner .calc', start: 'top 80%' } });
+    gsap.from('.tiers .tier', { y: 60, opacity: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '.tiers', start: 'top 82%' } });
+
+    // Story-Karten dimmen beim Stapeln
+    document.querySelectorAll('#story .scard').forEach(function (card, i, all) {
+      if (i === all.length - 1) return;
+      gsap.to(card, {
+        scale: .95, opacity: .45,
+        scrollTrigger: { trigger: all[i + 1], start: 'top 70%', end: 'top 20%', scrub: true }
+      });
+    });
+
+    // Mario-Sektion: Stark-Line + Count-Up
+    gsap.from('#starkline .sw', { y: 30, opacity: 0, stagger: .18, duration: .6, ease: 'power3.out', scrollTrigger: { trigger: '#mario', start: 'top 62%' } });
+    gsap.from('#mario .hud', { x: -50, opacity: 0, duration: .9, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '#mario', start: 'top 70%' } });
+    document.querySelectorAll('.cnt').forEach(function (el) {
+      var to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10);
+      var obj = { v: 0 };
+      gsap.to(obj, {
+        v: to, duration: 1.8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+        onUpdate: function () { el.textContent = obj.v.toFixed(dec).replace('.', ','); }
+      });
+    });
+
+    // Final CTA
+    gsap.from('#final > *', { y: 40, opacity: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '#final', start: 'top 70%' } });
+  }
+</script>
+</body>
+</html>
