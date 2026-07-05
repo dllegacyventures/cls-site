@@ -1,0 +1,81 @@
+<!-- CLS Danke/Onboarding-Seite v2 — kompletter HTML-Block für FunnelCockpit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  .clsd, .clsd * { box-sizing:border-box; margin:0; padding:0; }
+  .clsd {
+    --bg:#050505; --panel:#0d0c0b; --ink:#f2efe8; --muted:rgba(242,239,232,.65);
+    --faint:rgba(242,239,232,.34); --line:rgba(242,239,232,.13); --am:#ff9f1c; --am-soft:rgba(255,159,28,.08);
+    background:var(--bg); color:var(--ink); font-family:'Archivo',sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased; min-height:100vh; padding-bottom:40px;
+    background-image:radial-gradient(rgba(242,239,232,.05) 1.5px, transparent 1.5px); background-size:32px 32px;
+  }
+  .clsd .wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+  .clsd .am { color:var(--am); }
+  .clsd .top { display:flex; justify-content:center; padding:24px 0 0; }
+  .clsd .logo { font-family:'Anton',sans-serif; font-size:24px; }
+  .clsd .logo i { color:var(--am); font-style:normal; }
+  .clsd .hero { text-align:center; padding:44px 0 36px; }
+  .clsd .check { width:72px; height:72px; border-radius:50%; background:var(--am); color:#0a0806; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700; margin:0 auto 24px; box-shadow:0 0 0 12px rgba(255,159,28,.14), 0 10px 40px rgba(255,159,28,.35); }
+  .clsd h1 { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(1.9rem,6vw,3rem); line-height:1.06; }
+  .clsd .hero p { color:var(--muted); max-width:520px; margin:16px auto 0; font-size:16px; }
+  .clsd .hero p b { color:var(--ink); }
+  .clsd .steps { display:flex; flex-direction:column; gap:14px; margin:36px 0; }
+  .clsd .step { display:flex; gap:18px; align-items:flex-start; background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px; }
+  .clsd .step.hot { border-color:rgba(255,159,28,.5); background:var(--am-soft); }
+  .clsd .step .n { font-family:'JetBrains Mono',monospace; color:var(--am); font-size:13px; min-width:30px; padding-top:3px; }
+  .clsd .step h3 { font-size:17px; font-weight:700; margin-bottom:4px; }
+  .clsd .step p { color:var(--muted); font-size:14.5px; }
+  .clsd .step a.inline { color:var(--am); }
+  .clsd .btn { display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:16.5px; padding:17px 32px; border-radius:14px; background:var(--am); color:#0a0806; box-shadow:0 10px 34px rgba(255,159,28,.28); transition:transform .25s ease; }
+  .clsd .btn:hover { transform:translateY(-2px); }
+  .clsd .center { text-align:center; }
+  .clsd .note { text-align:center; color:var(--faint); font-size:13px; margin-top:16px; }
+  .clsd footer { text-align:center; padding:44px 0 0; }
+  .clsd footer a { color:var(--faint); text-decoration:none; font-size:13px; margin:0 12px; }
+</style>
+
+<div class="clsd">
+  <div class="top wrap"><span class="logo">CLS<i>.</i></span></div>
+
+  <div class="hero wrap">
+    <div class="check">✓</div>
+    <h1>Willkommen im <span class="am">Loop.</span></h1>
+    <p>Du bist drin. Ab jetzt zählt nur noch eins: <b>Umsetzung in den ersten 48 Stunden.</b> Genau dafür sind diese drei Schritte da.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="steps">
+      <div class="step hot">
+        <span class="n">01</span>
+        <div>
+          <h3>Community betreten &amp; vorstellen</h3>
+          <p>Geh in die <a class="inline" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">CLS-Community auf Skool</a> und poste deine Vorstellung: Wer du bist, was dein 90-Tage-Ziel ist. Wer sich vorstellt, setzt statistisch 3x häufiger um.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <div>
+          <h3>Level-1-Training starten</h3>
+          <p>Im Classroom wartet Modul 1: <b>Dein erster Loop</b> — Betrieb finden, Claude briefen, Demo bauen. Plane dafür 1–2 Stunden. Heute oder morgen, nicht „irgendwann".</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <div>
+          <h3>Ersten Zielbetrieb notieren</h3>
+          <p>Bäckerei, Handwerker, Studio in deiner Stadt mit veralteter Webseite — schreib den Namen auf. Das ist dein erster Übungsfall in Modul 1. Kein Kontakt nötig, nur hinschauen lernen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <a class="btn" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Zur CLS Community →</a>
+      <p class="note">Fragen? Stell sie direkt in der Community — dort antworte ich am schnellsten.</p>
+    </div>
+  </div>
+
+  <footer class="wrap">
+    <a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a>
+  </footer>
+</div>

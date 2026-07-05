@@ -1,0 +1,305 @@
+<!-- CLS VSL-Seite v2 — kompletter HTML-Block für FunnelCockpit (in HTML-Element einfügen) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  .cls2, .cls2 * { box-sizing: border-box; margin: 0; padding: 0; }
+  .cls2 {
+    --bg:#050505; --panel:#0d0c0b; --panel2:#0a0908;
+    --ink:#f2efe8; --muted:rgba(242,239,232,.65); --faint:rgba(242,239,232,.34);
+    --line:rgba(242,239,232,.13); --am:#ff9f1c; --am-soft:rgba(255,159,28,.08);
+    background:var(--bg); color:var(--ink);
+    font-family:'Archivo',sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:radial-gradient(rgba(242,239,232,.05) 1.5px, transparent 1.5px);
+    background-size:32px 32px;
+  }
+  .cls2 .anton { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; line-height:1.02; letter-spacing:.01em; }
+  .cls2 .mono { font-family:'JetBrains Mono',monospace; }
+  .cls2 .am { color:var(--am); }
+  .cls2 .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
+  .cls2 section { padding:64px 0; position:relative; }
+  @media (min-width:760px){ .cls2 section { padding:96px 0; } }
+
+  .cls2 .kicker { display:flex; align-items:center; justify-content:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; text-align:center; }
+  .cls2 .kicker::before, .cls2 .kicker::after { content:''; width:34px; height:2px; background:var(--am); }
+  .cls2 .kicker.left { justify-content:flex-start; text-align:left; }
+  .cls2 .kicker.left::after { display:none; }
+
+  /* Topbar */
+  .cls2 .top { display:flex; justify-content:center; padding:20px 0 0; }
+  .cls2 .top .logo { font-family:'Anton',sans-serif; font-size:24px; letter-spacing:.02em; }
+  .cls2 .top .logo i { color:var(--am); font-style:normal; }
+
+  /* Hero */
+  .cls2 .hero { text-align:center; padding:36px 0 56px; }
+  .cls2 .qualifier { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--am); border:1px solid rgba(255,159,28,.4); background:var(--am-soft); border-radius:999px; padding:8px 18px; margin-bottom:26px; }
+  .cls2 h1 { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(1.9rem,6vw,3.6rem); line-height:1.06; max-width:820px; margin:0 auto; }
+  .cls2 .hero .sub { color:var(--muted); font-size:clamp(1rem,2.5vw,1.2rem); max-width:640px; margin:22px auto 0; }
+  .cls2 .hero .sub b { color:var(--ink); }
+
+  /* Video */
+  .cls2 .vframe { position:relative; margin:34px auto 26px; max-width:840px; aspect-ratio:16/9; border-radius:18px; overflow:hidden; border:1px solid rgba(255,159,28,.4); background:linear-gradient(160deg,#12100c,#070605); box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 60px rgba(255,159,28,.08); }
+  .cls2 .vframe .vinner { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; }
+  .cls2 .vframe .play { width:74px; height:74px; border-radius:50%; background:var(--am); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 12px rgba(255,159,28,.15), 0 10px 40px rgba(255,159,28,.4); }
+  .cls2 .vframe .play::after { content:''; border-style:solid; border-width:14px 0 14px 24px; border-color:transparent transparent transparent #0a0806; margin-left:6px; }
+  .cls2 .vframe .vhint { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); }
+  .cls2 .vnote { text-align:center; font-size:13px; color:var(--faint); margin-bottom:8px; }
+
+  /* CTA */
+  .cls2 .btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; text-decoration:none; font-weight:700; font-size:16.5px; padding:18px 34px; border-radius:14px; transition:transform .25s ease, box-shadow .25s ease; font-family:'Archivo',sans-serif; }
+  .cls2 .btn.primary { background:var(--am); color:#0a0806; box-shadow:0 10px 34px rgba(255,159,28,.28); }
+  .cls2 .btn.primary:hover { transform:translateY(-2px); box-shadow:0 16px 44px rgba(255,159,28,.42); }
+  .cls2 .btn.big { font-size:18px; padding:20px 42px; }
+  .cls2 .trust { margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--faint); }
+
+  /* Proof strip */
+  .cls2 .proof { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:28px 0; }
+  .cls2 .proof .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; text-align:center; }
+  @media (min-width:760px){ .cls2 .proof .grid { grid-template-columns:repeat(4,1fr); } }
+  .cls2 .proof .v { font-family:'Anton',sans-serif; font-size:clamp(1.7rem,4vw,2.5rem); }
+  .cls2 .proof .v i { color:var(--am); font-style:normal; }
+  .cls2 .proof .l { color:var(--faint); font-size:12.5px; margin-top:4px; line-height:1.4; }
+
+  /* Section headers */
+  .cls2 h2 { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(1.7rem,5vw,2.8rem); text-align:center; margin-bottom:14px; }
+  .cls2 .sub { color:var(--muted); font-size:16px; text-align:center; max-width:620px; margin:0 auto; }
+  .cls2 .sub b { color:var(--ink); }
+
+  /* Loop steps */
+  .cls2 .loop { margin-top:44px; display:flex; flex-direction:column; gap:12px; }
+  .cls2 .fnode { display:flex; align-items:center; gap:16px; padding:18px 20px; border:1px solid var(--line); border-radius:14px; background:var(--panel2); }
+  .cls2 .fnode .n { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--am); min-width:28px; }
+  .cls2 .fnode .t { font-weight:700; font-size:16px; }
+  .cls2 .fnode .d { color:var(--faint); font-size:13px; margin-left:auto; text-align:right; max-width:46%; }
+  .cls2 .fnode.hot { border-color:rgba(255,159,28,.5); background:var(--am-soft); }
+
+  /* Story */
+  .cls2 .story { background:var(--panel2); border:1px solid var(--line); border-radius:22px; padding:clamp(26px,5vw,48px); margin-top:44px; }
+  .cls2 .story p { color:var(--muted); font-size:16px; margin-bottom:16px; max-width:680px; }
+  .cls2 .story p:last-child { margin-bottom:0; }
+  .cls2 .story b { color:var(--ink); }
+
+  /* Value stack */
+  .cls2 .stack { margin-top:44px; display:flex; flex-direction:column; gap:12px; }
+  .cls2 .sitem { display:flex; gap:16px; align-items:flex-start; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:18px 20px; }
+  .cls2 .sitem .pl { font-family:'JetBrains Mono',monospace; color:var(--am); font-size:15px; padding-top:2px; }
+  .cls2 .sitem h4 { font-size:16px; font-weight:700; }
+  .cls2 .sitem p { color:var(--muted); font-size:14px; margin-top:3px; }
+
+  /* Tiers */
+  .cls2 .tiers { display:grid; grid-template-columns:1fr; gap:18px; margin-top:48px; max-width:520px; margin-left:auto; margin-right:auto; }
+  @media (min-width:980px){ .cls2 .tiers { grid-template-columns:repeat(3,1fr); max-width:none; align-items:stretch; } }
+  .cls2 .tier { background:var(--panel); border:1px solid var(--line); border-radius:22px; padding:32px 28px; display:flex; flex-direction:column; position:relative; }
+  .cls2 .tier .name { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:25px; margin-bottom:4px; }
+  .cls2 .tier .pos { color:var(--faint); font-size:13.5px; margin-bottom:18px; }
+  .cls2 .tier .price { font-family:'Anton',sans-serif; font-size:42px; }
+  .cls2 .tier .price small { font-family:'Archivo',sans-serif; font-size:15px; color:var(--muted); }
+  .cls2 .tier .per { font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--faint); letter-spacing:.16em; margin-bottom:22px; }
+  .cls2 .tier ul { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:26px; }
+  .cls2 .tier li { font-size:14.5px; color:var(--muted); padding-left:22px; position:relative; }
+  .cls2 .tier li::before { content:'+'; position:absolute; left:0; color:var(--am); font-family:'JetBrains Mono',monospace; }
+  .cls2 .tier li b { color:var(--ink); }
+  .cls2 .tier .btn { margin-top:auto; }
+  .cls2 .tier .btn.ghost { border:1px solid rgba(242,239,232,.25); color:var(--ink); background:rgba(242,239,232,.03); }
+  .cls2 .tier .btn.ghost:hover { border-color:var(--am); color:var(--am); }
+  .cls2 .tier.featured { border-color:var(--am); background:linear-gradient(170deg,#171006,var(--panel)); box-shadow:0 26px 70px rgba(255,159,28,.14); }
+  .cls2 .tier .flag { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--am); color:#0a0806; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.2em; font-weight:700; padding:6px 14px; border-radius:999px; white-space:nowrap; }
+  .cls2 .hinweis { text-align:center; margin-top:18px; color:var(--faint); font-size:12.5px; }
+
+  /* Garantie */
+  .cls2 .gbox { border:1px solid rgba(255,159,28,.4); background:var(--am-soft); border-radius:20px; padding:clamp(24px,5vw,40px); margin-top:44px; text-align:center; }
+  .cls2 .gbox h3 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(1.3rem,3.4vw,1.8rem); margin-bottom:12px; }
+  .cls2 .gbox p { color:var(--muted); font-size:15px; max-width:620px; margin:0 auto; }
+  .cls2 .gbox b { color:var(--ink); }
+
+  /* FAQ */
+  .cls2 details { border:1px solid var(--line); border-radius:14px; background:var(--panel); margin-bottom:12px; overflow:hidden; }
+  .cls2 summary { cursor:pointer; list-style:none; padding:20px 24px; font-weight:700; font-size:16px; display:flex; justify-content:space-between; align-items:center; }
+  .cls2 summary::-webkit-details-marker { display:none; }
+  .cls2 summary::after { content:'+'; font-family:'JetBrains Mono',monospace; color:var(--am); font-size:22px; transition:transform .3s; }
+  .cls2 details[open] summary::after { transform:rotate(45deg); }
+  .cls2 details .a { padding:0 24px 20px; color:var(--muted); font-size:14.5px; }
+  .cls2 details .a b { color:var(--ink); }
+
+  /* Final */
+  .cls2 .final { text-align:center; }
+  .cls2 .final h2 { font-size:clamp(1.9rem,6vw,3.2rem); max-width:760px; margin:0 auto 30px; }
+  .cls2 .final .last { font-family:'JetBrains Mono',monospace; letter-spacing:.26em; text-transform:uppercase; color:var(--faint); font-size:11px; margin-top:36px; }
+
+  /* Footer */
+  .cls2 footer { border-top:1px solid var(--line); padding:32px 0 40px; text-align:center; }
+  .cls2 footer .links a { color:var(--faint); text-decoration:none; font-size:13px; margin:0 12px; }
+  .cls2 footer .links a:hover { color:var(--am); }
+  .cls2 footer .discl { color:var(--faint); font-size:11.5px; max-width:720px; margin:18px auto 0; line-height:1.6; }
+</style>
+
+<div class="cls2">
+
+  <div class="top wrap"><span class="logo">CLS<i>.</i></span></div>
+
+  <!-- HERO -->
+  <div class="hero wrap">
+    <span class="qualifier">Für Angestellte 18–40 · Neben dem Job · Ohne Code</span>
+    <h1>Dein KI-Klon baut Webseiten. Lokale Betriebe <span class="am">zahlen dich dafür.</span></h1>
+    <p class="sub">In den nächsten Minuten zeige ich dir den <b>Cash Loophole</b> — das System, mit dem Claude komplette Webseiten in Stunden baut und du sie an Handwerker, Restaurants und Studios verkaufst. <b>400–1.500&nbsp;€ pro Webseite, oder monatlicher Retainer.</b> Kein Startkapital. Kein Guru.</p>
+
+    <!-- VIDEO-SLOT: Diesen Container durch FunnelCockpit-Video-Element oder Embed ersetzen -->
+    <div class="vframe" id="cls-vsl-video">
+      <div class="vinner">
+        <div class="play"></div>
+        <span class="vhint">▶ VSL abspielen · ~15 Minuten</span>
+      </div>
+    </div>
+    <p class="vnote">Ton an — die entscheidenden 3 Minuten kommen am Anfang.</p>
+
+    <a class="btn primary big" href="#zugang">Zeig mir das System — Preise &amp; Zugang</a>
+    <div class="trust">Monatlich kündbar · 14 Tage Widerrufsrecht · 30-Tage-Umsetzungsgarantie</div>
+  </div>
+
+  <!-- PROOF STRIP -->
+  <div class="proof">
+    <div class="wrap grid">
+      <div><div class="v"><i>€</i>3,5 Mio<i>+</i></div><div class="l">Cash Collected — über alle Vertriebssysteme eingesammelt</div></div>
+      <div><div class="v">28</div><div class="l">Unternehmen im Vertrieb skaliert</div></div>
+      <div><div class="v">~2 <i>Std.</i></div><div class="l">aktive Arbeit pro Kundenauftrag</div></div>
+      <div><div class="v">4 <i>Fails</i></div><div class="l">Dropshipping, Trading, Memecoins, Modemarke — das Lehrgeld hinter CLS</div></div>
+    </div>
+  </div>
+
+  <!-- MECHANISMUS -->
+  <section>
+    <div class="wrap">
+      <div class="kicker">Der Mechanismus</div>
+      <h2>Ein Loop. <span class="am">Fünf Schritte.</span> Jede Woche wiederholbar.</h2>
+      <p class="sub">Das ist kein Kurs zum Konsumieren. Es ist ein Ablauf, den du am ersten Tag startest — und den dein KI-Klon Schritt für Schritt übernimmt.</p>
+      <div class="loop">
+        <div class="fnode"><span class="n">01</span><span class="t">Finden</span><span class="d">Betriebe, deren Webseite sie Kunden kostet</span></div>
+        <div class="fnode"><span class="n">02</span><span class="t">Kontakt</span><span class="d">E-Mail + Anruf — Skripte inklusive</span></div>
+        <div class="fnode hot"><span class="n">03</span><span class="t">Jarvis baut</span><span class="d">fertige Webseite in Stunden, kein Code</span></div>
+        <div class="fnode"><span class="n">04</span><span class="t">Abschluss</span><span class="d">Demo zeigen, Preis nennen</span></div>
+        <div class="fnode"><span class="n">05</span><span class="t">Rechnung</span><span class="d">Einmalpreis oder monatlicher Retainer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">Warum ich das teile</div>
+      <h2>Kein Guru. <span class="am">Ein Sohn mit einem Plan.</span></h2>
+      <div class="story">
+        <p>Mit 18 saß ich mit <b>fünfstelligen Schulden</b> im Kinderzimmer. Vier Businesses probiert, vier Mal nichts: Dropshipping, Trading, Memecoins, Modemarke.</p>
+        <p>Dann sah ich, wie Claude in Minuten eine Webseite baute, für die Agenturen fünfstellig kassieren. Erster Gedanke: <b>Genau das brauchen Tausende lokale Betriebe — und keiner liefert es ihnen.</b> Erste E-Mails raus. Der erste Auftrag kam. Dann der nächste.</p>
+        <p>Mein Vater hat sich in Deutschland aus dem Nichts ein Eiscafé aufgebaut — und wurde von Neidern zerstört. Er ist über 60 und arbeitet immer noch. <b>Ich baue CLS, damit er aufhören kann — und damit du nicht 10 Jahre suchst, wie ich fast.</b></p>
+        <p>Ich verdiene mein Geld damit, dass Unternehmen Webseiten und Vertriebssysteme bei mir kaufen — nicht mit Kursen. CLS ist das System, mit dem ich angefangen habe. Als Ablauf zum Nachmachen, nicht als Videosammlung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STACK -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">Was du bekommst</div>
+      <h2>Das komplette System. <span class="am">Nicht nur Theorie.</span></h2>
+      <div class="stack">
+        <div class="sitem"><span class="pl">01</span><div><h4>Jarvis — mein KI-Klon als fertiges Setup</h4><p>Webseiten-Builder, Lead-Finder und Outreach, wie ich sie täglich nutze. Übernehmen statt selbst bauen (ab Premium).</p></div></div>
+        <div class="sitem"><span class="pl">02</span><div><h4>Claude-Briefing-Templates</h4><p>Copy-Paste-Briefings, mit denen Claude in 30–60 Minuten eine verkaufsfertige Webseite baut.</p></div></div>
+        <div class="sitem"><span class="pl">03</span><div><h4>Outreach-Pakete + Telefon-Skripte</h4><p>E-Mail-Sequenzen, die Inhaber wirklich lesen — plus Leitfaden für Erstgespräch, Einwände und Abschluss.</p></div></div>
+        <div class="sitem"><span class="pl">04</span><div><h4>Branchen-Blueprints &amp; Preisrahmen</h4><p>Restaurant, Handwerk, Coaches, Studios — was du baust und was du dafür nimmst.</p></div></div>
+        <div class="sitem"><span class="pl">05</span><div><h4>A–Z-Training + Community</h4><p>Von Lead bis Lieferung, Schritt für Schritt. Und Leute, die denselben Weg gehen — du baust nicht allein.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section id="zugang" style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">Zugang</div>
+      <h2>Wähle deinen <span class="am">Vorsprung.</span></h2>
+      <p class="sub">Alle Stufen laufen über die CLS-Community auf Skool. Monatlich kündbar, Zahlung sicher über Skool.</p>
+      <div class="tiers">
+        <div class="tier">
+          <div class="name">Standard</div>
+          <div class="pos">Das komplette System zum Selbst-Ausführen.</div>
+          <div class="price">$98<small> / Monat</small></div>
+          <div class="per">BASE ACCESS</div>
+          <ul>
+            <li><b>Kompletter Classroom</b> — A–Z von Lead bis Lieferung</li>
+            <li>Prompt-Bibliothek + Briefing-Templates</li>
+            <li>Outreach-Pakete, Verkaufs-Skripte, Einwand-Trainer</li>
+            <li>Branchen-Blueprints &amp; Preisrahmen</li>
+            <li>Community — nicht allein bauen</li>
+          </ul>
+          <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Platz sichern</a>
+        </div>
+        <div class="tier featured">
+          <span class="flag">MEISTGEWÄHLT</span>
+          <div class="name">Premium</div>
+          <div class="pos">Jarvis fertig übernehmen statt selbst bauen.</div>
+          <div class="price">$159<small> / Monat</small></div>
+          <div class="per">JARVIS DIREKTZUGANG</div>
+          <ul>
+            <li><b>Alles aus Standard</b></li>
+            <li><b>Jarvis Beta Direktzugang</b> — der Klon als fertiges Setup</li>
+            <li>Webseiten-Builder, Lead-Finder &amp; Outreach sofort einsatzbereit</li>
+            <li>Feedback auf deine Seiten &amp; deinen Outreach</li>
+            <li>Live-Q&amp;A-Calls + Prioritäts-Support</li>
+          </ul>
+          <a class="btn primary" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Jarvis übernehmen</a>
+        </div>
+        <div class="tier">
+          <div class="name">VIP</div>
+          <div class="pos">Alles zuerst, direkter Draht, mitentscheiden.</div>
+          <div class="price">$249<small> / Monat</small></div>
+          <div class="per">ODER $1.500 / JAHR</div>
+          <ul>
+            <li><b>Alles aus Premium</b></li>
+            <li><b>Neue Module zuerst</b> — Telefon-Assistent, Rechnungs-Agent</li>
+            <li>Roadmap-Stimme — du entscheidest mit</li>
+            <li>Enge Betreuung, bis die Rechnungen laufen</li>
+            <li>VIP-Channel + Platz-Garantie</li>
+          </ul>
+          <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">VIP werden</a>
+        </div>
+      </div>
+      <p class="hinweis">Preise in USD über Skool. Der Kauf wird auf der Skool-Seite mit allen Vertragsdetails abgeschlossen.</p>
+
+      <div class="gbox">
+        <h3>30-Tage-Umsetzungsgarantie</h3>
+        <p>Du setzt die Schritte aus dem System um — wenn danach nichts funktioniert, <b>setzt mein Team dein Setup kostenlos mit dir auf.</b> Dazu gilt dein gesetzliches 14-tägiges Widerrufsrecht. Umsetzung erforderlich: Wir helfen Machern, nicht Konsumenten.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding-top:0">
+    <div class="wrap" style="max-width:760px">
+      <div class="kicker">Bevor du fragst</div>
+      <h2>Die üblichen <span class="am">Fragen.</span></h2>
+      <div style="height:26px"></div>
+      <details><summary>Muss ich programmieren können?</summary><div class="a"><b>Nein.</b> Claude schreibt den Code. Du schreibst Briefings — die Vorlagen bekommst du. Laptop + Telefon bedienen reicht.</div></details>
+      <details><summary>Wie viel Zeit brauche ich?</summary><div class="a"><b>1–2 Stunden am Tag</b> reichen für den Start. Pro Kundenauftrag liegt die aktive Arbeit bei etwa 2 Stunden.</div></details>
+      <details><summary>Wann sehe ich erste Ergebnisse?</summary><div class="a">Erste Termine oft <b>in den ersten 30 Tagen</b>, erste abgeschlossene Aufträge meist in 30–60 Tagen — abhängig von deinem Outreach. Ergebnisse sind individuell und hängen von deiner Umsetzung ab. Kein Magic Button. Ein System.</div></details>
+      <details><summary>Brauche ich Startkapital oder teure Software?</summary><div class="a"><b>Nein.</b> Laptop, Internet, Claude-Zugang. Kein Lager, kein Werbebudget, keine Agentur-Kosten.</div></details>
+      <details><summary>Ist das legal? DSGVO?</summary><div class="a"><b>Ja.</b> Du baust und verkaufst Webseiten an echte Unternehmen — echte Rechnungen, keine Grauzone.</div></details>
+      <details><summary>Was, wenn ich hängen bleibe?</summary><div class="a">Dafür sind Community, Feedback und Live-Calls da. Und nach 30 Tagen Umsetzung ohne Ergebnis <b>bauen wir dein Setup kostenlos mit dir auf.</b></div></details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="anton">Eine Webseite kann dein Leben verändern. <span class="am">Mehrere machen dich frei.</span></h2>
+      <a class="btn primary big" href="#zugang">Zugang zur CLS Community sichern</a>
+      <div class="last">Lass uns bauen. — Mario</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="links"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></div>
+      <p class="discl">© 2026 CLS — Cash Loophole System. Alle genannten Zahlen beziehen sich auf persönliche Erfahrungen und Einzelfälle; sie sind keine Zusicherung oder Garantie eigener Ergebnisse. Dein Erfolg hängt von deinem Einsatz, deiner Umsetzung und deinem Markt ab. Dieses Angebot ist kein „passives Einkommen"-Versprechen, sondern ein Trainings- und Software-Zugang.</p>
+    </div>
+  </footer>
+
+</div>
