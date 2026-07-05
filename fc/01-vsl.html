@@ -4,7 +4,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+  /* FunnelCockpit-Wrapper neutralisieren: kein weißer Rand, volle Breite */
+  html, body { background:#0a0908 !important; margin:0 !important; padding:0 !important; overflow-x:hidden !important; }
   .cls3, .cls3 * { box-sizing:border-box; margin:0; padding:0; }
+  .cls3 { width:100vw; margin-left:calc(50% - 50vw) !important; }
   .cls3 {
     --bg:#0a0908; --panel:#12100d; --panel2:#0d0c0a;
     --ink:#f2efe8; --muted:rgba(242,239,232,.66); --faint:rgba(242,239,232,.38);
@@ -32,6 +35,17 @@
 
   /* ── Hero: Video zuerst ── */
   .cls3 .hero { padding:34px 0 0; position:relative; }
+  @media (max-width:620px){
+    .cls3 .hero { padding-top:22px; }
+    .cls3 .vframe { border-radius:14px; }
+    .cls3 .vframe .play { width:64px; height:64px; }
+    .cls3 .vframe .play::after { border-width:11px 0 11px 19px; }
+    .cls3 .vframe .vmeta { left:14px; right:14px; bottom:10px; font-size:9px; }
+    .cls3 .btn { width:100%; max-width:420px; }
+    .cls3 section { padding:64px 0 0; }
+    .cls3 .final { padding:72px 0 0; }
+    .cls3 footer { margin-top:64px; }
+  }
   .cls3 .hero::before { content:''; position:absolute; top:-140px; left:50%; transform:translateX(-50%); width:900px; height:520px; background:radial-gradient(ellipse at center, rgba(245,166,35,.13), transparent 65%); pointer-events:none; }
   .cls3 h1 { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(1.7rem,4.6vw,3rem); line-height:1.04; text-align:center; max-width:840px; margin:0 auto 8px; text-wrap:balance; position:relative; }
   .cls3 .sub1 { text-align:center; color:var(--muted); font-size:clamp(.98rem,2.2vw,1.12rem); max-width:600px; margin:0 auto 26px; }
