@@ -1,5 +1,5 @@
 <!-- CLS VSL-Seite v3 — kompletter HTML-Block für FunnelCockpit -->
-<!-- ▼▼▼ VIDEO: Trag hier deinen YouTube- oder Vimeo-Link ein (z.B. https://www.youtube.com/watch?v=XXXX) — Video erscheint automatisch oben. Leer = Poster. ▼▼▼ -->
+<!-- ▼▼▼ VIDEO: Trag hier deinen Wistia-, YouTube- oder Vimeo-Link ein (z.B. https://mario.wistia.com/medias/abc123) — Video erscheint automatisch oben. Leer = Poster. ▼▼▼ -->
 <script>var CLS_VIDEO_URL = '';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -318,7 +318,9 @@
     var frame = document.getElementById('cls-vsl-video');
     if (!frame) return;
     function embedUrl(url){
-      var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/);
+      var m = url.match(/wistia\.(?:com|net)\/(?:medias|embed\/iframe|embed\/medias)\/([\w]+)/);
+      if (m) return 'https://fast.wistia.net/embed/iframe/' + m[1] + '?autoPlay=true&videoFoam=true&playerColor=f5a623';
+      m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/);
       if (m) return 'https://www.youtube-nocookie.com/embed/' + m[1] + '?autoplay=1&rel=0&modestbranding=1';
       m = url.match(/vimeo\.com\/(\d+)/);
       if (m) return 'https://player.vimeo.com/video/' + m[1] + '?autoplay=1';
