@@ -1,6 +1,10 @@
 <!-- CLS VSL-Seite v3 — kompletter HTML-Block für FunnelCockpit -->
 <!-- ▼▼▼ VIDEO: Trag hier deinen Wistia-, YouTube- oder Vimeo-Link ein (z.B. https://mario.wistia.com/medias/abc123) — Video erscheint automatisch oben. Leer = Poster. ▼▼▼ -->
-<script>var CLS_VIDEO_URL = 'https://dllegacyventures.wistia.com/medias/pj1w5lh7eq';</script>
+<script>
+var CLS_VIDEO_URL = 'https://dllegacyventures.wistia.com/medias/pj1w5lh7eq';
+/* ▼ CTA-Reveal: Sekunden nach Seitenaufruf, bis Button + Angebot erscheinen. 28:30 = 1710. 0 = sofort sichtbar. */
+var CLS_CTA_REVEAL_SECONDS = 1710;
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -163,6 +167,11 @@
   .cls3 footer .links a { color:var(--faint); text-decoration:none; font-size:13px; margin:0 12px; }
   .cls3 footer .links a:hover { color:var(--am); }
   .cls3 footer .discl { color:rgba(242,239,232,.3); font-size:11px; max-width:740px; margin:16px auto 0; line-height:1.6; }
+
+  /* ── Zeitbasiertes CTA-Gating ── */
+  .cls3 .cls-gated { display:none !important; }
+  .cls3 .cls-revealed { animation:clsfade .9s ease; }
+  @keyframes clsfade { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
 </style>
 
 <div class="cls3">
@@ -187,7 +196,7 @@
         </div>
       </div>
 
-      <div class="ctarow">
+      <div class="ctarow cls-gated">
         <a class="btn" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Zugang zur CLS Community sichern →</a>
       </div>
     </div>
@@ -232,7 +241,7 @@
     </section>
 
     <!-- ANGEBOT -->
-    <section id="zugang">
+    <section id="zugang" class="cls-gated">
       <div class="wrap">
         <div class="kick">Zugang</div>
         <h2>Wähle deinen <span class="am">Vorsprung.</span></h2>
@@ -297,7 +306,7 @@
     </section>
 
     <!-- FINAL -->
-    <div class="final wrap">
+    <div class="final wrap cls-gated">
       <h2 class="anton">Eine Webseite kann dein Leben verändern. <span class="am">Mehrere machen dich frei.</span></h2>
       <a class="btn" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Jetzt Zugang sichern →</a>
       <div class="last">Lass uns bauen. — Mario</div>
@@ -331,6 +340,19 @@
       frame.innerHTML = '<iframe src="' + src + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="CLS VSL"></iframe>';
       frame.style.cursor = 'default';
     }
+    /* Zeitbasiertes CTA-Gating: Elemente mit .cls-gated erscheinen CLS_CTA_REVEAL_SECONDS nach dem ersten Seitenaufruf (Reload-sicher via localStorage). */
+    (function(){
+      var els = Array.prototype.slice.call(document.querySelectorAll('.cls-gated'));
+      if (!els.length) return;
+      function reveal(){ els.forEach(function(el){ el.classList.remove('cls-gated'); el.classList.add('cls-revealed'); }); }
+      if (!CLS_CTA_REVEAL_SECONDS || CLS_CTA_REVEAL_SECONDS <= 0) { reveal(); return; }
+      var KEY = 'cls_vsl_t0_v1', t0 = 0;
+      try { t0 = parseInt(localStorage.getItem(KEY) || '0', 10); } catch(e) {}
+      if (!t0 || isNaN(t0)) { t0 = Date.now(); try { localStorage.setItem(KEY, String(t0)); } catch(e) {} }
+      var remaining = CLS_CTA_REVEAL_SECONDS * 1000 - (Date.now() - t0);
+      if (remaining <= 0) { reveal(); } else { setTimeout(reveal, remaining); }
+    })();
+
     if (typeof CLS_VIDEO_URL === 'string' && CLS_VIDEO_URL.trim()) {
       frame.addEventListener('click', function once(){ frame.removeEventListener('click', once); mount(); }, { once:true });
     } else {
