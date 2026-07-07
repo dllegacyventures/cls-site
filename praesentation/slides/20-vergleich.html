@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P18 · Vergleich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 52px;
+  }
+  h1 { font-size: 100px; }
+  table { border-collapse: collapse; width: 100%; }
+  th {
+    font-family: var(--mono);
+    font-size: 17px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--faint);
+    text-align: left;
+    padding: 0 28px 20px;
+    font-weight: 500;
+  }
+  td {
+    border-top: 1px solid var(--line);
+    padding: 24px 28px;
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  td.model {
+    font-family: var(--display);
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--muted);
+    width: 320px;
+  }
+  td.problem { color: var(--muted); width: 640px; }
+  td.cls { color: var(--ink); }
+  td.cls::before {
+    content: '→';
+    color: var(--red);
+    margin-right: 18px;
+  }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Die Alternativen</span></div>
+  <div class="stage">
+    <h1 class="h-display">Warum nicht <span class="red">die anderen Modelle?</span></h1>
+    <table>
+      <tr><th>Modell</th><th>Das Problem</th><th>Bei CLS</th></tr>
+      <tr>
+        <td class="model">Dropshipping</td>
+        <td class="problem">Gesättigt, hohe Werbekosten, dünne Margen</td>
+        <td class="cls">Kein Ad-Budget, kein Lager</td>
+      </tr>
+      <tr>
+        <td class="model">Trading / Krypto</td>
+        <td class="problem">Glücksspiel mit hohem Stress</td>
+        <td class="cls">Planbar — basiert auf echtem Bedarf</td>
+      </tr>
+      <tr>
+        <td class="model">Amazon FBA</td>
+        <td class="problem">Hohe Investition, Logistik-Hölle</td>
+        <td class="cls">Kein Inventar, kein Versand</td>
+      </tr>
+      <tr>
+        <td class="model">Affiliate</td>
+        <td class="problem">Mini-Provisionen, kein Hebel, jederzeit gebannt</td>
+        <td class="cls">Echter Auftragswert pro Abschluss</td>
+      </tr>
+      <tr>
+        <td class="model">SMMA</td>
+        <td class="problem">Überlaufen, Kundenjagd, Vertriebs-Burnout</td>
+        <td class="cls">KI liefert das Produkt — solo machbar</td>
+      </tr>
+    </table>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>20</b> / 30</span></div>
+</body>
+</html>

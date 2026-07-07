@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P14 · Der Loop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 64px;
+  }
+  .mini {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    font-family: var(--mono);
+    font-size: 21px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .mini .a { color: var(--red); }
+  .mini .hot { color: var(--ink); border: 1px solid var(--red); padding: 12px 20px; background: rgba(255,159,28,0.06); }
+  .mini .cold { border: 1px solid var(--line); padding: 12px 20px; }
+  h1 { font-size: 168px; }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 1500px;
+  }
+  .fact { border: 1px solid var(--line); padding: 38px 40px; }
+  .fact .v {
+    font-family: var(--display);
+    font-size: 58px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .fact .v span { color: var(--red); }
+  .fact .l { font-size: 22px; color: var(--muted); line-height: 1.45; }
+</style>
+</head>
+<body class="board">
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Zoom out</span></div>
+  <div class="stage">
+    <div class="mini">
+      <span class="cold">LEADS</span><span class="a">→</span>
+      <span class="cold">OUTREACH</span><span class="a">→</span>
+      <span class="hot">JARVIS BAUT</span><span class="a">→</span>
+      <span class="cold">VERKAUF</span><span class="a">→</span>
+      <span class="cold">RECHNUNG</span><span class="a">↺</span>
+    </div>
+    <h1 class="h-display">Das ist der <span class="red">ganze Loop.</span></h1>
+    <div class="facts">
+      <div class="fact"><div class="v">~2 Std<span>.</span></div><div class="l">Deine aktive Arbeit pro Kunde — Rest macht das System.</div></div>
+      <div class="fact"><div class="v">1 : 1</div><div class="l">Wiederholbar. Jeder Durchlauf identisch — nur der Betrieb wechselt.</div></div>
+      <div class="fact"><div class="v">0 Code</div><div class="l">Du schreibst Briefings und gehst ans Telefon. Mehr nicht.</div></div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>16</b> / 30</span></div>
+  <div class="swarm-holder"><canvas class="jarvis-swarm" width="260" height="260" data-particles="50" style="width:130px;height:130px"></canvas></div>
+  <script src="../shared/jarvis-swarm.js"></script>
+</body>
+</html>

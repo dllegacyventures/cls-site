@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P21 · FAQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+  }
+  h1 { font-size: 110px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .qa { border: 1px solid var(--line); padding: 44px 52px; }
+  .qa .q {
+    font-family: var(--display);
+    font-size: 38px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .qa .a { font-size: 24px; line-height: 1.55; color: var(--muted); }
+  .qa .a b { color: var(--ink); }
+  .qa .a .red { color: var(--red); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Die üblichen Fragen</span></div>
+  <div class="stage">
+    <h1 class="h-display">Bevor du <span class="red">fragst.</span></h1>
+    <div class="grid">
+      <div class="qa">
+        <div class="q">Muss ich programmieren können?</div>
+        <div class="a"><span class="red">Nein.</span> Claude schreibt den Code. <b>Du schreibst die Briefings.</b></div>
+      </div>
+      <div class="qa">
+        <div class="q">Ist das legal? DSGVO?</div>
+        <div class="a"><span class="red">Ja.</span> Du baust und verkaufst Webseiten. <b>Keine Grauzone, keine Tricks.</b></div>
+      </div>
+      <div class="qa">
+        <div class="q">Brauche ich teure Software?</div>
+        <div class="a"><span class="red">Nein.</span> Laptop, Internet, Claude-Zugang. <b>Das war's.</b></div>
+      </div>
+      <div class="qa">
+        <div class="q">Wann sehe ich erste Einnahmen?</div>
+        <div class="a">Erste Termine oft <b>in 30 Tagen.</b> Abgeschlossene Aufträge meist in <b>30–60 Tagen</b> — abhängig von deinem Outreach.</div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>23</b> / 30</span></div>
+</body>
+</html>

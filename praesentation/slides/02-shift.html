@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P02 · Die Verschiebung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 70px;
+  }
+  h1 { font-size: 128px; max-width: 1500px; }
+  .windows {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .win {
+    border: 1px solid var(--line);
+    padding: 44px 40px 48px;
+  }
+  .win .year {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: 0.26em;
+    color: var(--faint);
+    margin-bottom: 22px;
+  }
+  .win .name {
+    font-family: var(--display);
+    font-size: 54px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .win.now {
+    border-color: var(--red);
+    background: rgba(255, 159, 28, 0.06);
+  }
+  .win.now .year { color: var(--red); }
+  .win.now .name { color: var(--ink); }
+  .foot {
+    font-size: 29px;
+    color: var(--muted);
+  }
+  .foot b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Die Verschiebung</span></div>
+  <div class="stage">
+    <h1 class="h-display">Alle paar Jahre öffnet sich <span class="red">ein Fenster.</span></h1>
+    <div class="windows">
+      <div class="win"><div class="year">1999</div><div class="name">Internet</div></div>
+      <div class="win"><div class="year">2010</div><div class="name">Social Media</div></div>
+      <div class="win"><div class="year">2017</div><div class="name">Krypto</div></div>
+      <div class="win now"><div class="year">Jetzt</div><div class="name">KI</div></div>
+    </div>
+    <p class="foot">Nur dass diesmal <b>niemand außerhalb der KI-Bubble</b> checkt, was gerade möglich ist.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>02</b> / 30</span></div>
+</body>
+</html>

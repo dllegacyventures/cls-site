@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P27 · Zu spät</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+    gap: 8px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 760px 1fr;
+    align-items: baseline;
+    gap: 60px;
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .row:first-child { border-top: 1px solid var(--line); }
+  .row .quote {
+    font-family: var(--display);
+    font-size: 92px;
+    text-transform: uppercase;
+    color: var(--faint);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255, 159, 28, 0.7);
+    text-decoration-thickness: 5px;
+  }
+  .row .fact { font-size: 27px; line-height: 1.5; color: var(--muted); }
+  .row .fact b { color: var(--ink); }
+  .row.now { border-bottom: 2px solid var(--red); }
+  .row.now .quote {
+    color: var(--red);
+    text-decoration: none;
+  }
+  .row.now .fact { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Das Muster</span></div>
+  <div class="stage">
+    <div class="row">
+      <div class="quote">„Zu spät."</div>
+      <div class="fact">Sagten sie zu <b>Bitcoin bei 30 Cent.</b></div>
+    </div>
+    <div class="row">
+      <div class="quote">„Zu spät."</div>
+      <div class="fact">Sagten sie zu <b>Instagram,</b> als die ersten Influencer 1 Mio. Follower in 12 Monaten machten.</div>
+    </div>
+    <div class="row now">
+      <div class="quote">„Zu spät."</div>
+      <div class="fact">Sagen sie <b>jetzt zu KI</b> — während die ersten gerade ihre ersten Rechnungen schreiben.</div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>29</b> / 30</span></div>
+</body>
+</html>

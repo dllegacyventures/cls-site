@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P05 · 4 Versuche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 64px;
+  }
+  h1 { font-size: 138px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .cell {
+    border: 1px solid var(--line);
+    padding: 48px 40px;
+  }
+  .cell .n {
+    font-family: var(--mono);
+    font-size: 17px;
+    letter-spacing: 0.26em;
+    color: var(--faint);
+    margin-bottom: 20px;
+  }
+  .cell .t {
+    font-family: var(--display);
+    font-size: 44px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 4px;
+  }
+  .foot {
+    font-size: 32px;
+    color: var(--muted);
+  }
+  .foot b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Der Tiefpunkt</span></div>
+  <div class="stage">
+    <h1 class="h-display">4 Versuche. <span class="red">4 mal nichts.</span></h1>
+    <div class="grid">
+      <div class="cell"><div class="n">Versuch 01</div><div class="t">Dropshipping</div></div>
+      <div class="cell"><div class="n">Versuch 02</div><div class="t">Trading</div></div>
+      <div class="cell"><div class="n">Versuch 03</div><div class="t">Memecoins</div></div>
+      <div class="cell"><div class="n">Versuch 04</div><div class="t">Modemarke</div></div>
+    </div>
+    <p class="foot">18 Jahre alt. <b>Fünfstellige Schulden.</b> Abgebrochene Ausbildung. Kinderzimmer. Jeden Tag der Gedanke: <b>„So kann's nicht weitergehen."</b></p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>06</b> / 30</span></div>
+</body>
+</html>

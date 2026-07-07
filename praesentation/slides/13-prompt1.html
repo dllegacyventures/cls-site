@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P11 · Prompt 01 — Leads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: grid;
+    grid-template-columns: 560px 1fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .side .tag {
+    font-family: var(--mono);
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+  h1 { font-size: 100px; margin-bottom: 44px; }
+  .points { display: flex; flex-direction: column; gap: 26px; }
+  .points .p {
+    font-size: 25px;
+    line-height: 1.5;
+    color: var(--muted);
+    padding-left: 30px;
+    border-left: 3px solid var(--line);
+  }
+  .points .p b { color: var(--ink); }
+</style>
+</head>
+<body class="board">
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Zoom · Prompt 01</span></div>
+  <div class="stage">
+    <div class="side">
+      <div class="tag">PROMPT 01 / 03</div>
+      <h1 class="h-display">Der Lead-<br>Finder<span class="red">.</span></h1>
+      <div class="points">
+        <div class="p"><b>Kein Kaltakquise-Chaos.</b> Claude sortiert vor, wen du überhaupt anrufst.</div>
+        <div class="p">Das Ergebnis ist eine <b>fertige Liste mit Begründung</b> — warum jede Seite ihren Besitzer Kunden kostet.</div>
+        <div class="p">10 Minuten Arbeit. <b>20 qualifizierte Leads.</b></div>
+      </div>
+    </div>
+    <div class="prompt-card">
+      <div class="bar"><span><span class="dot"></span>jarvis — briefing 01</span><span>leads</span></div>
+      <pre>Suche mir 20 <span class="var">[Handwerksbetriebe]</span> in <span class="var">[Stadt]</span>,
+deren Webseite veraltet wirkt oder komplett fehlt.
+
+Gib mir pro Betrieb:
+- Name, Telefonnummer, aktuelle Website
+- 2 Sätze: was die Seite den Inhaber
+  gerade an Kunden kostet
+- eine Priorität von 1–3
+
+<span class="cm"># Ergebnis: meine Anrufliste für morgen früh.</span></pre>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>13</b> / 30</span></div>
+  <div class="swarm-holder" style="left:240px;right:auto;top:102px;"><canvas class="jarvis-swarm" width="220" height="220" data-particles="44" style="width:110px;height:110px"></canvas></div>
+  <script src="../shared/jarvis-swarm.js"></script>
+</body>
+</html>

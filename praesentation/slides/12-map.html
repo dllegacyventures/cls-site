@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P10 · Das System-Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 70px;
+  }
+  h1 { font-size: 96px; }
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+  }
+  /* Jarvis-Orb wandert über die Nodes; jeder Node leuchtet mit */
+  .orb {
+    position: absolute;
+    top: 50%;
+    left: 147px;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 26px 8px rgba(255, 159, 28, 0.5);
+    animation: orbMove 12.5s ease-in-out infinite;
+    z-index: 3;
+    pointer-events: none;
+  }
+  @keyframes orbMove {
+    0%, 12%  { left: 147px; }
+    20%, 32% { left: 505px; }
+    40%, 52% { left: 864px; }
+    60%, 72% { left: 1222px; }
+    80%, 92% { left: 1580px; }
+    100%     { left: 147px; }
+  }
+  .node:not(.build) { animation: nodeOn 12.5s infinite; }
+  .flow > .node:nth-child(2)  { animation-delay: 0s; }
+  .flow > .node:nth-child(4)  { animation-delay: 2.5s; }
+  .flow > .node:nth-child(8)  { animation-delay: 7.5s; }
+  .flow > .node:nth-child(10) { animation-delay: 10s; }
+  @keyframes nodeOn {
+    0%, 12%   { border-color: var(--red); background: rgba(255, 159, 28, 0.05); }
+    20%, 100% { border-color: rgba(242, 239, 232, 0.14); background: rgba(255, 159, 28, 0); }
+  }
+  .node.build { animation: buildOn 12.5s infinite; }
+  @keyframes buildOn {
+    0%, 36%   { box-shadow: none; }
+    42%, 50%  { box-shadow: inset 0 0 50px rgba(255, 159, 28, 0.22); }
+    58%, 100% { box-shadow: none; }
+  }
+  .node {
+    flex: 1;
+    padding: 40px 32px 44px;
+  }
+  .node .node-tag { display: block; margin-bottom: 20px; }
+  .node .t {
+    font-family: var(--display);
+    font-size: 44px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .node .d {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    color: var(--red);
+    font-size: 38px;
+    flex: none;
+  }
+  .node.build { border-color: var(--red); background: rgba(255, 159, 28, 0.06); }
+  .node.build .t { color: var(--ink); }
+  .caption {
+    font-family: var(--mono);
+    font-size: 20px;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+  }
+  .caption b { color: var(--red); font-weight: 500; }
+</style>
+</head>
+<body class="board">
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Das System-Board</span></div>
+  <div class="stage">
+    <h1 class="h-display">So funktioniert das System <span class="red">hinter Jarvis.</span></h1>
+    <div class="flow">
+      <div class="orb"></div>
+      <div class="node">
+        <span class="node-tag">01 · LEADS</span>
+        <div class="t">Finden</div>
+        <div class="d">Lokale Unternehmen mit alten oder fehlenden Webseiten. Die Liste ist endlos.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <span class="node-tag">02 · OUTREACH</span>
+        <div class="t">Kontakt</div>
+        <div class="d">Automatisierte E-Mails, KI-gestützte Calls — persönlich, wo es zählt.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node build">
+        <span class="node-tag">03 · BRIEFING</span>
+        <div class="t">Jarvis baut</div>
+        <div class="d">Ein Prompt-Briefing an Claude. Fertige Webseite in Stunden — nicht Wochen.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <span class="node-tag">04 · VERKAUF</span>
+        <div class="t">Abschluss</div>
+        <div class="d">Erstgespräch, Demo der Seite, klarer Preisrahmen. Skripte inklusive.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <span class="node-tag">05 · CASH</span>
+        <div class="t">Rechnung</div>
+        <div class="d">Einmalpreis pro Seite oder monatlicher Retainer. Beides im selben Gespräch.</div>
+      </div>
+    </div>
+    <p class="caption"><b>↳</b> Wir zoomen jetzt in die drei Prompts rein, die dieses Board antreiben.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>12</b> / 30</span></div>
+  <div class="swarm-holder" style="top:94px;"><canvas class="jarvis-swarm" width="220" height="220" data-particles="44" style="width:110px;height:110px"></canvas></div>
+  <script src="../shared/jarvis-swarm.js"></script>
+</body>
+</html>

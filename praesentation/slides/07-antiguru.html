@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P06 · Kein Guru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    padding: 0 60px;
+  }
+  h1 { font-size: 150px; max-width: 1560px; }
+  .sub {
+    font-size: 32px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 1300px;
+  }
+  .sub b { color: var(--ink); }
+  .tags {
+    display: flex;
+    gap: 60px;
+    font-family: var(--mono);
+    font-size: 19px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .tags span { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Eine Sache vorweg</span></div>
+  <div class="stage">
+    <div class="tags">
+      <span>5.000-€-Coaching</span>
+      <span>Zoom-Call-Verkäufer</span>
+      <span>Standard-Guru</span>
+    </div>
+    <h1 class="h-display">Ich verdiene mein Geld <span class="red">nicht mit Kursen.</span></h1>
+    <p class="sub">Ich verdiene es damit, dass <b>Claude für mich Webseiten baut, die echte Unternehmen kaufen.</b> Einmalpreis pro Seite oder monatlicher Retainer — echte Rechnungen an echte Firmen.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>07</b> / 30</span></div>
+</body>
+</html>

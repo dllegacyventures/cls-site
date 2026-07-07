@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P20 · Für wen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 56px;
+  }
+  h1 { font-size: 110px; }
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .col { border: 1px solid var(--line); padding: 50px 56px; }
+  .col .label {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .col.yes .label { color: var(--red); }
+  .col.no .label { color: var(--faint); }
+  .col ul { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+  .col li {
+    font-size: 26px;
+    line-height: 1.45;
+    color: var(--muted);
+    padding-left: 40px;
+    position: relative;
+  }
+  .col li b { color: var(--ink); }
+  .col.yes li::before { content: '→'; position: absolute; left: 0; color: var(--red); }
+  .col.no li::before { content: '✕'; position: absolute; left: 0; color: var(--faint); }
+  .col.no li { color: var(--faint); }
+  .col.no li b { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Für wen</span></div>
+  <div class="stage">
+    <h1 class="h-display">Für wen das ist — <span class="red">und für wen nicht.</span></h1>
+    <div class="cols">
+      <div class="col yes">
+        <div class="label">Für dich, wenn</div>
+        <ul>
+          <li><b>Angestellt, 18–40,</b> und bereit für eine echte zweite Einnahmequelle</li>
+          <li>Du <b>1–2 Stunden am Tag</b> investieren kannst — Laptop und Telefon reichen</li>
+          <li><b>Hunger statt Vorerfahrung.</b> Kein Studium, kein Code, kein Kapital nötig</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <div class="label">Nicht für dich, wenn</div>
+        <ul>
+          <li>Du einen <b>Magic Button</b> suchst, der ohne dich Geld druckt</li>
+          <li>Du <b>konsumierst statt umsetzt</b> — das hier belohnt nur Macher</li>
+          <li>Du in <b>3 Tagen reich</b> werden willst statt in 30–60 Tagen zu liefern</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>22</b> / 30</span></div>
+</body>
+</html>

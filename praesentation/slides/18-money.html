@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P16 · Monetarisierung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+  }
+  h1 { font-size: 110px; }
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .col {
+    border: 1px solid var(--line);
+    padding: 56px 60px;
+  }
+  .col .label {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 30px;
+  }
+  .col .big {
+    font-family: var(--display);
+    font-size: 84px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .col .d { font-size: 25px; line-height: 1.55; color: var(--muted); }
+  .col .d b { color: var(--ink); }
+  .col.retainer { border-color: var(--red); background: rgba(255, 159, 28, 0.05); }
+  .col.retainer .label { color: var(--red); }
+  .foot { font-size: 30px; color: var(--muted); }
+  .foot b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Monetarisierung</span></div>
+  <div class="stage">
+    <h1 class="h-display">Zwei Wege, <span class="red">bezahlt zu werden.</span></h1>
+    <div class="cols">
+      <div class="col">
+        <div class="label">Weg 01 — Einmalpreis</div>
+        <div class="big">Pro Webseite</div>
+        <div class="d">Mehrere Hundert bis <b>1.500 €</b> pro ausgelieferter Seite. Geld sofort, Projekt abgeschlossen.</div>
+      </div>
+      <div class="col retainer">
+        <div class="label">Weg 02 — Retainer</div>
+        <div class="big">Pro Monat</div>
+        <div class="d">Mehrere Hundert Euro <b>monatlich, pro Kunde</b> — Pflege, Updates, neue Funnels. Vom Einmal-Verkäufer zum bezahlten Partner.</div>
+      </div>
+    </div>
+    <p class="foot"><b>Beides verkaufst du im selben Erstgespräch.</b> Der Kunde wählt — du kassierst so oder so.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>18</b> / 30</span></div>
+</body>
+</html>

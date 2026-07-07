@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P12 · Prompt 02 — Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: grid;
+    grid-template-columns: 560px 1fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .side .tag {
+    font-family: var(--mono);
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+  h1 { font-size: 100px; margin-bottom: 44px; }
+  .points { display: flex; flex-direction: column; gap: 26px; }
+  .points .p {
+    font-size: 25px;
+    line-height: 1.5;
+    color: var(--muted);
+    padding-left: 30px;
+    border-left: 3px solid var(--line);
+  }
+  .points .p b { color: var(--ink); }
+  .prompt-card pre { font-size: 21px; }
+</style>
+</head>
+<body class="board">
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Zoom · Prompt 02</span></div>
+  <div class="stage">
+    <div class="side">
+      <div class="tag">PROMPT 02 / 03</div>
+      <h1 class="h-display">Das Webseiten-Briefing<span class="red">.</span></h1>
+      <div class="points">
+        <div class="p"><b>Das Herzstück.</b> Du schreibst kein Code — du schreibst dieses Briefing.</div>
+        <div class="p">Claude liefert daraus eine <b>fertige Seite in 30–60 Minuten,</b> bereit zum Hochladen.</div>
+        <div class="p">Die Vorlagen dafür sind <b>Plug &amp; Play</b> — Branche einsetzen, Lücken füllen, abschicken.</div>
+      </div>
+    </div>
+    <div class="prompt-card">
+      <div class="bar"><span><span class="dot"></span>jarvis — briefing 02</span><span>build</span></div>
+      <pre>Baue eine komplette Webseite für <span class="var">[Betrieb]</span> aus <span class="var">[Stadt]</span>.
+
+Branche:  <span class="var">[Dachdecker]</span>
+Ziel:     Anrufe + Anfragen über das Kontaktformular
+Seiten:   Start · Leistungen · Über uns · Kontakt · Impressum
+Stil:     modern, hell, vertrauenswürdig — Referenz: <span class="var">[Link]</span>
+Inhalte:  nutze die Texte aus meiner Notiz unten
+
+Eine einzige HTML-Datei. Mobil zuerst.
+Fertig zum Hochladen.
+
+<span class="cm"># 30–60 Minuten später: das Produkt, das ich verkaufe.</span></pre>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>14</b> / 30</span></div>
+  <div class="swarm-holder" style="left:240px;right:auto;top:102px;"><canvas class="jarvis-swarm" width="220" height="220" data-particles="44" style="width:110px;height:110px"></canvas></div>
+  <script src="../shared/jarvis-swarm.js"></script>
+</body>
+</html>

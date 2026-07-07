@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P24 · Drei Stufen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 56px;
+  }
+  h1 { font-size: 110px; }
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .tier {
+    border: 1px solid var(--line);
+    padding: 52px 48px 56px;
+  }
+  .tier .n {
+    font-family: var(--mono);
+    font-size: 17px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 26px;
+  }
+  .tier .t {
+    font-family: var(--display);
+    font-size: 56px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .tier .d { font-size: 24px; line-height: 1.55; color: var(--muted); }
+  .tier .d b { color: var(--ink); }
+  .tier.mid { border-color: var(--red); background: rgba(255, 159, 28, 0.05); }
+  .tier.mid .n { color: var(--red); }
+  .foot { font-size: 28px; color: var(--muted); }
+  .foot b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Drei Stufen</span></div>
+  <div class="stage">
+    <h1 class="h-display">Drei Stufen. <span class="red">Ein System.</span></h1>
+    <div class="tiers">
+      <div class="tier">
+        <div class="n">Stufe 01</div>
+        <div class="t">Starter</div>
+        <div class="d">Das komplette System zum <b>Selbst-Umsetzen</b> — Templates, Skripte, Training, Community.</div>
+      </div>
+      <div class="tier mid">
+        <div class="n">Stufe 02</div>
+        <div class="t">Core</div>
+        <div class="d">Alles aus Starter, plus <b>Feedback auf deine Arbeit und Live-Support</b> — du bleibst nie hängen.</div>
+      </div>
+      <div class="tier">
+        <div class="n">Stufe 03</div>
+        <div class="t">Inner Circle</div>
+        <div class="d"><b>Enge Betreuung.</b> Wir bauen deinen Clon gemeinsam aus — bis die Rechnungen laufen.</div>
+      </div>
+    </div>
+    <p class="foot"><b>Wie du dir den Zugang sicherst, erkläre ich dir jetzt</b> — direkt nach den nächsten zwei Punkten.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>26</b> / 30</span></div>
+</body>
+</html>

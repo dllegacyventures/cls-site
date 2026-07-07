@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P10 · Jarvis Beta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: grid;
+    grid-template-columns: 560px 1fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .side .tag {
+    font-family: var(--mono);
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+  h1 { font-size: 108px; margin-bottom: 44px; }
+  .points { display: flex; flex-direction: column; gap: 26px; }
+  .points .p {
+    font-size: 25px;
+    line-height: 1.5;
+    color: var(--muted);
+    padding-left: 30px;
+    border-left: 3px solid var(--line);
+  }
+  .points .p b { color: var(--ink); }
+
+  /* App-Fenster */
+  .app {
+    background: #0a0908;
+    border: 1px solid rgba(242, 239, 232, 0.2);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  }
+  .app .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .app .bar .dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+    display: inline-block;
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+  .app .bar .beta {
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 4px 12px;
+    font-size: 13px;
+  }
+  .app .body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
+  .modules {
+    border-right: 1px solid var(--line);
+    padding: 28px 0;
+    font-family: var(--mono);
+    font-size: 17px;
+    position: relative;
+  }
+  /* Jarvis wandert durch die Tabs: Indikator + mitleuchtende Zeile */
+  .modules .scan {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: 3px;
+    height: 50px;
+    background: var(--red);
+    box-shadow: 0 0 18px 2px rgba(255, 159, 28, 0.7);
+    animation: tabScan 7.5s ease-in-out infinite;
+  }
+  @keyframes tabScan {
+    0%, 26%  { top: 28px; }
+    33%, 59% { top: 78px; }
+    66%, 92% { top: 128px; }
+    100%     { top: 28px; }
+  }
+  .modules .m:nth-child(2) { animation: glow1 7.5s infinite; }
+  .modules .m:nth-child(3) { animation: glow2 7.5s infinite; }
+  .modules .m:nth-child(4) { animation: glow3 7.5s infinite; }
+  @keyframes glow1 {
+    0%, 28%   { background: rgba(255, 159, 28, 0.08); color: var(--ink); }
+    33%, 100% { background: rgba(255, 159, 28, 0);   color: var(--muted); }
+  }
+  @keyframes glow2 {
+    0%, 28%   { background: rgba(255, 159, 28, 0);   color: var(--muted); }
+    33%, 61%  { background: rgba(255, 159, 28, 0.08); color: var(--ink); }
+    66%, 100% { background: rgba(255, 159, 28, 0);   color: var(--muted); }
+  }
+  @keyframes glow3 {
+    0%, 61%   { background: rgba(255, 159, 28, 0);   color: var(--muted); }
+    66%, 94%  { background: rgba(255, 159, 28, 0.08); color: var(--ink); }
+    100%      { background: rgba(255, 159, 28, 0);   color: var(--muted); }
+  }
+  .modules .m {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 30px;
+    color: var(--muted);
+  }
+  .modules .m .led { color: var(--red); font-size: 13px; }
+  .modules .m.off { color: var(--faint); }
+  .modules .m.off .led { color: var(--faint); }
+  .modules .m.off .soon {
+    margin-left: auto;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--faint);
+    border: 1px solid var(--line);
+    padding: 3px 8px;
+  }
+  .chat {
+    padding: 34px 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .msg {
+    max-width: 82%;
+    padding: 20px 26px;
+    font-size: 21px;
+    line-height: 1.55;
+  }
+  .msg.user {
+    align-self: flex-end;
+    background: rgba(242, 239, 232, 0.08);
+    color: var(--ink);
+  }
+  .msg.jarvis {
+    align-self: flex-start;
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .msg.jarvis b { color: var(--ink); }
+  .msg .who {
+    display: block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .progress {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+  .progress .track {
+    margin-top: 12px;
+    height: 6px;
+    background: rgba(242, 239, 232, 0.1);
+  }
+  .progress .fill {
+    width: 68%;
+    height: 100%;
+    background: var(--red);
+    animation: fillPulse 4s ease-in-out infinite alternate;
+  }
+  @keyframes fillPulse {
+    from { width: 42%; }
+    to   { width: 86%; }
+  }
+  .progress .dots::after {
+    content: '';
+    animation: dots 1.6s steps(1) infinite;
+  }
+  @keyframes dots {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+  }
+  .app .bar .dot { animation: ledPulse 2s ease-in-out infinite; }
+  @keyframes ledPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 159, 28, 0.6); }
+    50%      { box-shadow: 0 0 12px 3px rgba(255, 159, 28, 0.6); }
+  }
+</style>
+</head>
+<body class="board">
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Jarvis Beta</span></div>
+  <div class="stage">
+    <div class="side">
+      <div class="tag">SOFT LAUNCH</div>
+      <h1 class="h-display">Die Jarvis<br>Beta<span class="red">.</span></h1>
+      <div class="points">
+        <div class="p"><b>Genau diesen Clon bekommst du</b> — als Soft-Version zum Nachbauen. Kein Konzept, ein Setup.</div>
+        <div class="p">Du fütterst ihn mit <b>deinen Skripten, deinen Leads, deiner Stimme</b> — er arbeitet, wie du arbeiten würdest.</div>
+        <div class="p">In der Community bauen wir ihn <b>gemeinsam weiter aus</b> — Modul für Modul.</div>
+      </div>
+    </div>
+    <div class="app">
+      <div class="bar">
+        <span><span class="dot"></span>JARVIS — v0.9</span>
+        <span class="beta">BETA</span>
+      </div>
+      <div class="body">
+        <div class="modules">
+          <div class="scan"></div>
+          <div class="m"><span class="led">●</span>Webseiten-Builder</div>
+          <div class="m"><span class="led">●</span>Lead-Finder</div>
+          <div class="m"><span class="led">●</span>Outreach</div>
+          <div class="m off"><span class="led">○</span>Telefon-Assistent<span class="soon">BALD</span></div>
+          <div class="m off"><span class="led">○</span>Rechnungen<span class="soon">BALD</span></div>
+        </div>
+        <div class="chat">
+          <div class="msg user">Bau die Seite für Bäckerei Sommer aus Köln. Notizen hängen an.</div>
+          <div class="msg jarvis">
+            <span class="who">Jarvis</span>
+            Verstanden. Struktur steht, Texte aus deinen Notizen übernommen, mobil zuerst. <b>Fertig in ~40 Minuten.</b>
+            <div class="progress">building<span class="dots"></span>
+              <div class="track"><div class="fill"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>11</b> / 30</span></div>
+  <div class="swarm-holder"><canvas class="jarvis-swarm" width="240" height="240" data-particles="48" style="width:120px;height:120px"></canvas></div>
+  <script src="../shared/jarvis-swarm.js"></script>
+</body>
+</html>

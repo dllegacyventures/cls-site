@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P15 · CLS in 4 Schritten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 64px;
+  }
+  h1 { font-size: 110px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .cell {
+    border: 1px solid var(--line);
+    padding: 46px 40px 50px;
+  }
+  .cell .n {
+    font-family: var(--mono);
+    font-size: 17px;
+    letter-spacing: 0.26em;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+  .cell .t {
+    font-family: var(--display);
+    font-size: 42px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .cell .d {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Das Modell</span></div>
+  <div class="stage">
+    <h1 class="h-display">CLS in <span class="red">4 Schritten.</span></h1>
+    <div class="grid">
+      <div class="cell">
+        <div class="n">Schritt 01</div>
+        <div class="t">Lead-Quelle</div>
+        <div class="d">Handwerker, Restaurants, Coaches, Praxen, Studios — Betriebe, deren Webseite Kunden kostet statt bringt.</div>
+      </div>
+      <div class="cell">
+        <div class="n">Schritt 02</div>
+        <div class="t">Setup</div>
+        <div class="d">Outreach-Skripte, Briefing-Templates, Webseiten-Strukturen — Plug &amp; Play. Briefen, übergeben, ausliefern.</div>
+      </div>
+      <div class="cell">
+        <div class="n">Schritt 03</div>
+        <div class="t">Monetarisierung</div>
+        <div class="d">Einmalpreis pro Webseite oder monatlicher Retainer — beides im selben Erstgespräch verkauft.</div>
+      </div>
+      <div class="cell">
+        <div class="n">Schritt 04</div>
+        <div class="t">Skalierung</div>
+        <div class="d">Empfehlungen kommen automatisch. Add-ons: Logos, Funnels, SEO. Vom Verkäufer zum Partner.</div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>17</b> / 30</span></div>
+</body>
+</html>

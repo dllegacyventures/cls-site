@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P04 · Meine Geschichte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: grid;
+    grid-template-columns: 680px 1fr;
+    gap: 110px;
+    align-items: center;
+  }
+  h1 { font-size: 118px; }
+  .side p {
+    margin-top: 44px;
+    font-size: 28px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .side p b { color: var(--ink); }
+  .timeline { border-left: 2px solid var(--line); }
+  .step {
+    position: relative;
+    padding: 0 0 52px 56px;
+  }
+  .step:last-child { padding-bottom: 0; }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--faint);
+    border-radius: 50%;
+  }
+  .step.hit::before { border-color: var(--red); background: var(--red); }
+  .step .t {
+    font-family: var(--display);
+    font-size: 38px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .step .d {
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 760px;
+  }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Meine Geschichte</span></div>
+  <div class="stage">
+    <div class="side">
+      <h1 class="h-display">Woher ich <span class="red">komme.</span></h1>
+      <p>Als Kind dachte ich, <b>ich</b> sei das Problem — ich koste zu viel. Bis ich verstanden habe: <b>Es ist meine Bestimmung, das Geld zu bringen.</b></p>
+    </div>
+    <div class="timeline">
+      <div class="step">
+        <div class="t">Südamerika → Deutschland</div>
+        <div class="d">Mein Vater kam mit kaum einem Wort Deutsch — meine Mutter und ich, 6 Jahre alt, im Schlepptau.</div>
+      </div>
+      <div class="step">
+        <div class="t">Das Eiscafé</div>
+        <div class="d">Aus dem Nichts aufgebaut. Für eine kurze Zeit hatten wir alles, was zählt.</div>
+      </div>
+      <div class="step hit">
+        <div class="t">Sabotiert. Alles weg.</div>
+        <div class="d">Andere haben es aus Neid in Trümmer gelegt — und meinem Vater alles genommen, was er sich erkämpft hatte.</div>
+      </div>
+      <div class="step">
+        <div class="t">Beide Eltern Vollzeit</div>
+        <div class="d">Vater morgens auf dem Bau. Beide Eltern abends als Kellner. Die Gastro hat sie nie losgelassen.</div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>05</b> / 30</span></div>
+</body>
+</html>

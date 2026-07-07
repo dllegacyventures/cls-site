@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P23 · Die Community</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: grid;
+    grid-template-columns: 640px 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  h1 { font-size: 120px; margin-bottom: 40px; }
+  .side p { font-size: 28px; line-height: 1.6; color: var(--muted); }
+  .side p b { color: var(--ink); }
+  .stack { display: flex; flex-direction: column; }
+  .item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: baseline;
+    gap: 24px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .item:first-child { border-top: 1px solid var(--line); }
+  .item .m { font-family: var(--mono); font-size: 20px; color: var(--red); }
+  .item .t { font-size: 28px; color: var(--ink); font-weight: 500; }
+  .item .t span { color: var(--muted); font-weight: 400; }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Der nächste Schritt</span></div>
+  <div class="stage">
+    <div class="side">
+      <h1 class="h-display">Die CLS<br>Community<span class="red">.</span></h1>
+      <p>Das Ziel ist nicht eine Webseite. <b>Das Ziel ist dein eigener Jarvis</b> — die Webseiten sind sein erster bezahlter Auftrag. Hier baust du ihn, mit den Leuten, die es gerade mit dir umsetzen.</p>
+    </div>
+    <div class="stack">
+      <div class="item"><span class="m">✓</span><span class="t">Jarvis-Blueprint <span>— dein eigener KI-Clon, Schritt für Schritt (Beta-Zugang)</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">Claude-Briefing-Templates <span>— Webseiten in 30–60 Minuten</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">Outreach-Pakete <span>— E-Mail-Sequenzen, Anruf-Skripte, KI-Setup</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">Verkaufs-Skripte <span>— Erstgespräch, Einwände, Closing</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">Branchen-Blueprints <span>— Restaurant, Handwerk, Coaches, Studios</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">Preisrahmen-Vorlagen <span>— Einmalpreis und Retainer</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">A–Z-Training <span>— von Lead bis Lieferung, Schritt für Schritt</span></span></div>
+      <div class="item"><span class="m">✓</span><span class="t">Community &amp; Support <span>— damit du nicht hängen bleibst</span></span></div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>25</b> / 30</span></div>
+</body>
+</html>

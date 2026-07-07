@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P19 · Die Rechnung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 64px;
+  }
+  h1 { font-size: 110px; }
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr 90px 1fr;
+    align-items: stretch;
+  }
+  .s {
+    border: 1px solid var(--line);
+    padding: 50px 48px;
+  }
+  .s .label {
+    font-family: var(--mono);
+    font-size: 17px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 26px;
+  }
+  .s .v {
+    font-family: var(--display);
+    font-size: 72px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .s .d { font-size: 23px; line-height: 1.5; color: var(--muted); }
+  .s.last { border-color: var(--red); background: rgba(255,159,28,0.05); }
+  .s.last .label { color: var(--red); }
+  .arr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 40px;
+  }
+  .foot { font-size: 28px; color: var(--muted); }
+  .foot b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Die Rechnung</span></div>
+  <div class="stage">
+    <h1 class="h-display">Rechnen wir es <span class="red">kurz durch.</span></h1>
+    <div class="steps">
+      <div class="s">
+        <div class="label">Anfang</div>
+        <div class="v">1 Webseite</div>
+        <div class="d">Deine erste Rechnung: 3- bis 4-stellig. Der Beweis, dass es funktioniert.</div>
+      </div>
+      <div class="arr">→</div>
+      <div class="s">
+        <div class="label">30–60 Tage</div>
+        <div class="v">3 Retainer</div>
+        <div class="d">500–1.500 € extra — jeden Monat, neben dem Job. Planbar statt Hoffnung.</div>
+      </div>
+      <div class="arr">→</div>
+      <div class="s last">
+        <div class="label">Danach</div>
+        <div class="v">Du wählst</div>
+        <div class="d">Skalieren, Job kündigen oder beides behalten — zum ersten Mal ist es deine Entscheidung.</div>
+      </div>
+    </div>
+    <p class="foot"><b>Eine Webseite kann dein Leben verändern.</b> Mehrere machen dich frei.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>21</b> / 30</span></div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P03 · Die nächsten 25 Minuten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 56px;
+  }
+  h1 { font-size: 110px; }
+  .rows { border-top: 1px solid var(--line); }
+  .row {
+    display: grid;
+    grid-template-columns: 160px 620px 1fr;
+    align-items: baseline;
+    gap: 40px;
+    padding: 42px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .row .n {
+    font-family: var(--mono);
+    font-size: 26px;
+    color: var(--red);
+    letter-spacing: 0.2em;
+  }
+  .row .t {
+    font-family: var(--display);
+    font-size: 46px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .row .d {
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .foot {
+    font-size: 30px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .foot span { color: var(--faint); font-weight: 400; margin: 0 18px; }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Die nächsten 25 Minuten</span></div>
+  <div class="stage">
+    <h1 class="h-display">Was du gleich <span class="red">siehst.</span></h1>
+    <div class="rows">
+      <div class="row">
+        <span class="n">01</span>
+        <span class="t">Das System hinter Jarvis</span>
+        <span class="d">Mein KI-Clon auf Claude-Basis — und wie du deinen eigenen baust.</span>
+      </div>
+      <div class="row">
+        <span class="n">02</span>
+        <span class="t">Die exakten Prompts</span>
+        <span class="d">Die Briefings, die aus einer KI ein Produkt machen — live erklärt.</span>
+      </div>
+      <div class="row">
+        <span class="n">03</span>
+        <span class="t">Der Weg zur ersten Rechnung</span>
+        <span class="d">Von der Lead-Liste bis zum bezahlten Auftrag in 30–60 Tagen.</span>
+      </div>
+    </div>
+    <p class="foot">Kein Studium.<span>·</span>Kein Code.<span>·</span>Kein Startkapital.</p>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>04</b> / 30</span></div>
+</body>
+</html>

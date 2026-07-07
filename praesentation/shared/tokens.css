@@ -1,0 +1,190 @@
+/* CLS VSL Deck — Design Tokens
+   Brand: schwarz / off-white / ein roter Akzent. Institutional, ruhig, kein Hype. */
+
+:root {
+  --bg: #050505;
+  --panel: #0d0c0b;
+  --ink: #f2efe8;
+  --muted: rgba(242, 239, 232, 0.55);
+  --faint: rgba(242, 239, 232, 0.3);
+  --line: rgba(242, 239, 232, 0.14);
+  --red: #ff9f1c; /* Akzent: warmes Amber — lädt ein statt zu warnen */
+  --display: 'Anton', 'Arial Narrow', 'Impact', sans-serif;
+  --body: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Chrome: jede Slide identisch ─────────────────────────── */
+
+.chrome-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 88px;
+  padding: 0 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--faint);
+  z-index: 5;
+}
+.chrome-top .brand { color: var(--muted); }
+.chrome-top .brand b { color: var(--red); font-weight: 600; }
+
+.chrome-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 76px;
+  padding: 0 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-family: var(--mono);
+  z-index: 5;
+}
+.chrome-bottom .num b { color: var(--red); font-weight: 500; }
+
+/* ── Typo-Bausteine ───────────────────────────────────────── */
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 19px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.kicker::before {
+  content: '';
+  width: 56px;
+  height: 3px;
+  background: var(--red);
+}
+
+.h-display {
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+}
+.h-display .red { color: var(--red); }
+.h-display .dim { color: var(--faint); }
+
+.lead {
+  font-size: 30px;
+  line-height: 1.55;
+  color: var(--muted);
+  font-weight: 400;
+}
+.lead b, .lead strong { color: var(--ink); font-weight: 600; }
+.lead .red { color: var(--red); font-weight: 600; }
+
+.rule { height: 1px; background: var(--line); border: 0; }
+
+/* ── Board-Look (Jarvis-Sektion): Dot-Grid ────────────────── */
+
+.board {
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(242, 239, 232, 0.075) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+}
+
+.node {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  position: relative;
+}
+.node .node-tag {
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 0.24em;
+  color: var(--red);
+}
+
+/* ── Jarvis-Schwarm: schwebende Punktwolke in der Ecke ────── */
+
+.swarm-holder {
+  position: absolute;
+  top: 112px;
+  right: 240px;
+  z-index: 4;
+  pointer-events: none;
+  /* Flugbahn: liegende Acht (∞) — Amplitude pro Slide über --swx/--swy anpassbar */
+  --swx: 140px;
+  --swy: 30px;
+  animation: swarmPath 11s ease-in-out infinite;
+}
+.swarm-holder canvas { display: block; }
+@keyframes swarmPath {
+  0%    { transform: translate(0, 0); }
+  12.5% { transform: translate(calc(var(--swx) *  0.7), var(--swy)); }
+  25%   { transform: translate(var(--swx), 0); }
+  37.5% { transform: translate(calc(var(--swx) *  0.7), calc(var(--swy) * -1)); }
+  50%   { transform: translate(0, 0); }
+  62.5% { transform: translate(calc(var(--swx) * -0.7), var(--swy)); }
+  75%   { transform: translate(calc(var(--swx) * -1), 0); }
+  87.5% { transform: translate(calc(var(--swx) * -0.7), calc(var(--swy) * -1)); }
+  100%  { transform: translate(0, 0); }
+}
+
+/* ── Prompt-Karten (Terminal-Look) ────────────────────────── */
+
+.prompt-card {
+  background: #0a0908;
+  border: 1px solid rgba(242, 239, 232, 0.2);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.prompt-card .bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.prompt-card .bar .dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--red);
+  display: inline-block;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+.prompt-card pre {
+  font-family: var(--mono);
+  font-size: 24px;
+  line-height: 1.7;
+  color: var(--ink);
+  padding: 40px 48px;
+  white-space: pre-wrap;
+}
+.prompt-card pre .var { color: var(--red); }
+.prompt-card pre .cm { color: var(--faint); }

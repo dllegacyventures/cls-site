@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>P07 · Der Moment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .stage {
+    position: absolute;
+    inset: 88px 96px 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 66px;
+  }
+  h1 { font-size: 104px; max-width: 1600px; }
+  .vs {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: stretch;
+  }
+  .col {
+    border: 1px solid var(--line);
+    padding: 52px 56px;
+  }
+  .col .label {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 34px;
+  }
+  .col .big {
+    font-family: var(--display);
+    font-size: 72px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 26px;
+  }
+  .col .d { font-size: 25px; line-height: 1.55; color: var(--muted); }
+  .col.claude { border-color: var(--red); background: rgba(255, 159, 28, 0.05); }
+  .col.claude .label { color: var(--red); }
+  .col.claude .big { color: var(--ink); }
+  .col.claude .d { color: var(--ink); }
+  .mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 40px;
+    color: var(--faint);
+  }
+</style>
+</head>
+<body>
+  <div class="chrome-top"><span class="brand">CLS <b>—</b> Claude Lösungs System</span><span>Der Moment</span></div>
+  <div class="stage">
+    <h1 class="h-display">Ich sah Claude in Minuten bauen, wofür Agenturen <span class="red">Monate nehmen.</span></h1>
+    <div class="vs">
+      <div class="col">
+        <div class="label">Web-Agentur</div>
+        <div class="big">6–8 Wochen</div>
+        <div class="d">5- bis 6-stellige Preise. Meetings, Wartezeiten, Change-Requests. Der Kunde wartet — und zahlt.</div>
+      </div>
+      <div class="mid">VS</div>
+      <div class="col claude">
+        <div class="label">Claude</div>
+        <div class="big">Stunden</div>
+        <div class="d">Ein sauberes Briefing rein — fertige Webseite raus. Die Differenz ist deine Marge.</div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-bottom"><span>VSL — CLS</span><span class="num"><b>08</b> / 30</span></div>
+</body>
+</html>
