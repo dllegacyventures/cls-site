@@ -165,6 +165,16 @@ var CLS_CTA_REVEAL_SECONDS = 1710;
   .cls3 .final h2 { font-size:clamp(1.8rem,5vw,3rem); max-width:780px; margin:0 auto 28px; }
   .cls3 .final .last { font-family:'JetBrains Mono',monospace; letter-spacing:.26em; text-transform:uppercase; color:var(--faint); font-size:10.5px; margin-top:30px; }
 
+  /* ── Präsentation zum Nachlesen ── */
+  .cls3 .deck { padding:88px 0 0; text-align:center; position:relative; }
+  .cls3 .deck .kick { justify-content:center; }
+  .cls3 .deck h2 { margin:0 auto 12px; }
+  .cls3 .deck .sub { color:var(--muted); font-size:15.5px; max-width:600px; margin:0 auto 30px; }
+  .cls3 .deck .sub b { color:var(--ink); }
+  .cls3 .deckframe { position:relative; max-width:960px; margin:0 auto; aspect-ratio:16/9; border-radius:18px; overflow:hidden; border:1px solid rgba(245,166,35,.35); box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 60px rgba(245,166,35,.08); background:#050505; }
+  .cls3 .deckframe iframe { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+  .cls3 .deck .open { margin-top:20px; }
+
   .cls3 footer { border-top:1px solid var(--line); margin-top:88px; padding:30px 0 40px; text-align:center; }
   .cls3 footer .links a { color:var(--faint); text-decoration:none; font-size:13px; margin:0 12px; }
   .cls3 footer .links a:hover { color:var(--am); }
@@ -313,6 +323,17 @@ var CLS_CTA_REVEAL_SECONDS = 1710;
       <a class="btn" data-cfx-convert="5491802c-5b56-49cd-b6c1-dd7c18453b67" data-cfx-click="Final-CTA · Jetzt Zugang sichern" href="https://bryght.social/communities/cls-claude-losung-system/memberships" target="_blank" rel="noopener">Jetzt Zugang sichern →</a>
       <div class="last">Lass uns bauen. — Mario</div>
     </div>
+
+    <!-- PRÄSENTATION zum Nachlesen (volle Transparenz) -->
+    <section class="deck wrap" data-cfx-section="07 Präsentation">
+      <div class="kick">Volle Transparenz</div>
+      <h2 class="anton">Für dich zum <span class="am">Nachlesen</span> — weil ich nichts zu verstecken habe.</h2>
+      <p class="sub">Hier ist die komplette Präsentation zum Durchklicken. Klick auf die linke/rechte Seite oder nutz die Pfeiltasten. <b>Alles offen, alles nachlesbar.</b></p>
+      <div class="deckframe">
+        <iframe src="https://delucalegacy.com/praesentation/" title="CLS Präsentation" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <a class="btn ghost open" data-cfx-click="Präsentation Vollbild" href="https://delucalegacy.com/praesentation/" target="_blank" rel="noopener">⤢ Präsentation im Vollbild öffnen</a>
+    </section>
 
     <footer>
       <div class="wrap">
