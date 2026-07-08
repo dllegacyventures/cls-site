@@ -81,6 +81,26 @@
   .clsp .copybtn:hover { background:var(--am); color:#0a0806; }
   .clsp .copybtn.ok { background:#2fbf71; color:#04150c; border-color:#2fbf71; }
 
+  /* ★ Kundenseiten-Vorlage (Workflow) ★ */
+  .clsp .kvbox { border:1px solid rgba(245,166,35,.45); background:linear-gradient(170deg,#181007,var(--panel) 55%); border-radius:22px; padding:clamp(24px,4vw,44px); margin-top:64px; position:relative; box-shadow:0 26px 70px rgba(245,166,35,.10); }
+  .clsp .kvbox .ribbon { position:absolute; top:-13px; left:clamp(24px,4vw,44px); background:var(--am); color:#140d03; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; font-weight:700; text-transform:uppercase; padding:6px 14px; border-radius:8px; }
+  .clsp .kvbox h2 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(1.5rem,4.2vw,2.3rem); line-height:1.08; margin-bottom:10px; text-wrap:balance; }
+  .clsp .kvbox .kv-intro { color:var(--muted); font-size:15px; max-width:640px; margin-bottom:8px; }
+  .clsp .kvbox .kv-intro b { color:var(--ink); }
+  .clsp .kv-flow { font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--am); margin:14px 0 26px; display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; }
+  .clsp .kv-flow .fs { border:1px solid rgba(245,166,35,.35); background:var(--am-soft); border-radius:999px; padding:5px 12px; }
+  .clsp .kv-flow .fa { color:var(--faint); }
+  .clsp .kv-steps { display:grid; grid-template-columns:1fr; gap:16px; position:relative; }
+  .clsp .kv-steps::before { content:''; position:absolute; left:21px; top:24px; bottom:24px; width:2px; background:linear-gradient(180deg, rgba(245,166,35,.5), rgba(245,166,35,.08)); }
+  .clsp .kv-steps .card { margin-left:44px; position:relative; overflow:visible; }
+  .clsp .kv-steps .card > * { overflow:hidden; }
+  .clsp .kv-steps .card .head { border-radius:16px 16px 0 0; }
+  .clsp .kv-steps .card .foot { border-radius:0 0 16px 16px; }
+  .clsp .kv-num { position:absolute; left:-44px; top:14px; width:34px; height:34px; border-radius:10px; background:var(--bg); border:1px solid rgba(245,166,35,.5); color:var(--am); font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; z-index:2; }
+  .clsp .kv-steps .card pre { max-height:300px; border-radius:0; }
+  .clsp .kv-tip { margin-top:20px; font-size:13.5px; color:var(--muted); border-left:2px solid var(--am); padding:4px 0 4px 16px; }
+  .clsp .kv-tip b { color:var(--ink); }
+
   /* Bottom CTA */
   .clsp .endcta { text-align:center; border:1px solid rgba(245,166,35,.4); background:linear-gradient(170deg,#1c1307,var(--panel) 60%); border-radius:22px; padding:clamp(30px,5vw,52px); margin-top:64px; box-shadow:0 26px 70px rgba(245,166,35,.12); }
   .clsp .endcta h2 { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:clamp(1.5rem,4.4vw,2.4rem); margin-bottom:12px; }
@@ -131,8 +151,8 @@
     <div class="wrap">
       <div class="plib-head">
         <div class="k">Deine Werkzeuge</div>
-        <h2>9 Copy-Paste-Prompts</h2>
-        <p>Klick auf „Prompt kopieren", füg ihn in Claude ein, ersetze die <span class="am">{PLATZHALTER}</span> — und leg los.</p>
+        <h2>14 Copy-Paste-Prompts</h2>
+        <p>Klick auf „Prompt kopieren", füg ihn in Claude ein, ersetze die <span class="am">{PLATZHALTER}</span> — und leg los. Ganz unten: die <span class="am">Kundenseiten-Vorlage</span> in 5 Schritten.</p>
       </div>
 
       <div class="cat">Planung</div>
@@ -239,6 +259,107 @@ HARTE REGELN: kein Emoji außer er nutzt es, behaupte nie "ich bin nur eine KI",
 Dokument-Ausschnitten. Enthalten sie die Antwort nicht, sag das — erfinde nichts. Zitiere Quellen per [n]. Knapp und direkt.</pre>
           <div class="foot"><button class="copybtn">📋 Prompt kopieren</button></div>
         </div>
+      </div>
+
+      <!-- ★ KUNDENSEITEN-VORLAGE ★ -->
+      <div class="kvbox">
+        <div class="ribbon">★ Die CLS-Vorlage</div>
+        <h2>Baue eine <span class="am">Kundenseite</span> — mit 5 Prompts</h2>
+        <p class="kv-intro">Das ist der Kern des Systems: Mit dieser Vorlage baust du eine <b>verkaufsfertige Webseite für ein lokales Unternehmen</b> — Zahnarzt, Handwerker, Restaurant, egal. In dieser Reihenfolge kopieren, Platzhalter ersetzen, liefern.</p>
+        <div class="kv-flow">
+          <span class="fs">01 Briefing</span><span class="fa">→</span>
+          <span class="fs">02 Bauen</span><span class="fa">→</span>
+          <span class="fs">03 Feedback-Loop</span><span class="fa">→</span>
+          <span class="fs">04 Qualitäts-Check</span><span class="fa">→</span>
+          <span class="fs">05 Pitch senden</span>
+        </div>
+
+        <div class="kv-steps">
+          <div class="card">
+            <div class="kv-num">01</div>
+            <div class="head"><h3>📋 Kunden-Briefing</h3><span class="tag">VORLAGE</span></div>
+            <pre>Ich baue eine Webseite für ein lokales Unternehmen. Stelle mir nacheinander genau 8 kurze Fragen,
+um alles zu sammeln, was du für eine verkaufsstarke One-Page-Webseite brauchst — eine Frage
+pro Nachricht, warte jeweils auf meine Antwort:
+1. Firmenname &amp; Branche  2. Stadt/Region  3. Die 3 wichtigsten Leistungen
+4. Was soll der Besucher tun? (anrufen / Termin buchen / Formular)  5. Zielgruppe &amp; Anrede (Du/Sie)
+6. Stil &amp; Hauptfarbe (oder: schlag 2 Richtungen vor)  7. Öffnungszeiten, Adresse, Telefon
+8. Gibt es etwas, das sie von der Konkurrenz unterscheidet?
+Fasse am Ende ALLES als kompaktes Briefing zusammen — das ist die Grundlage für den Build-Prompt.</pre>
+            <div class="foot"><button class="copybtn">📋 Prompt kopieren</button></div>
+          </div>
+
+          <div class="card">
+            <div class="kv-num">02</div>
+            <div class="head"><h3>🏗️ Build-Prompt — die Kundenseite</h3><span class="tag">VORLAGE</span></div>
+            <pre>Baue eine komplette, moderne One-Page-Webseite als EINE einzige HTML-Datei (inline CSS + JS,
+keine Frameworks, nur Google Fonts) für:
+
+FIRMA: {FIRMA} · BRANCHE: {BRANCHE} · STADT: {STADT}
+LEISTUNGEN: {LEISTUNG_1}, {LEISTUNG_2}, {LEISTUNG_3}
+ZIEL DER SEITE: {ZIEL — z.B. Anrufe / Terminbuchungen / Anfragen}
+STIL: {STIL — z.B. hell &amp; freundlich / edel &amp; dunkel} · Hauptfarbe: {FARBE} · Anrede: {DU/SIE}
+
+PFLICHT-SEKTIONEN (in dieser Reihenfolge):
+1. Hero — Nutzen-Headline (NICHT der Firmenname), Subline, großer CTA-Button "{CTA}",
+   Telefonnummer sofort sichtbar
+2. Vertrauens-Leiste — 3 Vorteile mit Icons (z.B. Erfahrung, Region, Schnelligkeit)
+3. Leistungen — eine Karte pro Leistung mit kurzem, verkaufsstarkem Text
+4. Über uns — {KURZE_STORY_DES_BETRIEBS}
+5. Bewertungen — 3 Testimonials, klar als [PLATZHALTER] markiert
+6. Kontakt — Formular (Name, Telefon, Nachricht), Öffnungszeiten, Adresse
+7. Footer — Links für Impressum &amp; Datenschutz
+
+REGELN:
+- Mobile-first, schnell, sauberes responsives Layout, dezente Scroll-Animationen
+- Jede Sektion muss auf das Ziel einzahlen: Warum sollte der Besucher JETZT {CTA}?
+- Seriöse, lokale Sprache — kein Marketing-Geschwurbel
+- Am Ende: Liste ALLER Stellen, die ich noch mit echten Fotos/Texten/Daten ersetzen muss</pre>
+            <div class="foot"><button class="copybtn">📋 Prompt kopieren</button></div>
+          </div>
+
+          <div class="card">
+            <div class="kv-num">03</div>
+            <div class="head"><h3>🔁 Feedback-Loop</h3><span class="tag">VORLAGE</span></div>
+            <pre>Hier ist Feedback zur Webseite (vom Kunden / von mir): "{FEEDBACK}".
+Setze NUR diese Änderungen um — verändere nichts anderes am Design oder an den Texten.
+Gib mir danach die komplette aktualisierte HTML-Datei zurück und liste in 2-3 Bullets,
+was du geändert hast. Wenn ein Wunsch der Conversion schadet (z.B. CTA verstecken),
+setz ihn trotzdem um, aber sag mir vorher in einem Satz warum ich gegensteuern sollte.</pre>
+            <div class="foot"><button class="copybtn">📋 Prompt kopieren</button></div>
+          </div>
+
+          <div class="card">
+            <div class="kv-num">04</div>
+            <div class="head"><h3>✅ Qualitäts-Check vor Übergabe</h3><span class="tag">VORLAGE</span></div>
+            <pre>Prüfe die fertige HTML-Datei wie ein strenger Abnahme-Tester und gib mir eine Checkliste
+mit ✅/❌ pro Punkt — und fixe danach alle ❌ direkt selbst:
+1. Mobil (390px): nichts abgeschnitten, Buttons gut tippbar, Text lesbar
+2. Alle Links &amp; der CTA funktionieren, Telefonnummer ist klickbar (tel:)
+3. Kein [PLATZHALTER] mehr im sichtbaren Text
+4. Ladezeit: keine unnötig großen Bilder, keine toten Ressourcen
+5. Impressum &amp; Datenschutz verlinkt
+6. Rechtschreibung komplett fehlerfrei (Deutsch)
+7. Title-Tag &amp; Meta-Description gesetzt: "{FIRMA} — {LEISTUNG} in {STADT}"
+Gib mir am Ende die finale, bereinigte HTML-Datei.</pre>
+            <div class="foot"><button class="copybtn">📋 Prompt kopieren</button></div>
+          </div>
+
+          <div class="card">
+            <div class="kv-num">05</div>
+            <div class="head"><h3>💬 Pitch-Nachricht an den Kunden</h3><span class="tag">VORLAGE</span></div>
+            <pre>Schreibe mir eine kurze, persönliche Nachricht (E-Mail + WhatsApp-Variante) an {ANSPRECHPARTNER}
+von {FIRMA} in {STADT}. Kontext: Ich habe ihnen — ohne Auftrag — bereits eine neue Webseite
+gebaut und will sie ihnen zeigen: {DEMO_LINK}.
+Regeln: maximal 6 Sätze, kein Verkaufsdruck, keine Floskeln wie "ich hoffe, es geht Ihnen gut".
+Aufbau: 1 konkreter Aufhänger zu ihrer aktuellen Webseite / fehlenden Webseite →
+was ich gebaut habe → der Link → eine einfache Frage als Abschluss ("Darf ich Ihnen kurz
+zeigen, was da möglich wäre?"). Ton: auf Augenhöhe, lokal, ehrlich.</pre>
+            <div class="foot"><button class="copybtn">📋 Prompt kopieren</button></div>
+          </div>
+        </div>
+
+        <div class="kv-tip">💡 <b>So läuft der Loop:</b> Briefing ausfüllen → Seite in Minuten bauen lassen → Demo-Link an den Betrieb schicken → Feedback einloopen → liefern &amp; kassieren. Danach: nächster Betrieb, gleiche Vorlage.</div>
       </div>
 
       <!-- Bottom CTA -->
