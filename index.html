@@ -361,7 +361,12 @@
   #robo .rbubble::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 8px; height: 8px; transform: translateX(-50%) rotate(45deg); background: rgba(8,7,6,.85); border-right: 1px solid rgba(255,159,28,.4); border-bottom: 1px solid rgba(255,159,28,.4); }
   #robo.talk .rbubble { opacity: 1; }
   #robo .rhit { position: absolute; left: 22%; right: 22%; top: 22%; bottom: 12%; pointer-events: auto; cursor: pointer; }
-  @media (max-width: 1180px), (pointer: coarse) { #robo { display: none !important; } }
+  .roboSpot { display: none; }
+  @media (max-width: 1180px), (pointer: coarse) {
+    .roboSpot { display: flex; justify-content: center; padding: 6px 0 30px; }
+    #robo { position: relative; left: auto; top: auto; width: 150px; height: 190px; }
+    #robo .rbubble { font-size: 9.5px; padding: 6px 10px; }
+  }
 
   /* ── Foto-Backdrops in Sektionen ── */
   .secphoto { position: absolute; inset: 0; pointer-events: none; background-size: cover; background-position: center;
@@ -461,6 +466,8 @@
   <span>Querdenker<i>&middot;</i></span><span>Gr&uuml;nder<i>&middot;</i></span><span>Systembauer<i>&middot;</i></span><span>5 Unternehmen<i>&middot;</i></span><span>5 L&auml;nder<i>&middot;</i></span><span>Sohn<i>&middot;</i></span><span>Kein Guru<i>&middot;</i></span><span>Output statt Theorie<i>&middot;</i></span>
 </div></div>
 
+<div class="roboSpot" data-quip="Ich war dabei." aria-hidden="true"></div>
+
 <div id="rail" aria-hidden="true">
   <a href="#hero"><span class="lbl">Start</span></a>
   <a href="#story"><span class="lbl">Die Reise</span></a>
@@ -545,6 +552,8 @@
   </div>
 </section>
 
+<div class="roboSpot" data-quip="5 Länder. Ich packe schon." aria-hidden="true"></div>
+
 <section id="welt">
   <div class="aurora" style="bottom:-120px; right:-180px; animation-delay:-8s;"></div>
   <div class="wrap">
@@ -589,6 +598,7 @@
     <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Community auf Skool</a>
   </div>
   <div class="last">Lass uns bauen. — Mario De Luca</div>
+  <div class="roboSpot" data-quip="Komm mit." aria-hidden="true" style="margin-top:50px"></div>
 </section>
 
 <div class="outro" aria-hidden="true"><span>De Luca.</span></div>
@@ -950,7 +960,8 @@
   // Kopf folgt dem Cursor, blinzelt, Klick → Herz-Augen + CTRL+L+$
   (function () {
     var robo = document.getElementById('robo');
-    if (!robo || !window.THREE || !window.gsap || reduceMotion || !finePointer || innerWidth <= 1180) return;
+    if (!robo || !window.THREE || !window.gsap || reduceMotion) return;
+    var mobileMode = !finePointer || window.matchMedia('(pointer: coarse)').matches || innerWidth <= 1180;
 
     var W = 230, H = 290;
     var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -1086,6 +1097,7 @@
       requestAnimationFrame(loop);
       if (!visible) return;
       var t = clock.getElapsedTime(), dt = Math.min(clock.getDelta() + .016, .1);
+      if (mobileMode) { px = Math.sin(t * .6) * .55; py = Math.sin(t * .4) * .22; }
       body.rotation.y += ((-px * .55) - body.rotation.y) * Math.min(1, 8 * dt);
       body.rotation.z += ((-px * .12) - body.rotation.z) * Math.min(1, 8 * dt);
       head.rotation.y += ((px * 1.1) - head.rotation.y) * Math.min(1, 12 * dt);
@@ -1100,8 +1112,43 @@
       renderer.render(scene, camera);
     })();
 
-    // Kapitel-Spots: wo der Klon jeweils auftaucht
     var bubble = document.getElementById('rbubble');
+
+    if (mobileMode) {
+      // Mobile: 3 feste Gastauftritte in reservierten Lücken (kein Overlay über Text)
+      var spotEls = Array.from(document.querySelectorAll('.roboSpot'));
+      var currentSpot = null;
+      var spotIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && currentSpot !== en.target) {
+            currentSpot = en.target;
+            en.target.appendChild(robo);
+            bubble.textContent = en.target.dataset.quip || '';
+            gsap.set(bubble, { x: 0 });
+            robo.classList.remove('talk');
+            visible = true;
+            gsap.fromTo(robo, { scale: 0 }, {
+              scale: 1, duration: .6, ease: 'back.out(1.9)',
+              onComplete: function () { robo.classList.add('talk'); }
+            });
+          }
+        });
+      }, { threshold: .4 });
+      spotEls.forEach(function (s) { spotIO.observe(s); });
+      // Rendering pausieren, wenn der Roboter weit außerhalb des Viewports ist
+      new IntersectionObserver(function (en) {
+        if (currentSpot) visible = en[0].isIntersecting;
+      }, { rootMargin: '35%' }).observe(robo);
+      robo.querySelector('.rhit').addEventListener('click', function () {
+        loved = true;
+        if (lovedTimer) clearTimeout(lovedTimer);
+        lovedTimer = setTimeout(function () { loved = false; }, 2200);
+        if (runEgg) runEgg();
+      });
+      return;
+    }
+
+    // Desktop-Kapitel-Spots: wo der Klon jeweils auftaucht
     var spots = {
       story:   { x: function () { return innerWidth - 265; }, y: function () { return innerHeight * .52; }, quip: 'Ich war dabei.' },
       erfolge: { x: function () { return -72; }, y: function () { return innerHeight * .52; }, bx: 96, quip: 'Alles echt — ich hab mitgezählt.' },
