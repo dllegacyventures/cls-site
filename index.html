@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CLS — Clone Looping System | CTRL + L + $</title>
-<meta name="description" content="Der Shortcut, den dir keiner gezeigt hat: Dein KI-Klon baut Webseiten, du verkaufst sie an lokale Betriebe. KI baut. Du verkaufst. Beide kassieren.">
+<title>Mario De Luca — Systembauer & Gründer von CLS</title>
+<meta name="description" content="Mario De Luca, 22: vom Kinderzimmer mit Schulden zu KI-Klonen, die er an Unternehmen vermietet wie Autos. Wer er ist, was er baut — und warum er das Clone Looping System für jeden zugänglich macht.">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://delucalegacy.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mario De Luca — Systembauer & Gründer von CLS">
+<meta property="og:description" content="Vom Kinderzimmer mit Schulden zu KI-Klonen, die Unternehmen mieten wie Autos. Zahlen. Klone. Umsetzung.">
+<meta property="og:url" content="https://delucalegacy.com/">
+<meta property="og:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mario De Luca — Systembauer & Gründer von CLS">
+<meta name="twitter:description" content="Vom Kinderzimmer mit Schulden zu KI-Klonen, die Unternehmen mieten wie Autos.">
+<meta name="twitter:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='38' font-weight='900' text-anchor='middle' fill='%23f2efe8'%3EM%3C/text%3E%3Ccircle cx='52' cy='46' r='5' fill='%23ff9f1c'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -14,12 +27,33 @@
     --ink: #f2efe8; --muted: rgba(242,239,232,.62); --faint: rgba(242,239,232,.32);
     --line: rgba(242,239,232,.13); --am: #ff9f1c; --am-soft: rgba(255,159,28,.08);
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scrollbar-color: rgba(255,159,28,.4) #0a0908; }
   body {
     background: var(--bg); color: var(--ink);
     font-family: 'Archivo', sans-serif; line-height: 1.6;
     overflow-x: hidden; width: 100%; max-width: 100vw;
     -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--am); color: #0a0806; }
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  body::after {
+    content: ''; position: fixed; inset: -50%; pointer-events: none; z-index: 500;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: .035; animation: grain 9s steps(6) infinite;
+  }
+  @keyframes grain {
+    0%,100% { transform: translate(0,0); } 20% { transform: translate(-4%,3%); } 40% { transform: translate(3%,-2%); }
+    60% { transform: translate(-2%,-4%); } 80% { transform: translate(4%,2%); }
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--am); outline-offset: 3px; border-radius: 6px;
+  }
+  .skip { position: absolute; left: -9999px; top: 12px; z-index: 300; background: var(--am); color: #0a0806; font-weight: 700; padding: 12px 20px; border-radius: 10px; text-decoration: none; }
+  .skip:focus { left: 12px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   }
   .anton { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; line-height: .97; letter-spacing: .01em; }
   .mono { font-family: 'JetBrains Mono', monospace; }
@@ -32,6 +66,7 @@
   }
   .kicker { display: flex; align-items: center; gap: 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .34em; text-transform: uppercase; color: var(--muted); margin-bottom: 26px; }
   .kicker::before { content: ''; width: 44px; height: 3px; background: var(--am); }
+  .kicker .num { color: var(--am); }
   h2.anton { font-size: clamp(2.4rem, 5vw, 4.2rem); max-width: 1100px; margin-bottom: 22px; }
   h2 .am { color: var(--am); }
   .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.2rem); max-width: 680px; }
@@ -45,7 +80,7 @@
     border: 1px solid var(--line); border-radius: 999px; padding: 10px 12px 10px 24px;
     white-space: nowrap;
   }
-  nav .logo { font-family: 'Anton', sans-serif; font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: .02em; }
+  nav .logo { font-family: 'Anton', sans-serif; font-size: 20px; color: var(--ink); text-decoration: none; letter-spacing: .04em; text-transform: uppercase; }
   nav .logo i { color: var(--am); font-style: normal; }
   nav .links { display: flex; gap: 22px; }
   nav .links a { color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; transition: color .25s; }
@@ -55,21 +90,178 @@
     font-size: 14px; padding: 11px 22px; border-radius: 999px; transition: transform .25s ease, box-shadow .25s ease;
   }
   nav .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,159,28,.35); }
+  nav .cta:active { transform: translateY(1px) scale(.98); }
+  nav .links a.active { color: var(--am); }
+  nav.scrolled { background: rgba(8,7,6,.92); border-color: rgba(255,159,28,.22); }
   @media (max-width: 760px) { nav .links { display: none; } }
 
   /* ── Hero ── */
-  #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 150px 24px 0; overflow: hidden; }
-  #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 42% at 50% -6%, rgba(255,159,28,.14), transparent 70%); pointer-events: none; }
-  #swarmHero { position: absolute; top: 6%; right: -60px; width: 420px; height: 420px; opacity: .8; pointer-events: none; }
-  @media (max-width: 900px) { #swarmHero { width: 260px; height: 260px; right: -70px; top: 4%; opacity: .5; } }
+  #hero { min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; padding: 150px 0 80px; overflow: hidden; }
+  #hero::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
+    radial-gradient(ellipse 65% 48% at 50% -8%, rgba(255,159,28,.26), transparent 68%),
+    radial-gradient(ellipse 40% 34% at 12% 108%, rgba(255,159,28,.12), transparent 70%); }
+  #hero .herodots { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,170,45,.2) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 32%, #000, transparent 78%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 32%, #000, transparent 78%); }
+  #hero .heroghost { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%); z-index: 0;
+    font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: 1; white-space: nowrap;
+    font-size: clamp(8rem, 25vw, 23rem); color: transparent; -webkit-text-stroke: 1.5px rgba(255,159,28,.11);
+    pointer-events: none; user-select: none; }
+  #hero .horizon { position: absolute; left: 8%; right: 8%; bottom: 0; height: 1px; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255,159,28,.75), transparent);
+    box-shadow: 0 0 46px 7px rgba(255,159,28,.28); }
+  #swarmHero { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; opacity: .95; pointer-events: none; }
+  #hero .wrap { position: relative; z-index: 2; }
+  #hero .scue { z-index: 2; }
+  #hero .split { display: grid; grid-template-columns: 1fr 420px; gap: 70px; align-items: center; width: 100%; }
+  @media (max-width: 980px) { #hero .split { grid-template-columns: 1fr; gap: 50px; } }
+  #hero .tagline { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--am); margin-bottom: 22px; }
+  #hero h1 { font-size: clamp(3.2rem, 7.5vw, 6.8rem); color: var(--ink); }
+  #hero h1 .am { color: var(--am); }
+  #hero .sub { margin: 26px 0 38px; max-width: 560px; font-size: clamp(1.05rem, 1.5vw, 1.25rem); }
+  .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; font-size: 16.5px; padding: 18px 34px; border-radius: 14px; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+  .btn.primary { background: var(--am); color: #0a0806; box-shadow: 0 10px 34px rgba(255,159,28,.28); }
+  .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(255,159,28,.42); }
+  .btn.ghost { border: 1px solid rgba(242,239,232,.25); color: var(--ink); background: rgba(242,239,232,.03); }
+  .btn.ghost:hover { border-color: var(--am); color: var(--am); }
+  .btn:active { transform: translateY(1px) scale(.98); }
 
-  .keys { display: flex; align-items: center; gap: 14px; margin-bottom: 44px; }
+  .herostats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 96px; }
+  @media (max-width: 900px) { .herostats { grid-template-columns: 1fr 1fr; margin-top: 60px; } }
+  .stat { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; background: var(--panel); transition: border-color .3s ease, transform .4s ease; }
+  .stat:hover { border-color: rgba(255,159,28,.4); transform: translateY(-3px); }
+  .stat .v { font-family: 'Anton', sans-serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); color: var(--ink); font-variant-numeric: tabular-nums; }
+  .stat .v i { color: var(--am); font-style: normal; }
+  .stat .l { color: var(--faint); font-size: 13px; margin-top: 4px; }
+  .stat.hot { border-color: rgba(255,159,28,.5); background: var(--am-soft); }
+
+  /* ── HUD Portrait ── */
+  .hud {
+    position: relative; aspect-ratio: 3/4; width: 100%; max-width: 420px; border-radius: 22px; overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(255,159,28,.22), transparent 46%),
+      radial-gradient(circle at 50% 42%, rgba(255,201,96,.14), transparent 26%),
+      linear-gradient(180deg, #12100c, #070605);
+    border: 1px solid rgba(255,159,28,.35);
+    margin: 0 auto;
+  }
+  .hud::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(180deg, rgba(255,159,28,.045) 0 2px, transparent 2px 6px);
+    pointer-events: none; z-index: 3;
+  }
+  .hud .scanline { position: absolute; left: 0; right: 0; height: 90px; top: -90px; background: linear-gradient(180deg, transparent, rgba(255,159,28,.14), transparent); animation: hudscan 5s ease-in-out infinite; pointer-events: none; z-index: 4; }
+  @keyframes hudscan { 0% { top: -90px; } 50% { top: 100%; } 100% { top: -90px; } }
+  .hud .ring { position: absolute; top: 42%; left: 50%; width: 240px; height: 240px; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,159,28,.5); box-shadow: 0 0 60px rgba(255,159,28,.25), inset 0 0 40px rgba(255,159,28,.12); animation: ringp 3.4s ease-in-out infinite; }
+  @keyframes ringp { 50% { box-shadow: 0 0 90px rgba(255,159,28,.4), inset 0 0 60px rgba(255,159,28,.2); } }
+  .hud .mono-m { position: absolute; top: 42%; left: 50%; transform: translate(-50%, -54%); font-family: 'Anton', sans-serif; font-size: 190px; color: var(--ink); opacity: .92; }
+  .hud .mono-m i { color: var(--am); font-style: normal; }
+  .hud img.real { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; filter: contrast(1.1) saturate(.9); }
+  .hud .corner { position: absolute; width: 34px; height: 34px; border: 2px solid rgba(255,159,28,.75); z-index: 5; }
+  .hud .c1 { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
+  .hud .c2 { top: 14px; right: 14px; border-left: 0; border-bottom: 0; }
+  .hud .c3 { bottom: 14px; left: 14px; border-right: 0; border-top: 0; }
+  .hud .c4 { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+  .hud .data { position: absolute; left: 26px; right: 26px; bottom: 20px; z-index: 5; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; gap: 5px; background: rgba(5,5,5,.55); backdrop-filter: blur(4px); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+  .hud .data b { color: var(--am); font-weight: 500; }
+
+  /* ── Marquee ── */
+  .marquee { width: 100vw; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 18px 0; }
+  .marquee .track { display: flex; gap: 56px; width: max-content; animation: mq 30s linear infinite; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .3em; text-transform: uppercase; color: var(--faint); }
+  .marquee .track span i { color: var(--am); font-style: normal; margin-left: 56px; }
+  @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee:hover .track { animation-play-state: paused; }
+
+  /* ── Spotlight-Border (Cursor-Glow auf Karten) ── */
+  .spot { position: relative; }
+  .spot::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(255,159,28,.14), transparent 65%);
+    opacity: 0; transition: opacity .35s ease; z-index: 0;
+  }
+  .spot:hover::before { opacity: 1; }
+  .spot > * { position: relative; z-index: 1; }
+
+  /* ── Die Reise: Horizontal Journey ── */
+  #story { padding-bottom: 60px; }
+  .jwrap { position: relative; overflow: hidden; padding: 30px 0 40px; }
+  .jtrack { display: flex; gap: 22px; width: max-content; padding: 30px max(6vw, 24px) 10px; will-change: transform; }
+  .jcard {
+    position: relative; overflow: hidden; flex: 0 0 auto;
+    width: min(560px, 80vw); min-height: 380px;
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 24px;
+    padding: 46px 44px; display: flex; flex-direction: column; justify-content: flex-end;
+    box-shadow: 0 24px 70px rgba(12,8,2,.5);
+  }
+  .jcard .ghost {
+    position: absolute; top: -34px; right: 6px; font-family: 'Anton', sans-serif; line-height: 1;
+    font-size: 180px; color: transparent; -webkit-text-stroke: 1.5px rgba(255,159,28,.14); user-select: none; pointer-events: none;
+  }
+  .jcard .yr { font-family: 'JetBrains Mono', monospace; color: var(--am); font-size: 13px; letter-spacing: .22em; margin-bottom: 14px; }
+  .jcard h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(1.6rem, 2.6vw, 2.4rem); margin-bottom: 12px; }
+  .jcard p { color: var(--muted); font-size: 15.5px; max-width: 460px; }
+  .jcard p b { color: var(--ink); }
+  .jcard.gold { border-color: rgba(255,159,28,.55); background: linear-gradient(160deg, #171006, #0a0908); box-shadow: 0 24px 80px rgba(255,159,28,.12); }
+  .jprog { margin: 26px max(6vw, 24px) 0; height: 3px; background: rgba(242,239,232,.1); border-radius: 99px; overflow: hidden; }
+  .jprog i { display: block; height: 100%; width: 100%; background: var(--am); border-radius: 99px; transform: scaleX(0); transform-origin: 0 50%; box-shadow: 0 0 12px rgba(255,159,28,.5); }
+  @media (max-width: 980px) {
+    .jtrack { flex-direction: column; width: auto; padding: 10px 24px; }
+    .jcard { width: 100%; min-height: 0; }
+    .jprog { display: none; }
+  }
+
+  /* ── Journey-Rail (Stationspunkte rechts) ── */
+  #rail { position: fixed; right: 28px; top: 50%; transform: translateY(-50%); z-index: 90; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+  #rail::before { content: ''; position: absolute; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+  #rail a { position: relative; width: 9px; height: 9px; border-radius: 50%; background: rgba(242,239,232,.22); transition: background .3s, transform .3s, box-shadow .3s; }
+  #rail a.on { background: var(--am); transform: scale(1.35); box-shadow: 0 0 12px rgba(255,159,28,.8); }
+  #rail a .lbl { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--am); white-space: nowrap; opacity: 0; transition: opacity .3s; pointer-events: none; }
+  #rail a:hover .lbl { opacity: 1; }
+  @media (max-width: 1280px) { #rail { display: none; } }
+
+  /* ── Expansion: Globus ── */
+  #welt .globegrid { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; margin-top: 40px; }
+  @media (max-width: 980px) { #welt .globegrid { grid-template-columns: 1fr; } }
+  #globe { width: 100%; max-width: 640px; aspect-ratio: 1; display: block; margin: 0 auto; }
+  #welt .gstats { display: flex; flex-direction: column; gap: 14px; }
+  .chap { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .34em; text-transform: uppercase; color: var(--am); margin-bottom: 30px; }
+
+  /* ── Aurora-Blobs ── */
+  #erfolge, #welt, #mission { overflow: hidden; }
+  .aurora { position: absolute; width: 560px; height: 560px; border-radius: 50%; pointer-events: none; filter: blur(70px); background: radial-gradient(circle, rgba(255,159,28,.13), transparent 65%); animation: floaty 16s ease-in-out infinite alternate; }
+  @keyframes floaty { from { transform: translate(0, 0) scale(1); } to { transform: translate(60px, -70px) scale(1.15); } }
+
+  /* ── Scroll-Cue ── */
+  .scue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--faint); }
+  .scue i { display: block; width: 1px; height: 48px; background: linear-gradient(180deg, var(--am), transparent); animation: cue 2.2s ease-in-out infinite; }
+  @keyframes cue { 0% { transform: scaleY(0); transform-origin: top; } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+  /* ── Erfolge ── */
+  .wins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+  @media (max-width: 980px) { .wins { grid-template-columns: 1fr; } }
+  .win { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 36px 32px; position: relative; overflow: hidden; transition: border-color .3s ease, transform .5s ease; display: flex; flex-direction: column; }
+  .win:hover { border-color: rgba(255,159,28,.45); transform: translateY(-4px); }
+  .win .tag { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--am); margin-bottom: 16px; }
+  .win h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; margin-bottom: 10px; }
+  .win p { color: var(--muted); font-size: 15px; }
+  .win .big-num { font-family: 'Anton', sans-serif; font-size: clamp(2.6rem, 4.4vw, 4rem); color: var(--ink); line-height: 1.05; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+  .win .big-num i { color: var(--am); font-style: normal; }
+  .win.cls { grid-column: span 3; border-color: rgba(255,159,28,.5); background: linear-gradient(160deg, #171006, var(--panel)); box-shadow: 0 26px 70px rgba(255,159,28,.1); display: grid; grid-template-columns: 1.25fr 1fr; gap: 50px; align-items: center; padding: clamp(34px, 4.5vw, 60px); }
+  @media (max-width: 980px) { .win.cls { grid-column: span 1; grid-template-columns: 1fr; gap: 30px; } }
+  .win.cls h3 { font-size: clamp(1.9rem, 3.4vw, 3rem); }
+  .win.cls .flag { position: absolute; top: 24px; right: 28px; background: var(--am); color: #0a0806; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .2em; font-weight: 700; padding: 6px 14px; border-radius: 99px; }
+  .win.cls p { font-size: 16px; max-width: 560px; }
+  .win.cls .cta-row { margin-top: 28px; }
+  .keys { display: flex; align-items: center; gap: 12px; }
   .key {
-    font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(15px, 2vw, 21px);
+    font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(14px, 1.6vw, 18px);
     letter-spacing: .08em; color: var(--ink);
     background: linear-gradient(180deg, #171512, #0c0b0a);
     border: 1px solid rgba(242,239,232,.22); border-radius: 12px;
-    padding: 16px 22px; min-width: 62px;
+    padding: 14px 20px; min-width: 56px; text-align: center;
     box-shadow: 0 6px 0 #000, 0 6px 0 1px rgba(242,239,232,.14), 0 14px 30px rgba(0,0,0,.5);
     transition: transform .12s ease, box-shadow .12s ease;
     user-select: none; cursor: pointer;
@@ -77,218 +269,117 @@
   .key.pressed, .key:active { transform: translateY(5px); box-shadow: 0 1px 0 #000, 0 1px 0 1px rgba(242,239,232,.14); }
   .key.dollar { color: #0a0806; background: linear-gradient(180deg, #ffb84d, #f28f00); border-color: rgba(255,159,28,.7); box-shadow: 0 6px 0 #7a4a00, 0 14px 34px rgba(255,159,28,.35); }
   .key.dollar.pressed, .key.dollar:active { box-shadow: 0 1px 0 #7a4a00; }
-  .keys .plus { color: var(--faint); font-family: 'JetBrains Mono', monospace; font-size: 20px; }
-
-  #hero h1 { font-size: clamp(3rem, 7vw, 6.5rem); max-width: 1200px; color: var(--ink); }
-  #hero h1 .am { color: var(--am); }
-  #hero .sub { margin: 30px auto 42px; max-width: 640px; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
-  .cta-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-  .btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; font-size: 16.5px; padding: 18px 34px; border-radius: 14px; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
-  .btn.primary { background: var(--am); color: #0a0806; box-shadow: 0 10px 34px rgba(255,159,28,.28); }
-  .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(255,159,28,.42); }
-  .btn.ghost { border: 1px solid rgba(242,239,232,.25); color: var(--ink); background: rgba(242,239,232,.03); }
-  .btn.ghost:hover { border-color: var(--am); color: var(--am); }
-
-  .marquee { margin-top: 96px; width: 100vw; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 18px 0; }
-  .marquee .track { display: flex; gap: 56px; width: max-content; animation: mq 30s linear infinite; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: .3em; text-transform: uppercase; color: var(--faint); }
-  .marquee .track span i { color: var(--am); font-style: normal; margin-left: 56px; }
-  @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  /* ── Scrub Text ── */
-  #luecke { padding: 190px 0; }
-  #luecke p { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(1.7rem, 3.6vw, 3.1rem); line-height: 1.25; max-width: 1080px; }
-  #luecke p .w { opacity: .12; }
-  #luecke p .hl { color: var(--am); }
-
-  /* ── Bento ── */
-  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; grid-auto-flow: dense; gap: 14px; margin-top: 60px; }
-  .cell { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; transition: border-color .3s ease, transform .5s ease; }
-  .cell:hover { border-color: rgba(255,159,28,.45); transform: translateY(-3px); }
-  .cell.a { grid-column: span 2; grid-row: span 2; }
-  .cell.b { grid-column: span 2; }
-  @media (max-width: 900px) { .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; } .cell.a { grid-column: span 2; } .cell.b { grid-column: span 2; } .cell { min-height: 200px; } }
-  .cell .tag { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--am); margin-bottom: 14px; }
-  .cell h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; margin-bottom: 10px; }
-  .cell p { color: var(--muted); font-size: 15px; }
-  .big-num { font-family: 'Anton', sans-serif; font-size: clamp(3rem, 5vw, 4.6rem); color: var(--ink); line-height: 1; }
-  .big-num i { color: var(--am); font-style: normal; }
-
-  .flow-v { display: flex; flex-direction: column; gap: 0; margin-top: 18px; position: relative; }
-  .fnode { display: flex; align-items: center; gap: 16px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; background: var(--panel2); position: relative; }
+  .keys .plus { color: var(--faint); font-family: 'JetBrains Mono', monospace; font-size: 18px; }
+  .clsloop { display: flex; flex-direction: column; gap: 10px; }
+  .fnode { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px; background: rgba(5,5,5,.45); }
   .fnode .n { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--am); min-width: 26px; }
-  .fnode .t { font-weight: 700; font-size: 15.5px; }
+  .fnode .t { font-weight: 700; font-size: 15px; }
   .fnode .d { color: var(--faint); font-size: 13px; margin-left: auto; text-align: right; }
   .fnode.hot { border-color: rgba(255,159,28,.5); background: var(--am-soft); }
-  .forb { position: absolute; left: -5px; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--am); box-shadow: 0 0 16px 4px rgba(255,159,28,.5); animation: orbdown 8s ease-in-out infinite; }
-  @keyframes orbdown {
-    0%, 10% { top: 26px; } 22%, 30% { top: 88px; } 42%, 50% { top: 150px; }
-    62%, 70% { top: 212px; } 82%, 92% { top: 274px; } 100% { top: 26px; }
-  }
 
-  .term { background: #060505; border: 1px solid rgba(242,239,232,.18); border-radius: 14px; margin-top: 16px; overflow: hidden; }
-  .term .bar { display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-  .term .bar b { color: var(--am); font-weight: 500; }
-  .term pre { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.75; color: var(--ink); padding: 16px 18px; white-space: pre-wrap; }
-  .term pre .v { color: var(--am); }
-  .cursor { display: inline-block; width: 8px; height: 15px; background: var(--am); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
+  /* ── Mission ── */
+  .missions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 60px; }
+  @media (max-width: 860px) { .missions { grid-template-columns: 1fr; } }
+  .mission { border: 1px solid var(--line); border-radius: 22px; padding: 40px 36px; background: var(--panel); transition: border-color .3s ease, transform .5s ease; }
+  .mission:hover { border-color: rgba(255,159,28,.45); transform: translateY(-4px); }
+  .mission .idx { font-family: 'JetBrains Mono', monospace; color: var(--am); font-size: 13px; letter-spacing: .2em; margin-bottom: 18px; display: block; }
+  .mission h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 25px; margin-bottom: 12px; }
+  .mission p { color: var(--muted); font-size: 15.5px; }
+  .mission p b { color: var(--ink); }
 
-  /* ── Jarvis Pinned Split ── */
-  #jarvis .split { display: grid; grid-template-columns: 420px 1fr; gap: 80px; align-items: start; }
-  @media (max-width: 980px) { #jarvis .split { grid-template-columns: 1fr; gap: 40px; } }
-  #jarvis .pinbox h2 { font-size: clamp(2.6rem, 4.6vw, 4.4rem); }
-  #jarvis .stack { display: flex; flex-direction: column; gap: 22px; }
-
-  .app { background: var(--panel2); border: 1px solid rgba(242,239,232,.2); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
-  .app .abar { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-  .app .abar .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--am); display: inline-block; margin-right: 10px; animation: ledp 2s ease-in-out infinite; }
-  @keyframes ledp { 50% { box-shadow: 0 0 10px 3px rgba(255,159,28,.55); } }
-  .app .abar .beta { color: var(--am); border: 1px solid var(--am); padding: 3px 9px; font-size: 10px; border-radius: 6px; }
-  .app .abody { display: grid; grid-template-columns: 200px 1fr; }
-  @media (max-width: 640px) { .app .abody { grid-template-columns: 1fr; } .app .mods { display: flex; flex-wrap: wrap; border-right: 0 !important; border-bottom: 1px solid var(--line); } }
-  .app .mods { border-right: 1px solid var(--line); padding: 14px 0; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; position: relative; }
-  .app .mods .m { padding: 11px 18px; color: var(--muted); display: flex; gap: 10px; align-items: center; }
-  .app .mods .m .led { color: var(--am); font-size: 9px; }
-  .app .mods .m.off { color: var(--faint); }
-  .app .mods .m.off .led { color: var(--faint); }
-  .app .mods .m.off em { font-style: normal; font-size: 9px; border: 1px solid var(--line); padding: 2px 6px; margin-left: auto; color: var(--faint); }
-  .app .mods .scan { position: absolute; left: 0; top: 14px; width: 3px; height: 40px; background: var(--am); box-shadow: 0 0 14px 2px rgba(255,159,28,.6); animation: mscan 6s ease-in-out infinite; }
-  @keyframes mscan { 0%,26% { top: 14px; } 33%,59% { top: 56px; } 66%,92% { top: 98px; } 100% { top: 14px; } }
-  .app .chat { padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
-  .app .msg { max-width: 88%; padding: 13px 16px; font-size: 14px; border-radius: 12px; }
-  .app .msg.user { align-self: flex-end; background: rgba(242,239,232,.08); }
-  .app .msg.jarvis { align-self: flex-start; border: 1px solid var(--line); color: var(--muted); }
-  .app .msg.jarvis b { color: var(--ink); }
-  .app .who { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .22em; color: var(--am); margin-bottom: 6px; }
-  .app .prog { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--muted); }
-  .app .track { margin-top: 8px; height: 5px; background: rgba(242,239,232,.1); border-radius: 99px; overflow: hidden; }
-  .app .fill { height: 100%; width: 60%; background: var(--am); animation: fillp 4s ease-in-out infinite alternate; }
-  @keyframes fillp { from { width: 38%; } to { width: 86%; } }
-
-  .modcard { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 28px; display: flex; align-items: baseline; gap: 18px; }
-  .modcard .st { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; color: var(--am); min-width: 66px; }
-  .modcard .st.soon { color: var(--faint); }
-  .modcard h4 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 21px; }
-  .modcard p { color: var(--muted); font-size: 14px; margin-top: 4px; }
-
-  /* ── Rechner ── */
-  #rechner .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 54px; }
-  @media (max-width: 900px) { #rechner .calc { grid-template-columns: 1fr; } }
-  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 34px; }
-  .sl { margin-bottom: 26px; }
-  .sl .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-  .sl label { font-weight: 600; font-size: 15px; }
-  .sl label small { display: block; font-weight: 400; color: var(--faint); font-size: 12px; }
-  .sl output { font-family: 'JetBrains Mono', monospace; font-size: 17px; color: var(--am); }
-  input[type=range] { width: 100%; accent-color: var(--am); height: 26px; cursor: pointer; }
-  .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .res { border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
-  .res.main { border-color: var(--am); background: var(--am-soft); }
-  .res .l { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  .res.main .l { color: var(--am); }
-  .res .v { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
-  .goal { margin-top: 14px; border-left: 3px solid var(--am); background: var(--am-soft); padding: 14px 18px; font-size: 14.5px; color: var(--muted); border-radius: 0 12px 12px 0; }
-  .goal b, .goal .am { color: var(--am); font-weight: 700; }
-
-  /* ── Story Stacking ── */
-  #story .scard {
-    position: sticky; top: 110px; background: var(--panel2); border: 1px solid var(--line);
-    border-radius: 22px; padding: clamp(30px, 5vw, 60px); margin-bottom: 26px;
-    display: grid; grid-template-columns: 90px 1fr; gap: 28px; align-items: start;
-    box-shadow: 0 -20px 60px rgba(0,0,0,.5);
-  }
-  #story .scard .yr { font-family: 'JetBrains Mono', monospace; color: var(--am); font-size: 14px; letter-spacing: .1em; padding-top: 10px; }
-  #story .scard h3 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.6rem); margin-bottom: 12px; }
-  #story .scard p { color: var(--muted); max-width: 640px; font-size: 16px; }
-  #story .scard p b { color: var(--ink); }
-  #story .scard.gold { border-color: rgba(255,159,28,.5); background: linear-gradient(160deg, #14100a, #0a0908); }
-  @media (max-width: 640px) { #story .scard { grid-template-columns: 1fr; gap: 8px; } }
-
-  /* ── Mario / HUD ── */
-  #mario .split { display: grid; grid-template-columns: 460px 1fr; gap: 70px; align-items: center; margin-top: 50px; }
-  @media (max-width: 980px) { #mario .split { grid-template-columns: 1fr; gap: 44px; } }
-  .hud {
-    position: relative; aspect-ratio: 3/4; max-width: 460px; border-radius: 22px; overflow: hidden;
-    background:
-      radial-gradient(circle at 50% 42%, rgba(255,159,28,.22), transparent 46%),
-      radial-gradient(circle at 50% 42%, rgba(255,201,96,.14), transparent 26%),
-      linear-gradient(180deg, #12100c, #070605);
-    border: 1px solid rgba(255,159,28,.35);
-  }
-  .hud::before {
-    content: ''; position: absolute; inset: 0;
-    background: repeating-linear-gradient(180deg, rgba(255,159,28,.045) 0 2px, transparent 2px 6px);
-    pointer-events: none;
-  }
-  .hud .scanline { position: absolute; left: 0; right: 0; height: 90px; top: -90px; background: linear-gradient(180deg, transparent, rgba(255,159,28,.14), transparent); animation: hudscan 5s ease-in-out infinite; pointer-events: none; }
-  @keyframes hudscan { 0% { top: -90px; } 50% { top: 100%; } 100% { top: -90px; } }
-  .hud .ring { position: absolute; top: 42%; left: 50%; width: 240px; height: 240px; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255,159,28,.5); box-shadow: 0 0 60px rgba(255,159,28,.25), inset 0 0 40px rgba(255,159,28,.12); animation: ringp 3.4s ease-in-out infinite; }
-  @keyframes ringp { 50% { box-shadow: 0 0 90px rgba(255,159,28,.4), inset 0 0 60px rgba(255,159,28,.2); } }
-  .hud .mono-m { position: absolute; top: 42%; left: 50%; transform: translate(-50%, -54%); font-family: 'Anton', sans-serif; font-size: 190px; color: var(--ink); opacity: .92; }
-  .hud .mono-m i { color: var(--am); font-style: normal; }
-  .hud img.real { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; filter: contrast(1.1) saturate(.9); }
-  .hud .corner { position: absolute; width: 34px; height: 34px; border: 2px solid rgba(255,159,28,.75); z-index: 3; }
-  .hud .c1 { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
-  .hud .c2 { top: 14px; right: 14px; border-left: 0; border-bottom: 0; }
-  .hud .c3 { bottom: 14px; left: 14px; border-right: 0; border-top: 0; }
-  .hud .c4 { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
-  .hud .data { position: absolute; left: 26px; right: 26px; bottom: 20px; z-index: 3; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; gap: 5px; background: rgba(5,5,5,.55); backdrop-filter: blur(4px); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
-  .hud .data b { color: var(--am); font-weight: 500; }
   .starkline { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.12; margin: 26px 0 18px; }
   .starkline .sw { display: inline-block; }
   .starkline .am { color: var(--am); }
-  .bio { color: var(--muted); font-size: 16.5px; max-width: 620px; }
-  .bio b { color: var(--ink); }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
-  @media (max-width: 560px) { .stats { grid-template-columns: 1fr; } }
-  .stat { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; background: var(--panel); }
-  .stat .v { font-family: 'Anton', sans-serif; font-size: clamp(2rem, 3.4vw, 2.9rem); color: var(--ink); }
-  .stat .v i { color: var(--am); font-style: normal; }
-  .stat .l { color: var(--faint); font-size: 13px; margin-top: 4px; }
-  .stat.hot { border-color: rgba(255,159,28,.5); background: var(--am-soft); }
-
-  /* ── Pricing ── */
-  .scarcity { display: flex; align-items: center; gap: 18px; border: 1px solid rgba(255,159,28,.4); background: var(--am-soft); border-radius: 14px; padding: 16px 22px; margin: 40px 0 46px; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: var(--ink); flex-wrap: wrap; }
-  .scarcity .bar { flex: 1 1 160px; height: 7px; background: rgba(242,239,232,.12); border-radius: 99px; overflow: hidden; }
-  .scarcity .bar i { display: block; height: 100%; width: 62%; background: var(--am); border-radius: 99px; }
-  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
-  @media (max-width: 980px) { .tiers { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
-  .tier { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 36px 32px; display: flex; flex-direction: column; position: relative; transition: transform .4s ease, border-color .3s ease; }
-  .tier:hover { transform: translateY(-6px); border-color: rgba(255,159,28,.4); }
-  .tier .name { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 27px; margin-bottom: 4px; }
-  .tier .pos { color: var(--faint); font-size: 13.5px; margin-bottom: 20px; }
-  .tier .price { font-family: 'Anton', sans-serif; font-size: 46px; }
-  .tier .price small { font-family: 'Archivo', sans-serif; font-size: 15px; color: var(--muted); }
-  .tier .per { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--faint); letter-spacing: .16em; margin-bottom: 24px; }
-  .tier ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 30px; }
-  .tier li { font-size: 14.5px; color: var(--muted); padding-left: 24px; position: relative; }
-  .tier li::before { content: '+'; position: absolute; left: 0; color: var(--am); font-family: 'JetBrains Mono', monospace; }
-  .tier li b { color: var(--ink); }
-  .tier .btn { margin-top: auto; justify-content: center; }
-  .tier.featured { border-color: var(--am); background: linear-gradient(170deg, #171006, var(--panel)); transform: scale(1.03); box-shadow: 0 26px 70px rgba(255,159,28,.14); }
-  .tier.featured:hover { transform: scale(1.03) translateY(-6px); }
-  .tier .flag { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--am); color: #0a0806; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .2em; font-weight: 700; padding: 6px 14px; border-radius: 99px; }
-  .guarantee { text-align: center; margin-top: 40px; color: var(--muted); font-size: 14.5px; }
-  .guarantee b { color: var(--ink); }
-
-  /* ── FAQ ── */
-  #faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); margin-bottom: 12px; overflow: hidden; }
-  #faq summary { cursor: pointer; list-style: none; padding: 22px 26px; font-weight: 700; font-size: 16.5px; display: flex; justify-content: space-between; align-items: center; }
-  #faq summary::after { content: '+'; font-family: 'JetBrains Mono', monospace; color: var(--am); font-size: 22px; transition: transform .3s; }
-  #faq details[open] summary::after { transform: rotate(45deg); }
-  #faq .a { padding: 0 26px 22px; color: var(--muted); font-size: 15px; max-width: 760px; }
-  #faq .a b { color: var(--ink); }
 
   /* ── Final CTA ── */
   #final { text-align: center; padding: 200px 24px 160px; overflow: hidden; }
   #final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 45% at 50% 110%, rgba(255,159,28,.16), transparent 70%); pointer-events: none; }
   #final h2 { font-size: clamp(2.6rem, 6vw, 5.4rem); max-width: 1150px; margin: 0 auto 18px; }
-  #final .keys { justify-content: center; margin: 44px 0; }
+  #final .sub { margin: 0 auto 46px; }
+  #final .cta-row { justify-content: center; }
   #final .last { font-family: 'JetBrains Mono', monospace; letter-spacing: .28em; text-transform: uppercase; color: var(--faint); font-size: 12px; margin-top: 46px; }
+
+  /* ── Preloader ── */
+  #loader { position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; align-items: center; justify-content: center; }
+  #loader .ld { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  #loader .ldname { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: .03em; }
+  #loader .ldname i { color: var(--am); font-style: normal; }
+  #loader .ldbar { width: 180px; height: 3px; background: rgba(242,239,232,.12); border-radius: 99px; overflow: hidden; }
+  #loader .ldbar i { display: block; height: 100%; width: 0; background: var(--am); border-radius: 99px; }
+
+  /* ── Scroll-Progress ── */
+  #prog { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 600; background: var(--am); transform-origin: 0 50%; transform: scaleX(0); box-shadow: 0 0 12px rgba(255,159,28,.6); }
+
+  /* ── Custom Cursor ── */
+  #cur, #curR { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 900; border-radius: 50%; transform: translate(-50%, -50%); display: none; }
+  #cur { width: 7px; height: 7px; background: var(--am); }
+  #curR { width: 38px; height: 38px; border: 1.5px solid rgba(255,159,28,.55); transition: width .25s ease, height .25s ease, background .25s ease, opacity .25s ease; }
+  #curR.grow { width: 62px; height: 62px; background: rgba(255,159,28,.08); }
+  @media (pointer: fine) {
+    #cur, #curR { display: block; }
+    html, body, a, button, .btn, .key, summary, input, nav .cta { cursor: none; }
+  }
+
+  /* ── Hero Line-Reveal ── */
+  #heroH1 .line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+  #heroH1 .ch { display: inline-block; will-change: transform; }
+
+  /* ── HUD Tilt ── */
+  #hero .tiltwrap { perspective: 1000px; }
+  #hero .hud { will-change: transform; }
+
+  /* ── CLS Loop Orb ── */
+  .clsloop { position: relative; }
+  .lorb { position: absolute; left: -5px; top: 24px; width: 10px; height: 10px; border-radius: 50%; background: var(--am); box-shadow: 0 0 16px 4px rgba(255,159,28,.5); animation: lorbdown 9s ease-in-out infinite; z-index: 2; }
+  @keyframes lorbdown {
+    0%, 9% { top: 22px; } 20%, 29% { top: 86px; } 40%, 49% { top: 150px; }
+    60%, 69% { top: 214px; } 80%, 91% { top: 278px; } 100% { top: 22px; }
+  }
+
+  /* ── HUD Glitch ── */
+  .hud img.real { animation: hudglitch 7.5s steps(1) infinite; }
+  @keyframes hudglitch {
+    0%, 100% { transform: none; clip-path: none; filter: contrast(1.1) saturate(.9); }
+    93.0% { transform: translate(-7px, 2px); clip-path: inset(8% 0 62% 0); filter: contrast(1.4) saturate(1.6) hue-rotate(25deg); }
+    93.6% { transform: translate(6px, -3px); clip-path: inset(58% 0 6% 0); filter: contrast(1.4) saturate(1.6) hue-rotate(-15deg); }
+    94.2% { transform: translate(-3px, 1px); clip-path: inset(30% 0 30% 0); filter: contrast(1.3) saturate(1.3); }
+    94.8% { transform: none; clip-path: none; filter: contrast(1.1) saturate(.9); }
+  }
+
+  /* ── Klick-Funken ── */
+  .spark { position: fixed; width: 5px; height: 5px; border-radius: 50%; background: var(--am); pointer-events: none; z-index: 940; box-shadow: 0 0 8px rgba(255,159,28,.8); }
+
+  /* ── Easter Egg: CTRL+L+$ Takeover ── */
+  #egg { position: fixed; inset: 0; z-index: 950; background: rgba(5,5,5,.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; opacity: 0; pointer-events: none; visibility: hidden; }
+  #egg .eggkeys { display: flex; gap: 20px; align-items: center; transform: scale(1.5); }
+  #egg .eggline { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .34em; text-transform: uppercase; color: var(--am); }
+
+  /* ── Klon-Roboter (taucht als Easter Egg pro Kapitel auf) ── */
+  #robo { position: fixed; left: 0; top: 0; z-index: 860; width: 230px; height: 290px; pointer-events: none; transform: scale(0); transform-origin: 50% 90%; }
+  #robo canvas { width: 100%; height: 100%; display: block; }
+  #robo .rbubble { position: absolute; top: -4px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; color: var(--am); background: rgba(8,7,6,.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,159,28,.4); border-radius: 10px; padding: 7px 12px; white-space: nowrap; opacity: 0; transition: opacity .4s ease; }
+  #robo .rbubble::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 8px; height: 8px; transform: translateX(-50%) rotate(45deg); background: rgba(8,7,6,.85); border-right: 1px solid rgba(255,159,28,.4); border-bottom: 1px solid rgba(255,159,28,.4); }
+  #robo.talk .rbubble { opacity: 1; }
+  #robo .rhit { position: absolute; left: 22%; right: 22%; top: 22%; bottom: 12%; pointer-events: auto; cursor: pointer; }
+  @media (max-width: 1180px), (pointer: coarse) { #robo { display: none !important; } }
+
+  /* ── Foto-Backdrops in Sektionen ── */
+  .secphoto { position: absolute; inset: 0; pointer-events: none; background-size: cover; background-position: center;
+    filter: grayscale(.65) sepia(.45) hue-rotate(-14deg) saturate(1.7) brightness(.85); opacity: .14;
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 20%, #000 78%, transparent);
+    mask-image: linear-gradient(180deg, transparent, #000 20%, #000 78%, transparent); }
+  #final .secphoto { opacity: .18;
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 55%, #000, transparent 82%);
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 55%, #000, transparent 82%); }
+
+  /* ── Outro Wordmark ── */
+  .outro { overflow: hidden; padding: 60px 0 10px; user-select: none; }
+  .outro span { display: block; text-align: center; white-space: nowrap; font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: .82; font-size: clamp(5rem, 17.5vw, 16rem); color: transparent; -webkit-text-stroke: 1.5px rgba(255,159,28,.32); transition: color .6s ease; }
+  .outro span:hover { color: rgba(255,159,28,.14); }
 
   footer { border-top: 1px solid var(--line); padding: 36px 0; }
   footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
-  footer .logo { font-family: 'Anton', sans-serif; font-size: 20px; }
+  footer .logo { font-family: 'Anton', sans-serif; font-size: 18px; text-transform: uppercase; }
   footer .logo i { color: var(--am); font-style: normal; }
   footer .links a { color: var(--faint); text-decoration: none; font-size: 13.5px; margin-left: 22px; }
   footer .links a:hover { color: var(--am); }
@@ -296,343 +387,824 @@
 </style>
 </head>
 <body class="board">
-
-<nav>
-  <a class="logo" href="#hero">CLS<i>.</i></a>
-  <div class="links">
-    <a href="#system">System</a>
-    <a href="#jarvis">Jarvis</a>
-    <a href="#rechner">Rechner</a>
-    <a href="#mario">Wer ich bin</a>
-    <a href="#preise">Preise</a>
+<div id="loader"><div class="ld"><span class="ldname">De Luca<i>.</i></span><span class="ldbar"><i></i></span></div></div>
+<div id="prog"></div>
+<div id="cur"></div><div id="curR"></div>
+<div id="egg" aria-hidden="true">
+  <div class="eggkeys">
+    <span class="key">CTRL</span><span class="plus">+</span>
+    <span class="key">L</span><span class="plus">+</span>
+    <span class="key dollar">$</span>
   </div>
-  <a class="cta" href="#preise">Zugang sichern</a>
+  <div class="eggline">Shortcut erkannt — Clone Looping System</div>
+</div>
+<div id="robo" aria-hidden="true">
+  <div class="rbubble" id="rbubble">SYSTEM BEREIT</div>
+  <div class="rhit" title="Klon v1.0 — klick mich"></div>
+</div>
+<a class="skip" href="#story">Zum Inhalt springen</a>
+
+<nav id="topnav">
+  <a class="logo" href="#hero">De Luca<i>.</i></a>
+  <div class="links">
+    <a href="#story">Story</a>
+    <a href="#erfolge">Erfolge</a>
+    <a href="#mission">Mission</a>
+    <a href="https://claude-erfolg.de" target="_blank" rel="noopener">CLS</a>
+  </div>
+  <a class="cta" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Community beitreten</a>
 </nav>
 
 <section id="hero">
-  <canvas id="swarmHero" width="840" height="840"></canvas>
-  <div class="keys" id="heroKeys">
-    <span class="key" data-k>CTRL</span><span class="plus">+</span>
-    <span class="key" data-k>L</span><span class="plus">+</span>
-    <span class="key dollar" data-k>$</span>
-  </div>
-  <h1 class="anton" id="heroH1">Der Shortcut, den dir <span class="am">keiner gezeigt hat.</span></h1>
-  <p class="sub">Dein KI-Klon baut Webseiten in Stunden. Du verkaufst sie an lokale Betriebe — <b>Einmalpreis oder monatlicher Retainer.</b> Kein Code. Kein Startkapital. Kein Guru.</p>
-  <div class="cta-row">
-    <a class="btn primary" href="#preise" id="pressBtn">CTRL + L + $ drücken</a>
-    <a class="btn ghost" href="#system">So funktioniert das System</a>
-  </div>
-  <div class="marquee"><div class="track">
-    <span>Handwerker<i>·</i></span><span>Restaurants<i>·</i></span><span>Coaches<i>·</i></span><span>Praxen<i>·</i></span><span>Studios<i>·</i></span><span>Bäckereien<i>·</i></span><span>Kanzleien<i>·</i></span><span>Fahrschulen<i>·</i></span>
-    <span>Handwerker<i>·</i></span><span>Restaurants<i>·</i></span><span>Coaches<i>·</i></span><span>Praxen<i>·</i></span><span>Studios<i>·</i></span><span>Bäckereien<i>·</i></span><span>Kanzleien<i>·</i></span><span>Fahrschulen<i>·</i></span>
-  </div></div>
-</section>
-
-<section id="luecke">
+  <div class="herodots"></div>
+  <div class="heroghost" aria-hidden="true">De Luca.</div>
+  <canvas id="swarmHero"></canvas>
+  <div class="horizon"></div>
   <div class="wrap">
-    <p id="scrub">Jeder Markt hat eine Lücke. Unsere: Tausende lokale Betriebe verlieren jeden Tag Kunden über veraltete Webseiten — und niemand liefert die Lösung in der Geschwindigkeit, in der KI das heute kann. <span class="hl">Genau da drückst du CTRL + L + $.</span></p>
-  </div>
-</section>
-
-<section id="system">
-  <div class="wrap">
-    <div class="kicker">Das Clone Looping System</div>
-    <h2 class="anton">Ein Loop. <span class="am">Fünf Schritte.</span> Jede Woche wiederholbar.</h2>
-    <p class="sub">Kein Theorie-Kurs. Ein Ablauf, den du am Tag 1 startest — und den dein KI-Klon Schritt für Schritt für dich übernimmt.</p>
-    <div class="bento">
-      <div class="cell a">
-        <div class="tag">Das System-Board</div>
-        <h3>So läuft der Loop</h3>
-        <div class="flow-v" style="position:relative">
-          <span class="forb"></span>
-          <div class="fnode"><span class="n">01</span><span class="t">Finden</span><span class="d">Betriebe mit alten Webseiten</span></div>
-          <div class="fnode"><span class="n">02</span><span class="t">Kontakt</span><span class="d">E-Mail + Anruf, persönlich</span></div>
-          <div class="fnode hot"><span class="n">03</span><span class="t">Jarvis baut</span><span class="d">fertige Seite in Stunden</span></div>
-          <div class="fnode"><span class="n">04</span><span class="t">Abschluss</span><span class="d">Demo zeigen, Preis nennen</span></div>
-          <div class="fnode"><span class="n">05</span><span class="t">Rechnung</span><span class="d">einmalig oder Retainer</span></div>
-        </div>
-      </div>
-      <div class="cell b">
-        <div class="tag">Ein Briefing statt Code</div>
-        <div class="term">
-          <div class="bar"><span><b>&#9679;</b> jarvis — briefing</span><span>build</span></div>
-          <pre>Baue eine komplette Webseite für <span class="v">[Betrieb]</span>.
-Ziel: Anrufe + Anfragen. Mobil zuerst.
-Fertig zum Hochladen.<span class="cursor"></span></pre>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="tag">Dein Aufwand</div>
-        <div class="big-num">0 <i>Code</i></div>
-        <p>Du schreibst Briefings und gehst ans Telefon. Mehr nicht.</p>
-      </div>
-      <div class="cell">
-        <div class="tag">Pro Kunde</div>
-        <div class="big-num">~2 <i>Std.</i></div>
-        <p>Aktive Arbeit pro Auftrag — den Rest macht das System.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="jarvis">
-  <div class="wrap split">
-    <div class="pinbox" id="pinbox">
-      <div class="kicker">Jarvis Beta</div>
-      <h2 class="anton">Dein Klon. <span class="am">Nicht dein Kurs.</span></h2>
-      <p class="sub" style="margin-bottom:30px">Du bekommst keinen Video-Ordner. Du bekommst <b>mein komplettes Setup</b> — den KI-Klon, der bei mir jeden Tag Leads findet, Outreach schreibt und Webseiten baut. Fertig zum Übernehmen, gebaut zum Ausbauen.</p>
-      <a class="btn primary" href="#preise">Jarvis übernehmen</a>
-    </div>
-    <div class="stack">
-      <div class="app">
-        <div class="abar"><span><span class="dot"></span>JARVIS — v0.9</span><span class="beta">BETA</span></div>
-        <div class="abody">
-          <div class="mods">
-            <span class="scan"></span>
-            <div class="m"><span class="led">&#9679;</span>Webseiten-Builder</div>
-            <div class="m"><span class="led">&#9679;</span>Lead-Finder</div>
-            <div class="m"><span class="led">&#9679;</span>Outreach</div>
-            <div class="m off"><span class="led">&#9675;</span>Telefon-Assistent<em>BALD</em></div>
-            <div class="m off"><span class="led">&#9675;</span>Rechnungen<em>BALD</em></div>
-          </div>
-          <div class="chat">
-            <div class="msg user">Bau die Seite für Bäckerei Sommer aus Köln. Notizen hängen an.</div>
-            <div class="msg jarvis"><span class="who">JARVIS</span>Verstanden. Struktur steht, Texte übernommen, mobil zuerst. <b>Fertig in ~40 Minuten.</b>
-              <div class="prog">building<span class="cursor" style="height:11px"></span><div class="track"><div class="fill"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modcard"><span class="st">AKTIV</span><div><h4>Webseiten-Builder</h4><p>Briefing rein, fertige One-Page-Seite raus — in 30 bis 60 Minuten, bereit zum Hochladen.</p></div></div>
-      <div class="modcard"><span class="st">AKTIV</span><div><h4>Lead-Finder</h4><p>Sortiert vor, wen du überhaupt anrufst — mit Begründung, warum jede Seite ihren Besitzer Kunden kostet.</p></div></div>
-      <div class="modcard"><span class="st">AKTIV</span><div><h4>Outreach</h4><p>Personalisierte E-Mails, die der Inhaber wirklich liest — plus Telefon-Leitfaden für den Abschluss.</p></div></div>
-      <div class="modcard"><span class="st soon">BALD</span><div><h4>Telefon-Assistent + Rechnungen</h4><p>Die Roadmap läuft. VIP-Mitglieder testen jedes neue Modul zuerst — und stimmen ab, was als Nächstes kommt.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="rechner">
-  <div class="wrap">
-    <div class="kicker">Die Rechnung</div>
-    <h2 class="anton">Rechne dir <span class="am">deine Lücke</span> aus.</h2>
-    <p class="sub">Zieh die Regler auf dein Tempo — realistisch, neben dem Job. Das ist keine Fantasie-Mathematik, sondern der Preisrahmen aus dem System.</p>
-    <div class="calc">
-      <div class="panel">
-        <div class="sl"><div class="row"><label>Webseiten pro Monat<small>1–2 ist realistisch neben dem Job</small></label><output id="o1">2</output></div><input type="range" id="s1" min="0" max="8" value="2" oninput="calc()"></div>
-        <div class="sl"><div class="row"><label>Einmalpreis pro Webseite<small>CLS-Rahmen: 400–1.500 &euro;</small></label><output id="o2">800 &euro;</output></div><input type="range" id="s2" min="300" max="1500" step="50" value="800" oninput="calc()"></div>
-        <div class="sl"><div class="row"><label>Retainer-Kunden<small>zahlen jeden Monat weiter</small></label><output id="o3">3</output></div><input type="range" id="s3" min="0" max="15" value="3" oninput="calc()"></div>
-        <div class="sl" style="margin-bottom:6px"><div class="row"><label>Retainer pro Kunde / Monat<small>Pflege, Updates, kleine &Auml;nderungen</small></label><output id="o4">150 &euro;</output></div><input type="range" id="s4" min="50" max="500" step="25" value="150" oninput="calc()"></div>
-      </div>
-      <div>
-        <div class="res-grid">
-          <div class="res main"><div class="l">Pro Monat</div><div class="v" id="rM">–</div></div>
-          <div class="res"><div class="l">Aufs Jahr</div><div class="v" id="rY">–</div></div>
-          <div class="res"><div class="l">Davon wiederkehrend</div><div class="v" id="rR">–</div></div>
-          <div class="res"><div class="l">Pro Woche</div><div class="v" id="rW">–</div></div>
-        </div>
-        <div class="goal" id="goal"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="story">
-  <div class="wrap">
-    <div class="kicker">Warum es CLS gibt</div>
-    <h2 class="anton">Vom Kinderzimmer mit Schulden <span class="am">zum eigenen System.</span></h2>
-    <div style="height:40px"></div>
-    <div class="scard"><span class="yr">DER ANFANG</span><div><h3>Das Eiscaf&eacute;</h3><p>Meine Eltern kamen aus S&uuml;damerika nach Deutschland — mein Vater mit kaum einem Wort Deutsch. Er baute aus dem Nichts ein Eiscaf&eacute; auf. Andere haben es aus Neid <b>in Tr&uuml;mmer gelegt.</b> Ab da: beide Eltern Vollzeit, Bau am Morgen, Kellnern am Abend.</p></div></div>
-    <div class="scard"><span class="yr">MIT 18</span><div><h3>4 Versuche. 4 mal nichts.</h3><p>Dropshipping, Trading, Memecoins, eigene Modemarke. Vier Businesses, vier Mal Monate Arbeit, vier Mal nichts. <b>F&uuml;nfstellige Schulden im Kinderzimmer</b> und jeden Tag der Gedanke: So kann&rsquo;s nicht weitergehen.</p></div></div>
-    <div class="scard"><span class="yr">DER MOMENT</span><div><h3>Claude baut in Minuten</h3><p>Ich sah, wie eine KI in Minuten eine Webseite baute, f&uuml;r die Agenturen f&uuml;nfstellig kassieren. Erster Gedanke: <b>Genau das brauchen tausende lokale Betriebe</b> — und keiner liefert es ihnen. Erste E-Mails raus. Der erste Auftrag kam. Dann der n&auml;chste.</p></div></div>
-    <div class="scard gold"><span class="yr">HEUTE</span><div><h3>Das Clone Looping System</h3><p>Das System ist replizierbar: Claude baut, du verkaufst, beide kassieren. CLS ist alles, womit ich angefangen habe — <b>als System zum Ausf&uuml;hren,</b> nicht als Kurs zum Konsumieren. Mein Vater ist &uuml;ber 60. Ich will ihm seine besten Jahre jetzt schenken. Deshalb baue ich das hier.</p></div></div>
-  </div>
-</section>
-
-<section id="mario">
-  <div class="wrap">
-    <div class="kicker">Wer baut das hier</div>
-    <h2 class="anton">Kein Guru. <span class="am">Ein Querdenker mit System.</span></h2>
     <div class="split">
+      <div>
+        <div class="tagline" id="tagline" data-text="SYSTEMBAUER · GRÜNDER · DACH">SYSTEMBAUER · GR&Uuml;NDER · DACH</div>
+        <h1 class="anton" id="heroH1"><span class="line"><span class="lin">Mario</span></span><span class="line am"><span class="lin">De Luca.</span></span></h1>
+        <p class="sub">Mit 18 sa&szlig; ich mit <b>f&uuml;nfstelligen Schulden</b> im Kinderzimmer. Mit 22: <b>f&uuml;nf Unternehmen gegr&uuml;ndet, die Firma in f&uuml;nf L&auml;ndern etabliert.</b> Meine KI-Klone arbeiten wie Mitarbeiter — Webseiten, To-dos, ganze Abl&auml;ufe — und <b>ich vermiete sie wie Autos.</b> Kein Lambo-Versprechen. Zahlen, Klone, Umsetzung.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#story">Meine Story</a>
+          <a class="btn ghost" href="https://claude-erfolg.de" target="_blank" rel="noopener">CLS entdecken &rarr;</a>
+        </div>
+      </div>
+      <div class="tiltwrap">
       <div class="hud">
-        <img class="real" src="assets/mario-hud.jpg" alt="Mario — ELEVATE Cover" onerror="this.remove()">
+        <img class="real" src="assets/mario-hud.jpg" alt="Mario De Luca" onerror="this.remove()">
         <span class="scanline"></span>
         <span class="ring"></span>
         <span class="mono-m">M<i>.</i></span>
         <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
         <div class="data">
-          <span>ID: <b>MARIO</b> &nbsp;&middot;&nbsp; ALTER: <b>22</b> &nbsp;&middot;&nbsp; BASE: <b>DACH</b></span>
-          <span>STATUS: <b>BUILDING</b> &nbsp;&middot;&nbsp; SYSTEM: <b>CLS v1.0</b></span>
+          <span>ID: <b>MARIO DE LUCA</b> &nbsp;&middot;&nbsp; ALTER: <b>22</b></span>
+          <span>STATUS: <b>BUILDING</b> &nbsp;&middot;&nbsp; AKTUELL: <b>CLS v1.0</b></span>
+          <span>ZEIT: <b id="hudTime">--:--:--</b> &nbsp;&middot;&nbsp; SIGNAL: <b>ONLINE</b></span>
         </div>
       </div>
-      <div>
-        <p class="bio">Auf die Frage, wer ich ohne das System bin, gibt es nur eine ehrliche Antwort:</p>
-        <div class="starkline" id="starkline">
-          <span class="sw">Querdenker.</span> <span class="sw">Closer.</span> <span class="sw">Systembauer.</span> <span class="sw am">Sohn.</span>
-        </div>
-        <p class="bio">Mit 18 sa&szlig; ich mit <b>f&uuml;nfstelligen Schulden</b> im Kinderzimmer. Heute baue ich Vertriebssysteme, die skalieren — f&uuml;r meine eigenen Marken und f&uuml;r Unternehmen, die mich daf&uuml;r holen. <b>Kein Lambo-Versprechen.</b> Zahlen, Systeme, Umsetzung. Und ein Vater &uuml;ber 60, dem ich seine besten Jahre jetzt schenken will.</p>
-        <div class="stats">
-          <div class="stat hot"><div class="v"><i>&euro;</i><span class="cnt" data-to="3.5" data-dec="1">0</span> Mio<i>+</i></div><div class="l">Cash Collected — eingesammelt in Verk&auml;ufen &uuml;ber alle Systeme</div></div>
-          <div class="stat"><div class="v"><span class="cnt" data-to="28">0</span></div><div class="l">Unternehmen skaliert — vom Setter-Team bis zum kompletten Vertriebs-OS</div></div>
-          <div class="stat"><div class="v"><span class="cnt" data-to="22">0</span></div><div class="l">Jahre alt — angefangen wurde trotzdem</div></div>
-          <div class="stat"><div class="v"><span class="cnt" data-to="4">0</span> <i>Fails</i></div><div class="l">Dropshipping, Trading, Memecoins, Modemarke — das Lehrgeld hinter CLS</div></div>
-        </div>
       </div>
     </div>
+    <div class="herostats">
+      <div class="stat hot spot"><div class="v"><i>&euro;</i><span class="cnt" data-to="3.5" data-dec="1">0</span> Mio<i>+</i></div><div class="l">geflossen durch Klone &amp; Systeme, die ich gebaut habe</div></div>
+      <div class="stat spot"><div class="v"><span class="cnt" data-to="5">0</span></div><div class="l">Unternehmen gegr&uuml;ndet — mit 22</div></div>
+      <div class="stat spot"><div class="v"><span class="cnt" data-to="5">0</span> <i>L&auml;nder</i></div><div class="l">in denen die Firma etabliert ist</div></div>
+      <div class="stat spot"><div class="v"><span class="cnt" data-to="28">0</span></div><div class="l">Unternehmen, in denen meine Klone &amp; Systeme arbeiten</div></div>
+    </div>
   </div>
+  <div class="scue"><span>Die Reise beginnt</span><i></i></div>
 </section>
 
-<section id="preise">
+<div class="marquee"><div class="track">
+  <span>Querdenker<i>&middot;</i></span><span>Gr&uuml;nder<i>&middot;</i></span><span>Systembauer<i>&middot;</i></span><span>5 Unternehmen<i>&middot;</i></span><span>5 L&auml;nder<i>&middot;</i></span><span>Sohn<i>&middot;</i></span><span>Kein Guru<i>&middot;</i></span><span>Output statt Theorie<i>&middot;</i></span>
+  <span>Querdenker<i>&middot;</i></span><span>Gr&uuml;nder<i>&middot;</i></span><span>Systembauer<i>&middot;</i></span><span>5 Unternehmen<i>&middot;</i></span><span>5 L&auml;nder<i>&middot;</i></span><span>Sohn<i>&middot;</i></span><span>Kein Guru<i>&middot;</i></span><span>Output statt Theorie<i>&middot;</i></span>
+</div></div>
+
+<div id="rail" aria-hidden="true">
+  <a href="#hero"><span class="lbl">Start</span></a>
+  <a href="#story"><span class="lbl">Die Reise</span></a>
+  <a href="#erfolge"><span class="lbl">Erfolge</span></a>
+  <a href="#welt"><span class="lbl">Expansion</span></a>
+  <a href="#mission"><span class="lbl">Mission</span></a>
+  <a href="#final"><span class="lbl">Dein Zug</span></a>
+</div>
+
+<section id="story">
   <div class="wrap">
-    <div class="kicker">Zugang</div>
-    <h2 class="anton">W&auml;hle deinen <span class="am">Vorsprung.</span></h2>
-    <div class="scarcity"><span><b>50–100 Pl&auml;tze.</b> Dann schlie&szlig;t der Zugang — sehr wahrscheinlich f&uuml;r Monate.</span><span class="bar"><i></i></span><span>Wer jetzt keinen Vorsprung hat, verpasst ihn.</span></div>
-    <div class="tiers">
-      <div class="tier">
-        <div class="name">Standard</div>
-        <div class="pos">Der Zugang — das komplette System zum Selbst-Ausf&uuml;hren.</div>
-        <div class="price">$98<small> / Monat</small></div>
-        <div class="per">BASE ACCESS</div>
-        <ul>
-          <li><b>Kompletter Classroom</b> — A–Z-Training von Lead bis Lieferung</li>
-          <li>Prompt-Bibliothek mit allen Copy-Paste-Prompts</li>
-          <li>Briefing-Templates — Webseiten in 30–60 Minuten</li>
-          <li>Outreach-Pakete, Verkaufs-Skripte + Einwand-Trainer</li>
-          <li>Branchen-Blueprints &amp; Preisrahmen</li>
-          <li>Community — nicht allein bauen</li>
-        </ul>
-        <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Platz sichern</a>
-      </div>
-      <div class="tier featured">
-        <span class="flag">MEISTGEW&Auml;HLT</span>
-        <div class="name">Premium</div>
-        <div class="pos">Der Klon — Jarvis fertig &uuml;bernehmen statt selbst bauen.</div>
-        <div class="price">$159<small> / Monat</small></div>
-        <div class="per">JARVIS DIREKTZUGANG</div>
-        <ul>
-          <li><b>Alles aus Standard</b></li>
-          <li><b>Jarvis Beta Direktzugang</b> — der Klon als fertiges Setup</li>
-          <li>Webseiten-Builder, Lead-Finder &amp; Outreach sofort einsatzbereit</li>
-          <li>Automatische Jarvis-Updates — jede Verbesserung inklusive</li>
-          <li>Feedback auf deine Seiten &amp; deinen Outreach</li>
-          <li>Live-Q&amp;A-Calls + Priorit&auml;ts-Support</li>
-        </ul>
-        <a class="btn primary" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Jarvis &uuml;bernehmen</a>
-      </div>
-      <div class="tier">
-        <div class="name">VIP</div>
-        <div class="pos">Der Vorsprung — alles zuerst, direkter Draht, mitentscheiden.</div>
-        <div class="price">$249<small> / Monat</small></div>
-        <div class="per">ODER $1.500 / JAHR</div>
-        <ul>
-          <li><b>Alles aus Premium</b></li>
-          <li><b>Coming-Soon-Betas zuerst</b> — Telefon-Assistent, Rechnungs- &amp; Outreach-Agent</li>
-          <li>Early Access auf die DEPLOY-Roadmap</li>
-          <li>Roadmap-Stimme — du entscheidest mit, was als N&auml;chstes kommt</li>
-          <li>Enge Betreuung, bis die Rechnungen laufen</li>
-          <li>VIP-Channel + Platz-Garantie beim Zugangs-Stopp</li>
-        </ul>
-        <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">VIP werden</a>
-      </div>
+    <div class="kicker"><span class="num">Kapitel 01</span> Die Reise</div>
+    <h2 class="anton">Vom Kinderzimmer mit Schulden <span class="am">zur Firma in 5 L&auml;ndern.</span></h2>
+    <p class="sub">Sechs Stationen. Keine Legende — <b>ein Protokoll.</b> Scroll weiter, die Strecke l&auml;uft quer.</p>
+  </div>
+  <div class="jwrap">
+    <div class="jtrack" id="jtrack">
+      <div class="jcard"><span class="ghost">01</span><div><span class="yr">DER ANFANG</span><h3>Das Eiscaf&eacute;</h3><p>Meine Eltern kamen aus S&uuml;damerika nach Deutschland — mein Vater mit kaum einem Wort Deutsch. Er baute aus dem Nichts ein Eiscaf&eacute; auf. Andere haben es aus Neid <b>in Tr&uuml;mmer gelegt.</b> Ab da: beide Eltern Vollzeit. Da wusste ich: <b>Es ist meine Bestimmung, das Geld zu bringen.</b></p></div></div>
+      <div class="jcard"><span class="ghost">02</span><div><span class="yr">MIT 18</span><h3>4 Versuche. 4 mal nichts.</h3><p>Dropshipping, Trading, Memecoins, eigene Modemarke. Vier Businesses, vier Mal Monate Arbeit, vier Mal nichts. <b>F&uuml;nfstellige Schulden im Kinderzimmer</b> und jeden Tag der Gedanke: So kann&rsquo;s nicht weitergehen.</p></div></div>
+      <div class="jcard"><span class="ghost">03</span><div><span class="yr">DIE WENDE</span><h3>Systeme statt Taktiken</h3><p>Kurz vor dem Aufgeben kam die Erkenntnis: Mir fehlte kein Flei&szlig; und kein n&auml;chster Trend — <b>mir fehlte ein System, das ohne Gl&uuml;ck funktioniert.</b> Ich h&ouml;rte auf, Hypes zu jagen, und fing an, Abl&auml;ufe zu bauen, die man wiederholen kann.</p></div></div>
+      <div class="jcard"><span class="ghost">04</span><div><span class="yr">DER MOMENT</span><h3>Der erste Klon</h3><p>Ich sah, wie eine KI in Minuten eine Webseite baute, f&uuml;r die Agenturen f&uuml;nfstellig kassieren. Mir wurde klar: <b>Das ist kein Werkzeug. Das ist ein Mitarbeiter.</b> Ich baute meinen ersten Klon — und bot ihn Betrieben an. Der erste Auftrag kam. Dann der n&auml;chste.</p></div></div>
+      <div class="jcard"><span class="ghost">05</span><div><span class="yr">EXPANSION</span><h3>5 Unternehmen. 5 L&auml;nder.</h3><p>Aus einem Klon wurden Systeme, aus Systemen Firmen: <b>f&uuml;nf Unternehmen gegr&uuml;ndet,</b> die Firma in <b>f&uuml;nf L&auml;ndern etabliert</b> — mit 22. Nicht durch Gl&uuml;ck, sondern weil derselbe Loop &uuml;berall funktioniert.</p></div></div>
+      <div class="jcard gold"><span class="ghost">06</span><div><span class="yr">HEUTE</span><h3>Klone, die ohne mich arbeiten</h3><p>Meine Klone und Systeme arbeiten in <b>28 Unternehmen</b> — &uuml;ber <b>3,5 Mio &euro;</b> sind durch sie geflossen. <b>Ich vermiete sie wie Autos.</b> Mein Vater ist &uuml;ber 60 und arbeitet immer noch. <b>Ich baue, damit er aufh&ouml;ren kann.</b></p></div></div>
     </div>
-    <p class="guarantee"><b>30-Tage-Umsetzungsgarantie:</b> Du setzt die Schritte um — wenn danach nichts funktioniert, setzt mein Team dein Setup kostenlos mit dir auf. Umsetzung erforderlich. Wir helfen Machern, nicht Konsumenten.</p>
+    <div class="jprog"><i id="jbar"></i></div>
   </div>
 </section>
 
-<section id="faq">
-  <div class="wrap" style="max-width:860px">
-    <div class="kicker">Bevor du fragst</div>
-    <h2 class="anton">Die &uuml;blichen <span class="am">Fragen.</span></h2>
-    <div style="height:30px"></div>
-    <details><summary>Muss ich programmieren k&ouml;nnen?</summary><div class="a"><b>Nein.</b> Claude schreibt den Code. Du schreibst Briefings — und daf&uuml;r bekommst du die Vorlagen. Wenn du einen Laptop und ein Telefon bedienen kannst, reicht das.</div></details>
-    <details><summary>Ist das legal? DSGVO?</summary><div class="a"><b>Ja.</b> Du baust und verkaufst Webseiten an echte Unternehmen. Echte Rechnungen, keine Grauzone, keine Datenschutz-Tricks.</div></details>
-    <details><summary>Wie viel Zeit brauche ich?</summary><div class="a"><b>1–2 Stunden am Tag</b> reichen f&uuml;r den Start. Pro Kunde liegt deine aktive Arbeit bei etwa 2 Stunden — den Rest &uuml;bernimmt dein Klon.</div></details>
-    <details><summary>Brauche ich teure Software oder Startkapital?</summary><div class="a"><b>Nein.</b> Laptop, Internet, Claude-Zugang. Kein Lager, kein Ad-Budget, keine Agentur-Kosten.</div></details>
-    <details><summary>Wann sehe ich erste Einnahmen?</summary><div class="a">Erste Termine oft <b>in den ersten 30 Tagen,</b> abgeschlossene Auftr&auml;ge meist in 30–60 Tagen — abh&auml;ngig davon, wie diszipliniert du den Outreach f&auml;hrst. Kein Magic Button. Ein System.</div></details>
-    <details><summary>Was, wenn ich h&auml;ngen bleibe?</summary><div class="a">Daf&uuml;r ist die Community da — plus Feedback und Live-Calls ab Premium. Und wenn du nach 30 Tagen Umsetzung nicht lieferst, <b>bauen wir dein Setup kostenlos mit dir auf.</b></div></details>
+<section id="erfolge">
+  <div class="secphoto" style="background-image:url('assets/m4-sunset.jpg')"></div>
+  <div class="aurora" style="top:-80px; left:-160px;"></div>
+  <div class="wrap">
+    <div class="kicker"><span class="num">Kapitel 02</span> Marios Erfolge</div>
+    <h2 class="anton">Was bisher <span class="am">gebaut wurde.</span></h2>
+    <p class="sub">&raquo;Ich vermiete meine KI-Klone wie Autos — <b>und werde von Unternehmen mit tausenden Euro bezahlt.</b>&laquo; Das ist keine Theorie, das ist meine Bilanz.</p>
+    <div class="wins">
+      <div class="win spot">
+        <div class="tag">Bilanz</div>
+        <div class="big-num"><i>&euro;</i>3,5 Mio<i>+</i></div>
+        <h3>Durch Klone &amp; Systeme geflossen</h3>
+        <p>&Uuml;ber alle Projekte und Marken hinweg — Geld, das durch Klone und Systeme bewegt wurde, die ich gebaut habe.</p>
+      </div>
+      <div class="win spot">
+        <div class="tag">Vermietung</div>
+        <div class="big-num">28 <i>Firmen</i></div>
+        <h3>Meine Klone im Einsatz</h3>
+        <p>Webseiten bauen, To-dos abarbeiten, Anfragen beantworten — meine Klone sind in Unternehmen angestellt, die daf&uuml;r monatlich zahlen.</p>
+      </div>
+      <div class="win spot">
+        <div class="tag">Software</div>
+        <div class="big-num">Jarvis <i>Beta</i></div>
+        <h3>Der Klon selbst</h3>
+        <p>Mein eigener KI-Klon: baut Webseiten, findet Leads, schreibt Outreach und arbeitet To-dos ab. Der Mitarbeiter hinter allem, was ich liefere.</p>
+      </div>
+      <div class="win cls spot">
+        <span class="flag">FLAGGSCHIFF</span>
+        <div>
+          <div class="tag">Clone Looping System</div>
+          <h3>CLS — mein System <span style="color:var(--am)">f&uuml;r jeden zug&auml;nglich.</span></h3>
+          <p>Alles, was ich gelernt habe, in einem wiederholbaren Loop: Du baust deinen eigenen KI-Klon auf und vermietest ihn an lokale Betriebe — <b style="color:var(--ink)">wie ein Auto. Ohne Code, ohne Startkapital.</b> Kein Kurs zum Konsumieren, ein Ablauf zum Ausf&uuml;hren. Mit Community, Feedback und Jarvis-Zugang.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://claude-erfolg.de" target="_blank" rel="noopener">Zum System &rarr;</a>
+            <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Community auf Skool</a>
+          </div>
+          <div style="height:28px"></div>
+          <div class="keys" id="clsKeys">
+            <span class="key" data-k>CTRL</span><span class="plus">+</span>
+            <span class="key" data-k>L</span><span class="plus">+</span>
+            <span class="key dollar" data-k>$</span>
+          </div>
+        </div>
+        <div class="clsloop">
+          <span class="lorb"></span>
+          <div class="fnode"><span class="n">01</span><span class="t">Finden</span><span class="d">Betriebe, denen digitale Arbeit fehlt</span></div>
+          <div class="fnode"><span class="n">02</span><span class="t">Kontakt</span><span class="d">E-Mail + Anruf, Skripte inklusive</span></div>
+          <div class="fnode hot"><span class="n">03</span><span class="t">Klon liefert</span><span class="d">Arbeitsprobe in Stunden</span></div>
+          <div class="fnode"><span class="n">04</span><span class="t">Abschluss</span><span class="d">Demo zeigen, Preis nennen</span></div>
+          <div class="fnode"><span class="n">05</span><span class="t">Vermietung</span><span class="d">der Betrieb mietet deinen Klon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="welt">
+  <div class="aurora" style="bottom:-120px; right:-180px; animation-delay:-8s;"></div>
+  <div class="wrap">
+    <div class="kicker"><span class="num">Kapitel 03</span> Expansion</div>
+    <h2 class="anton">Eine Firma. <span class="am">F&uuml;nf L&auml;nder.</span></h2>
+    <p class="sub">Der Loop h&auml;ngt nicht an einem Markt, einer Sprache oder einem Standort. <b>Dasselbe System, f&uuml;nf Mal ausgerollt</b> — und jeder Punkt auf dieser Kugel ist ein Team, das damit arbeitet.</p>
+    <div class="globegrid">
+      <canvas id="globe" width="920" height="920"></canvas>
+      <div class="gstats">
+        <div class="stat hot spot"><div class="v"><span class="cnt" data-to="5">0</span> <i>L&auml;nder</i></div><div class="l">in denen die Firma etabliert ist</div></div>
+        <div class="stat spot"><div class="v"><span class="cnt" data-to="5">0</span></div><div class="l">Unternehmen gegr&uuml;ndet — mit 22</div></div>
+        <div class="stat spot"><div class="v">1 <i>System</i></div><div class="l">derselbe Loop hinter allem — Klon bauen, vermieten, wiederholen</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mission">
+  <div class="aurora" style="top:-60px; right:-140px; animation-delay:-5s;"></div>
+  <div class="wrap">
+    <div class="kicker"><span class="num">Kapitel 04</span> Die Mission</div>
+    <h2 class="anton">Warum ich das alles <span class="am">&ouml;ffentlich mache.</span></h2>
+    <div class="starkline" id="starkline">
+      <span class="sw">Querdenker.</span> <span class="sw">Gr&uuml;nder.</span> <span class="sw">Systembauer.</span> <span class="sw am">Sohn.</span>
+    </div>
+    <div class="missions">
+      <div class="mission spot"><span class="idx">/ 01</span><h3>Den KI-Goldrausch &ouml;ffnen</h3><p>Der KI-Vorsprung darf nicht bei Tech-Bros und Agenturen bleiben. Ich will, dass <b>Angestellte, Pfleger, B&uuml;rokr&auml;fte und Studenten</b> ihn f&uuml;r sich monetarisieren — bevor es alle tun.</p></div>
+      <div class="mission spot"><span class="idx">/ 02</span><h3>Output statt Theorie</h3><p>Keine Motivationsvideos, keine 80-Stunden-Kurse. <b>Du verkaufst, du lieferst, du wirst bezahlt.</b> Systeme schlagen Talent — und Umsetzung schl&auml;gt beides.</p></div>
+      <div class="mission spot"><span class="idx">/ 03</span><h3>Echte Kunden, echtes Geld</h3><p>Kein Affiliate-M&auml;rchen, kein passives Einkommen aus dem Nichts. <b>Echte Rechnungen an echte Unternehmen</b> — das ist die einzige Sorte Einkommen, die bleibt.</p></div>
+      <div class="mission spot"><span class="idx">/ 04</span><h3>Familie absichern</h3><p>Mein Vater hat sich aus dem Nichts ein Eiscaf&eacute; aufgebaut und wurde von Neidern zerst&ouml;rt. Er ist &uuml;ber 60 und arbeitet immer noch. <b>Ich baue, damit er aufh&ouml;ren kann</b> — und damit du nicht 10 Jahre suchst, wie ich fast.</p></div>
+    </div>
   </div>
 </section>
 
 <section id="final">
-  <h2 class="anton">Eine Webseite kann dein Leben ver&auml;ndern. <span class="am">Mehrere machen dich frei.</span></h2>
-  <div class="keys">
-    <span class="key" data-k>CTRL</span><span class="plus">+</span>
-    <span class="key" data-k>L</span><span class="plus">+</span>
-    <span class="key dollar" data-k>$</span>
+  <div class="secphoto" style="background-image:url('assets/mario-drive.jpg')"></div>
+  <div class="chap">Letztes Kapitel — deins</div>
+  <h2 class="anton">Willst du zuschauen — <span class="am">oder mitbauen?</span></h2>
+  <p class="sub" style="max-width:620px">Das komplette System, die Community und Jarvis findest du im Clone Looping System. Alles offen, alles nachlesbar — entscheide selbst.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="https://claude-erfolg.de" target="_blank" rel="noopener">CLS ansehen &rarr;</a>
+    <a class="btn ghost" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Community auf Skool</a>
   </div>
-  <a class="btn primary" href="#preise">Zugang zur CLS Community sichern</a>
-  <div class="last">Lass uns bauen. — Mario</div>
+  <div class="last">Lass uns bauen. — Mario De Luca</div>
 </section>
+
+<div class="outro" aria-hidden="true"><span>De Luca.</span></div>
 
 <footer>
   <div class="wrap">
-    <span class="logo">CLS<i>.</i></span>
-    <span class="links"><a href="#">Impressum</a><a href="#">Datenschutz</a></span>
-    <span class="claim">&copy; 2026 CLS — Clone Looping System &nbsp;&middot;&nbsp; KI baut. Du verkaufst. Beide kassieren.</span>
+    <span class="logo">Mario De Luca<i>.</i></span>
+    <span class="links">
+      <a href="https://claude-erfolg.de" target="_blank" rel="noopener">CLS</a>
+      <a href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Skool</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </span>
+    <span class="claim">&copy; 2026 Mario De Luca &nbsp;&middot;&nbsp; Zahlen. Klone. Umsetzung. &nbsp;&middot;&nbsp; // Tipp: schreib &raquo;cls&laquo;</span>
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script>
-  // Jarvis-Schwarm (Canvas, wie Deck)
+  // Hero: Konstellations-Netz (vollflächig, reagiert auf die Maus)
   (function () {
     var canvas = document.getElementById('swarmHero');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var W = canvas.width, H = canvas.height, N = 90, R = Math.min(W, H) * 0.32;
-    var pts = [];
-    for (var i = 0; i < N; i++) {
-      var y = 1 - (i / (N - 1)) * 2;
-      var rad = Math.sqrt(Math.max(0, 1 - y * y));
-      var th = i * 2.399963;
-      pts.push({ x: Math.cos(th) * rad, y: y, z: Math.sin(th) * rad, ph: Math.random() * 6.28, sp: .5 + Math.random(), sz: (2 + Math.random() * 3) });
+    var W, H, pts = [], LINK = 140, mx = -9999, my = -9999;
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function resize() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+      var N = Math.round(Math.min(190, (W * H) / 10500));
+      pts = [];
+      for (var i = 0; i < N; i++) {
+        pts.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+          s: 1 + Math.random() * 2.1, tw: Math.random() * 6.28
+        });
+      }
     }
+    resize();
+    addEventListener('resize', resize, { passive: true });
+    canvas.parentElement.addEventListener('mousemove', function (e) {
+      var r = canvas.getBoundingClientRect();
+      mx = e.clientX - r.left; my = e.clientY - r.top;
+    }, { passive: true });
+    canvas.parentElement.addEventListener('mouseleave', function () { mx = my = -9999; });
     function frame(now) {
       var t = now * 0.001;
       ctx.clearRect(0, 0, W, H);
-      var rotY = t * .3, rotX = Math.sin(t * .18) * .4, br = 1 + Math.sin(t * .7) * .06;
-      var cx = W / 2, cy = H / 2;
-      var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * .8);
-      g.addColorStop(0, 'rgba(255,170,45,.28)'); g.addColorStop(1, 'rgba(255,159,28,0)');
-      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
       for (var i = 0; i < pts.length; i++) {
-        var p = pts[i], j = 1 + Math.sin(t * p.sp + p.ph) * .13;
-        var x1 = p.x * Math.cos(rotY) + p.z * Math.sin(rotY);
-        var z1 = -p.x * Math.sin(rotY) + p.z * Math.cos(rotY);
-        var y1 = p.y * Math.cos(rotX) - z1 * Math.sin(rotX);
-        var z2 = p.y * Math.sin(rotX) + z1 * Math.cos(rotX);
-        var r = R * br * j, px = cx + x1 * r, py = cy + y1 * r;
-        var d = (z2 + 1) / 2, a = .35 + d * .6, s = p.sz * (.55 + d * .85);
-        var col = d > .55 ? '255,201,96' : '255,159,28';
-        ctx.beginPath(); ctx.fillStyle = 'rgba(' + col + ',' + (a * .2).toFixed(3) + ')'; ctx.arc(px, py, s * 2.6, 0, 6.2832); ctx.fill();
-        ctx.beginPath(); ctx.fillStyle = 'rgba(' + col + ',' + a.toFixed(3) + ')'; ctx.arc(px, py, s, 0, 6.2832); ctx.fill();
+        var p = pts[i];
+        if (!still) {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < -20) p.x = W + 20; if (p.x > W + 20) p.x = -20;
+          if (p.y < -20) p.y = H + 20; if (p.y > H + 20) p.y = -20;
+        }
+        for (var k = i + 1; k < pts.length; k++) {
+          var q = pts[k], dx = p.x - q.x, dy = p.y - q.y, d2 = dx * dx + dy * dy;
+          if (d2 < LINK * LINK) {
+            var a = (1 - Math.sqrt(d2) / LINK) * .22;
+            ctx.strokeStyle = 'rgba(255,159,28,' + a.toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
+          }
+        }
+        var mdx = p.x - mx, mdy = p.y - my, md2 = mdx * mdx + mdy * mdy;
+        if (md2 < 180 * 180) {
+          var ma = (1 - Math.sqrt(md2) / 180) * .5;
+          ctx.strokeStyle = 'rgba(255,201,96,' + ma.toFixed(3) + ')';
+          ctx.lineWidth = 1.2;
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mx, my); ctx.stroke();
+        }
+        var tw = .45 + Math.sin(t * 1.4 + p.tw) * .3;
+        ctx.beginPath(); ctx.fillStyle = 'rgba(255,170,45,' + (tw * .16).toFixed(3) + ')'; ctx.arc(p.x, p.y, p.s * 3, 0, 6.2832); ctx.fill();
+        ctx.beginPath(); ctx.fillStyle = 'rgba(255,190,80,' + tw.toFixed(3) + ')'; ctx.arc(p.x, p.y, p.s, 0, 6.2832); ctx.fill();
       }
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
   })();
 
-  // Rechner
-  var fmt = new Intl.NumberFormat('de-DE');
-  function calc() {
-    var n = +document.getElementById('s1').value, p = +document.getElementById('s2').value,
-        rk = +document.getElementById('s3').value, rp = +document.getElementById('s4').value;
-    document.getElementById('o1').textContent = n;
-    document.getElementById('o2').textContent = fmt.format(p) + ' €';
-    document.getElementById('o3').textContent = rk;
-    document.getElementById('o4').textContent = fmt.format(rp) + ' €';
-    var once = n * p, rec = rk * rp, m = once + rec;
-    document.getElementById('rM').textContent = fmt.format(m) + ' €';
-    document.getElementById('rY').textContent = fmt.format(m * 12) + ' €';
-    document.getElementById('rR').textContent = fmt.format(rec) + ' €';
-    document.getElementById('rW').textContent = fmt.format(Math.round(m / 4.33)) + ' €';
-    var g = document.getElementById('goal');
-    if (m === 0) g.innerHTML = 'Zieh die Regler nach rechts und schau, was passiert.';
-    else if (m < 500) g.innerHTML = 'Du bist bei <b>' + fmt.format(m) + ' €</b>. Das 500-€-Ziel: eine Webseite mehr pro Monat — oder 2–3 Retainer-Kunden.';
-    else if (m < 1500) g.innerHTML = '<b>' + fmt.format(m) + ' € im Monat</b> — das ist das 500–1.500-€-Fenster aus dem CLS-Versprechen. Ab hier entscheidet dein Tempo.';
-    else g.innerHTML = '<b>' + fmt.format(m) + ' € monatlich</b> — auf diesem Niveau ist CLS kein Nebeneinkommen mehr. Jetzt zählt Skalierung: Empfehlungen einsammeln, Retainer stapeln.';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(pointer: fine)').matches;
+
+  // Fallback: Loader nie länger als 3s (falls GSAP/CDN nicht lädt)
+  setTimeout(function () {
+    var l = document.getElementById('loader');
+    if (l) { l.style.transition = 'opacity .4s'; l.style.opacity = '0'; setTimeout(function () { l.remove(); }, 450); }
+  }, 3000);
+
+  // Lenis Smooth Scroll (Trägheit) — koppelt an GSAP-Ticker
+  var lenis = null;
+  if (window.Lenis && !reduceMotion) {
+    document.documentElement.style.scrollBehavior = 'auto';
+    lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1 });
+    if (window.gsap) {
+      lenis.on('scroll', function () { if (window.ScrollTrigger) ScrollTrigger.update(); });
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(500, 33);
+    } else {
+      (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = a.getAttribute('href');
+        if (id.length < 2) return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: -10, duration: 1.4 });
+      });
+    });
   }
-  calc();
+
+  // Custom Cursor: Punkt direkt, Ring mit Verzögerung
+  if (finePointer && !reduceMotion) {
+    var cur = document.getElementById('cur'), curR = document.getElementById('curR');
+    var mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
+    addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      cur.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
+    }, { passive: true });
+    (function ringLoop() {
+      rx += (mx - rx) * .16; ry += (my - ry) * .16;
+      curR.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
+      requestAnimationFrame(ringLoop);
+    })();
+    document.addEventListener('mouseover', function (e) {
+      curR.classList.toggle('grow', !!e.target.closest('a, button, .btn, .key, summary, input'));
+    });
+    document.addEventListener('mouseleave', function () { cur.style.opacity = 0; curR.style.opacity = 0; });
+    document.addEventListener('mouseenter', function () { cur.style.opacity = 1; curR.style.opacity = 1; });
+  }
+
+  // Magnetic Buttons
+  if (finePointer && !reduceMotion && window.gsap) {
+    document.querySelectorAll('.btn, nav .cta').forEach(function (el) {
+      el.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect();
+        gsap.to(el, { x: (e.clientX - r.left - r.width / 2) * .22, y: (e.clientY - r.top - r.height / 2) * .3, duration: .4, ease: 'power2.out' });
+      });
+      el.addEventListener('mouseleave', function () {
+        gsap.to(el, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1, .45)' });
+      });
+    });
+  }
+
+  // Scroll-Progress
+  (function () {
+    var prog = document.getElementById('prog');
+    function upd() {
+      var max = document.documentElement.scrollHeight - innerHeight;
+      prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
+    }
+    addEventListener('scroll', upd, { passive: true });
+    upd();
+  })();
+
+  // Tagline Decoder-Effekt
+  function decode(el, delay) {
+    var final = el.dataset.text || el.textContent;
+    var glyphs = '█▓▒░#</>+·';
+    var frame = 0, total = Math.max(26, final.length * 2);
+    setTimeout(function tick() {
+      frame++;
+      var out = '';
+      for (var i = 0; i < final.length; i++) {
+        var reveal = (frame / total) * final.length * 1.4;
+        out += i < reveal ? final[i] : (final[i] === ' ' ? ' ' : glyphs[(Math.random() * glyphs.length) | 0]);
+      }
+      el.textContent = out;
+      if (frame < total) setTimeout(tick, 28);
+      else el.textContent = final;
+    }, delay || 0);
+  }
+
+  // HUD 3D-Tilt
+  if (finePointer && !reduceMotion && window.gsap) {
+    var hud = document.querySelector('#hero .hud');
+    var heroSec = document.getElementById('hero');
+    if (hud && heroSec) {
+      heroSec.addEventListener('mousemove', function (e) {
+        var r = hud.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+        var dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+        gsap.to(hud, { rotationY: dx * 7, rotationX: -dy * 7, transformPerspective: 900, duration: .6, ease: 'power2.out' });
+      });
+      heroSec.addEventListener('mouseleave', function () {
+        gsap.to(hud, { rotationY: 0, rotationX: 0, duration: .9, ease: 'elastic.out(1, .5)' });
+      });
+    }
+  }
+
+  // Globus: Partikel-Kugel mit 5 Länder-Beacons
+  (function () {
+    var canvas = document.getElementById('globe');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height, N = 260, R = Math.min(W, H) * 0.36;
+    var BEACONS = [24, 78, 131, 182, 236];
+    var pts = [];
+    for (var i = 0; i < N; i++) {
+      var y = 1 - (i / (N - 1)) * 2;
+      var rad = Math.sqrt(Math.max(0, 1 - y * y));
+      var th = i * 2.399963;
+      pts.push({ x: Math.cos(th) * rad, y: y, z: Math.sin(th) * rad, beacon: BEACONS.indexOf(i) });
+    }
+    function frame(now) {
+      var t = now * 0.001;
+      ctx.clearRect(0, 0, W, H);
+      var rotY = t * .16, rotX = .35;
+      var cx = W / 2, cy = H / 2;
+      var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
+      g.addColorStop(0, 'rgba(255,170,45,.1)'); g.addColorStop(1, 'rgba(255,159,28,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,159,28,.14)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.stroke();
+      var drawn = [];
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        var x1 = p.x * Math.cos(rotY) + p.z * Math.sin(rotY);
+        var z1 = -p.x * Math.sin(rotY) + p.z * Math.cos(rotY);
+        var y1 = p.y * Math.cos(rotX) - z1 * Math.sin(rotX);
+        var z2 = p.y * Math.sin(rotX) + z1 * Math.cos(rotX);
+        var px = cx + x1 * R, py = cy + y1 * R;
+        var d = (z2 + 1) / 2, a = .12 + d * .55, s = 1.2 + d * 1.6;
+        ctx.beginPath(); ctx.fillStyle = 'rgba(255,159,28,' + a.toFixed(3) + ')'; ctx.arc(px, py, s, 0, 6.2832); ctx.fill();
+        if (p.beacon > -1 && d > .35) drawn.push({ px: px, py: py, d: d, n: p.beacon + 1 });
+      }
+      drawn.forEach(function (b) {
+        var pulse = (t * .9 + b.n * .7) % 1;
+        ctx.beginPath(); ctx.strokeStyle = 'rgba(255,159,28,' + ((1 - pulse) * .7 * b.d).toFixed(3) + ')';
+        ctx.lineWidth = 1.5; ctx.arc(b.px, b.py, 6 + pulse * 26, 0, 6.2832); ctx.stroke();
+        ctx.beginPath(); ctx.fillStyle = 'rgba(255,201,96,' + (.5 + b.d * .5).toFixed(3) + ')'; ctx.arc(b.px, b.py, 4, 0, 6.2832); ctx.fill();
+        ctx.font = '500 15px "JetBrains Mono", monospace'; ctx.fillStyle = 'rgba(255,159,28,' + (b.d * .95).toFixed(3) + ')';
+        ctx.fillText('0' + b.n, b.px + 12, b.py - 10);
+      });
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  // Journey-Rail: aktive Station
+  (function () {
+    var rail = document.getElementById('rail');
+    if (!rail) return;
+    var links = Array.from(rail.querySelectorAll('a'));
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && map[en.target.id]) {
+          links.forEach(function (a) { a.classList.remove('on'); });
+          map[en.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-38% 0px -52% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+  })();
+
+  // HUD Live-Uhr
+  (function () {
+    var t = document.getElementById('hudTime');
+    if (!t) return;
+    function tick() {
+      var d = new Date();
+      t.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()].map(function (n) { return String(n).padStart(2, '0'); }).join(':');
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+
+  // Klick-Funken
+  if (finePointer && !reduceMotion && window.gsap) {
+    document.addEventListener('click', function (e) {
+      for (var i = 0; i < 12; i++) {
+        var s = document.createElement('span');
+        s.className = 'spark';
+        s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+        if (i % 4 === 0) s.style.background = '#f2efe8';
+        document.body.appendChild(s);
+        var ang = Math.random() * Math.PI * 2, dist = 30 + Math.random() * 70;
+        gsap.to(s, {
+          x: Math.cos(ang) * dist, y: Math.sin(ang) * dist - 18,
+          scale: Math.random() * .6, opacity: 0, duration: .55 + Math.random() * .4, ease: 'power2.out',
+          onComplete: function (el) { el.remove(); }, onCompleteParams: [s]
+        });
+      }
+    });
+  }
+
+  // Nav-Links: Decode beim Hover
+  (function () {
+    var glyphs = '█▓▒░#</>';
+    document.querySelectorAll('nav .links a').forEach(function (a) {
+      var orig = a.textContent, busy = false;
+      a.addEventListener('mouseenter', function () {
+        if (busy || reduceMotion) return;
+        busy = true;
+        var frame = 0, total = 10;
+        (function tick() {
+          frame++;
+          a.textContent = orig.split('').map(function (c, i) {
+            return i < (frame / total) * orig.length ? c : glyphs[(Math.random() * glyphs.length) | 0];
+          }).join('');
+          if (frame < total) setTimeout(tick, 26);
+          else { a.textContent = orig; busy = false; }
+        })();
+      });
+    });
+  })();
+
+  // Ghost-Wordmark-Parallax im Hero (Maus)
+  if (finePointer && !reduceMotion && window.gsap) {
+    var heroEl = document.getElementById('hero');
+    heroEl.addEventListener('mousemove', function (e) {
+      var dx = e.clientX / innerWidth - .5, dy = e.clientY / innerHeight - .5;
+      gsap.to('.heroghost', { x: dx * -44, y: dy * -26, duration: 1.2, ease: 'power2.out' });
+    });
+  }
+
+  // Easter Egg: »cls« tippen (oder Klon anklicken) → CTRL+L+$ Takeover
+  var runEgg;
+  (function () {
+    var buf = '', egg = document.getElementById('egg'), lock = false;
+    document.addEventListener('keydown', function (e) {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      buf = (buf + e.key.toLowerCase()).slice(-3);
+      if (buf !== 'cls') return;
+      buf = '';
+      runEgg();
+    });
+    runEgg = function () {
+      if (lock || !window.gsap) return;
+      lock = true;
+      var keys = egg.querySelectorAll('.key');
+      gsap.timeline({ onComplete: function () { lock = false; } })
+        .set(egg, { visibility: 'visible' })
+        .to(egg, { opacity: 1, duration: .25 })
+        .fromTo(keys, { y: -90, opacity: 0 }, { y: 0, opacity: 1, stagger: .14, duration: .45, ease: 'back.out(2)' })
+        .add(function () { pressKeys(Array.from(keys)); })
+        .fromTo(egg, { backgroundColor: 'rgba(5,5,5,.9)' }, { backgroundColor: 'rgba(255,159,28,.28)', duration: .12, yoyo: true, repeat: 1, delay: .8 })
+        .to(egg, { opacity: 0, duration: .45, delay: .35 })
+        .set(egg, { visibility: 'hidden' })
+        .add(function () {
+          var target = document.querySelector('.win.cls');
+          if (lenis) lenis.scrollTo(target, { offset: -60, duration: 1.6 });
+          else target.scrollIntoView({ behavior: 'smooth' });
+        }, '-=.9');
+    };
+  })();
+
+  // Klon-Roboter: 3D-Figur (Three.js), taucht pro Kapitel woanders auf,
+  // Kopf folgt dem Cursor, blinzelt, Klick → Herz-Augen + CTRL+L+$
+  (function () {
+    var robo = document.getElementById('robo');
+    if (!robo || !window.THREE || !window.gsap || reduceMotion || !finePointer || innerWidth <= 1180) return;
+
+    var W = 230, H = 290;
+    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    renderer.setSize(W, H);
+    robo.insertBefore(renderer.domElement, robo.firstChild);
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(40, W / H, .1, 20);
+    camera.position.set(0, -0.02, 2.35);
+    camera.lookAt(0, -0.06, 0);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 1.15));
+    var key = new THREE.DirectionalLight(0xffd9a0, 1.4); key.position.set(2, 4, 3); scene.add(key);
+    var rim = new THREE.DirectionalLight(0xff9f1c, .9); rim.position.set(-3, 1, -3); scene.add(rim);
+
+    var AM = 0xff9f1c;
+    var chassisMat = new THREE.MeshStandardMaterial({ color: 0x35302a, roughness: .55, metalness: .35 });
+    var darkMat = new THREE.MeshStandardMaterial({ color: 0x0c0b0a, roughness: .9, metalness: 0 });
+    var amberMat = new THREE.MeshStandardMaterial({ color: AM, roughness: .3, metalness: .1, emissive: AM, emissiveIntensity: .55 });
+    var eyeMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(2.2, 1.8, 1.1), toneMapped: false });
+    var heartMat = new THREE.MeshBasicMaterial({ color: AM, toneMapped: false });
+
+    var body = new THREE.Group();
+    body.position.y = -0.34;
+    scene.add(body);
+
+    // Körper
+    var torso = new THREE.Mesh(new THREE.SphereGeometry(.43, 48, 48, 0, Math.PI * 2, Math.PI * .15, Math.PI * .85), chassisMat);
+    body.add(torso);
+    var ring = new THREE.Mesh(new THREE.TorusGeometry(.235, .025, 24, 48), amberMat);
+    ring.position.y = .34; ring.rotation.x = Math.PI / 2;
+    body.add(ring);
+
+    // Hals (Lathe)
+    var np = { baseR: .215, baseH: -.05, midR: .28, midH: .02, lipBottomR: .295, lipBottomH: .045, lipTopR: .27, lipTopH: .055, innerR: .1 };
+    var lathePts = [
+      new THREE.Vector2(np.innerR, np.baseH), new THREE.Vector2(np.baseR, np.baseH),
+      new THREE.Vector2(np.midR, np.midH), new THREE.Vector2(np.lipBottomR, np.lipBottomH),
+      new THREE.Vector2(np.lipTopR, np.lipTopH), new THREE.Vector2(np.innerR, np.lipTopH)
+    ];
+    var neck = new THREE.Mesh(new THREE.LatheGeometry(lathePts, 48), chassisMat);
+    neck.position.y = .38;
+    body.add(neck);
+
+    // Kopf
+    var head = new THREE.Group();
+    head.position.y = .6;
+    body.add(head);
+    head.add(new THREE.Mesh(new THREE.SphereGeometry(.28, 48, 48, 0, Math.PI * 2, 0, Math.PI), darkMat));
+
+    // Fresnel-Visier (Amber-Glow)
+    var visor = new THREE.Mesh(
+      new THREE.SphereGeometry(.30, 48, 48, 0, Math.PI * 2, 0, Math.PI),
+      new THREE.ShaderMaterial({
+        uniforms: { color: { value: new THREE.Color(AM) }, power: { value: 3.4 }, intensity: { value: 1.1 } },
+        vertexShader: 'varying vec3 vN; varying vec3 vV; void main(){ vec4 mv = modelViewMatrix * vec4(position,1.0); vV = -mv.xyz; vN = normalize(normalMatrix * normal); gl_Position = projectionMatrix * mv; }',
+        fragmentShader: 'uniform vec3 color; uniform float power; uniform float intensity; varying vec3 vN; varying vec3 vV; void main(){ float f = 1.0 - max(dot(normalize(vV), normalize(vN)), 0.0); f = pow(f, power); gl_FragColor = vec4(color, f * intensity); }',
+        transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+      })
+    );
+    head.add(visor);
+
+    // Augen: abgerundete Balken (blinzeln) + Herz (Klick)
+    function eyePaths() {
+      var w = .025, h = .035, r = .02, g = .005;
+      function half(sign) {
+        var p = new THREE.CurvePath();
+        p.add(new THREE.LineCurve3(new THREE.Vector3(-w, sign * g, 0), new THREE.Vector3(-w, sign * (h - r), 0)));
+        p.add(new THREE.QuadraticBezierCurve3(new THREE.Vector3(-w, sign * (h - r), 0), new THREE.Vector3(-w, sign * h, 0), new THREE.Vector3(-w + r, sign * h, 0)));
+        p.add(new THREE.LineCurve3(new THREE.Vector3(-w + r, sign * h, 0), new THREE.Vector3(w - r, sign * h, 0)));
+        p.add(new THREE.QuadraticBezierCurve3(new THREE.Vector3(w - r, sign * h, 0), new THREE.Vector3(w, sign * h, 0), new THREE.Vector3(w, sign * (h - r), 0)));
+        p.add(new THREE.LineCurve3(new THREE.Vector3(w, sign * (h - r), 0), new THREE.Vector3(w, sign * g, 0)));
+        return p;
+      }
+      return [half(1), half(-1)];
+    }
+    class HeartCurve extends THREE.Curve {
+      getPoint(t, target) {
+        target = target || new THREE.Vector3();
+        t = t * Math.PI * 2;
+        var x = 16 * Math.pow(Math.sin(t), 3);
+        var y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+        return target.set(x * .002, (y + 6) * .002, 0);
+      }
+    }
+    var heartCurve = new HeartCurve();
+    var loved = false, lovedTimer = null;
+    var eyes = [];
+    [-.07, .07].forEach(function (x, i) {
+      var g = new THREE.Group();
+      g.position.set(x, -.02, .29);
+      g.rotation.y = i === 0 ? -.2 : .2;
+      var paths = eyePaths();
+      var normal = new THREE.Group();
+      normal.add(new THREE.Mesh(new THREE.TubeGeometry(paths[0], 20, .0035, 8, false), eyeMat));
+      normal.add(new THREE.Mesh(new THREE.TubeGeometry(paths[1], 20, .0035, 8, false), eyeMat));
+      g.add(normal);
+      var heart = new THREE.Mesh(new THREE.TubeGeometry(heartCurve, 64, .0035, 8, true), heartMat);
+      heart.visible = false;
+      g.add(heart);
+      head.add(g);
+      eyes.push({ g: g, normal: normal, heart: heart });
+    });
+
+    // Ohren + Antennen
+    [-1, 1].forEach(function (dir) {
+      var ear = new THREE.Group();
+      ear.position.set(dir * .29, 0, 0);
+      ear.scale.setScalar(1.3);
+      var base = new THREE.Mesh(new THREE.CylinderGeometry(.04, .04, .025, 24), chassisMat);
+      base.rotation.z = Math.PI / 2; ear.add(base);
+      var ringE = new THREE.Mesh(new THREE.TorusGeometry(.032, .008, 12, 24), amberMat);
+      ringE.rotation.y = Math.PI / 2; ringE.position.x = dir * .012; ear.add(ringE);
+      var ant = new THREE.Group();
+      ant.position.set(dir * .015, .035, 0); ant.rotation.x = -.4;
+      var stick = new THREE.Mesh(new THREE.CylinderGeometry(.003, .003, .1, 8), chassisMat);
+      stick.position.y = .06; ant.add(stick);
+      var tip = new THREE.Mesh(new THREE.SphereGeometry(.008, 12, 12), amberMat);
+      tip.position.y = .11; ant.add(tip);
+      ear.add(ant);
+      head.add(ear);
+    });
+
+    // Pointer-Following + Idle-Bob + Blinzeln
+    var px = 0, py = 0;
+    addEventListener('mousemove', function (e) {
+      px = (e.clientX / innerWidth) * 2 - 1;
+      py = -((e.clientY / innerHeight) * 2 - 1);
+    }, { passive: true });
+    var clock = new THREE.Clock();
+    var visible = false;
+    (function loop() {
+      requestAnimationFrame(loop);
+      if (!visible) return;
+      var t = clock.getElapsedTime(), dt = Math.min(clock.getDelta() + .016, .1);
+      body.rotation.y += ((-px * .55) - body.rotation.y) * Math.min(1, 8 * dt);
+      body.rotation.z += ((-px * .12) - body.rotation.z) * Math.min(1, 8 * dt);
+      head.rotation.y += ((px * 1.1) - head.rotation.y) * Math.min(1, 12 * dt);
+      head.rotation.x += ((-py * .3) - head.rotation.x) * Math.min(1, 12 * dt);
+      body.position.y = -0.34 + Math.sin(t * 1.6) * .02;
+      var cyc = t % 3.2, sy = 1;
+      if (cyc < .3 && !loved) sy = Math.max(.06, 1 - Math.sin((cyc / .3) * Math.PI));
+      eyes.forEach(function (e) {
+        e.normal.visible = !loved; e.heart.visible = loved;
+        e.g.scale.y = 1.1 * sy; e.g.scale.x = 1.1; e.g.scale.z = 1.1;
+      });
+      renderer.render(scene, camera);
+    })();
+
+    // Kapitel-Spots: wo der Klon jeweils auftaucht
+    var bubble = document.getElementById('rbubble');
+    var spots = {
+      story:   { x: function () { return innerWidth - 265; }, y: function () { return innerHeight * .52; }, quip: 'Ich war dabei.' },
+      erfolge: { x: function () { return -72; }, y: function () { return innerHeight * .52; }, bx: 96, quip: 'Alles echt — ich hab mitgezählt.' },
+      welt:    { x: function () { return innerWidth - 158; }, y: function () { return innerHeight * .26; }, bx: -40, quip: '5 Länder. Ich packe schon.' },
+      mission: { x: function () { return -72; }, y: function () { return innerHeight * .28; }, bx: 46, quip: 'Für Papa.' },
+      final:   { x: function () { return innerWidth * .5 + 330; }, y: function () { return innerHeight * .44; }, quip: 'Komm mit.' }
+    };
+    var current = null, animating = false, pendingId = null;
+    function popTo(id) {
+      if (animating) { pendingId = id; return; }
+      if (id === current) return;
+      animating = true;
+      var done = function () {
+        animating = false;
+        if (pendingId && pendingId !== current) { var n = pendingId; pendingId = null; popTo(n); }
+      };
+      var show = function () {
+        if (!id || !spots[id]) { current = id; visible = false; done(); return; }
+        var s = spots[id];
+        gsap.set(robo, { left: s.x(), top: s.y() });
+        gsap.set(bubble, { x: s.bx || 0 });
+        bubble.textContent = s.quip;
+        current = id; visible = true;
+        gsap.to(robo, {
+          scale: 1, duration: .55, ease: 'back.out(1.9)',
+          onComplete: function () { robo.classList.add('talk'); done(); }
+        });
+      };
+      robo.classList.remove('talk');
+      if (current && spots[current]) {
+        gsap.to(robo, { scale: 0, duration: .3, ease: 'back.in(1.6)', onComplete: show });
+      } else show();
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) popTo(spots[en.target.id] ? en.target.id : null); });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    ['hero', 'story', 'erfolge', 'welt', 'mission', 'final'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+
+    // Klick: Herz-Augen + CTRL+L+$
+    robo.querySelector('.rhit').addEventListener('click', function () {
+      loved = true;
+      if (lovedTimer) clearTimeout(lovedTimer);
+      lovedTimer = setTimeout(function () { loved = false; }, 2200);
+      if (runEgg) runEgg();
+    });
+  })();
+
+  // Scroll-Velocity-Skew auf Marquee + Outro
+  if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+    var skewObjs = [
+      { el: '.marquee .track', max: 14, div: -160 },
+      { el: '.outro span', max: 6, div: -320 }
+    ];
+    skewObjs.forEach(function (o) {
+      var proxy = { skew: 0 };
+      var setter = gsap.quickSetter(o.el, 'skewX', 'deg');
+      var clampF = gsap.utils.clamp(-o.max, o.max);
+      ScrollTrigger.create({
+        onUpdate: function (self) {
+          var skew = clampF(self.getVelocity() / o.div);
+          if (Math.abs(skew) > Math.abs(proxy.skew)) {
+            proxy.skew = skew;
+            gsap.to(proxy, { skew: 0, duration: .9, ease: 'power3', overwrite: true, onUpdate: function () { setter(proxy.skew); } });
+          }
+        }
+      });
+    });
+  }
+
+  // Spotlight-Border: Cursor-Position als CSS-Variable
+  document.querySelectorAll('.spot').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Nav: Zustand nach Scroll + Scroll-Spy
+  (function () {
+    var nav = document.getElementById('topnav');
+    var links = Array.from(nav.querySelectorAll('.links a[href^="#"]'));
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && map[en.target.id]) {
+          links.forEach(function (a) { a.classList.remove('active'); });
+          map[en.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+  })();
 
   // Keycap-Press
   function pressKeys(keys) {
@@ -643,69 +1215,53 @@ Fertig zum Hochladen.<span class="cursor"></span></pre>
   document.querySelectorAll('.keys').forEach(function (grp) {
     grp.addEventListener('click', function () { pressKeys(Array.from(grp.querySelectorAll('[data-k]'))); });
   });
-  document.getElementById('pressBtn').addEventListener('click', function () {
-    pressKeys(Array.from(document.querySelectorAll('#heroKeys [data-k]')));
-  });
 
   // GSAP
   if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero Intro
-    var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('#heroKeys .key, #heroKeys .plus', { y: -60, opacity: 0, stagger: .09, duration: .7, clearProps: 'transform,opacity' })
-      .from('#heroH1', { y: 40, opacity: 0, duration: .9 }, '-=.2')
-      .from('#hero .sub', { y: 24, opacity: 0, duration: .7 }, '-=.5')
+    // Hero H1 in Buchstaben zerlegen
+    document.querySelectorAll('#heroH1 .lin').forEach(function (lin) {
+      lin.innerHTML = lin.textContent.split('').map(function (c) {
+        return '<span class="ch">' + (c === ' ' ? '&nbsp;' : c) + '</span>';
+      }).join('');
+    });
+
+    // Preloader → Hero Intro
+    var seen = sessionStorage.getItem('dl_seen');
+    var loader = document.getElementById('loader');
+    var intro = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+    intro.from('#heroH1 .ch', { yPercent: 115, duration: .85, stagger: .035, ease: 'power4.out' })
+      .add(function () { decode(document.getElementById('tagline'), 0); }, '-=.75')
+      .from('#hero .sub', { y: 24, opacity: 0, duration: .7 }, '-=.45')
       .from('#hero .cta-row', { y: 18, opacity: 0, duration: .6 }, '-=.4')
-      .from('#hero .marquee', { opacity: 0, duration: .8 }, '-=.3')
-      .add(function () { pressKeys(Array.from(document.querySelectorAll('#heroKeys [data-k]'))); }, '+=.3');
+      .from('#hero .tiltwrap', { x: 50, opacity: 0, duration: .9, clearProps: 'transform,opacity' }, '-=.7')
+      .from('.herostats .stat', { y: 40, opacity: 0, stagger: .1, duration: .7, clearProps: 'transform,opacity' }, '-=.4');
 
-    // Scrub Text Reveal
-    var scrub = document.getElementById('scrub');
-    scrub.innerHTML = scrub.innerHTML.split(/(<span class="hl">.*?<\/span>)/).map(function (part) {
-      if (part.indexOf('hl') > -1) return part.replace(/(<span class="hl">)(.*?)(<\/span>)/, function (_, a, txt, c) {
-        return a + txt.split(' ').map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ') + c;
-      });
-      return part.split(' ').map(function (w) { return w ? '<span class="w">' + w + '</span>' : ''; }).join(' ');
-    }).join(' ');
-    gsap.to('#scrub .w', {
-      opacity: 1, stagger: .06,
-      scrollTrigger: { trigger: '#luecke', start: 'top 75%', end: 'bottom 55%', scrub: true }
+    if (seen || reduceMotion) {
+      loader.remove();
+      if (reduceMotion) { intro.progress(1); } else { intro.play(); }
+    } else {
+      sessionStorage.setItem('dl_seen', '1');
+      gsap.timeline()
+        .from('#loader .ldname', { y: 26, opacity: 0, duration: .5, ease: 'power3.out' })
+        .to('#loader .ldbar i', { width: '100%', duration: .85, ease: 'power2.inOut' }, '-=.15')
+        .to('#loader', { yPercent: -100, duration: .7, ease: 'power4.inOut', delay: .1 })
+        .add(function () { loader.remove(); intro.play(); }, '-=.35');
+    }
+
+    // Section-Headlines: Fade-up beim Scroll
+    gsap.utils.toArray('section h2.anton').forEach(function (h) {
+      gsap.from(h, { y: 46, opacity: 0, duration: .85, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 84%' } });
     });
 
-    // Bento Cells rein
-    gsap.from('.bento .cell', {
-      y: 60, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.bento', start: 'top 80%' }
-    });
+    // Outro-Wordmark
+    gsap.from('.outro span', { yPercent: 60, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.outro', start: 'top 92%' } });
 
-    // Jarvis Pinned Split (nur Desktop)
-    ScrollTrigger.matchMedia({
-      '(min-width: 981px)': function () {
-        ScrollTrigger.create({ trigger: '#jarvis .split', start: 'top 120px', end: 'bottom bottom', pin: '#pinbox', pinSpacing: false });
-      }
-    });
-    gsap.from('#jarvis .stack > *', {
-      y: 70, opacity: 0, stagger: .15, duration: .8, ease: 'power2.out',
-      scrollTrigger: { trigger: '#jarvis .stack', start: 'top 78%' }
-    });
+    // Hero-Ghost: Scroll-Parallax
+    gsap.to('.heroghost', { yPercent: 42, opacity: .3, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
 
-    // Rechner + Tiers rein
-    gsap.from('#rechner .calc > *', { y: 50, opacity: 0, stagger: .15, duration: .8, scrollTrigger: { trigger: '#rechner .calc', start: 'top 80%' } });
-    gsap.from('.tiers .tier', { y: 60, opacity: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '.tiers', start: 'top 82%' } });
-
-    // Story-Karten dimmen beim Stapeln
-    document.querySelectorAll('#story .scard').forEach(function (card, i, all) {
-      if (i === all.length - 1) return;
-      gsap.to(card, {
-        scale: .95, opacity: .45,
-        scrollTrigger: { trigger: all[i + 1], start: 'top 70%', end: 'top 20%', scrub: true }
-      });
-    });
-
-    // Mario-Sektion: Stark-Line + Count-Up
-    gsap.from('#starkline .sw', { y: 30, opacity: 0, stagger: .18, duration: .6, ease: 'power3.out', scrollTrigger: { trigger: '#mario', start: 'top 62%' } });
-    gsap.from('#mario .hud', { x: -50, opacity: 0, duration: .9, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '#mario', start: 'top 70%' } });
+    // Count-Up-Stats
     document.querySelectorAll('.cnt').forEach(function (el) {
       var to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10);
       var obj = { v: 0 };
@@ -716,8 +1272,46 @@ Fertig zum Hochladen.<span class="cursor"></span></pre>
       });
     });
 
-    // Final CTA
-    gsap.from('#final > *', { y: 40, opacity: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '#final', start: 'top 70%' } });
+    // Die Reise: horizontale Pin-Strecke (Desktop), vertikale Karten (Mobile)
+    var mmJ = gsap.matchMedia();
+    mmJ.add('(min-width: 981px)', function () {
+      var track = document.getElementById('jtrack');
+      var jbar = document.getElementById('jbar');
+      var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth + 120); };
+      gsap.to(track, {
+        x: function () { return -dist(); }, ease: 'none',
+        scrollTrigger: {
+          trigger: '.jwrap', start: 'top 120', end: function () { return '+=' + dist(); },
+          pin: true, scrub: 1, invalidateOnRefresh: true,
+          onUpdate: function (self) { jbar.style.transform = 'scaleX(' + self.progress + ')'; }
+        }
+      });
+      gsap.from('.jcard', { opacity: 0, y: 50, stagger: .08, duration: .7, ease: 'power3.out', scrollTrigger: { trigger: '.jwrap', start: 'top 80%' } });
+    });
+    mmJ.add('(max-width: 980px)', function () {
+      gsap.utils.toArray('.jcard').forEach(function (c) {
+        gsap.from(c, { opacity: 0, y: 44, duration: .7, ease: 'power3.out', scrollTrigger: { trigger: c, start: 'top 86%' } });
+      });
+    });
+
+    // Erfolge-Karten rein
+    gsap.from('.wins .win', {
+      y: 60, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.wins', start: 'top 80%' }
+    });
+
+    // CLS-Keys drücken, wenn Karte sichtbar
+    ScrollTrigger.create({
+      trigger: '#clsKeys', start: 'top 80%', once: true,
+      onEnter: function () { pressKeys(Array.from(document.querySelectorAll('#clsKeys [data-k]'))); }
+    });
+
+    // Mission
+    gsap.from('#starkline .sw', { y: 30, opacity: 0, stagger: .18, duration: .6, ease: 'power3.out', scrollTrigger: { trigger: '#mission', start: 'top 62%' } });
+    gsap.from('.missions .mission', { y: 50, opacity: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '.missions', start: 'top 80%' } });
+
+    // Final CTA (h2 hat bereits den generischen Fade, secphoto bleibt statisch)
+    gsap.from('#final .chap, #final .sub, #final .cta-row, #final .last', { y: 40, opacity: 0, stagger: .12, duration: .8, scrollTrigger: { trigger: '#final', start: 'top 70%' } });
   }
 </script>
 </body>
