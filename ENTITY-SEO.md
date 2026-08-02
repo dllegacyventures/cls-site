@@ -40,17 +40,38 @@ Angabe aktiv.
 
 ### 1 · Sofort, kostenlos, größte Wirkung
 
-- [ ] **Google Search Console** für `delucalegacy.com` einrichten, Sitemap
-      einreichen, Startseite manuell indexieren lassen. Ohne das dauert alles
-      Wochen länger.
-- [ ] **LinkedIn-Profil** auf `linkedin.com/in/realsalesgenius`. LinkedIn
-      rankt bei Namenssuchen fast immer auf Seite 1 und ist bislang die
-      größte Lücke.
-- [ ] **YouTube-Kanal** um Klarnamen ergänzen: Kanalname „Mario De Luca —
-      Real Sales Genius", Beschreibung mit Link auf delucalegacy.com.
-      YouTube-Kanäle ranken bei Personensuchen extrem hoch.
+- [x] **Google Search Console** eingerichtet (02.08.2026). Property
+      `https://delucalegacy.com/`, bestätigt per HTML-Tag, zusätzlich liegt
+      die Datei `google433b7b8fc03c6e88.html` im Root. Sitemap eingereicht
+      (Status erfolgreich, 3 Seiten), Neu-Indexierung der Startseite
+      beantragt.
+- [x] **LinkedIn-Profil** angelegt:
+      `linkedin.com/in/mario-de-luca-business` — im `sameAs` und im Footer.
+      Offene Punkte am Profil selbst siehe unten.
+- [ ] **YouTube-Beschreibung** um „Mario De Luca" und den Link auf
+      delucalegacy.com ergänzen. Kanalname bleibt auf Wunsch
+      `realsalesgenius`; das Info-Feld ist ein getrenntes Feld und kostet
+      optisch nichts.
 - [ ] In **allen** Profilen dieselbe Bio, dasselbe Foto, denselben Link.
       Widersprüchliche Angaben verhindern die Entitätsbildung.
+
+#### LinkedIn — was am Profil noch klemmt
+
+Beim Gegenprüfen am 02.08. gesehen, alles direkt entitätsrelevant:
+
+- **Namensfeld steht auf „Mario De Luca geb. realsalesgenius".** Das „geb."
+  gehört da nicht hin — es liest sich wie ein Geburtsname und verwässert
+  genau den Namen, auf den die Entität aufgebaut wird. Ins Namensfeld nur
+  „Mario De Luca"; der Handle gehört in den Profilslogan oder das
+  Spitznamen-Feld.
+- **Profilslogan ist leer** (steht auf „-"). Das ist das wichtigste
+  durchsuchbare Textfeld auf LinkedIn und taucht in den Suchergebnissen
+  direkt unter dem Namen auf.
+- **Banner zeigt „CHROMEVIM"** — eine fremde Marke. Für die Entität sollte
+  dort NextCore oder CLS stehen.
+- **Profilfoto ist ein Spiegelselfie.** Dasselbe Foto wie auf allen anderen
+  Profilen zu verwenden, ist ein ausdrückliches Entitätssignal für Google.
+- **7 Kontakte.** Dünne Profile ranken schlechter.
 
 ### 2 · Diese Woche
 
