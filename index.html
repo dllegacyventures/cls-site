@@ -18,6 +18,72 @@
 <meta name="twitter:description" content="Vom Kinderzimmer mit Schulden zu KI-Klonen, die Unternehmen mieten wie Autos.">
 <meta name="twitter:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='38' font-weight='900' text-anchor='middle' fill='%23f2efe8'%3EM%3C/text%3E%3Ccircle cx='52' cy='46' r='5' fill='%23ff9f1c'/%3E%3C/svg%3E">
+
+<!-- Entitäts-Markup: sagt Google, dass diese Seite EINE Person beschreibt und
+     welche Profile im Netz dieselbe Person sind. Grundlage für einen späteren
+     Knowledge Panel. Bei Änderungen die @id-Anker unverändert lassen. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://delucalegacy.com/#mario",
+      "name": "Mario De Luca",
+      "givenName": "Mario",
+      "familyName": "De Luca",
+      "alternateName": "Real Sales Genius",
+      "url": "https://delucalegacy.com/",
+      "mainEntityOfPage": "https://delucalegacy.com/",
+      "image": "https://delucalegacy.com/assets/mario-hud.jpg",
+      "jobTitle": "Gründer und Systembauer",
+      "description": "Mario De Luca baut Vertriebssysteme und KI-gestützte Klone für Unternehmen und ist Gründer des Clone Looping System (CLS).",
+      "knowsAbout": [
+        "Vertriebsaufbau",
+        "Sales-Systeme",
+        "Telefonvertrieb",
+        "KI-Automatisierung",
+        "Clone Looping System",
+        "Performance Marketing"
+      ],
+      "worksFor": { "@id": "https://delucalegacy.com/#nextcore" },
+      "sameAs": [
+        "https://www.instagram.com/realsalesgenius/",
+        "https://www.tiktok.com/@realsalesgenius",
+        "https://www.youtube.com/@realsalesgenius",
+        "https://x.com/realsalesgenius",
+        "https://www.skool.com/cls-claude-losungs-system-6453/about"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://delucalegacy.com/#nextcore",
+      "name": "NextCore",
+      "url": "https://delucalegacy.com/",
+      "founder": { "@id": "https://delucalegacy.com/#mario" },
+      "employee": { "@id": "https://delucalegacy.com/#mario" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://delucalegacy.com/#website",
+      "url": "https://delucalegacy.com/",
+      "name": "Mario De Luca",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "https://delucalegacy.com/#mario" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://delucalegacy.com/#webpage",
+      "url": "https://delucalegacy.com/",
+      "name": "Mario De Luca — Systembauer & Gründer von CLS",
+      "isPartOf": { "@id": "https://delucalegacy.com/#website" },
+      "about": { "@id": "https://delucalegacy.com/#mario" },
+      "mainEntity": { "@id": "https://delucalegacy.com/#mario" },
+      "inLanguage": "de-DE"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -389,6 +455,20 @@
   footer .links a { color: var(--faint); text-decoration: none; font-size: 13.5px; margin-left: 22px; }
   footer .links a:hover { color: var(--am); }
   footer .claim { width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--faint); }
+  /* Profil-Leiste: die sichtbaren Gegenstuecke zu den sameAs-Angaben im
+     JSON-LD. Google gewichtet Verweise staerker, wenn sie auch im Markup
+     der Seite stehen — rel="me" macht die Zuordnung explizit. */
+  footer .social { width: 100%; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  footer .social a {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 8px 16px; text-decoration: none; color: var(--muted);
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+    letter-spacing: .16em; text-transform: uppercase;
+    transition: border-color .2s, color .2s;
+  }
+  footer .social a:hover { color: var(--am); border-color: rgba(255,159,28,.5); }
+  footer .social a .at { color: var(--faint); }
 </style>
 </head>
 <body class="board">
@@ -612,6 +692,15 @@
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </span>
+    <!-- bewusst ein div, kein nav: die globale nav-Regel ist position:fixed
+         und wuerde die Leiste an den oberen Bildrand reissen -->
+    <div class="social" role="navigation" aria-label="Profile von Mario De Luca">
+      <a href="https://www.instagram.com/realsalesgenius/" rel="me noopener" target="_blank">Instagram <span class="at">@realsalesgenius</span></a>
+      <a href="https://www.youtube.com/@realsalesgenius" rel="me noopener" target="_blank">YouTube <span class="at">@realsalesgenius</span></a>
+      <a href="https://www.tiktok.com/@realsalesgenius" rel="me noopener" target="_blank">TikTok <span class="at">@realsalesgenius</span></a>
+      <a href="https://x.com/realsalesgenius" rel="me noopener" target="_blank">X <span class="at">@realsalesgenius</span></a>
+      <a href="https://www.skool.com/cls-claude-losungs-system-6453/about" rel="me noopener" target="_blank">Skool <span class="at">CLS</span></a>
+    </div>
     <span class="claim">&copy; 2026 Mario De Luca &nbsp;&middot;&nbsp; Zahlen. Klone. Umsetzung. &nbsp;&middot;&nbsp; // Tipp: schreib &raquo;cls&laquo;</span>
   </div>
 </footer>
