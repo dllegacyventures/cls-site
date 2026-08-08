@@ -1,0 +1,723 @@
+<script src="https://static.funnelcockpit.com/assets/js/funnel-page.js" async=""></script><body style="background-color:#ffffff;color:#000000;font-size:14px;input-font-size:14px;line-height:1.4;overflow-x:hidden"><div id="row-rvAYYoiq" class="" style="padding-top:35px;padding-bottom:35px"><div class="container"><div class="row"><div class="col-md-12"><div id="element-s44PpJXF" data-element-id="s44PpJXF" class="html"><div><!-- CLS Prompt-Bibliothek v5 — Value-first, Video unten, Jarvis-Sektion, 21 Prompts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { background:#0a0908 !important; margin:0 !important; padding:0 !important; overflow-x:hidden !important; }
+  .clsx{
+    --bg:#0a0908; --bg2:#12100d; --card:#161210; --card2:#1b1512;
+    --line:rgba(232,163,61,.16); --line2:rgba(232,163,61,.32);
+    --amber:#e8a33d; --amber2:#f5c063; --amber-deep:#c97f1e;
+    --ink:#f4ead9; --dim:#b8a68c; --dim2:#8a7a63;
+    --mono:'JetBrains Mono',monospace; --disp:'Anton',sans-serif;
+    --body:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    width:100vw; margin-left:calc(50% - 50vw); position:relative;
+    background:var(--bg); color:var(--ink); font-family:var(--body);
+    -webkit-font-smoothing:antialiased; line-height:1.55; overflow-x:hidden;
+  }
+  .clsx *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  .clsx .atmo{position:absolute;inset:0;pointer-events:none;z-index:0}
+  .clsx .atmo::before{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(900px 500px at 50% 0%, rgba(232,163,61,.10), transparent 60%),
+      radial-gradient(700px 600px at 90% 40%, rgba(201,127,30,.05), transparent 65%),
+      radial-gradient(800px 700px at 5% 80%, rgba(232,163,61,.06), transparent 60%);
+  }
+  .clsx .atmo::after{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+  }
+  .clsx .inner{position:relative;z-index:1}
+  .clsx .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* top */
+  .clsx .top{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .clsx .logo{font-family:var(--disp);font-size:26px;letter-spacing:.06em;color:var(--ink);text-decoration:none}
+  .clsx .logo i{font-style:normal;color:var(--amber)}
+  .clsx .toplink{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--dim);text-decoration:none;border:1px solid var(--line);border-radius:999px;
+    padding:9px 16px;transition:.25s}
+  .clsx .toplink:hover{color:var(--amber2);border-color:var(--line2)}
+
+  /* hero */
+  .clsx .hero{text-align:center;padding:34px 0 6px}
+  .clsx .badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--amber2);
+    border:1px solid var(--line2);border-radius:999px;padding:9px 18px;
+    background:linear-gradient(180deg,rgba(232,163,61,.08),rgba(232,163,61,.02))}
+  .clsx .h1{font-family:var(--disp);font-weight:400;text-transform:uppercase;
+    font-size:clamp(44px,8.5vw,96px);line-height:1.02;margin:26px 0 20px;letter-spacing:.015em}
+  .clsx .hl{color:var(--amber);text-shadow:0 0 60px rgba(232,163,61,.35)}
+  .clsx .sub{max-width:600px;margin:0 auto;color:var(--dim);font-size:clamp(15px,2vw,17px)}
+  .clsx .sub b{color:var(--ink)}
+  .clsx .ph{font-family:var(--mono);font-size:.85em;color:var(--amber2);background:rgba(232,163,61,.09);
+    border:1px solid var(--line);border-radius:6px;padding:1px 7px;white-space:nowrap}
+  .clsx .hero-hint{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim2)}
+  .clsx .hero-hint .arr{width:1px;height:44px;background:linear-gradient(180deg,var(--amber),transparent);
+    animation:clsxDrip 2.2s ease-in-out infinite}
+  @keyframes clsxDrip{0%,100%{opacity:.25;transform:scaleY(.6);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+  /* sections */
+  .clsx section{padding:64px 0}
+  .clsx .sec-head{text-align:center;margin-bottom:44px}
+  .clsx .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--amber)}
+  .clsx .h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;
+    font-size:clamp(30px,5.4vw,54px);line-height:1.06;margin:14px 0 14px;letter-spacing:.02em}
+  .clsx .sec-sub{max-width:560px;margin:0 auto;color:var(--dim);font-size:15px}
+  .clsx .sec-sub b{color:var(--ink)}
+
+  /* category nav */
+  .clsx .catnav{position:sticky;top:0;z-index:30;background:rgba(10,9,8,.88);backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:11px 0;margin-bottom:40px}
+  .clsx .catnav .row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+    max-width:1060px;margin:0 auto;padding:0 20px}
+  .clsx .catnav .row::-webkit-scrollbar{display:none}
+  .clsx .catnav a{flex:0 0 auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--dim);text-decoration:none;border:1px solid transparent;
+    border-radius:999px;padding:8px 15px;transition:.2s;white-space:nowrap}
+  .clsx .catnav a:hover{color:var(--amber2)}
+  .clsx .catnav a.on{color:var(--amber2);border-color:var(--line2);background:rgba(232,163,61,.08)}
+
+  /* prompt groups & cards — tabs: nur die aktive Kategorie ist sichtbar */
+  .clsx .group{display:none;margin-bottom:12px;scroll-margin-top:76px}
+  .clsx .group.act{display:block;animation:clsxFade .45s ease}
+  @keyframes clsxFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .clsx .group-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+  .clsx .group-head .h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;
+    font-size:clamp(20px,3vw,27px);letter-spacing:.04em;color:var(--ink)}
+  .clsx .group-head .cnt{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--dim2)}
+  .clsx .group-head::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+  .clsx .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(430px,100%),1fr));gap:18px}
+  .clsx .pcard{display:flex;flex-direction:column;background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    transition:border-color .3s,transform .3s,box-shadow .3s}
+  .clsx .pcard:hover{border-color:var(--line2);transform:translateY(-3px);
+    box-shadow:0 18px 40px -18px rgba(232,163,61,.18)}
+  .clsx .pcard-top{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:15px 18px;border-bottom:1px solid var(--line)}
+  .clsx .pcard-top b{font-size:15px;letter-spacing:.01em}
+  .clsx .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amber2);border:1px solid var(--line);border-radius:999px;padding:4px 10px;white-space:nowrap}
+  .clsx .tag.new{color:#0a0908;background:linear-gradient(135deg,var(--amber2),var(--amber-deep));border:none;font-weight:700}
+  .clsx .pcard pre{background:transparent !important;border:0;color:var(--dim) !important;font-family:var(--mono) !important;font-size:12px;line-height:1.75;color:var(--dim);
+    padding:16px 18px;white-space:pre-wrap;word-break:break-word;flex:1;
+    max-height:190px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+  .clsx .copybtn{margin:0 14px 14px;padding:12px;border:1px solid var(--line2);border-radius:11px;
+    background:linear-gradient(180deg,rgba(232,163,61,.12),rgba(232,163,61,.04));
+    color:var(--amber2);font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;cursor:pointer;transition:.25s}
+  .clsx .copybtn:hover{background:linear-gradient(180deg,rgba(232,163,61,.22),rgba(232,163,61,.08));
+    border-color:var(--amber)}
+  .clsx .copybtn.ok{background:linear-gradient(180deg,rgba(120,200,120,.16),rgba(120,200,120,.05));
+    border-color:rgba(140,220,140,.5);color:#a5e6a5}
+
+  /* workflow */
+  .clsx .wf{background:linear-gradient(180deg,var(--bg2),var(--bg));border:1px solid var(--line);
+    border-radius:26px;padding:clamp(26px,5vw,52px);position:relative;overflow:hidden}
+  .clsx .wf::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(600px 300px at 50% 0%, rgba(232,163,61,.09), transparent 70%)}
+  .clsx .star-tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.2em;text-transform:uppercase;color:#0a0908;font-weight:700;
+    background:linear-gradient(135deg,var(--amber2),var(--amber-deep));border-radius:999px;padding:8px 16px}
+  .clsx .wf .h2{text-align:left;margin-top:20px}
+  .clsx .wf .lead{color:var(--dim);max-width:640px;font-size:15px;margin-bottom:26px}
+  .clsx .steps-line{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:38px}
+  .clsx .steps-line .st{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amber2);border:1px solid var(--line2);border-radius:999px;padding:7px 14px}
+  .clsx .steps-line .sep{color:var(--dim2)}
+  .clsx .wstep{display:grid;grid-template-columns:56px 1fr;gap:18px;margin-bottom:26px;position:relative}
+  .clsx .wstep .num{width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;
+    color:var(--amber2);background:rgba(232,163,61,.06);position:relative;z-index:2}
+  .clsx .wstep:not(:last-of-type) .num::after{content:"";position:absolute;top:46px;left:50%;width:1px;
+    height:calc(100% + 26px);background:linear-gradient(180deg,var(--line2),var(--line));z-index:1}
+  .clsx .wcard{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .clsx .wcard .whead{padding:15px 20px;border-bottom:1px solid var(--line);font-size:15px;font-weight:700}
+  .clsx .wcard pre{background:transparent !important;border:0;color:var(--dim) !important;font-family:var(--mono) !important;font-size:12px;line-height:1.75;color:var(--dim);
+    padding:16px 20px;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow-y:auto;
+    scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+  .clsx .wcard .copybtn{display:block;width:calc(100% - 28px)}
+  .clsx .allbtn{display:block;width:100%;margin-top:8px;padding:17px;border-radius:14px;cursor:pointer;
+    border:1px solid var(--amber);background:linear-gradient(180deg,rgba(232,163,61,.16),rgba(232,163,61,.05));
+    color:var(--amber2);font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    transition:.25s}
+  .clsx .allbtn:hover{background:linear-gradient(180deg,rgba(232,163,61,.28),rgba(232,163,61,.1))}
+  .clsx .allbtn.ok{border-color:rgba(140,220,140,.5);color:#a5e6a5}
+
+  /* jarvis */
+  .clsx .jarvis-box{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,52px);align-items:center}
+  .clsx .jarvis-box .h2{text-align:left}
+  .clsx .jarvis-box p{color:var(--dim);font-size:15.5px;margin-bottom:16px}
+  .clsx .jarvis-box p b{color:var(--ink)}
+  .clsx .one-liner{border-left:2px solid var(--amber);padding:4px 0 4px 18px;margin:22px 0;
+    color:var(--ink);font-size:16.5px;line-height:1.6}
+  .clsx .one-liner .lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--amber);margin-bottom:7px}
+  .clsx .jarvis-cta{display:inline-flex;align-items:center;gap:11px;margin-top:10px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber2);text-decoration:none;border-bottom:1px solid var(--line2);
+    padding-bottom:6px;transition:.25s}
+  .clsx .jarvis-cta:hover{border-color:var(--amber);gap:16px}
+  .clsx .term{background:#0d0c0a;border:1px solid var(--line2);border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 80px -30px rgba(232,163,61,.22), 0 0 0 1px rgba(0,0,0,.4);
+    transform:rotate(.6deg)}
+  .clsx .term-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line);
+    background:rgba(232,163,61,.04)}
+  .clsx .term-bar i{width:11px;height:11px;border-radius:50%;background:#3a332b}
+  .clsx .term-bar i:first-child{background:rgba(232,120,80,.7)}
+  .clsx .term-bar span{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--dim2)}
+  .clsx .term-body{padding:22px 22px 26px;font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--dim)}
+  .clsx .term-body .who{color:var(--amber);font-weight:700}
+  .clsx .term-body .t{color:var(--dim2)}
+  .clsx .term-body .msg{color:var(--ink)}
+  .clsx .cursor{display:inline-block;width:8px;height:15px;background:var(--amber);vertical-align:-2px;
+    animation:clsxBlink 1.05s steps(1) infinite}
+  @keyframes clsxBlink{50%{opacity:0}}
+
+  /* finale */
+  .clsx .finale{text-align:center;padding:6px 0 40px;scroll-margin-top:40px}
+  .clsx .tonext{margin-top:34px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);display:flex;flex-direction:column;align-items:center;gap:10px}
+  .clsx .tonext .arr{width:1px;height:38px;background:linear-gradient(180deg,rgba(232,163,61,.7),transparent)}
+  .clsx .finale .sec-sub{margin-bottom:26px}
+  .clsx .vslcard{position:relative;display:block;max-width:960px;margin:0 auto;border-radius:22px;
+    overflow:hidden;border:1px solid var(--line2);text-decoration:none;
+    box-shadow:0 50px 140px -30px rgba(232,163,61,.55),0 0 0 1px rgba(232,163,61,.28);transition:transform .35s,box-shadow .35s}
+  .clsx .vslcard:hover{transform:translateY(-6px) scale(1.008);box-shadow:0 70px 170px -30px rgba(232,163,61,.7),0 0 0 1px rgba(232,163,61,.5)}
+  .clsx .vslcard .thumb{position:relative;aspect-ratio:16/9;
+    background:url('https://delucalegacy.com/assets/vsl-thumbnail-lockedin.jpg') center/cover no-repeat, #1a140e}
+  .clsx .vslcard .thumb::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,9,8,0) 45%,rgba(10,9,8,.55))}
+  .clsx .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:104px;height:104px;
+    border-radius:50%;background:linear-gradient(135deg,var(--amber2),var(--amber-deep));
+    display:flex;align-items:center;justify-content:center;z-index:2;
+    box-shadow:0 0 0 0 rgba(232,163,61,.45);animation:clsxPulse 2.4s infinite}
+  @keyframes clsxPulse{0%{box-shadow:0 0 0 0 rgba(232,163,61,.45)}70%{box-shadow:0 0 0 26px rgba(232,163,61,0)}100%{box-shadow:0 0 0 0 rgba(232,163,61,0)}}
+  .clsx .play svg{width:36px;height:36px;fill:#0a0908;margin-left:5px}
+  .clsx .vslmeta{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;
+    padding:16px 20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink);z-index:2}
+  .clsx .bigbtn{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:19px 42px;
+    border-radius:14px;background:linear-gradient(135deg,var(--amber2),var(--amber-deep));
+    color:#0a0908;font-weight:700;font-size:17px;text-decoration:none;letter-spacing:.01em;
+    box-shadow:0 18px 50px -12px rgba(232,163,61,.55);transition:transform .25s,box-shadow .25s}
+  .clsx .bigbtn:hover{transform:translateY(-2px);box-shadow:0 24px 60px -12px rgba(232,163,61,.7)}
+  .clsx .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+  .clsx .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:9px 17px}
+
+  .clsx .foot{border-top:1px solid var(--line);padding:34px 0 44px;text-align:center}
+  .clsx .foot .logo{font-size:20px}
+  .clsx .foot p{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim2);margin-top:12px}
+  .clsx .foot small{display:block;max-width:620px;margin:16px auto 0;color:var(--dim2);
+    font-size:11px;line-height:1.7;text-transform:none;font-family:var(--body);letter-spacing:0}
+
+  .clsx .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .clsx .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.clsx .rv{opacity:1;transform:none;transition:none}
+    .clsx .play{animation:none}.clsx .hero-hint .arr{animation:none}}
+
+  @media (max-width:860px){
+    .clsx .pcard pre,.clsx .wcard pre{max-height:170px}
+    .clsx .grid{gap:14px}
+    .clsx .jarvis-box{grid-template-columns:1fr}
+    .clsx .term{transform:none;margin-top:6px}
+  }
+  @media (max-width:560px){
+    .clsx section{padding:46px 0}
+    .clsx .top{padding:20px 0}
+    .clsx .toplink{padding:8px 12px;font-size:10px}
+    .clsx .hero{padding-top:22px}
+    .clsx .badge{font-size:10px;padding:8px 14px}
+    .clsx .wstep{grid-template-columns:1fr;gap:10px}
+    .clsx .wstep .num{width:34px;height:34px;font-size:11.5px}
+    .clsx .wstep:not(:last-of-type) .num::after{display:none}
+    .clsx .pcard pre,.clsx .wcard pre{font-size:11px;line-height:1.6;max-height:120px;padding:11px 13px}
+    .clsx .pcard-top{padding:10px 13px}
+    .clsx .pcard-top b{font-size:13.5px}
+    .clsx .copybtn{margin:0 9px 9px;padding:9px;font-size:12px}
+    .clsx .grid{gap:11px}
+    .clsx .play{width:74px;height:74px}
+    .clsx .bigbtn{width:100%;justify-content:center;padding:17px 20px;font-size:16px}
+    .clsx .steps-line .sep{display:none}
+  }
+</style>
+
+<div class="clsx">
+<div class="atmo"></div>
+<div class="inner">
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#">CLS<i>.</i></a>
+      <a class="toplink" href="#cls-video">▶ Direkt zum Video</a>
+    </div>
+
+    <div class="hero">
+      <span class="badge">🎁 Geschenk für dich · 100% kostenlos</span>
+      <div class="h1">Die <span class="hl">Prompt-<br>Bibliothek</span></div>
+      <p class="sub">21 Copy-Paste-Prompts, mit denen du dir aus Claude dein eigenes
+        <b>KI-Betriebssystem</b> baust. Platzhalter wie <span class="ph">{NICHE}</span> ersetzen,
+        einfügen — fertig. Alles hier auf der Seite, ohne E-Mail, ohne Haken.</p>
+    </div>
+  </div>
+
+  <section class="finale" id="cls-video">
+    <div class="wrap rv">
+      <span class="kicker">Zuerst das Wichtigste</span>
+      <div class="h2">Das komplette System —<br><span class="hl">in einem Video.</span></div>
+      <p class="sec-sub">Die 21 Prompts weiter unten sind die Werkzeuge. Im Video siehst du,
+        wie sie zusammen eine Maschine ergeben, die für dich arbeitet — Schritt für Schritt,
+        kostenlos, ohne Bla-Bla.</p>
+      <a class="vslcard" href="/prompt-bibliothek">
+        <span class="thumb" style="display:block">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vslmeta"><span>&#9654; Abspielen</span><span>~30 Min &middot; Ton an</span></span>
+        </span>
+      </a>
+      <a class="bigbtn" href="/prompt-bibliothek">&#9654; Video jetzt ansehen</a>
+      <div class="chips">
+        <span class="chip">100% kostenlos</span>
+        <span class="chip">Schritt f&uuml;r Schritt erkl&auml;rt</span>
+        <span class="chip">Purer Value &middot; Kein Bla-Bla</span>
+      </div>
+      <div class="tonext"><span>Und jetzt zu deinen 21 Prompts</span><span class="arr"></span></div>
+    </div>
+  </section>
+
+  <section id="cls-prompts">
+    <div class="wrap sec-head rv">
+      <span class="kicker">Deine Werkzeuge</span>
+      <div class="h2">21 <span class="hl">Copy-Paste-Prompts</span></div>
+      <p class="sec-sub">Wähl unten eine Kategorie, klick auf „Prompt kopieren", füg ihn in Claude ein und ersetze die
+        <span class="ph">{PLATZHALTER}</span> — von Tagesplanung bis zur fertigen Kundenseite.</p>
+    </div>
+
+    <nav class="catnav">
+      <div class="row">
+        <a href="#cls-planung" class="on">🗓️ Planung</a>
+        <a href="#cls-research">🔬 Research</a>
+        <a href="#cls-wissen">🧠 Wissen &amp; Voice</a>
+        <a href="#cls-kern">🤵 Jarvis-Kern</a>
+        <a href="#cls-vertrieb">💬 Content &amp; Vertrieb</a>
+        <a href="#cls-workflow">★ Workflow</a>
+      </div>
+    </nav>
+
+    <div class="wrap">
+
+      <div class="group act" id="cls-planung">
+        <div class="group-head"><span class="h3">Planung</span><span class="cnt">3 Prompts</span></div>
+        <div class="grid">
+          <div class="pcard">
+            <div class="pcard-top"><b>🗓️ Tagesplan</b><span class="tag">Planung</span></div>
+            <pre>[Autonom-Präambel]
+Aufgabe: erstelle die heutige Tagesnotiz unter {DELIVERABLE}.
+1. Lies die letzten 3 Tagesnotizen auf unerledigte Top-3 (Carryover); zieh offene "- [ ]"-Punkte.
+2. Wenn ein Kalender-Connector da ist: hol die heutigen Termine ({TZ}).
+3. Scanne aktive/fällige Projekte.
+4. Wähle die 3 höchst-hebelnden Prioritäten: Carryover schlägt Neu, Fällig schlägt Irgendwann.
+5. Wenn die Notiz existiert: MERGEN, nie überschreiben.
+Beende mit: SAVED {DELIVERABLE}</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🔁 Wochen-Review</b><span class="tag new">Neu</span></div>
+            <pre>[Autonom-Präambel]
+Aufgabe: erstelle das Wochen-Review unter {DELIVERABLE}.
+1. Lies die letzten 7 Tagesnotizen: Was wurde erledigt, was blieb liegen?
+2. Extrahiere: 3 Wins, 3 offene Baustellen, 1 Engpass, der die Woche gebremst hat.
+3. Schlage die Top-3 der nächsten Woche vor — Engpass zuerst.
+4. Max 1 Seite, Bullets statt Prosa.
+Beende mit: SAVED {DELIVERABLE}</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>📥 Inbox-Triage</b><span class="tag">Planung</span></div>
+            <pre>[Autonom-Präambel]
+Triagiere den Posteingang, speichere unter {DELIVERABLE}.
+1. Hol die letzten 24h (Mail-Connector, "in:inbox newer_than:1d", max 50).
+2. Klassifiziere: dringend / warm / Chancen / Meetings / Rauschen.
+3. Gruppiert speichern, dringendstes zuerst. Sende NICHTS.
+Beende mit: SAVED {DELIVERABLE}</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="group" id="cls-research">
+        <div class="group-head"><span class="h3">Research &amp; Briefing</span><span class="cnt">4 Prompts</span></div>
+        <div class="grid">
+          <div class="pcard">
+            <div class="pcard-top"><b>📰 Morning Report</b><span class="tag">Research</span></div>
+            <pre>[Autonom-Präambel]
+Aufgabe: erstelle das heutige Morgen-Briefing für jemanden in {NICHE}, speichere unter {DELIVERABLE}.
+Recherchiere die letzten ~24h per Websuche, gewichtet auf das was DIESES Geschäft bewegt,
+plus die großen AI-/Tool-Releases. Struktur: "# Morning Report" + Datum, "## Headlines"
+(3-5 Bullets nach Impact; jedes endet mit Quell-Link), "## Web", "## X", "## GitHub", "## Quellen".
+Beende mit: SAVED {DELIVERABLE}</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🔬 Deep Research</b><span class="tag">Research</span></div>
+            <pre>[Autonom-Präambel]
+Recherchiere {THEMA} gründlich aus mehreren Quellen (Web, YouTube, X, GitHub).
+Liefere: Kern-Erkenntnisse, wichtigste Frameworks, beste Zitate/Belege (mit Links),
+3 konkrete Anwendungen für {NICHE}. Speichere unter {DELIVERABLE}.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🗺️ Nischen-Finder</b><span class="tag new">Neu</span></div>
+            <pre>Finde mir 10 lokale Betriebe in {STADT} aus Branchen mit hoher Zahlungsbereitschaft
+(z.B. Zahnärzte, Kanzleien, Handwerk, Kosmetik), deren Webseite veraltet ist oder fehlt.
+Für jeden: Name, Branche, was an der aktuellen Webseite konkret schwach ist
+(mobil kaputt? veraltet? Telefonnummer nicht klickbar?) und ein 1-Satz-Aufhänger
+für die erste Nachricht. Sortiere danach, wie leicht sich der Verbesserungs-Beweis zeigen lässt.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🕵️ Konkurrenz-Spion</b><span class="tag new">Neu</span></div>
+            <pre>Analysiere die Webseite {URL} eines Konkurrenten von {FIRMA}.
+Liefere: 1. Was macht die Seite besser als {FIRMA}? 2. Was macht sie schlechter?
+3. Welche 3 Elemente sollten wir übernehmen — angepasst, nicht kopiert?
+4. Welche Lücke lässt die Konkurrenz offen, die {FIRMA} besetzen kann?
+Antworte als kompakte Tabelle + 3 konkrete To-dos.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="group" id="cls-wissen">
+        <div class="group-head"><span class="h3">Wissen &amp; Voice</span><span class="cnt">3 Prompts</span></div>
+        <div class="grid">
+          <div class="pcard">
+            <div class="pcard-top"><b>🧠 Ask-Brain</b><span class="tag">Wissen</span></div>
+            <pre>[Autonom-Präambel]
+Dein Arbeitsverzeichnis IST mein Wissensordner {VAULT}. Beantworte {FRAGE} aus dem Brain, speichere unter {DELIVERABLE}.
+1. Navigiere über den Brain-Index, dann grep/lies die passenden Notizen.
+2. Antworte konkret, NUR aus dem was der Brain wirklich sagt — nenne die Notizen. Deckt er's nicht ab: sag das.
+3. Speichere Antwort + "## Quellen".
+Erste Zeile = EIN Satz, der die Frage direkt beantwortet. Beende mit: SAVED {DELIVERABLE}</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🎙️ Voice-Ask</b><span class="tag">Voice</span></div>
+            <pre>[Autonom-Präambel]
+Sprach-Anfrage (Push-to-Talk, transkribiert, kleine Fehler möglich): "{ANFRAGE}".
+Erledige die Aufgabe vollständig, schreibe das Ergebnis als Markdown unter {DELIVERABLE}.
+Liegt das echte Ergebnis an einer URL (Mail-Entwurf, Video, Doc): füge "link: &lt;url&gt;" hinzu.
+Erste Zeile wird vorgelesen — EIN Satz (unter 200 Zeichen), der die Anfrage direkt beantwortet.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>📚 RAG-Wissensassistent</b><span class="tag">Wissen</span></div>
+            <pre>Du bist {NAME}, ein persönlicher Wissensassistent. Beantworte Fragen NUR aus den bereitgestellten
+Dokument-Ausschnitten. Enthalten sie die Antwort nicht, sag das — erfinde nichts. Zitiere Quellen per [n]. Knapp und direkt.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="group" id="cls-kern">
+        <div class="group-head"><span class="h3">Jarvis-Kern</span><span class="cnt">2 Prompts</span></div>
+        <div class="grid">
+          <div class="pcard">
+            <div class="pcard-top"><b>🤵 Persönlicher AI-Assistent</b><span class="tag">Kern</span></div>
+            <pre>Du bist {ASSISTANT}, der persönliche Assistent von {USER}. Du bist das Betriebssystem seines Lebens.
+STIMME: direkt, trocken, ruhig souverän. Nie unterwürfig. Antizipiere. Knapp (1-3 Sätze). Witz, keine Witze.
+SPRACHE: spiegle die letzte Sprache des Users, wechsle nie unaufgefordert.
+GEDÄCHTNIS: behandle den Wissensordner als dein eigenes Gedächtnis, referenziere Datei-/Projektnamen konkret.
+HANDELN: wenn du etwas per Tool tun kannst, tu es OHNE zu fragen, bestätige knapp ("Erledigt.").
+HARTE REGELN: kein Emoji außer er nutzt es, behaupte nie "ich bin nur eine KI", brich nie den Charakter.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🧭 Intent-Router</b><span class="tag">Kern</span></div>
+            <pre>Du bist der Intent-Router für ein sprachgesteuertes Dashboard. Klassifiziere die Äußerung,
+antworte NUR in striktem JSON:
+{"tier": 1|2|3, "skill": "&lt;name oder weglassen&gt;", "reply": "&lt;kurz, max 2 Sätze&gt;", "panels": [...]}
+Tier 1: User will einen Skill AUSFÜHREN → setze "skill", reply = kurze Bestätigung.
+Tier 2: Frage nach Dashboard-Status → antworte NUR aus dem Snapshot, nichts erfinden.
+Tier 3: braucht echtes Reasoning/externe Daten → reply = kurzes "arbeite dran".
+Snapshot: {STATE} / Gespräch: {CONVO}</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="group" id="cls-vertrieb">
+        <div class="group-head"><span class="h3">Content &amp; Vertrieb</span><span class="cnt">4 Prompts</span></div>
+        <div class="grid">
+          <div class="pcard">
+            <div class="pcard-top"><b>🎬 Reel-Skript</b><span class="tag new">Neu</span></div>
+            <pre>Schreibe mir ein 30-45-Sekunden-Reel-Skript für {NICHE} zum Thema {THEMA}.
+Aufbau: HOOK (erste 2 Sekunden, ohne Clickbait-Floskeln) → 3 Value-Punkte in Alltagssprache →
+CTA ({CTA — z.B. "Schreib mir PROMPT"}).
+Regeln: kurze Sätze, keine Fachbegriffe ohne Erklärung, jede Zeile in einem Atemzug sprechbar.
+Gib mir zusätzlich 3 alternative Hooks und einen Text-Overlay-Vorschlag pro Szene.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>✍️ Outreach-Personalisierer</b><span class="tag new">Neu</span></div>
+            <pre>Hier ist meine Standard-Outreach-Nachricht: "{NACHRICHT}".
+Und hier Infos zum Empfänger: {INFOS — Webseite, Branche, Besonderheit}.
+Personalisiere die Nachricht so, dass der erste Satz beweist, dass ich mich WIRKLICH mit dem
+Betrieb beschäftigt habe — konkretes Detail, kein "ich habe Ihre Webseite gesehen".
+Maximal 5 Sätze, eine einfache Frage am Ende, keine Floskeln.
+Gib mir eine E-Mail- und eine WhatsApp-Variante.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🥊 Einwand-Trainer</b><span class="tag new">Neu</span></div>
+            <pre>Du bist ein skeptischer Inhaber eines {BRANCHE}-Betriebs in {STADT}. Ich habe dir gerade
+eine fertige Webseite gezeigt und {PREIS} genannt. Spiel den Kunden: bring realistische Einwände
+("kein Budget", "muss ich besprechen", "wir haben schon eine Seite", "schick mal ein Angebot").
+Nach jeder meiner Antworten: bewerte sie kurz (1-10), sag was gut war und was ein echter Profi
+anders gesagt hätte — dann nächster Einwand. Bleib hartnäckig, aber fair.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+          <div class="pcard">
+            <div class="pcard-top"><b>🧾 Angebot &amp; Rechnung</b><span class="tag new">Neu</span></div>
+            <pre>Schreibe mir ein kurzes, seriöses Angebot für {FIRMA}: One-Page-Webseite, Leistungsumfang
+(Design, Texte, mobile Optimierung, Impressum/Datenschutz-Seiten, 1 Feedback-Runde),
+Preis {PREIS}, Lieferzeit {TAGE} Tage, 50% bei Start / 50% bei Livegang.
+Ton: klar, auf Augenhöhe, keine Agentur-Floskeln. Maximal eine Seite.
+Danach: die passende Rechnungs-Vorlage mit Platzhaltern für meine Daten
+({KLEINUNTERNEHMER — ja/nein} berücksichtigen).</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cls-workflow" class="group" style="padding-top:0">
+    <div class="wrap">
+      <div class="wf">
+        <span class="star-tag">★ Die CLS-Vorlage · Der Kern des Systems</span>
+        <div class="h2">Der Kundenseiten-<span class="hl">Workflow</span></div>
+        <p class="lead">Eine Vorlage, fünf Schritte: eine verkaufsfertige Webseite für ein lokales
+          Unternehmen — von Briefing bis Pitch. Der Reihe nach kopieren, Platzhalter ersetzen, liefern.</p>
+        <div class="steps-line">
+          <span class="st">01 Briefing</span><span class="sep">→</span>
+          <span class="st">02 Build</span><span class="sep">→</span>
+          <span class="st">03 Feedback</span><span class="sep">→</span>
+          <span class="st">04 Check</span><span class="sep">→</span>
+          <span class="st">05 Pitch</span>
+        </div>
+
+        <div class="wstep">
+          <div class="num">01</div>
+          <div class="wcard">
+            <div class="whead">📋 Kunden-Briefing</div>
+            <pre>Ich baue eine Webseite für ein lokales Unternehmen. Stelle mir nacheinander genau 8 kurze Fragen,
+um alles zu sammeln, was du für eine verkaufsstarke One-Page-Webseite brauchst — eine Frage
+pro Nachricht, warte jeweils auf meine Antwort:
+1. Firmenname &amp; Branche  2. Stadt/Region  3. Die 3 wichtigsten Leistungen
+4. Was soll der Besucher tun? (anrufen / Termin buchen / Formular)  5. Zielgruppe &amp; Anrede (Du/Sie)
+6. Stil &amp; Hauptfarbe (oder: schlag 2 Richtungen vor)  7. Öffnungszeiten, Adresse, Telefon
+8. Gibt es etwas, das sie von der Konkurrenz unterscheidet?
+Fasse am Ende ALLES als kompaktes Briefing zusammen — das ist die Grundlage für den Build-Prompt.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+
+        <div class="wstep">
+          <div class="num">02</div>
+          <div class="wcard">
+            <div class="whead">🏗️ Build-Prompt — die Kundenseite</div>
+            <pre>Baue eine komplette, moderne One-Page-Webseite als EINE einzige HTML-Datei (inline CSS + JS,
+keine Frameworks, nur Google Fonts) für:
+
+FIRMA: {FIRMA} · BRANCHE: {BRANCHE} · STADT: {STADT}
+LEISTUNGEN: {LEISTUNG_1}, {LEISTUNG_2}, {LEISTUNG_3}
+ZIEL DER SEITE: {ZIEL — z.B. Anrufe / Terminbuchungen / Anfragen}
+STIL: {STIL — z.B. hell &amp; freundlich / edel &amp; dunkel} · Hauptfarbe: {FARBE} · Anrede: {DU/SIE}
+
+PFLICHT-SEKTIONEN (in dieser Reihenfolge):
+1. Hero — Nutzen-Headline (NICHT der Firmenname), Subline, großer CTA-Button "{CTA}",
+   Telefonnummer sofort sichtbar
+2. Vertrauens-Leiste — 3 Vorteile mit Icons (z.B. Erfahrung, Region, Schnelligkeit)
+3. Leistungen — eine Karte pro Leistung mit kurzem, verkaufsstarkem Text
+4. Über uns — {KURZE_STORY_DES_BETRIEBS}
+5. Bewertungen — 3 Testimonials, klar als [PLATZHALTER] markiert
+6. Kontakt — Formular (Name, Telefon, Nachricht), Öffnungszeiten, Adresse
+7. Footer — Links für Impressum &amp; Datenschutz
+
+REGELN:
+- Mobile-first, schnell, sauberes responsives Layout, dezente Scroll-Animationen
+- Jede Sektion muss auf das Ziel einzahlen: Warum sollte der Besucher JETZT {CTA}?
+- Seriöse, lokale Sprache — kein Marketing-Geschwurbel
+- Am Ende: Liste ALLER Stellen, die ich noch mit echten Fotos/Texten/Daten ersetzen muss</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+
+        <div class="wstep">
+          <div class="num">03</div>
+          <div class="wcard">
+            <div class="whead">🔁 Feedback-Loop</div>
+            <pre>Hier ist Feedback zur Webseite (vom Kunden / von mir): "{FEEDBACK}".
+Setze NUR diese Änderungen um — verändere nichts anderes am Design oder an den Texten.
+Gib mir danach die komplette aktualisierte HTML-Datei zurück und liste in 2-3 Bullets,
+was du geändert hast. Wenn ein Wunsch der Conversion schadet (z.B. CTA verstecken),
+setz ihn trotzdem um, aber sag mir vorher in einem Satz warum ich gegensteuern sollte.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+
+        <div class="wstep">
+          <div class="num">04</div>
+          <div class="wcard">
+            <div class="whead">✅ Qualitäts-Check vor Übergabe</div>
+            <pre>Prüfe die fertige HTML-Datei wie ein strenger Abnahme-Tester und gib mir eine Checkliste
+mit ✅/❌ pro Punkt — und fixe danach alle ❌ direkt selbst:
+1. Mobil (390px): nichts abgeschnitten, Buttons gut tippbar, Text lesbar
+2. Alle Links &amp; der CTA funktionieren, Telefonnummer ist klickbar (tel:)
+3. Kein [PLATZHALTER] mehr im sichtbaren Text
+4. Ladezeit: keine unnötig großen Bilder, keine toten Ressourcen
+5. Impressum &amp; Datenschutz verlinkt
+6. Rechtschreibung komplett fehlerfrei (Deutsch)
+7. Title-Tag &amp; Meta-Description gesetzt: "{FIRMA} — {LEISTUNG} in {STADT}"
+Gib mir am Ende die finale, bereinigte HTML-Datei.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+
+        <div class="wstep">
+          <div class="num">05</div>
+          <div class="wcard">
+            <div class="whead">💬 Pitch-Nachricht an den Kunden</div>
+            <pre>Schreibe mir eine kurze, persönliche Nachricht (E-Mail + WhatsApp-Variante) an {ANSPRECHPARTNER}
+von {FIRMA} in {STADT}. Kontext: Ich habe ihnen — ohne Auftrag — bereits eine neue Webseite
+gebaut und will sie ihnen zeigen: {DEMO_LINK}.
+Regeln: maximal 6 Sätze, kein Verkaufsdruck, keine Floskeln wie "ich hoffe, es geht Ihnen gut".
+Aufbau: 1 konkreter Aufhänger zu ihrer aktuellen Webseite / fehlenden Webseite →
+was ich gebaut habe → der Link → eine einfache Frage als Abschluss ("Darf ich Ihnen kurz
+zeigen, was da möglich wäre?"). Ton: auf Augenhöhe, lokal, ehrlich.</pre>
+            <button class="copybtn" type="button">📋 Prompt kopieren</button>
+          </div>
+        </div>
+
+        <button class="allbtn" id="clsCopyAll" type="button">⚡ Kompletten Workflow kopieren — alle 5 Prompts</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="cls-jarvis">
+    <div class="wrap">
+      <div class="jarvis-box">
+        <div class="rv">
+          <span class="kicker">★ Mein KI-Klon</span>
+          <div class="h2">Darf ich vorstellen — <span class="hl">Jarvis.</span></div>
+          <p>Jeder Prompt hier oben ist ein <b>Bauteil</b>. Zusammengesetzt ergeben sie Jarvis —
+            mein persönlicher KI-Klon auf Basis von Claude. Er plant meinen Tag, recherchiert
+            Nischen, schreibt Outreach-Entwürfe und baut Kundenseiten — <b>während ich etwas
+            anderes mache.</b></p>
+          <div class="one-liner">
+            <span class="lbl">Wie er funktioniert — in einem Satz</span>
+            Claude bekommt Gedächtnis, Werkzeuge und feste Abläufe — und arbeitet damit
+            selbstständig Aufträge ab, statt nur auf Nachrichten zu antworten.
+          </div>
+          <a class="jarvis-cta" href="#cls-video">Du willst wissen, wie du dir so einen baust? → Klick hier für das Video</a>
+        </div>
+        <div class="term rv">
+          <div class="term-bar"><i></i><i></i><i></i><span>jarvis — heute, 06:58</span></div>
+          <div class="term-body">
+            <span class="who">jarvis</span> <span class="t">›</span> <span class="msg">Guten Morgen.
+            Während du geschlafen hast: 2 Webseiten-Entwürfe fertig gebaut, 10 Betriebe in deiner
+            Stadt gefunden, deren Seite Kunden kostet, und die Outreach-Entwürfe liegen bereit.</span><br>
+            <span class="who">jarvis</span> <span class="t">›</span> <span class="msg">Du musst nur
+            noch auf Senden drücken.</span> <span class="cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="finale" id="cls-ende">
+    <div class="wrap rv">
+      <span class="kicker">Und jetzt?</span>
+      <div class="h2">Das sind die Werkzeuge.<br><span class="hl">CLS ist die Maschine.</span></div>
+      <p class="sec-sub">Mit diesen Prompts baust du dir Helfer. Im kostenlosen Video zeige ich
+        dir, wie daraus ein System wird, das ohne dich weiterl&auml;uft.</p>
+      <a class="bigbtn" href="/prompt-bibliothek">&#9654; Zum kostenlosen Video</a>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="wrap">
+      <span class="logo">CLS<i>.</i></span>
+      <p>CLS — Clone Looping System</p>
+      <small>© 2026 CLS. Alle Inhalte dienen der Weiterbildung. Ergebnisse hängen von deinem
+        Einsatz, deiner Umsetzung und deinem Markt ab — niemand kann dir Resultate zusichern,
+        und das tun wir auch nicht.</small>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+  var root = document.querySelector('.clsx');
+  if (!root) return;
+  function flash(btn, txt){
+    var old = btn.textContent;
+    btn.textContent = txt; btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent = old; btn.classList.remove('ok'); }, 1800);
+  }
+  function fallback(t, btn){
+    var ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); flash(btn,'✓ Kopiert — ab in Claude damit!'); }
+    catch(e){ flash(btn,'Bitte manuell markieren'); }
+    document.body.removeChild(ta);
+  }
+  function copyText(t, btn){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){ flash(btn,'✓ Kopiert — ab in Claude damit!'); },
+        function(){ fallback(t, btn); });
+    } else { fallback(t, btn); }
+  }
+  root.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = btn.parentElement.querySelector('pre');
+      if (pre) copyText(pre.innerText, btn);
+    });
+  });
+  var all = document.getElementById('clsCopyAll');
+  if (all) all.addEventListener('click', function(){
+    var parts = [];
+    root.querySelectorAll('#cls-workflow .wstep').forEach(function(st, i){
+      var head = st.querySelector('.whead').innerText;
+      var pre = st.querySelector('pre').innerText;
+      parts.push('===== SCHRITT 0' + (i+1) + ' · ' + head + ' =====\n\n' + pre);
+    });
+    copyText(parts.join('\n\n\n'), all);
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:0, rootMargin:'0px 0px -8% 0px'});
+  root.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var links = root.querySelectorAll('.catnav a');
+  links.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var id = a.getAttribute('href').slice(1);
+      links.forEach(function(x){ x.classList.remove('on'); });
+      a.classList.add('on');
+      root.querySelectorAll('.group').forEach(function(g){ g.classList.remove('act'); });
+      var el = document.getElementById(id);
+      if (el) el.classList.add('act');
+      var nav = root.querySelector('.catnav');
+      var y = nav.getBoundingClientRect().top + window.pageYOffset;
+      if (window.pageYOffset > y - 10) window.scrollTo({top:y - 10, behavior:'instant'});
+    });
+  });
+})();
+</script>
+</div></div></div></div></div></div></body>
