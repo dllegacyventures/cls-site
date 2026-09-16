@@ -541,7 +541,7 @@ document.addEventListener('click',function(ev){
        Zahlen, keine Adjektive. Die Zahlen sind Marios eigene, sie standen
        bisher nur auf der Video-Seite. Bewusst OHNE Zaehl-Animation hier —
        die Leiste soll ruhig unter der Headline liegen, nicht auffuehren. -->
-  <div class="wrap proofleiste rv">
+  <div class="wrap proofleiste">
     <div class="pitem"><b>3,5 Mio+</b><span>Cash Collected über alle Vertriebssysteme</span></div>
     <div class="pitem"><b>28</b><span>Unternehmen im Vertrieb skaliert</span></div>
     <div class="pitem"><b>~2 Std.</b><span>aktive Arbeit pro Kundenauftrag</span></div>
@@ -549,7 +549,11 @@ document.addEventListener('click',function(ev){
   </div>
 
   <section class="finale" id="cls-video">
-    <div class="wrap rv">
+    <!-- PageSpeed (16.09.2026): Proof-Leiste und Video-Karte ohne .rv — sie
+         stehen praktisch immer im ersten Viewport, und die Video-Karte ist
+         auf dem Handy das LCP-Element. Ohne Reveal-Klasse haengt ihr erster
+         Paint nicht mehr am JavaScript. -->
+    <div class="wrap">
       <div class="vslcard" id="cls-thumb">
         <span class="thumb" style="display:block">
           <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
