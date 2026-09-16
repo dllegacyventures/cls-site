@@ -372,6 +372,7 @@ document.addEventListener('click',function(ev){
 
   .clsx .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .clsx .rv.in{opacity:1;transform:none}
+  .clsx .rv.now{transition:none}
   @media (prefers-reduced-motion:reduce){.clsx .rv{opacity:1;transform:none;transition:none}
     .clsx .play{animation:none}.clsx .hero-hint .arr{animation:none}}
 
@@ -1079,7 +1080,17 @@ zeigen, was da möglich wäre?"). Ton: auf Augenhöhe, lokal, ehrlich.</pre>
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
   }, {threshold:0, rootMargin:'0px 0px -8% 0px'});
-  root.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  /* PageSpeed (16.09.2026): Was beim Laden schon im Viewport steht (Proof-
+     Leiste, Video-Karte), wird sofort und ohne Einblendung gezeigt. Vorher
+     lag die Video-Karte — auf dem Handy das groesste Element — erst 0,7 s
+     im Fade; Lighthouse zaehlte den LCP erst danach. Alles unterhalb der
+     Falz blendet weiterhin beim Scrollen ein. */
+  var vh = window.innerHeight || 800;
+  root.querySelectorAll('.rv').forEach(function(el){
+    var r = el.getBoundingClientRect();
+    if (r.top < vh * 0.92 && r.bottom > 0){ el.classList.add('now', 'in'); }
+    else io.observe(el);
+  });
 
   var links = root.querySelectorAll('.catnav a');
   links.forEach(function(a){
