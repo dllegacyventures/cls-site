@@ -1,0 +1,245 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     CLS · Datenschutzerklärung v3 — 2026-09-17 (v1 05.09., v2 06.09.)
+     Einbau: FunnelCockpit → Funnel "CLS — Clone Looping Funnel"
+             → Seite "Datenschutz" → HTML-Element → kompletten Inhalt ERSETZEN
+     Ersetzt das FunnelCockpit-Muster (inkl. "DIESEN ROTEN ABSATZ BITTE LÖSCHEN!").
+
+     Beschreibt den IST-ZUSTAND vom 05.09.2026:
+       FunnelCockpit · PostHog EU (inkl. Session Recording) · Coredex-Tracking
+       · Wistia · WhatsApp-Kontaktlinks. KEIN Formular, KEIN Meta Pixel.
+
+     v3 (17.09.): Firmierung FunnelCockpit eingetragen (Impressum funnelcockpit.com:
+     GbR, Nobelstr. 3–5, 41189 Mönchengladbach); Ziffer 7a beschreibt den echten
+     Weg der Eintragung (FunnelCockpit → Close, Coredex nur zusätzlich).
+     Offen bleibt: EU-Vertreter nach Art. 27 DSGVO — siehe Hinweis am Dateiende
+
+     ▼ Beim Aktivieren von Opt-in-Formular + Meta Pixel: den Block
+       "NOCH NICHT AKTIV" am Ende dieser Datei einkommentieren.
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  html, body { background:#0a0908 !important; margin:0 !important; padding:0 !important; overflow-x:hidden !important; }
+  .clsD, .clsD * { box-sizing:border-box; margin:0; padding:0; }
+  .clsD { width:100vw; margin-left:calc(50% - 50vw) !important;
+    --bg:#0a0908; --panel:#12100d; --ink:#f2efe8; --muted:rgba(242,239,232,.66);
+    --faint:rgba(242,239,232,.38); --line:rgba(242,239,232,.12); --am:#f5a623;
+    background:var(--bg); color:var(--ink); font-family:'Archivo',sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .clsD .wrap { max-width:760px; margin:0 auto; padding:64px 22px 80px; }
+  .clsD a { color:var(--am); }
+  .clsD .back { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:12px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--faint);
+    text-decoration:none; margin-bottom:34px; }
+  .clsD .back:hover { color:var(--am); }
+  .clsD h1 { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase;
+    font-size:clamp(2.1rem,6vw,3.2rem); line-height:1.05; margin-bottom:6px; }
+  .clsD h1 i { color:var(--am); font-style:normal; }
+  .clsD .stand { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--faint); margin-bottom:8px; }
+  .clsD h2 { font-family:'Anton',sans-serif; font-weight:400; text-transform:uppercase;
+    font-size:1.15rem; letter-spacing:.02em; margin:38px 0 10px; }
+  .clsD h3 { font-family:'Archivo',sans-serif; font-weight:700; font-size:1rem;
+    margin:24px 0 6px; color:var(--ink); }
+  .clsD p, .clsD li { color:var(--muted); margin-bottom:12px; font-size:15px; }
+  .clsD b { color:var(--ink); font-weight:600; }
+  .clsD ul { margin:0 0 14px 20px; }
+  .clsD li { margin-bottom:6px; }
+  .clsD .card { border:1px solid var(--line); border-radius:16px; padding:24px 26px;
+    background:var(--panel); margin:22px 0; }
+  .clsD .card p:last-child { margin-bottom:0; }
+  .clsD footer { border-top:1px solid var(--line); margin-top:56px; padding-top:22px;
+    font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--faint); }
+  .clsD footer a { margin-right:14px; text-decoration:none; }
+</style>
+
+<div class="clsD">
+  <div class="wrap">
+
+    <a class="back" href="/">&larr; Zurück zur Seite</a>
+
+    <h1>Datenschutz<i>.</i></h1>
+    <p class="stand">Stand: 05. September 2026</p>
+
+    <p>Diese Erklärung beschreibt, welche personenbezogenen Daten beim Besuch von
+      claude-erfolg.de verarbeitet werden, zu welchem Zweck und auf welcher Rechtsgrundlage.</p>
+
+    <h2>1 · Verantwortlicher</h2>
+    <div class="card">
+      <p><b>NextCore Technologies Limited Liability Company</b><br>
+        131 Continental Dr, Suite 305<br>
+        Newark, DE 19713, United States of America</p>
+      <p>Vertreten durch Mario De Luca (Managing Member)<br>
+        E-Mail: <a href="mailto:support@nextcore-technologies.com">support@nextcore-technologies.com</a><br>
+        Telefon: <a href="tel:+17579068562">+1 757 906-8562</a></p>
+      <p>Vollständige Anbieterangaben im <a href="/impressum/">Impressum</a>.</p>
+    </div>
+
+    <h2>2 · Deine Rechte</h2>
+    <p>Du hast jederzeit das Recht auf <b>Auskunft</b> (Art. 15 DSGVO), <b>Berichtigung</b>
+      (Art. 16), <b>Löschung</b> (Art. 17), <b>Einschränkung der Verarbeitung</b> (Art. 18),
+      <b>Datenübertragbarkeit</b> (Art. 20) und <b>Widerspruch</b> (Art. 21). Eine erteilte
+      Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3).</p>
+    <p>Eine formlose E-Mail an
+      <a href="mailto:support@nextcore-technologies.com">support@nextcore-technologies.com</a>
+      genügt. Unabhängig davon steht dir ein Beschwerderecht bei einer
+      Datenschutz-Aufsichtsbehörde zu (Art. 77 DSGVO) — in Deutschland bei der Behörde
+      deines Wohnsitz-Bundeslandes.</p>
+    <p><b>Widerspruch gegen Reichweitenmessung:</b> Der Verarbeitung nach Ziffer 5 kannst du
+      jederzeit ohne Angabe von Gründen widersprechen — per E-Mail an die obige Adresse.</p>
+
+    <h2>3 · Aufruf der Website (Server-Logfiles)</h2>
+    <p>Beim Aufruf werden technisch notwendige Daten verarbeitet: IP-Adresse, Datum und
+      Uhrzeit, aufgerufene Seite, übertragene Datenmenge, Referrer, Browsertyp und
+      Betriebssystem. Diese Daten sind nötig, damit die Seite ausgeliefert werden kann,
+      und dienen der Stabilität und Sicherheit.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am
+      sicheren, störungsfreien Betrieb).<br>
+      <b>Speicherdauer:</b> Löschung, sobald die Daten für den Zweck nicht mehr erforderlich
+      sind; Logfiles in der Regel nach spätestens 30 Tagen.</p>
+
+    <h3>Hosting und Funnel-Software: FunnelCockpit</h3>
+    <p>Diese Seite wird mit der Marketingsoftware <b>FunnelCockpit</b>
+      (<a href="https://www.funnelcockpit.com" target="_blank" rel="noopener">funnelcockpit.com</a>,
+      FunnelCockpit GbR, Nobelstr. 3–5, 41189 Mönchengladbach,
+      Deutschland) betrieben und dort gehostet. Der Anbieter verarbeitet die oben genannten
+      Daten in unserem Auftrag auf Grundlage eines Vertrags zur Auftragsverarbeitung
+      nach Art. 28 DSGVO. Die Server stehen in der Europäischen Union.</p>
+
+    <h2>4 · Cookies und Speicherung auf deinem Gerät</h2>
+    <p>Für den Betrieb der Seite werden technisch notwendige Informationen auf deinem Gerät
+      gespeichert (Session-Cookies, <code>localStorage</code>). Ohne sie funktioniert die
+      Seite nicht. Zusätzlich setzen die unter Ziffer 5, 5a und 6 genannten Dienste eigene
+      Kennungen.</p>
+    <p><b>Rechtsgrundlage</b> für technisch notwendige Speicherung: § 25 Abs. 2 Nr. 2 TDDDG.
+      Du kannst Cookies jederzeit über die Einstellungen deines Browsers löschen oder
+      blockieren.</p>
+
+    <h2>5 · Reichweitenmessung</h2>
+
+    <h3>PostHog</h3>
+    <p>Wir nutzen <b>PostHog</b> (PostHog, Inc., USA) zur Analyse der Seitennutzung. Verarbeitet
+      werden gekürzte Nutzungsdaten: aufgerufene Seiten, Verweildauer, Klicks, Scrolltiefe,
+      Gerätetyp, Browser, ungefähre Herkunftsregion sowie eine pseudonyme Kennung, die deinem
+      Browser zugeordnet wird. Ziel ist es zu verstehen, welche Inhalte gelesen werden und
+      an welcher Stelle Besucher abspringen.</p>
+    <p>Die Verarbeitung erfolgt über die <b>EU-Cloud von PostHog</b>; die Daten werden auf
+      Servern in der Europäischen Union (Frankfurt am Main) gespeichert.</p>
+    <p><b>Session-Aufzeichnung:</b> PostHog zeichnet den Ablauf des Seitenbesuchs auf —
+      Mausbewegungen, Klicks und Scrollverhalten als abspielbare Sitzung. Eingaben in
+      Formularfelder werden dabei standardmäßig maskiert. Zweck ist ausschließlich die
+      Verbesserung der Seite.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
+      bedarfsgerechten Gestaltung des Angebots).<br>
+      <b>Speicherdauer:</b> Aufzeichnungen werden nach spätestens 90 Tagen gelöscht.<br>
+      <b>Weitere Informationen:</b>
+      <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a></p>
+
+    <h3>Coredex</h3>
+    <p>Auf der Videoseite läuft <b>Coredex</b> (coredex.ai) — eine von uns selbst betriebene
+      Software zur Messung, wie oft eine Seite aufgerufen und wie weit das Video gesehen wird.
+      Verarbeitet werden Seitenaufruf, Zeitstempel, Referrer und eine pseudonyme Kennung.
+      Es findet keine Weitergabe an Dritte statt.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+      Erfolgsmessung eigener Inhalte).</p>
+
+    <h2>5a · Meta Pixel (Facebook/Instagram)</h2>
+    <p>Wir setzen das <b>Meta Pixel</b> (Meta Platforms Ireland Limited, Irland) ein. Es erfasst,
+      welche Seiten du aufrufst und ob du dich in das Formular einträgst, und ordnet das deinem
+      Meta-Konto zu, sofern du eines hast. Zweck ist die Erfolgsmessung unserer Anzeigen und die
+      Ausspielung an Personen mit vergleichbaren Merkmalen. Dabei werden Daten in die <b>USA</b>
+      übermittelt; Meta stützt die Übermittlung auf die Standardvertragsklauseln der EU-Kommission
+      (Art. 46 Abs. 2 lit. c DSGVO). Ein den europäischen Standards vollständig entsprechendes
+      Datenschutzniveau kann für US-Behördenzugriffe nicht garantiert werden.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Messung
+      und Optimierung der eigenen Werbung).<br>
+      <b>Widerspruch:</b> Du kannst dieser Verarbeitung jederzeit widersprechen — formlos per
+      E-Mail an <a href="mailto:support@nextcore-technologies.com">support@nextcore-technologies.com</a>,
+      über die Werbeeinstellungen deines Meta-Kontos
+      (<a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>)
+      oder indem du Tracking in deinem Browser blockierst.<br>
+      <b>Speicherdauer:</b> Meta löscht Ereignisdaten nach eigenen Fristen, längstens nach zwei Jahren.<br>
+      <b>Weitere Informationen:</b>
+      <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">facebook.com/privacy/policy</a></p>
+
+    <h2>6 · Video-Wiedergabe: Wistia</h2>
+    <p>Die Videos auf dieser Seite werden über <b>Wistia</b> (Wistia, Inc., USA)
+      eingebunden. Beim Laden der Seite wird eine Verbindung zu Servern von Wistia
+      aufgebaut; dabei werden deine IP-Adresse, technische Angaben zu Browser und Gerät
+      sowie Angaben zum Abspielverhalten (Start, Fortschritt, Abbruch) übertragen. Wistia
+      setzt hierfür eigene Kennungen.</p>
+    <p>Damit werden Daten in die <b>USA</b> übermittelt. Wistia stützt die Übermittlung auf
+      die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO). Ein den
+      europäischen Standards vollständig entsprechendes Datenschutzniveau kann für
+      US-Behördenzugriffe nicht garantiert werden.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+      Bereitstellung der Videoinhalte).<br>
+      <b>Weitere Informationen:</b>
+      <a href="https://wistia.com/privacy" target="_blank" rel="noopener">wistia.com/privacy</a></p>
+
+    <h2>7 · Kontaktaufnahme über WhatsApp</h2>
+    <p>Auf dieser Seite befinden sich Links, die ein Gespräch in <b>WhatsApp</b> öffnen
+      (Anbieter: Meta Platforms Ireland Limited, Irland). Es handelt sich um reine
+      Verlinkungen — <b>solange du nicht klickst, wird keine Verbindung zu WhatsApp
+      aufgebaut und es werden keine Daten übertragen.</b></p>
+    <p>Klickst du, öffnet sich WhatsApp mit einer vorbereiteten Nachricht. Deine
+      Mobilfunknummer, dein Profilname und der Inhalt der Nachricht werden uns dann im Chat
+      angezeigt. Diese Angaben verarbeiten wir, um deine Anfrage zu beantworten. Zusätzlich
+      verarbeitet Meta die Daten nach eigenen Bestimmungen als eigenständig Verantwortlicher.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertragsverhältnisses)
+      bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).<br>
+      <b>Speicherdauer:</b> Wir löschen den Chatverlauf, sobald deine Anfrage abschließend
+      bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.<br>
+      <b>Hinweis:</b> Wenn du uns nicht über WhatsApp kontaktieren möchtest, erreichst du uns
+      jederzeit per E-Mail an
+      <a href="mailto:support@nextcore-technologies.com">support@nextcore-technologies.com</a>.<br>
+      <b>Weitere Informationen:</b>
+      <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy-eea</a></p>
+
+    <h2>7a · Eintragung in das Formular</h2>
+    <p>Trägst du dich ein, um das Video freizuschalten, verarbeiten wir <b>Name, E-Mail-Adresse und
+      Telefonnummer</b> sowie den Zeitpunkt der Eintragung, deine IP-Adresse, die aufgerufene Seite,
+      die Herkunft des Besuchs (Referrer und Kampagnenparameter) und den Text der Einwilligung,
+      dem du zugestimmt hast.</p>
+    <p>Zweck ist die Freischaltung des Videos sowie die Kontaktaufnahme zu dem Angebot, für das du
+      dich eingetragen hast. Die Eintragung wird bei <b>FunnelCockpit</b> (unser Auftragsverarbeiter,
+      siehe Ziffer 3) gespeichert und von dort in unser CRM <b>Close</b> (Elastic, Inc., San Francisco,
+      USA) übernommen, in dem wir die Kontaktaufnahme organisieren. Die Übermittlung in die USA erfolgt
+      auf Grundlage der Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).
+      Zusätzlich kann die Eintragung in unserem eigenen System <b>Coredex</b> (coredex.ai) zur
+      Auswertung des Funnels gespeichert werden.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) und Art. 6 Abs. 1 lit. b DSGVO
+      (Anbahnung eines Vertragsverhältnisses).<br>
+      <b>Speicherdauer:</b> Löschung, sobald der Zweck entfällt oder du widerrufst, vorbehaltlich
+      gesetzlicher Aufbewahrungsfristen.<br>
+      <b>Telefonische Kontaktaufnahme</b> erfolgt nur, soweit du dem ausdrücklich zugestimmt hast
+      (§ 7 Abs. 2 Nr. 1 UWG). Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft
+      widerrufen — eine formlose E-Mail genügt.</p>
+
+    <h2>8 · Schriften</h2>
+    <p>Diese Seite lädt Schriftarten von <b>Google Fonts</b> (Google Ireland Limited, Irland).
+      Dabei wird deine IP-Adresse an Google übertragen. Die Schriften dienen der einheitlichen
+      Darstellung.</p>
+    <p><b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
+      einheitlichen Darstellung des Angebots).</p>
+
+    <h2>9 · Keine automatisierte Entscheidungsfindung</h2>
+    <p>Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne des
+      Art. 22 DSGVO findet nicht statt.</p>
+
+    <h2>10 · Änderungen</h2>
+    <p>Wir passen diese Erklärung an, sobald sich die beschriebenen Verarbeitungen ändern.
+      Maßgeblich ist die jeweils hier veröffentlichte Fassung.</p>
+
+    <footer>
+      <a href="/">Startseite</a><a href="/impressum/">Impressum</a>
+      &copy; 2026 CLS — Clone Looping System
+    </footer>
+
+  </div>
+</div>
+
+
