@@ -1,0 +1,19 @@
+# Mario De Luca
+
+> Systembauer und Gründer aus dem DACH-Raum: baut KI-Klone (Agenten), die Arbeit in Unternehmen übernehmen, und das Clone Looping System (CLS), mit dem andere dasselbe lernen.
+
+## Worum es geht
+
+- Person: Mario De Luca, Jahrgang 2004, Gründer von NextCore Technologies LLC und des Clone Looping System (CLS).
+- Arbeitsgebiet: KI-Agenten für Vertrieb, Fulfillment und Betrieb — gebaut mit Claude, im eigenen Betrieb produktiv im Einsatz.
+- Belegbare Systeme: CLS (Vertriebs- und Fulfillment-System), ESIS (lokaler Assistent), AutoAgency (Webseiten-Autopilot), Coredex (CRM).
+- Handle in Social: realsalesgenius.
+
+## Seiten
+
+- [delucalegacy.com](https://delucalegacy.com/): Wer er ist, was er gebaut hat, wofür CLS steht
+- [Impressum](https://delucalegacy.com/impressum.html): Anbieterkennzeichnung
+- [NextCore Technologies](https://nextcore-technologies.com/): die Firma dahinter
+- [Clone Looping System](https://claude-erfolg.de/): das Programm, mit dem andere KI-Klone bauen
+- [YouTube](https://www.youtube.com/@realsalesgenius): Videos
+- [LinkedIn](https://www.linkedin.com/in/mario-de-luca-business/): Profil
