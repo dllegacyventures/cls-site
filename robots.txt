@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /fc/
+Disallow: /praesentation/
 
 # KI-Suche ausdrücklich erlaubt (23.09.2026) — sonst sperrt sie irgendwann jemand versehentlich aus
 
