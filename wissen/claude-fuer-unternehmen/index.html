@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude im Unternehmen: Vergleich, Kosten, Datenschutz</title>
+<meta name="description" content="Claude im Betrieb: Unterschied zu ChatGPT, Claude Code, Kostenstruktur der API, Datenschutz-Fragen und wie ich damit täglich Software und Vertriebsarbeit baue.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://delucalegacy.com/wissen/claude-fuer-unternehmen/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude im Unternehmen: was es kann, wo es ChatGPT schlägt, was es kostet">
+<meta property="og:description" content="Claude im Betrieb: Unterschied zu ChatGPT, Claude Code, Kostenstruktur der API, Datenschutz-Fragen und wie ich damit täglich Software und Vertriebsarbeit baue.">
+<meta property="og:url" content="https://delucalegacy.com/wissen/claude-fuer-unternehmen/">
+<meta property="og:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Mario De Luca">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude im Unternehmen: was es kann, wo es ChatGPT schlägt, was es kostet">
+<meta name="twitter:description" content="Claude im Betrieb: Unterschied zu ChatGPT, Claude Code, Kostenstruktur der API, Datenschutz-Fragen und wie ich damit täglich Software und Vertriebsarbeit baue.">
+<meta name="twitter:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='38' font-weight='900' text-anchor='middle' fill='%23f2efe8'%3EM%3C/text%3E%3Ccircle cx='52' cy='46' r='5' fill='%23ff9f1c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/wissen/wissen.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#artikel",
+      "headline": "Claude im Unternehmen: was es kann, wo es ChatGPT schlägt, was es kostet",
+      "description": "Claude im Betrieb: Unterschied zu ChatGPT, Claude Code, Kostenstruktur der API, Datenschutz-Fragen und wie ich damit täglich Software und Vertriebsarbeit baue.",
+      "inLanguage": "de-DE",
+      "url": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/",
+      "datePublished": "2026-09-28",
+      "dateModified": "2026-09-28",
+      "author": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "publisher": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#seite"
+      },
+      "image": "https://delucalegacy.com/assets/mario-hud.jpg",
+      "about": [],
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/wissen/#sammlung"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Claude oder ChatGPT für Unternehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für Software, lange Dokumente und deutsche Verkaufstexte nehme ich Claude, für Bilder, Sprache und die breite Werkzeugauswahl ChatGPT. In vielen Betrieben laufen beide: ein Abo für die Breite, ein API-Zugang für das, was in eigene Software eingebaut wird."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet die Claude API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abgerechnet wird pro Token, getrennt nach Eingabe und Ausgabe, und der Preis hängt am gewählten Modell. Die Rechnung wird nicht von der Zahl der Nutzer getrieben, sondern von Textlänge, Modellwahl und Zahl der Schritte. Zwei vollständige Software-Aufträge in meinem Betrieb lagen bei 52 und 114 US-Dollar Modellkosten. Prompt-Caching ist der größte einzelne Spareffekt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es Claude auf Deutsch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, vollständig. Die Qualität deutscher Texte hängt weniger am Modell als am Auftrag: Beispielsätze, Satzlängen und eine Liste verbotener Wörter mitgeben, sonst kommt Werbesprache."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Darf ich Kundendaten in Claude eingeben?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nur mit Auftragsverarbeitungsvertrag, Eintrag im Verarbeitungsverzeichnis und so wenigen personenbezogenen Daten wie möglich. Praktisch heißt das: Namen und Nummern vorher ersetzen und Gesprächsinhalte möglichst lokal verarbeiten. Die verbindliche Bewertung macht ein Datenschutzbeauftragter, nicht ich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claude im Terminal, mit Zugriff auf Dateien, Git und Befehle. Statt Code-Schnipsel zu liefern, baut es an einem echten Projekt: mehrere Dateien, Tests, Erklärung der Änderung. Das ist der Teil, mit dem ich mein CRM, meine Websites und meine Video-Kette gebaut habe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich Programmierkenntnisse für Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Um etwas zu bauen: nein. Um zu verstehen, was gebaut wurde: ja, wenigstens Code lesen zu können. Wer das nicht kann, sollte nichts an echte Kundendaten lassen — nicht wegen des Modells, sondern weil niemand merkt, wenn es still das Falsche tut."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#seite",
+      "url": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/",
+      "name": "Claude im Unternehmen: was es kann, wo es ChatGPT schlägt, was es kostet",
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#pfad"
+      },
+      "primaryImageOfPage": "https://delucalegacy.com/assets/mario-hud.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#pfad",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://delucalegacy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Wissen",
+          "item": "https://delucalegacy.com/wissen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Claude für Unternehmen",
+          "item": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://delucalegacy.com/#mario",
+      "name": "Mario De Luca",
+      "url": "https://delucalegacy.com/",
+      "jobTitle": "Gründer und Systembauer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "NextCore",
+        "url": "https://nextcore-technologies.com/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/">De Luca<i>.</i></a>
+  <div class="links">
+    <a href="/wissen/">Wissen</a>
+    <a class="opt" href="/#story">Story</a>
+    <a class="opt" href="/#erfolge">Erfolge</a>
+    <a href="https://claude-erfolg.de" target="_blank" rel="noopener">CLS</a>
+  </div>
+</div></nav>
+<main id="inhalt">
+<header class="kopf"><div class="wrap">
+  <p class="kicker">Werkzeuge · 12 Min</p>
+  <h1>Claude im Unternehmen</h1>
+  <p class="lede">Ich arbeite seit Anfang 2025 fast täglich mit Claude — nicht als Chatfenster, sondern als Baumaschine. Dieser Text sagt, wofür es taugt, wofür ChatGPT besser ist, und was es tatsächlich kostet.</p>
+  <p class="meta">Von Mario De Luca · Stand 28.09.2026 · Zahlen aus eigenen Projekten</p>
+</div></header>
+<article><div class="wrap">
+<div class="kurz"><p><b>Kurz:</b> Claude ist stark bei <b>langen Zusammenhängen</b>, <b>Code</b> und <b>mehrstufiger Arbeit an echten Dateien</b>. ChatGPT ist breiter bei Bild, Sprache und Alltags-Werkzeugen. Der eigentliche Hebel für Unternehmen ist nicht das Chatfenster, sondern <b>Claude Code</b> im Terminal, weil es an Dateien und Systemen arbeitet statt an Absätzen.</p></div>
+
+<h2 id="vergleich">Claude oder ChatGPT: der ehrliche Vergleich</h2>
+<p>Ich benutze beide. Die Frage ist nicht, welches Modell „besser“ ist, sondern wofür man es einsetzt.</p>
+<div class="tabelle"><table><thead><tr><th>Aufgabe</th><th>Meine Wahl</th><th>Warum</th></tr></thead><tbody><tr><td>Software bauen und umbauen</td><td>Claude</td><td>hält große Zusammenhänge, arbeitet an echten Dateien statt an Schnipseln</td></tr><tr><td>Lange Dokumente durcharbeiten</td><td>Claude</td><td>bleibt über hundert Seiten hinweg bei der Sache</td></tr><tr><td>Deutsche Verkaufstexte</td><td>Claude</td><td>weniger Werbefloskeln, näher am Gesprochenen</td></tr><tr><td>Bilder, Sprache, Alltagswerkzeuge</td><td>ChatGPT</td><td>größere Auswahl direkt im Produkt</td></tr><tr><td>Recherche im Netz</td><td>beides, mit Prüfung</td><td>jede Quelle nachsehen — beide erfinden Belege</td></tr><tr><td>Tabellen und Auswertungen</td><td>Claude mit Code</td><td>es rechnet nicht im Kopf, es schreibt ein Skript</td></tr></tbody></table></div>
+<p>Der praktische Unterschied, der im Alltag zählt: Claude gibt eher zu, dass es etwas nicht weiß, und erfindet seltener eine Zwischenüberschrift, wo ein Satz reicht. Für Verkaufstexte in deutscher Sprache ist das der Grund, warum ich dabei geblieben bin.</p>
+
+<h2 id="code">Claude Code: der Teil, den kaum jemand nutzt</h2>
+<p>Das Chatfenster ist die kleinste Anwendung. Der Hebel ist <strong>Claude Code</strong> — dasselbe Modell, aber im Terminal, mit Zugriff auf Dateien, Git, Befehle und Schnittstellen. Damit wird aus „schreib mir Code“ ein Arbeiter, der ein ganzes Projekt umbaut, Tests laufen lässt und die Änderung erklärt.</p>
+<p>Was ich damit im eigenen Betrieb gebaut habe: ein CRM-Portal, mehrere Websites mit eigenen Angeboten, eine Video-Schnitt-Kette, ein Vertriebs-Cockpit auf echten Tageszahlen, einen internen Betriebsassistenten auf einem eigenen Rechner. Kein Studium, kein Entwicklerteam — aber auch keine Magie: Wer nicht liest, was es tut, bekommt Software, die er nicht versteht.</p>
+<p>Die drei Regeln, die bei mir den Unterschied gemacht haben:</p>
+<ol>
+<li><strong>Auftrag vor Code.</strong> Erst aufschreiben, was fertig heißt — dann bauen lassen. Ohne Abnahmekriterien liefert es etwas Plausibles.</li>
+<li><strong>Getrennter Prüfer.</strong> Ein zweiter Durchgang mit leerem Kontext, der nur die Änderung und die Kriterien sieht. Der findet, was der Erbauer verteidigt.</li>
+<li><strong>Kein Zugriff auf Echtdaten beim Bauen.</strong> Testdaten, getrennte Rechte, und nichts Produktives ohne eigenen Blick.</li>
+</ol>
+
+<h2 id="kosten">Was Claude kostet</h2>
+<p>Zwei Wege, und sie unterscheiden sich grundsätzlich:</p>
+<ul>
+<li><strong>Abo pro Person.</strong> Fester Monatspreis, Nutzung im Rahmen von Grenzen. Richtig für Mitarbeiter, die schreiben, zusammenfassen, recherchieren.</li>
+<li><strong>API nach Verbrauch.</strong> Abgerechnet wird pro <em>Token</em> — grob: ein Wort sind eineinhalb Token, getrennt nach Eingabe und Ausgabe. Richtig für alles, was in eigene Software eingebaut wird.</li>
+</ul>
+<p>Weil die Preise pro Modell und Zeitpunkt wechseln, nenne ich keine Tabelle, die morgen falsch ist, sondern was die Rechnung <strong>treibt</strong>:</p>
+<div class="tabelle"><table><thead><tr><th>Treiber</th><th>Wirkung</th><th>Gegenmittel</th></tr></thead><tbody><tr><td>Länge der Eingabe</td><td>jeder Aufruf zahlt den ganzen mitgeschickten Text</td><td>nur mitschicken, was nötig ist</td></tr><tr><td>Wahl des Modells</td><td>zwischen klein und groß liegt oft ein Vielfaches</td><td>kleines Modell für Sortieren, großes für Denken</td></tr><tr><td>Schleifen im Agenten</td><td>jeder Schritt ist ein neuer Aufruf</td><td>Schrittgrenze setzen, Abbruchbedingung definieren</td></tr><tr><td>Wiederholter Kontext</td><td>dieselben Anweisungen in jedem Aufruf</td><td>Prompt-Caching nutzen — der große Spareffekt</td></tr><tr><td>Ausgabelänge</td><td>Ausgabe kostet mehr als Eingabe</td><td>kurze, feste Ausgabeform verlangen</td></tr></tbody></table></div>
+<p>Eine gemessene Zahl aus meinem Betrieb statt einer Schätzung: Zwei vollständige Software-Aufträge über das eigene Fließband — Spezifikation, Bau, Tests, Review — haben <strong>52 und 114 US-Dollar</strong> an Modellkosten verursacht. Das ist die Größenordnung, um die es bei sauber begrenzten Aufträgen geht. Ein Agent ohne Schrittgrenze kann das an einem Nachmittag überschreiten.</p>
+
+<h2 id="datenschutz">Datenschutz: die vier Fragen, die zählen</h2>
+<p>Nicht „ist KI DSGVO-konform“, sondern:</p>
+<ol>
+<li><strong>Gibt es einen Auftragsverarbeitungsvertrag?</strong> Bei den Geschäftsangeboten der großen Anbieter ja — er muss geschlossen und abgelegt werden, nicht nur existieren.</li>
+<li><strong>Werden meine Eingaben zum Training benutzt?</strong> Bei den Geschäfts- und API-Zugängen laut Anbieter nicht; bei kostenlosen Zugängen ist das oft anders. Das ist der Punkt, den ich in jedem Projekt schriftlich nachlese, weil Bedingungen sich ändern.</li>
+<li><strong>Welche Daten gehen überhaupt hinein?</strong> Die wirksamste Maßnahme ist nicht der Vertrag, sondern Daten sparen: Namen ersetzen, Nummern kürzen, Gesprächsinhalte lokal transkribieren. Bei mir läuft die Transkription auf einem eigenen Rechner, damit Gespräche das Haus nicht verlassen.</li>
+<li><strong>Steht es im Verarbeitungsverzeichnis?</strong> Ein Werkzeug, das niemand eingetragen hat, ist der häufigste echte Verstoß — nicht das Modell selbst.</li>
+</ol>
+<p>Ich bin kein Anwalt und kein Datenschutzbeauftragter. Für die verbindliche Bewertung im Einzelfall gehört beides dazu.</p>
+
+<h2 id="deutsch">Claude auf Deutsch</h2>
+<p>Claude arbeitet auf Deutsch ohne Einschränkung — Oberfläche, Eingabe, Ausgabe. Der Unterschied liegt nicht in der Sprache, sondern im Auftrag: Wer „schreibe einen Werbetext“ verlangt, bekommt Werbesprache. Wer eine Stimme mitgibt — Beispielsätze, verbotene Wörter, Satzlängen — bekommt etwas, das man vorlesen kann. Meine Textvorlagen enthalten deshalb immer eine Liste mit Wörtern, die nicht vorkommen dürfen.</p>
+
+<h2 id="faq">Häufige Fragen</h2><div class="faq"><details><summary>Claude oder ChatGPT für Unternehmen?</summary><p>Für Software, lange Dokumente und deutsche Verkaufstexte nehme ich Claude, für Bilder, Sprache und die breite Werkzeugauswahl ChatGPT. In vielen Betrieben laufen beide: ein Abo für die Breite, ein API-Zugang für das, was in eigene Software eingebaut wird.</p></details><details><summary>Was kostet die Claude API?</summary><p>Abgerechnet wird pro Token, getrennt nach Eingabe und Ausgabe, und der Preis hängt am gewählten Modell. Die Rechnung wird nicht von der Zahl der Nutzer getrieben, sondern von Textlänge, Modellwahl und Zahl der Schritte. Zwei vollständige Software-Aufträge in meinem Betrieb lagen bei 52 und 114 US-Dollar Modellkosten. Prompt-Caching ist der größte einzelne Spareffekt.</p></details><details><summary>Gibt es Claude auf Deutsch?</summary><p>Ja, vollständig. Die Qualität deutscher Texte hängt weniger am Modell als am Auftrag: Beispielsätze, Satzlängen und eine Liste verbotener Wörter mitgeben, sonst kommt Werbesprache.</p></details><details><summary>Darf ich Kundendaten in Claude eingeben?</summary><p>Nur mit Auftragsverarbeitungsvertrag, Eintrag im Verarbeitungsverzeichnis und so wenigen personenbezogenen Daten wie möglich. Praktisch heißt das: Namen und Nummern vorher ersetzen und Gesprächsinhalte möglichst lokal verarbeiten. Die verbindliche Bewertung macht ein Datenschutzbeauftragter, nicht ich.</p></details><details><summary>Was ist Claude Code?</summary><p>Claude im Terminal, mit Zugriff auf Dateien, Git und Befehle. Statt Code-Schnipsel zu liefern, baut es an einem echten Projekt: mehrere Dateien, Tests, Erklärung der Änderung. Das ist der Teil, mit dem ich mein CRM, meine Websites und meine Video-Kette gebaut habe.</p></details><details><summary>Brauche ich Programmierkenntnisse für Claude Code?</summary><p>Um etwas zu bauen: nein. Um zu verstehen, was gebaut wurde: ja, wenigstens Code lesen zu können. Wer das nicht kann, sollte nichts an echte Kundendaten lassen — nicht wegen des Modells, sondern weil niemand merkt, wenn es still das Falsche tut.</p></details></div>
+<div class="autor">
+  <img src="/assets/kopf-mario.webp" alt="Mario De Luca" width="56" height="56" loading="lazy">
+  <p><b>Mario De Luca</b>
+  Ich baue Vertriebssysteme und KI-gestützte Software für Unternehmen und bin Gründer des Clone Looping System (CLS). Alle Zahlen in diesen Texten stammen aus eigenen Projekten — nicht aus Studien. Was ich nicht selbst gemessen habe, steht als Einschätzung da. <a href="/">Mehr über mich</a></p>
+</div>
+<div class="cta"><h2>Kostenloser Einstieg</h2><p>Ich sammle meine Bauanleitungen, Vorlagen und Fehlschläge in einer offenen Community — ohne Bezahlschranke. Wer selbst etwas bauen will, fängt dort an.</p>
+<a class="btn" href="https://www.skool.com/cls-claude-losungs-system-6453/about" target="_blank" rel="noopener">Zur Community →</a></div>
+<div class="weiter"><h2>Weiterlesen</h2><a href="/wissen/ki-agenten-fuer-unternehmen/">KI-Agenten für Unternehmen<span>Was ein KI-Agent im Unternehmen wirklich übernimmt, wie er gebaut wird, was er kostet und woran die meisten Projekte scheitern.</span></a><a href="/wissen/ki-tools-fuer-unternehmen/">KI-Tools für Unternehmen<span>Welche KI-Tools im Unternehmen wirklich bleiben, nach Aufgabe geordnet — mit Blick auf DSGVO, Abo-Kosten und den Anschluss aneinander.</span></a><a href="/wissen/was-kostet-ein-ki-agent/">Was kostet ein KI-Agent?<span>Die drei Kostenblöcke eines KI-Agenten, warum Angebote so weit auseinanderliegen und woran man ein überteuertes Angebot erkennt.</span></a></div>
+</div></article>
+</main>
+<footer><div class="wrap">
+  <p><a href="/">Startseite</a><a href="/wissen/">Wissen</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></p>
+  <p>© 2026 Mario De Luca · NextCore von M. De Luca · Zuletzt geprüft: 28.09.2026</p>
+</div></footer>
+</body>
+</html>

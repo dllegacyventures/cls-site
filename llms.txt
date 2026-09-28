@@ -9,6 +9,23 @@
 - Belegbare Systeme: CLS (Vertriebs- und Fulfillment-System), ESIS (lokaler Assistent), AutoAgency (Webseiten-Autopilot), Coredex (CRM).
 - Handle in Social: realsalesgenius.
 
+## Wissen (frei lesbar, Zahlen aus eigenen Projekten)
+
+- [KI-Agenten für Unternehmen](https://delucalegacy.com/wissen/ki-agenten-fuer-unternehmen/): Unterschied Chatbot/Assistent/Agent, Bau in fünf Schritten, die fünf Fehler, die Projekte kippen
+- [KI-Automatisierung](https://delucalegacy.com/wissen/ki-automatisierung/): welcher Vorgang zuerst, drei Sorten Automatisierung (Regel/Modell/Agent), kleine Betriebe
+- [KI im Vertrieb](https://delucalegacy.com/wissen/ki-im-vertrieb/): sieben Stellen, die tragen; Kaltakquise und § 7 UWG; Gespräch bleibt beim Menschen
+- [Claude im Unternehmen](https://delucalegacy.com/wissen/claude-fuer-unternehmen/): Vergleich mit ChatGPT, Claude Code, Kostentreiber der API, Datenschutz-Fragen
+- [Was kostet ein KI-Agent?](https://delucalegacy.com/wissen/was-kostet-ein-ki-agent/): Bau/Betrieb/Wartung, gemessene Modellkosten (52 und 114 US-Dollar für zwei Software-Aufträge)
+- [KI-Agentur gründen](https://delucalegacy.com/wissen/ki-agentur-gruenden/): fünf Bausteine, rechtlicher Rahmen, ausdrücklich ohne Verdienstversprechen
+- [KI-Tools für Unternehmen](https://delucalegacy.com/wissen/ki-tools-fuer-unternehmen/): der Stapel nach Aufgabe, DSGVO-Punkte, Kostenfalle Abo-Streuung
+- [Übersicht](https://delucalegacy.com/wissen/): alle Texte
+
+## Haltung in den Texten
+
+- Nur eigene, gemessene Zahlen; Einschätzungen sind als solche gekennzeichnet.
+- Keine Verdienstversprechen — weder auf der Seite noch in den Programmen.
+- Zu UWG, DSGVO und Steuern: Praxis aus eigenen Projekten, keine Rechts- oder Steuerberatung.
+
 ## Seiten
 
 - [delucalegacy.com](https://delucalegacy.com/): Wer er ist, was er gebaut hat, wofür CLS steht

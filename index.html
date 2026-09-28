@@ -46,6 +46,11 @@
         "Sales-Systeme",
         "Telefonvertrieb",
         "KI-Automatisierung",
+        "KI-Agenten",
+        "KI im Vertrieb",
+        "Claude (Anthropic)",
+        "KI-Tools für Unternehmen",
+        "Prozessautomatisierung",
         "Clone Looping System",
         "Performance Marketing"
       ],
@@ -377,6 +382,17 @@
   .mission p { color: var(--muted); font-size: 15.5px; }
   .mission p b { color: var(--ink); }
 
+
+  /* ── Wissen (SEO-Bereich /wissen/) ── */
+  #wissen { padding: 150px 24px 40px; }
+  .wkarten { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-top: 44px; }
+  .wkarte { display: block; border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px; background: var(--panel); text-decoration: none; color: var(--ink); transition: border-color .3s ease, transform .4s ease; min-width: 0; }
+  .wkarte:hover, .wkarte:focus-visible { border-color: rgba(255,159,28,.45); transform: translateY(-3px); }
+  .wkarte b { display: block; font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 21px; line-height: 1.15; margin-bottom: 8px; }
+  .wkarte span { color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+  .wmehr { margin-top: 26px; font-size: 15.5px; color: var(--muted); }
+  .wmehr a { color: var(--am); }
+
   .starkline { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.12; margin: 26px 0 18px; }
   .starkline .sw { display: inline-block; }
   .starkline .am { color: var(--am); }
@@ -516,6 +532,7 @@
 <nav id="topnav">
   <a class="logo" href="#hero">De Luca<i>.</i></a>
   <div class="links">
+    <a href="/wissen/">Wissen</a>
     <a href="#story">Story</a>
     <a href="#erfolge">Erfolge</a>
     <a href="#mission">Mission</a>
@@ -578,6 +595,7 @@
   <a href="#erfolge"><span class="lbl">Erfolge</span></a>
   <a href="#welt"><span class="lbl">Expansion</span></a>
   <a href="#mission"><span class="lbl">Mission</span></a>
+  <a href="#wissen"><span class="lbl">Wissen</span></a>
   <a href="#final"><span class="lbl">Dein Zug</span></a>
 </div>
 
@@ -689,6 +707,21 @@
       <div class="mission spot"><span class="idx">/ 03</span><h3>Echte Kunden, echtes Geld</h3><p>Kein Affiliate-M&auml;rchen, kein passives Einkommen aus dem Nichts. <b>Echte Rechnungen an echte Unternehmen</b> — das ist die einzige Sorte Einkommen, die bleibt.</p></div>
       <div class="mission spot"><span class="idx">/ 04</span><h3>Familie absichern</h3><p>Mein Vater hat sich aus dem Nichts ein Eiscaf&eacute; aufgebaut und wurde von Neidern zerst&ouml;rt. Er ist &uuml;ber 60 und arbeitet immer noch. <b>Ich baue, damit er aufh&ouml;ren kann</b> — und damit du nicht 10 Jahre suchst, wie ich fast.</p></div>
     </div>
+  </div>
+</section>
+
+<section id="wissen">
+  <div class="wrap">
+    <div class="kicker"><span class="num">Offen</span> Wissen</div>
+    <h2 class="anton">Was ich wei&szlig;, <span class="am">steht hier offen.</span></h2>
+    <p class="sub" style="max-width:700px">Sieben Anleitungen zu den Fragen, die mir am h&auml;ufigsten gestellt werden — KI-Agenten, Automatisierung, Vertrieb, Claude, Preise. Jede Zahl darin ist aus einem eigenen Projekt. Kostenlos, ohne Anmeldung, ohne Verdienstversprechen.</p>
+    <div class="wkarten">
+      <a class="wkarte" href="/wissen/ki-agenten-fuer-unternehmen/"><b>KI-Agenten f&uuml;r Unternehmen</b><span>Chatbot, Assistent oder Agent — wof&uuml;r sich welcher rechnet und woran Projekte scheitern.</span></a>
+      <a class="wkarte" href="/wissen/ki-automatisierung/"><b>KI-Automatisierung</b><span>Welcher Vorgang zuerst, in welcher Reihenfolge — und die f&uuml;nf Fehler, die teuer werden.</span></a>
+      <a class="wkarte" href="/wissen/ki-im-vertrieb/"><b>KI im Vertrieb</b><span>Sieben Stellen, an denen es tr&auml;gt. Und die eine, an der es den Abschluss kostet.</span></a>
+      <a class="wkarte" href="/wissen/was-kostet-ein-ki-agent/"><b>Was kostet ein KI-Agent?</b><span>Drei Kostenbl&ouml;cke, gemessene Zahlen und woran man ein schlechtes Angebot erkennt.</span></a>
+    </div>
+    <p class="wmehr">Au&szlig;erdem: <a href="/wissen/claude-fuer-unternehmen/">Claude im Unternehmen</a> &middot; <a href="/wissen/ki-tools-fuer-unternehmen/">KI-Tools f&uuml;r Unternehmen</a> &middot; <a href="/wissen/ki-agentur-gruenden/">KI-Agentur gr&uuml;nden</a> &middot; <a href="/wissen/"><b>alle Texte im &Uuml;berblick</b></a></p>
   </div>
 </section>
 
