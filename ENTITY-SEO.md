@@ -118,3 +118,20 @@ Beim Gegenprüfen am 02.08. gesehen, alles direkt entitätsrelevant:
 Seite 1 mit eigenen Treffern besetzen: drei bis sechs Monate, wenn Schritt 1
 und 2 zügig kommen. Knowledge Panel: nicht planbar und nicht garantiert — er
 entsteht, wenn genug unabhängige Quellen dieselbe Person beschreiben.
+
+## Messung: Klicks von delucalegacy.com nach claude-erfolg.de (seit 09.10.2026)
+
+Jeder Link nach `https://www.claude-erfolg.de/` trägt UTM-Parameter (direkt auf `www.`, spart den 308-Umweg):
+
+| Seite | utm_medium | utm_campaign | utm_content |
+|---|---|---|---|
+| Startseite | `home` | `home` | `nav` · `hero` · `flaggschiff` · `final` · `footer` |
+| Wissen-Übersicht | `wissen` | `wissen-uebersicht` | `nav` |
+| Wissen-Artikel | `wissen` | Artikel-Slug, z. B. `ki-im-vertrieb` | `nav` |
+
+`utm_source` ist immer `delucalegacy`. Auswerten im Meta-Events-Manager / in der Analyse von claude-erfolg.de
+nach `utm_source=delucalegacy`, aufgeschlüsselt nach `utm_campaign` = welcher Ratgeber Leads bringt.
+Hinweis: Der Haupt-CTA in den Wissen-Artikeln führt zu Skool, nicht zu claude-erfolg.de — von dort kommt nur
+der „CLS"-Link in der Navigation. Wer die Artikel als Lead-Quelle messen will, muss das bewusst entscheiden.
+
+Diese Datei ist per `_config.yml` vom Pages-Build ausgeschlossen (war bis 09.10. unter /ENTITY-SEO öffentlich).

@@ -1,0 +1,5 @@
+# GitHub Pages baut diese Seite mit Jekyll. Ohne diese Zeile rendert Jekyll interne Markdown-Notizen
+# als öffentliche, indexierbare Seiten (ENTITY-SEO.md war unter /ENTITY-SEO live, gemessen 09.10.2026).
+# Alle .html-Dateien haben kein Front Matter und werden unverändert kopiert — daran ändert sich nichts.
+exclude:
+  - ENTITY-SEO.md

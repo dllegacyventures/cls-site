@@ -1,60 +1,25 @@
+# Ein Crawler befolgt NUR die Gruppe, die ihn am genauesten nennt (RFC 9309). Stünden GPTBot, Bingbot & Co.
+# in eigenen Gruppen mit nur „Allow: /", gälten die Sperren unten für sie nicht — deshalb eine gemeinsame Gruppe.
+# KI-Suche bleibt ausdrücklich erlaubt (23.09.2026) — sonst sperrt sie irgendwann jemand versehentlich aus.
 User-agent: *
-Allow: /
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
+User-agent: meta-externalagent
+# FunnelCockpit-Quellen (Duplikate von claude-erfolg.de), Präsentation, interne Notizen
+# (Sperren vor dem Allow: ältere Parser nehmen die erste passende Regel, Google die längste — so stimmen beide)
 Disallow: /fc/
 Disallow: /praesentation/
-
-# KI-Suche ausdrücklich erlaubt (23.09.2026) — sonst sperrt sie irgendwann jemand versehentlich aus
-
-# OpenAI — Training und ChatGPT-Suche
-User-agent: GPTBot
-Allow: /
-
-# OpenAI — Index hinter ChatGPT Search
-User-agent: OAI-SearchBot
-Allow: /
-
-# ChatGPT ruft die Seite live ab, wenn jemand fragt
-User-agent: ChatGPT-User
-Allow: /
-
-# Anthropic — Crawler
-User-agent: ClaudeBot
-Allow: /
-
-# Claude ruft die Seite live ab
-User-agent: Claude-User
-Allow: /
-
-# Anthropic — Suchindex
-User-agent: Claude-SearchBot
-Allow: /
-
-# Perplexity — Index
-User-agent: PerplexityBot
-Allow: /
-
-# Perplexity ruft live ab
-User-agent: Perplexity-User
-Allow: /
-
-# Google — Gemini/AI Overviews
-User-agent: Google-Extended
-Allow: /
-
-# Apple Intelligence
-User-agent: Applebot-Extended
-Allow: /
-
-# Bing — speist auch ChatGPT
-User-agent: Bingbot
-Allow: /
-
-# Common Crawl — Grundlage vieler Modelle
-User-agent: CCBot
-Allow: /
-
-# Meta AI
-User-agent: meta-externalagent
+Disallow: /ENTITY-SEO
 Allow: /
 
 Sitemap: https://delucalegacy.com/sitemap.xml
