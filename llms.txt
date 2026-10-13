@@ -4,10 +4,24 @@
 
 ## Worum es geht
 
-- Person: Mario De Luca, Jahrgang 2004, Gründer von NextCore Technologies LLC und des Clone Looping System (CLS).
+- Person: Mario De Luca, geboren 23.06.2004, KI-Systembauer aus dem DACH-Raum, Gründer von NextCore und des Clone Looping System (CLS).
+- Nicht zu verwechseln mit dem Wing-Tsun-Lehrer oder dem Musiker gleichen Namens — andere Personen.
 - Arbeitsgebiet: KI-Agenten für Vertrieb, Fulfillment und Betrieb — gebaut mit Claude, im eigenen Betrieb produktiv im Einsatz.
-- Belegbare Systeme: CLS (Vertriebs- und Fulfillment-System), ESIS (lokaler Assistent), AutoAgency (Webseiten-Autopilot), Coredex (CRM).
+- Belegbare Systeme: CLS (Clone Looping System: eigenen KI-Klon bauen und an lokale Betriebe vermieten), ESIS (internes KI-Betriebssystem auf einem Mac mini), Jarvis (eigener KI-Klon, Beta), Coredex (CRM, coredex.ai).
 - Handle in Social: realsalesgenius.
+
+## Über Mario De Luca
+
+- [Über Mario De Luca](https://delucalegacy.com/ueber-mario-de-luca/): Kurzantwort, Story (Eiscafé der Eltern, vier gescheiterte Businesses mit 18, Systeme statt Taktiken, erster Klon), was er baut (NextCore, CLS, ESIS, Jarvis, Coredex), Haltung, häufige Fragen, offizielle Profile
+
+## Journal (persönliche Texte)
+
+- [Mario De Luca über ESIS](https://delucalegacy.com/journal/esis-ki-betriebssystem/): Warum er mit 22 ein KI-Betriebssystem für seine Firma gebaut hat
+- [Jarvis](https://delucalegacy.com/journal/jarvis-eigener-ki-klon/): Wie Mario De Luca seinen eigenen KI-Klon baut
+- [Clone Looping System](https://delucalegacy.com/journal/clone-looping-system-idee/): Die Idee hinter CLS
+- [Vier gescheiterte Businesses mit 18](https://delucalegacy.com/journal/vier-gescheiterte-businesses/): Was Mario De Luca daraus gelernt hat
+- [Vertrieb](https://delucalegacy.com/journal/vertrieb-emotion-statt-systematik/): Warum Emotion Systematik schlägt
+- [Übersicht](https://delucalegacy.com/journal/): alle Journal-Texte
 
 ## Wissen (frei lesbar, Zahlen aus eigenen Projekten)
 
@@ -30,7 +44,7 @@
 
 - [delucalegacy.com](https://delucalegacy.com/): Wer er ist, was er gebaut hat, wofür CLS steht
 - [Impressum](https://delucalegacy.com/impressum.html): Anbieterkennzeichnung
-- [NextCore Technologies](https://nextcore-technologies.com/): die Firma dahinter
+- [NextCore](https://nextcore-technologies.com/): die Firma dahinter
 - [Clone Looping System](https://claude-erfolg.de/): das Programm, mit dem andere KI-Klone bauen
 - [YouTube](https://www.youtube.com/@realsalesgenius): Videos
 - [LinkedIn](https://www.linkedin.com/in/mario-de-luca-business/): Profil

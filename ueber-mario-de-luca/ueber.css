@@ -1,0 +1,40 @@
+/* Ergänzung zu /wissen/wissen.css für die Personen-Seiten (Über mich, Journal).
+   Nur Bausteine, die es dort noch nicht gibt: Fotostreifen, Steckbrief, Zeitstrahl, Profil-Leiste. */
+nav.top .links{gap:16px}
+@media(max-width:420px){nav.top .links{gap:13px;font-size:14px}nav.top .wrap{gap:12px}}
+
+.foto{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin:30px 0 6px}
+.foto figure{margin:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.foto img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.foto figure:last-child img{aspect-ratio:auto}
+.foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;font:500 11.5px/1.4 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--ink);background:linear-gradient(transparent,rgba(5,5,5,.85))}
+@media(max-width:560px){.foto{grid-template-columns:1fr 1fr;gap:8px}.foto figcaption{font-size:10.5px;padding:20px 10px 8px}}
+
+.steckbrief{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:26px 0}
+.steckbrief div{background:var(--panel2);padding:14px 16px;min-width:0}
+.steckbrief dt{font:500 11.5px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.steckbrief dd{margin:0;color:var(--ink);font-size:15.5px;line-height:1.4;overflow-wrap:anywhere}
+
+.zeit{list-style:none;padding:0;margin:22px 0;position:relative}
+.zeit::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--am),var(--line))}
+.zeit li{position:relative;padding:0 0 22px 34px;margin:0}
+.zeit li::before{content:"";position:absolute;left:2px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--am)}
+.zeit li:last-child{padding-bottom:0}
+.zeit .wann{display:block;font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--am);margin:0 0 7px}
+.zeit b{display:block;color:var(--ink);font-size:17.5px;margin:0 0 4px}
+.zeit p{margin:0}
+
+.baue{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:22px 0}
+.baue section{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:18px 18px 16px;min-width:0}
+.baue h3{margin:0 0 6px;font-family:Anton,sans-serif;font-weight:400;font-size:1.3rem;letter-spacing:.01em}
+.baue .tag{font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block;margin:0 0 10px}
+.baue p{font-size:15.5px;margin:0 0 10px}
+.baue p:last-child{margin:0;font-size:14.5px}
+
+.profile{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.profile li{margin:0}
+.profile a{display:inline-flex;align-items:baseline;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;color:var(--ink);font-size:14.5px;background:var(--panel2)}
+.profile a:hover{border-color:var(--am)}
+.profile a span{font:400 12px/1 'JetBrains Mono',monospace;color:var(--faint)}
+
+.journal-karten a time{display:block;font:500 11.5px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--am);margin:0 0 10px}
