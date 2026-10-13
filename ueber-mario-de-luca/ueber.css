@@ -38,3 +38,7 @@ nav.top .links{gap:16px}
 .profile a span{font:400 12px/1 'JetBrains Mono',monospace;color:var(--faint)}
 
 .journal-karten a time{display:block;font:500 11.5px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--am);margin:0 0 10px}
+
+/* Sprachumschalter DE/EN in der Nav (13.10.2026) */
+nav.top .links a.lang{font:600 11.5px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 9px;align-self:center}
+nav.top .links a.lang:hover{border-color:var(--am);color:var(--am)}

@@ -46,7 +46,7 @@ Angabe aktiv.
       (Status erfolgreich, 3 Seiten), Neu-Indexierung der Startseite
       beantragt.
 - [x] **LinkedIn-Profil** angelegt:
-      `linkedin.com/in/mario-de-luca-business` — im `sameAs` und im Footer.
+      `linkedin.com/in/mariodeluca-realsalesgenius` — im `sameAs` und im Footer.
       Offene Punkte am Profil selbst siehe unten.
 - [ ] **YouTube-Beschreibung** um „Mario De Luca" und den Link auf
       delucalegacy.com ergänzen. Kanalname bleibt auf Wunsch

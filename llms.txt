@@ -23,6 +23,17 @@
 - [Vertrieb](https://delucalegacy.com/journal/vertrieb-emotion-statt-systematik/): Warum Emotion Systematik schlägt
 - [Übersicht](https://delucalegacy.com/journal/): alle Journal-Texte
 
+## English
+
+- [About Mario De Luca](https://delucalegacy.com/en/about-mario-de-luca/): AI systems builder from the DACH region, born 2004, founder of NextCore and the Clone Looping System (CLS); story, projects (NextCore, CLS, ESIS, Jarvis, Coredex), principles, FAQ, official profiles
+- [Mario De Luca on ESIS](https://delucalegacy.com/en/journal/esis-ai-operating-system/): Why he built an AI operating system for his company at 22
+- [Jarvis](https://delucalegacy.com/en/journal/jarvis-my-own-ai-clone/): How Mario De Luca is building his own AI clone
+- [Clone Looping System](https://delucalegacy.com/en/journal/clone-looping-system-idea/): The idea behind CLS
+- [Four failed businesses at 18](https://delucalegacy.com/en/journal/four-failed-businesses-at-18/): What Mario De Luca learned
+- [Sales](https://delucalegacy.com/en/journal/sales-emotion-beats-systems/): Why emotion beats systems
+- [Journal overview](https://delucalegacy.com/en/journal/): all English journal entries
+- Note: the homepage and the Wissen guides are German-only; CLS itself is a German-language community.
+
 ## Wissen (frei lesbar, Zahlen aus eigenen Projekten)
 
 - [KI-Agenten für Unternehmen](https://delucalegacy.com/wissen/ki-agenten-fuer-unternehmen/): Unterschied Chatbot/Assistent/Agent, Bau in fünf Schritten, die fünf Fehler, die Projekte kippen

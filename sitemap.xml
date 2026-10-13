@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://delucalegacy.com/</loc>
     <lastmod>2026-10-13</lastmod>
@@ -8,42 +9,63 @@
   </url>
   <url>
     <loc>https://delucalegacy.com/ueber-mario-de-luca/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/ueber-mario-de-luca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/about-mario-de-luca/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/about-mario-de-luca/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://delucalegacy.com/journal/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://delucalegacy.com/journal/esis-ki-betriebssystem/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/esis-ki-betriebssystem/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/esis-ai-operating-system/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/esis-ai-operating-system/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://delucalegacy.com/journal/jarvis-eigener-ki-klon/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/jarvis-eigener-ki-klon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/jarvis-my-own-ai-clone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/jarvis-my-own-ai-clone/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://delucalegacy.com/journal/clone-looping-system-idee/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/clone-looping-system-idee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/clone-looping-system-idea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/clone-looping-system-idea/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://delucalegacy.com/journal/vier-gescheiterte-businesses/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/vier-gescheiterte-businesses/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/four-failed-businesses-at-18/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/four-failed-businesses-at-18/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://delucalegacy.com/journal/vertrieb-emotion-statt-systematik/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/vertrieb-emotion-statt-systematik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/sales-emotion-beats-systems/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/sales-emotion-beats-systems/"/>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -95,5 +117,68 @@
     <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/about-mario-de-luca/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/ueber-mario-de-luca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/about-mario-de-luca/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/about-mario-de-luca/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/journal/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/journal/esis-ai-operating-system/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/esis-ki-betriebssystem/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/esis-ai-operating-system/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/esis-ai-operating-system/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/journal/jarvis-my-own-ai-clone/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/jarvis-eigener-ki-klon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/jarvis-my-own-ai-clone/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/jarvis-my-own-ai-clone/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/journal/clone-looping-system-idea/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/clone-looping-system-idee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/clone-looping-system-idea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/clone-looping-system-idea/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/journal/four-failed-businesses-at-18/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/vier-gescheiterte-businesses/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/four-failed-businesses-at-18/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/four-failed-businesses-at-18/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://delucalegacy.com/en/journal/sales-emotion-beats-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://delucalegacy.com/journal/vertrieb-emotion-statt-systematik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/journal/sales-emotion-beats-systems/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/journal/sales-emotion-beats-systems/"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
