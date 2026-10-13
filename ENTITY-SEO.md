@@ -135,3 +135,18 @@ Hinweis: Der Haupt-CTA in den Wissen-Artikeln führt zu Skool, nicht zu claude-e
 der „CLS"-Link in der Navigation. Wer die Artikel als Lead-Quelle messen will, muss das bewusst entscheiden.
 
 Diese Datei ist per `_config.yml` vom Pages-Build ausgeschlossen (war bis 09.10. unter /ENTITY-SEO öffentlich).
+
+## Stand 13.10.2026 — Namens-Offensive
+
+**Ausgangslage google.de („Mario De Luca“, 13.10.):** nicht auf Seite 1. Seite 1 = Wing-Tsun-Lehrer (yipman.de), Transfermarkt,
+LinkedIn-Sammelseite, Telefonbuch, Musiker (YouTube/Facebook). Indexiert: ~10 Seiten von delucalegacy.com + nextcore-technologies.com.
+
+**Live seit 13.10.:**
+- delucalegacy.com/ueber-mario-de-luca/ (AboutPage + FAQPage, Abgrenzung zu Namensvettern)
+- delucalegacy.com/journal/ + 5 Artikel mit dem Namen im Titel (ESIS, Jarvis, CLS-Idee, vier gescheiterte Businesses, Vertrieb)
+- nextcore-technologies.com/founder/ (EN, ProfilePage, gleiche @id #mario)
+- Navigation „Über mich / Journal“ auf allen Seiten, Bild-Alt-Texte mit Namen, GPS-EXIF aus Fotos entfernt
+
+**Offen (Mario):** mariodeluca.de und mario-deluca.de sind FREI (whois 13.10.) → kaufen; Search Console: Sitemap neu + Indexierung
+beantragen; LinkedIn-Profil reparieren (s. o.) + Journal-Artikel als LinkedIn-Artikel; einheitliche Bio mit Link auf /ueber-mario-de-luca/;
+Crunchbase, Xing, GitHub-Profil, Medium (mit canonical), Bing Webmaster Tools; 3–5 Podcast-/Gastauftritte.
