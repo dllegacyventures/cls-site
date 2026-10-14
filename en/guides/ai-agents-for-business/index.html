@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agents for Business: Uses, Costs, Pitfalls | Mario De Luca</title>
+<meta name="description" content="What an AI agent really takes over in a business, how it gets built, what it costs and why most projects fail. A guide by Mario De Luca, from his own projects – no hype.">
+<meta name="author" content="Mario De Luca">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://delucalegacy.com/en/guides/ai-agents-for-business/">
+<link rel="alternate" hreflang="de" href="https://delucalegacy.com/wissen/ki-agenten-fuer-unternehmen/">
+<link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/guides/ai-agents-for-business/">
+<link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/guides/ai-agents-for-business/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Agents for Business: What They Can Do, What They Cost, Where They Fail">
+<meta property="og:description" content="What an AI agent really takes over in a business, how it gets built, what it costs and why most projects fail. A guide by Mario De Luca, from his own projects – no hype.">
+<meta property="og:url" content="https://delucalegacy.com/en/guides/ai-agents-for-business/">
+<meta property="og:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta property="og:image:alt" content="Mario De Luca">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:site_name" content="Mario De Luca">
+<meta property="article:author" content="https://delucalegacy.com/en/about-mario-de-luca/">
+<meta property="article:published_time" content="2026-10-14">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Agents for Business: What They Can Do, What They Cost, Where They Fail">
+<meta name="twitter:description" content="What an AI agent really takes over in a business, how it gets built, what it costs and why most projects fail. A guide by Mario De Luca, from his own projects – no hype.">
+<meta name="twitter:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta name="twitter:image:alt" content="Mario De Luca">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='38' font-weight='900' text-anchor='middle' fill='%23f2efe8'%3EM%3C/text%3E%3Ccircle cx='52' cy='46' r='5' fill='%23ff9f1c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/wissen/wissen.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://delucalegacy.com/en/guides/ai-agents-for-business/#article",
+      "headline": "AI Agents for Business: What They Can Do, What They Cost, Where They Fail",
+      "description": "What an AI agent really takes over in a business, how it gets built, what it costs and why most projects fail. A guide by Mario De Luca, from his own projects – no hype.",
+      "inLanguage": "en",
+      "url": "https://delucalegacy.com/en/guides/ai-agents-for-business/",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "publisher": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://delucalegacy.com/en/guides/ai-agents-for-business/#page"
+      },
+      "image": "https://delucalegacy.com/assets/mario-hud.jpg",
+      "about": [
+        "AI agents",
+        "AI agents for business",
+        "Business automation",
+        "Chatbot vs. AI agent"
+      ],
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/en/guides/#collection"
+      },
+      "translationOfWork": {
+        "@id": "https://delucalegacy.com/wissen/ki-agenten-fuer-unternehmen/#artikel"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://delucalegacy.com/en/guides/ai-agents-for-business/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between a chatbot and an AI agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A chatbot answers. An agent acts: it gets a task, uses tools such as a CRM, calendar or database, and works through several steps on its own until there's a result. That's why an agent needs permissions, limits and a review step – and a chatbot doesn't."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to know how to code to use an AI agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For simple chains, no – no-code builders like n8n or the automation features of the big providers get you a long way. As soon as the agent writes into real systems, needs separate permissions and has to be checked, you need someone who can read code. Otherwise nobody notices when it quietly does the wrong thing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build an AI agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Building a single, clearly scoped process takes days, not months. The time goes into recording the process and signing it off. If you show up with a finished process description, you can be live in a week; if you first have to find out how the process really runs, it takes three."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which processes should I start with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The one that happens most often and whose result can be checked in five seconds. Usually that's research, pre-qualification or moving call notes into the CRM – not the conversation itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is an AI agent GDPR-compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That isn't decided by the AI but by where the data is processed and under which contract. You need a data processing agreement with the model provider, an entry in your records of processing activities, and a decision about which personal data goes in at all. For a binding assessment of your specific case, bring in a data protection officer or a lawyer – I'm neither."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will an AI agent replace employees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In my company it replaces groundwork, not people: research, drafts, data transfers, reports. What remains is the conversation, the decision and the responsibility – and those need more time, not less."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://delucalegacy.com/en/guides/ai-agents-for-business/#page",
+      "url": "https://delucalegacy.com/en/guides/ai-agents-for-business/",
+      "name": "AI Agents for Business: What They Can Do, What They Cost, Where They Fail",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://delucalegacy.com/en/guides/ai-agents-for-business/#breadcrumb"
+      },
+      "primaryImageOfPage": "https://delucalegacy.com/assets/mario-hud.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://delucalegacy.com/en/guides/ai-agents-for-business/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://delucalegacy.com/en/about-mario-de-luca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://delucalegacy.com/en/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Agents for Business",
+          "item": "https://delucalegacy.com/en/guides/ai-agents-for-business/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://delucalegacy.com/#mario",
+      "name": "Mario De Luca",
+      "url": "https://delucalegacy.com/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<nav class="top" aria-label="Main navigation"><div class="wrap">
+  <a class="logo" href="/en/about-mario-de-luca/">De Luca<i>.</i></a>
+  <div class="links">
+    <a href="/en/about-mario-de-luca/">About</a>
+    <a href="/en/journal/">Journal</a>
+    <a href="/en/guides/">Guides</a>
+    <a class="lang" href="/wissen/ki-agenten-fuer-unternehmen/" hreflang="de" lang="de" title="Diese Seite auf Deutsch">DE</a>
+  </div>
+</div></nav>
+<main id="content">
+<header class="kopf"><div class="wrap">
+  <p class="kicker">Fundamentals · 12 min read</p>
+  <h1>AI Agents for Business</h1>
+  <p class="lede">An AI agent isn't a chatbot with better manners. It's a piece of software that gets a task, uses tools to get it done and keeps working until there's a result. That difference decides whether the project pays off.</p>
+  <p class="meta">A guide by <a href="/en/about-mario-de-luca/" rel="author">Mario De Luca</a> · Updated Oct 14, 2026 · Figures from my own projects · <a href="/wissen/ki-agenten-fuer-unternehmen/" hreflang="de" lang="de">Auf Deutsch</a></p>
+</div></header>
+<article><div class="wrap">
+<div class="kurz"><p><b>In short:</b> An agent is worth it when a process is <b>recurring</b>, can be expressed <b>in text or data</b>, and is <b>checkable</b>. Building it is rarely the problem – the problem is the missing sign-off. An agent without a review step creates work instead of taking it off your plate.</p></div>
+
+<h2 id="difference">Chatbot, assistant, agent: the difference in one sentence</h2>
+<p>These three words get sold interchangeably, even though they mean different prices, risks and results. The dividing line is always the same: <strong>how much is the system allowed to do on its own before a human looks at it?</strong></p>
+<div class="tabelle"><table><thead><tr><th>Level</th><th>What it does</th><th>Where it lives</th><th>Risk</th></tr></thead><tbody><tr><td><b>Chatbot</b></td><td>answers questions from a fixed body of knowledge</td><td>website, support widget</td><td>low – a wrong answer</td></tr><tr><td><b>Assistant</b></td><td>writes, summarizes, drafts; a human takes it from there</td><td>next to the employee</td><td>low – lost time</td></tr><tr><td><b>Agent</b></td><td>pulls data, decides intermediate steps, writes into systems</td><td>inside the process, with access rights</td><td>high – it acts</td></tr></tbody></table></div>
+<p>The sentence I hear in almost every first call: “We want an agent.” Nine times out of ten, what they mean is an assistant – and that's the cheaper, faster, more honest solution. You only need a real agent when the process has to start and finish <em>on its own</em>.</p>
+
+<h2 id="worth-it">When an agent pays off – and when it doesn't</h2>
+<p>I test every process against three questions. If it fails one, I don't build it as an agent.</p>
+<ol>
+<li><strong>Does it recur?</strong> Below ten repetitions a month, doing it by hand is cheaper than any automation.</li>
+<li><strong>Does it live in text or data?</strong> Anything that only exists in an employee's head has to be written down first. That step is the real work.</li>
+<li><strong>Can the result be checked?</strong> If nobody can say “right” or “wrong” within five seconds, the review step is missing – and the agent becomes a problem.</li>
+</ol>
+<h3>Processes that hold up in practice</h3>
+<ul>
+<li>Researching and pre-qualifying contacts and companies</li>
+<li>Drafting proposals and texts from the same building blocks every time</li>
+<li>Call notes → summary → CRM entry</li>
+<li>Scheduling and follow-up sequences, including reminders</li>
+<li>Daily reports pulled from scattered sources (chat, spreadsheet, CRM)</li>
+<li>Preparing images, videos and documents in a fixed format</li>
+</ul>
+<h3>Processes I deliberately don't automate</h3>
+<ul>
+<li>The sales conversation itself. People buy from people; a clone on the phone burns the trust that carries the deal.</li>
+<li>Anything that legally needs a human – contracts, terminations, price commitments.</li>
+<li>One-off special cases. Automating them costs more than they will ever save.</li>
+</ul>
+
+<h2 id="build">How an agent gets built: five steps</h2>
+<p>This is the order I work in – on client projects and in my own company.</p>
+<h3>1. Record the process, don't describe it</h3>
+<p>For one week, every single step gets logged: input, decision, output. Not how it's supposed to work, but how it actually runs. Most agent ideas die in this step, and that's a good thing – they would have died later at a higher price.</p>
+<h3>2. Draw the line</h3>
+<p>What is the agent allowed to do alone, and what does it hand to a human? I write that line down as one sentence before a single line of code exists. An example from my own company: the agent may build drafts and write data, but it may send <em>nothing</em> to the outside world.</p>
+<h3>3. Tools, not knowledge</h3>
+<p>An agent is only as good as its access: CRM, calendar, database, file storage, search. Every tool gets its own permissions – read and write kept separate. An agent with full access isn't an agent, it's an open gate.</p>
+<h3>4. A reviewer that isn't the agent</h3>
+<p>The most important building block, and the one that's almost always missing: a second, independent check of the result. In my setup, a separate pass checks against a fixed list – are the numbers, fields, format and recipient right? If you let the same agent review its own output, you get praise, not control.</p>
+<h3>5. Handover with an emergency brake</h3>
+<p>A place where you can see what the agent did, and a switch that turns it off. Without both, nobody on the team trusts it – and an agent nobody trusts gets worked around.</p>
+
+<h2 id="mistakes">The five mistakes that sink projects</h2>
+<div class="tabelle"><table><thead><tr><th>Mistake</th><th>What happens</th><th>Fix</th></tr></thead><tbody><tr><td>No review step</td><td>the agent delivers plausible, wrong results</td><td>a second, separate check against fixed criteria</td></tr><tr><td>Task too broad</td><td>“take care of sales” ends in nothing</td><td>one process, one start, one end</td></tr><tr><td>Full access</td><td>one error writes into real customer data</td><td>separate permissions, read first, write later</td></tr><tr><td>No owner</td><td>after three weeks it fizzles out</td><td>one person who is responsible</td></tr><tr><td>No metric</td><td>nobody knows whether it helps</td><td>decide before building: which number should move?</td></tr></tbody></table></div>
+
+<h2 id="own">What I've built with it myself</h2>
+<p>I don't sell anything that isn't running in my own company. Three examples:</p>
+<ul>
+<li><strong>Sales groundwork:</strong> for my website campaign aimed at restaurants, the pipeline built <strong>616 finished demo websites</strong> from address data and prepared <strong>522 letters</strong> with a personal reference – before the first conversation took place. The human does the conversation, the machine does the groundwork.</li>
+<li><strong>Internal operations assistant:</strong> a system on a dedicated machine on my own network reads along, keeps track of open threads and writes a daily report every evening from chat, spreadsheet and CRM. It doesn't send anything by itself – it prepares. I've written about it in <a href="/en/journal/esis-ai-operating-system/">ESIS, my AI operating system</a>.</li>
+<li><strong>Software assembly line:</strong> jobs are split into specification, build, test, review and release – each role is its own pass with an empty context. The reviewer only sees the code diff and the acceptance criteria, never the builder's reasoning. That's exactly why it finds things.</li>
+</ul>
+<p>Two of these software jobs cost <strong>52 and 114 US dollars</strong> in model costs – measured, not estimated. More on pricing: <a href="/en/guides/how-much-does-an-ai-agent-cost/">How much does an AI agent cost?</a></p>
+
+<h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>What&#x27;s the difference between a chatbot and an AI agent?</summary><p>A chatbot answers. An agent acts: it gets a task, uses tools such as a CRM, calendar or database, and works through several steps on its own until there's a result. That's why an agent needs permissions, limits and a review step – and a chatbot doesn't.</p></details><details><summary>Do I need to know how to code to use an AI agent?</summary><p>For simple chains, no – no-code builders like n8n or the automation features of the big providers get you a long way. As soon as the agent writes into real systems, needs separate permissions and has to be checked, you need someone who can read code. Otherwise nobody notices when it quietly does the wrong thing.</p></details><details><summary>How long does it take to build an AI agent?</summary><p>Building a single, clearly scoped process takes days, not months. The time goes into recording the process and signing it off. If you show up with a finished process description, you can be live in a week; if you first have to find out how the process really runs, it takes three.</p></details><details><summary>Which processes should I start with?</summary><p>The one that happens most often and whose result can be checked in five seconds. Usually that's research, pre-qualification or moving call notes into the CRM – not the conversation itself.</p></details><details><summary>Is an AI agent GDPR-compliant?</summary><p>That isn't decided by the AI but by where the data is processed and under which contract. You need a data processing agreement with the model provider, an entry in your records of processing activities, and a decision about which personal data goes in at all. For a binding assessment of your specific case, bring in a data protection officer or a lawyer – I'm neither.</p></details><details><summary>Will an AI agent replace employees?</summary><p>In my company it replaces groundwork, not people: research, drafts, data transfers, reports. What remains is the conversation, the decision and the responsibility – and those need more time, not less.</p></details></div>
+<div class="autor">
+  <img src="/assets/kopf-mario.webp" alt="Mario De Luca, portrait" width="56" height="56" loading="lazy">
+  <p><b>Mario De Luca</b>
+  I build sales systems and AI-powered software for businesses and founded the Clone Looping System (CLS). Every figure in these guides comes from my own projects, not from studies. Anything I haven't measured myself is labeled as an estimate. <a href="/en/about-mario-de-luca/">More about me</a> · <a href="/en/journal/">Journal</a></p>
+</div>
+<div class="cta"><h2>Who's writing this</h2><p>I'm Mario De Luca, an AI systems builder from the DACH region and founder of NextCore and the Clone Looping System. My story, my projects and the principles behind these guides are on my about page. In the <a href="/en/journal/">journal</a> I write about what I've built, tested or messed up myself.</p>
+<a class="btn" href="/en/about-mario-de-luca/">About Mario De Luca →</a></div>
+<div class="weiter"><h2>Keep reading</h2><a href="/en/guides/how-much-does-an-ai-agent-cost/">How Much Does an AI Agent Cost?<span>The three cost blocks of an AI agent, why quotes vary so wildly and how to spot an overpriced offer.</span></a><a href="/en/guides/ai-automation-for-business/">AI Automation for Business<span>Which business processes you can automate with AI, in what order, what it costs and the five mistakes that make most projects expensive.</span></a><a href="/en/guides/ai-in-sales/">Using AI in Sales<span>Where AI makes a difference in sales – lead lists, personalization, CRM, follow-up, training – and where it costs you the deal.</span></a></div>
+</div></article>
+</main>
+<footer><div class="wrap">
+  <p><a href="/en/about-mario-de-luca/">About Mario De Luca</a><a href="/en/journal/">Journal</a><a href="/en/guides/">Guides</a><a href="/wissen/ki-agenten-fuer-unternehmen/" hreflang="de">Deutsch</a><a href="/impressum.html" hreflang="de">Imprint</a><a href="/datenschutz.html" hreflang="de">Privacy</a></p>
+  <p>© 2026 Mario De Luca · NextCore by M. De Luca · Last reviewed: Oct 14, 2026</p>
+</div></footer>
+</body>
+</html>
