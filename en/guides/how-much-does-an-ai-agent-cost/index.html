@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much Does an AI Agent Cost? Real Numbers | Mario De Luca</title>
+<meta name="description" content="The three cost blocks of an AI agent, why quotes vary so wildly and how to spot an overpriced offer. A guide by Mario De Luca with costs he measured himself.">
+<meta name="author" content="Mario De Luca">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/">
+<link rel="alternate" hreflang="de" href="https://delucalegacy.com/wissen/was-kostet-ein-ki-agent/">
+<link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/">
+<link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Much Does an AI Agent Cost? Real Numbers and Cost Blocks from Actual Projects">
+<meta property="og:description" content="The three cost blocks of an AI agent, why quotes vary so wildly and how to spot an overpriced offer. A guide by Mario De Luca with costs he measured himself.">
+<meta property="og:url" content="https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/">
+<meta property="og:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta property="og:image:alt" content="Mario De Luca">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:site_name" content="Mario De Luca">
+<meta property="article:author" content="https://delucalegacy.com/en/about-mario-de-luca/">
+<meta property="article:published_time" content="2026-10-14">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much Does an AI Agent Cost? Real Numbers and Cost Blocks from Actual Projects">
+<meta name="twitter:description" content="The three cost blocks of an AI agent, why quotes vary so wildly and how to spot an overpriced offer. A guide by Mario De Luca with costs he measured himself.">
+<meta name="twitter:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta name="twitter:image:alt" content="Mario De Luca">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='38' font-weight='900' text-anchor='middle' fill='%23f2efe8'%3EM%3C/text%3E%3Ccircle cx='52' cy='46' r='5' fill='%23ff9f1c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/wissen/wissen.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/#article",
+      "headline": "How Much Does an AI Agent Cost? Real Numbers and Cost Blocks from Actual Projects",
+      "description": "The three cost blocks of an AI agent, why quotes vary so wildly and how to spot an overpriced offer. A guide by Mario De Luca with costs he measured himself.",
+      "inLanguage": "en",
+      "url": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "publisher": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/#page"
+      },
+      "image": "https://delucalegacy.com/assets/mario-hud.jpg",
+      "about": [
+        "AI agent cost",
+        "AI agent pricing",
+        "LLM API costs",
+        "AI automation budget"
+      ],
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/en/guides/#collection"
+      },
+      "translationOfWork": {
+        "@id": "https://delucalegacy.com/wissen/was-kostet-ein-ki-agent/#artikel"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does an AI agent cost per month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A month consists of model costs per call, hosting and maintenance. For a rule-based chain without a language model it's close to zero; with a language model in the workflow, costs per case are in the cents range; a real agent with several steps costs correspondingly more. Without a step limit the bill is open-ended – that's the single most important lever."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I pay one-time or monthly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both are common and both are fine, as long as they're listed separately: build as a one-time fee, operation and maintenance monthly. A quote without a monthly item isn't a cheap quote, it's an incomplete one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it cheaper to build the agent myself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In money, yes; in time, usually not. Building is the small part today; process mapping, the review step and maintenance are what's expensive. Building it yourself pays off if you know the process best and are willing to stay its owner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do quotes for AI agents vary so much?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because three different things are sold under the same word: a rule-based chain, a language model inside a workflow, or an agent with tools and permissions. On top of that comes whether a review step and maintenance are included. Only once you've sorted that out can you compare quotes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does an AI agent pay off for a small business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The lever is repetition, not revenue. Below roughly ten repetitions a month, doing it by hand is cheaper. Above that it pays off even in small businesses – but as a single task, not as a platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does process mapping cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In my projects it's part of the build block, and typically the bigger part of it. If you come with a finished description – input, decision, output, exceptions – the project gets noticeably cheaper, because then it's only building."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/#page",
+      "url": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/",
+      "name": "How Much Does an AI Agent Cost? Real Numbers and Cost Blocks from Actual Projects",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/#breadcrumb"
+      },
+      "primaryImageOfPage": "https://delucalegacy.com/assets/mario-hud.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://delucalegacy.com/en/about-mario-de-luca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://delucalegacy.com/en/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Much Does an AI Agent Cost?",
+          "item": "https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://delucalegacy.com/#mario",
+      "name": "Mario De Luca",
+      "url": "https://delucalegacy.com/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<nav class="top" aria-label="Main navigation"><div class="wrap">
+  <a class="logo" href="/en/about-mario-de-luca/">De Luca<i>.</i></a>
+  <div class="links">
+    <a href="/en/about-mario-de-luca/">About</a>
+    <a href="/en/journal/">Journal</a>
+    <a href="/en/guides/">Guides</a>
+    <a class="lang" href="/wissen/was-kostet-ein-ki-agent/" hreflang="de" lang="de" title="Diese Seite auf Deutsch">DE</a>
+  </div>
+</div></nav>
+<main id="content">
+<header class="kopf"><div class="wrap">
+  <p class="kicker">Pricing · 9 min read</p>
+  <h1>How Much Does an AI Agent Cost?</h1>
+  <p class="lede">“It depends” is the correct answer, and a useless one. So here are the cost blocks, the drivers behind them and the numbers I've measured in my own company.</p>
+  <p class="meta">A guide by <a href="/en/about-mario-de-luca/" rel="author">Mario De Luca</a> · Updated Oct 14, 2026 · Figures from my own projects · <a href="/wissen/was-kostet-ein-ki-agent/" hreflang="de" lang="de">Auf Deutsch</a></p>
+</div></header>
+<article><div class="wrap">
+<div class="kurz"><p><b>In short:</b> There are three blocks – <b>build</b> (one-time), <b>operation</b> (model costs per call plus hosting) and <b>maintenance</b> (ongoing, and almost always forgotten). For tightly scoped jobs, operation is usually the smallest item: two complete software jobs in my company cost <b>52</b> and <b>114 US dollars</b> in model costs. What makes it expensive is unbounded loops and maintenance nobody planned for.</p></div>
+
+<h2 id="blocks">The three cost blocks</h2>
+<div class="tabelle"><table><thead><tr><th>Block</th><th>What's in it</th><th>When it gets expensive</th></tr></thead><tbody><tr><td><b>Build</b></td><td>mapping the process, setting limits, connecting CRM/calendar/database, review step, handover</td><td>when the process isn't documented – then you pay for the clarification as development</td></tr><tr><td><b>Operation</b></td><td>model costs per call, hosting, storage, monitoring</td><td>an agent with no step limit; whole documents sent along with every call</td></tr><tr><td><b>Maintenance</b></td><td>APIs change, forms change, workflows change</td><td>when nobody owns it – then it dies quietly and the whole investment is lost</td></tr></tbody></table></div>
+<p>The most common miscalculation isn't a build price that's too high, it's a quote <em>without</em> the third block. An automation without maintenance is dead within a year, and then the build was for nothing.</p>
+
+<h2 id="operation">What drives model costs</h2>
+<p>All the big providers bill per token – roughly one and a half tokens per word – split into what goes in and what comes out. Five drivers decide the bill:</p>
+<ol>
+<li><strong>Context length.</strong> If you send the entire manual with every call, you pay for it with every call.</li>
+<li><strong>Model choice.</strong> Small and large models are often several times apart in price. Sorting, recognizing and assigning can be done by the small one.</li>
+<li><strong>Number of steps.</strong> An agent that thinks ten times costs ten calls. Without a step limit, the bill is open-ended.</li>
+<li><strong>Caching.</strong> Recurring instructions can be cached – the biggest single saving, and it's barely used.</li>
+<li><strong>Output length.</strong> Output costs more than input. Ask for a fixed, short output format.</li>
+</ol>
+<p>Measured in my own company: the software assembly line – specification, build, tests, independent review – cost <strong>52</strong> and <strong>114 US dollars</strong> for two complete jobs. Both had clear acceptance criteria and a step limit. That's exactly the difference between a bill you can name and an open-ended one.</p>
+
+<h2 id="scenarios">Three cases to make the scale tangible</h2>
+<h3>Case 1: A chain without a model</h3>
+<p>Form → CRM entry → confirmation email → two reminders before the appointment. No language model needed. Running it costs almost nothing, building it takes days. This is the case that gets sold as an “AI agent” and isn't one – yet it's often the one with the best ratio of effort to result.</p>
+<h3>Case 2: A language model inside the workflow</h3>
+<p>Sort incoming emails, summarize them, create a reply draft; a human hits send. Costs per case are in the cents range, as long as you only send the email and not half the archive. Here, discipline with the context decides the bill.</p>
+<h3>Case 3: A real agent with tools</h3>
+<p>Research across several sources, comparison, result written to the database, report. Several calls per case, plus hosting and monitoring. At this level, a step limit and an output format aren't a convenience – they're cost control.</p>
+
+<h2 id="my-pricing">How I price things myself</h2>
+<p>Two examples from my own company, so you can see what an offer can look like:</p>
+<ul>
+<li><strong>Productized offer:</strong> a website including integration for restaurants at <strong>€799 one-time plus €49 a month</strong>. Fixed price, fixed scope, ongoing operation included – because the process is standardized and I've built it hundreds of times.</li>
+<li><strong>Custom project:</strong> priced after mapping the process, not before. Anyone who names a number without mapping the process is guessing – and adds a markup for their own risk.</li>
+</ul>
+
+<h2 id="red-flags">How to spot a bad offer</h2>
+<ul>
+<li><strong>No acceptance criteria.</strong> If “done” isn't defined in writing, you'll end up billing on feelings.</li>
+<li><strong>Not a word about running costs.</strong> If they don't tell you what a month costs, they haven't calculated it.</li>
+<li><strong>No maintenance in the plan.</strong> See above – that's the item projects die on.</li>
+<li><strong>Everything in one package.</strong> Six automations at once means six times the risk. One first, live, measured.</li>
+<li><strong>Revenue promises.</strong> Whoever tells you how much you'll earn with an agent isn't selling software.</li>
+</ul>
+<p>And the question I ask first: <strong>which number should move?</strong> Without an answer I don't build – not on principle, but because afterwards nobody will agree on whether it worked.</p>
+
+<h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>How much does an AI agent cost per month?</summary><p>A month consists of model costs per call, hosting and maintenance. For a rule-based chain without a language model it's close to zero; with a language model in the workflow, costs per case are in the cents range; a real agent with several steps costs correspondingly more. Without a step limit the bill is open-ended – that's the single most important lever.</p></details><details><summary>Should I pay one-time or monthly?</summary><p>Both are common and both are fine, as long as they're listed separately: build as a one-time fee, operation and maintenance monthly. A quote without a monthly item isn't a cheap quote, it's an incomplete one.</p></details><details><summary>Is it cheaper to build the agent myself?</summary><p>In money, yes; in time, usually not. Building is the small part today; process mapping, the review step and maintenance are what's expensive. Building it yourself pays off if you know the process best and are willing to stay its owner.</p></details><details><summary>Why do quotes for AI agents vary so much?</summary><p>Because three different things are sold under the same word: a rule-based chain, a language model inside a workflow, or an agent with tools and permissions. On top of that comes whether a review step and maintenance are included. Only once you've sorted that out can you compare quotes.</p></details><details><summary>Does an AI agent pay off for a small business?</summary><p>The lever is repetition, not revenue. Below roughly ten repetitions a month, doing it by hand is cheaper. Above that it pays off even in small businesses – but as a single task, not as a platform.</p></details><details><summary>What does process mapping cost?</summary><p>In my projects it's part of the build block, and typically the bigger part of it. If you come with a finished description – input, decision, output, exceptions – the project gets noticeably cheaper, because then it's only building.</p></details></div>
+<div class="autor">
+  <img src="/assets/kopf-mario.webp" alt="Mario De Luca, portrait" width="56" height="56" loading="lazy">
+  <p><b>Mario De Luca</b>
+  I build sales systems and AI-powered software for businesses and founded the Clone Looping System (CLS). Every figure in these guides comes from my own projects, not from studies. Anything I haven't measured myself is labeled as an estimate. <a href="/en/about-mario-de-luca/">More about me</a> · <a href="/en/journal/">Journal</a></p>
+</div>
+<div class="cta"><h2>Who's writing this</h2><p>I'm Mario De Luca, an AI systems builder from the DACH region and founder of NextCore and the Clone Looping System. My story, my projects and the principles behind these guides are on my about page. In the <a href="/en/journal/">journal</a> I write about what I've built, tested or messed up myself.</p>
+<a class="btn" href="/en/about-mario-de-luca/">About Mario De Luca →</a></div>
+<div class="weiter"><h2>Keep reading</h2><a href="/en/guides/ai-agents-for-business/">AI Agents for Business<span>What an AI agent really takes over in a business, how it gets built, what it costs and why most projects fail.</span></a><a href="/en/guides/ai-automation-for-business/">AI Automation for Business<span>Which business processes you can automate with AI, in what order, what it costs and the five mistakes that make most projects expensive.</span></a><a href="/en/guides/claude-for-business/">Claude for Business<span>How Claude differs from ChatGPT, what Claude Code is for, how API costs work and which data privacy questions matter.</span></a></div>
+</div></article>
+</main>
+<footer><div class="wrap">
+  <p><a href="/en/about-mario-de-luca/">About Mario De Luca</a><a href="/en/journal/">Journal</a><a href="/en/guides/">Guides</a><a href="/wissen/was-kostet-ein-ki-agent/" hreflang="de">Deutsch</a><a href="/impressum.html" hreflang="de">Imprint</a><a href="/datenschutz.html" hreflang="de">Privacy</a></p>
+  <p>© 2026 Mario De Luca · NextCore by M. De Luca · Last reviewed: Oct 14, 2026</p>
+</div></footer>
+</body>
+</html>
