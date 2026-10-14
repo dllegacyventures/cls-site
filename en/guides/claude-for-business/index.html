@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude for Business: vs. ChatGPT, Cost, Privacy | Mario De Luca</title>
+<meta name="description" content="Claude in a business: how it differs from ChatGPT, Claude Code, how API costs work, data privacy questions, and how Mario De Luca uses it daily to build software and sales work.">
+<meta name="author" content="Mario De Luca">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://delucalegacy.com/en/guides/claude-for-business/">
+<link rel="alternate" hreflang="de" href="https://delucalegacy.com/wissen/claude-fuer-unternehmen/">
+<link rel="alternate" hreflang="en" href="https://delucalegacy.com/en/guides/claude-for-business/">
+<link rel="alternate" hreflang="x-default" href="https://delucalegacy.com/en/guides/claude-for-business/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude for Business: What It Can Do, Where It Beats ChatGPT, What It Costs">
+<meta property="og:description" content="Claude in a business: how it differs from ChatGPT, Claude Code, how API costs work, data privacy questions, and how Mario De Luca uses it daily to build software and sales work.">
+<meta property="og:url" content="https://delucalegacy.com/en/guides/claude-for-business/">
+<meta property="og:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta property="og:image:alt" content="Mario De Luca">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:site_name" content="Mario De Luca">
+<meta property="article:author" content="https://delucalegacy.com/en/about-mario-de-luca/">
+<meta property="article:published_time" content="2026-10-14">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude for Business: What It Can Do, Where It Beats ChatGPT, What It Costs">
+<meta name="twitter:description" content="Claude in a business: how it differs from ChatGPT, Claude Code, how API costs work, data privacy questions, and how Mario De Luca uses it daily to build software and sales work.">
+<meta name="twitter:image" content="https://delucalegacy.com/assets/mario-hud.jpg">
+<meta name="twitter:image:alt" content="Mario De Luca">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050505'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='38' font-weight='900' text-anchor='middle' fill='%23f2efe8'%3EM%3C/text%3E%3Ccircle cx='52' cy='46' r='5' fill='%23ff9f1c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/wissen/wissen.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://delucalegacy.com/en/guides/claude-for-business/#article",
+      "headline": "Claude for Business: What It Can Do, Where It Beats ChatGPT, What It Costs",
+      "description": "Claude in a business: how it differs from ChatGPT, Claude Code, how API costs work, data privacy questions, and how Mario De Luca uses it daily to build software and sales work.",
+      "inLanguage": "en",
+      "url": "https://delucalegacy.com/en/guides/claude-for-business/",
+      "datePublished": "2026-10-14",
+      "dateModified": "2026-10-14",
+      "author": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "publisher": {
+        "@id": "https://delucalegacy.com/#mario"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://delucalegacy.com/en/guides/claude-for-business/#page"
+      },
+      "image": "https://delucalegacy.com/assets/mario-hud.jpg",
+      "about": [
+        "Claude",
+        "Claude for business",
+        "Claude Code",
+        "Claude vs. ChatGPT",
+        "Anthropic API costs"
+      ],
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/en/guides/#collection"
+      },
+      "translationOfWork": {
+        "@id": "https://delucalegacy.com/wissen/claude-fuer-unternehmen/#artikel"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://delucalegacy.com/en/guides/claude-for-business/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Claude or ChatGPT for business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For software, long documents and German sales copy I use Claude; for images, voice and the broad tool selection, ChatGPT. Many businesses run both: one subscription for breadth, one API account for what gets built into their own software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does the Claude API cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's billed per token, split into input and output, and the price depends on the model you choose. The bill isn't driven by the number of users but by text length, model choice and number of steps. Two complete software jobs in my company came to 52 and 114 US dollars in model costs. Prompt caching is the biggest single saving."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Claude work in German?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, fully. The quality of German copy depends less on the model than on the brief: give it example sentences, sentence lengths and a list of banned words, otherwise you get ad-speak."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I put customer data into Claude?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only with a data processing agreement, an entry in your records of processing and as little personal data as possible. In practice that means replacing names and numbers beforehand and processing call content locally where you can. A binding assessment comes from a data protection officer, not from me."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claude in the terminal, with access to files, Git and commands. Instead of handing you code snippets, it works on a real project: multiple files, tests, an explanation of the change. That's what I used to build my CRM, my websites and my video pipeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to know how to code to use Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To build something: no. To understand what got built: yes, at least enough to read code. If you can't, don't let it near real customer data – not because of the model, but because nobody will notice when it quietly does the wrong thing."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://delucalegacy.com/en/guides/claude-for-business/#page",
+      "url": "https://delucalegacy.com/en/guides/claude-for-business/",
+      "name": "Claude for Business: What It Can Do, Where It Beats ChatGPT, What It Costs",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://delucalegacy.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://delucalegacy.com/en/guides/claude-for-business/#breadcrumb"
+      },
+      "primaryImageOfPage": "https://delucalegacy.com/assets/mario-hud.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://delucalegacy.com/en/guides/claude-for-business/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://delucalegacy.com/en/about-mario-de-luca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://delucalegacy.com/en/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Claude for Business",
+          "item": "https://delucalegacy.com/en/guides/claude-for-business/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://delucalegacy.com/#mario",
+      "name": "Mario De Luca",
+      "url": "https://delucalegacy.com/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<nav class="top" aria-label="Main navigation"><div class="wrap">
+  <a class="logo" href="/en/about-mario-de-luca/">De Luca<i>.</i></a>
+  <div class="links">
+    <a href="/en/about-mario-de-luca/">About</a>
+    <a href="/en/journal/">Journal</a>
+    <a href="/en/guides/">Guides</a>
+    <a class="lang" href="/wissen/claude-fuer-unternehmen/" hreflang="de" lang="de" title="Diese Seite auf Deutsch">DE</a>
+  </div>
+</div></nav>
+<main id="content">
+<header class="kopf"><div class="wrap">
+  <p class="kicker">Tools · 12 min read</p>
+  <h1>Claude for Business</h1>
+  <p class="lede">I've been working with Claude almost daily since early 2025 – not as a chat window, but as a construction machine. This guide covers what it's good for, where ChatGPT is better, and what it actually costs.</p>
+  <p class="meta">A guide by <a href="/en/about-mario-de-luca/" rel="author">Mario De Luca</a> · Updated Oct 14, 2026 · Figures from my own projects · <a href="/wissen/claude-fuer-unternehmen/" hreflang="de" lang="de">Auf Deutsch</a></p>
+</div></header>
+<article><div class="wrap">
+<div class="kurz"><p><b>In short:</b> Claude is strong at <b>long context</b>, <b>code</b> and <b>multi-step work on real files</b>. ChatGPT is broader on images, voice and everyday tools. The real lever for businesses isn't the chat window but <b>Claude Code</b> in the terminal, because it works on files and systems instead of paragraphs.</p></div>
+
+<h2 id="comparison">Claude or ChatGPT: the honest comparison</h2>
+<p>I use both. The question isn't which model is “better”, but what you use it for.</p>
+<div class="tabelle"><table><thead><tr><th>Task</th><th>My pick</th><th>Why</th></tr></thead><tbody><tr><td>Building and refactoring software</td><td>Claude</td><td>keeps large contexts together, works on real files instead of snippets</td></tr><tr><td>Working through long documents</td><td>Claude</td><td>stays on track across a hundred pages</td></tr><tr><td>Sales copy in German</td><td>Claude</td><td>fewer marketing clichés, closer to how people actually talk</td></tr><tr><td>Images, voice, everyday tools</td><td>ChatGPT</td><td>wider selection right inside the product</td></tr><tr><td>Web research</td><td>both, with checking</td><td>verify every source – both invent citations</td></tr><tr><td>Spreadsheets and analysis</td><td>Claude with code</td><td>it doesn't calculate in its head, it writes a script</td></tr></tbody></table></div>
+<p>The practical difference that matters day to day: Claude is more likely to admit it doesn't know something, and less likely to invent a subheading where one sentence will do. For sales copy in German, that's why I stuck with it.</p>
+
+<h2 id="code">Claude Code: the part hardly anyone uses</h2>
+<p>The chat window is the smallest use case. The lever is <strong>Claude Code</strong> – the same model, but in the terminal, with access to files, Git, commands and APIs. That turns “write me some code” into a worker that refactors an entire project, runs the tests and explains the change.</p>
+<p>What I've built with it in my own company: a CRM portal, several websites with their own offers, a video editing pipeline, a sales dashboard on real daily numbers, and an internal operations assistant on a dedicated machine. No degree, no developer team – but no magic either: if you don't read what it does, you get software you don't understand.</p>
+<p>The three rules that made the difference for me:</p>
+<ol>
+<li><strong>Brief before code.</strong> First write down what “done” means – then let it build. Without acceptance criteria it delivers something plausible.</li>
+<li><strong>A separate reviewer.</strong> A second pass with an empty context that only sees the change and the criteria. It finds what the builder would defend.</li>
+<li><strong>No access to live data while building.</strong> Test data, separate permissions, and nothing goes to production without your own eyes on it.</li>
+</ol>
+
+<h2 id="cost">What Claude costs</h2>
+<p>There are two ways to pay, and they're fundamentally different:</p>
+<ul>
+<li><strong>Subscription per person.</strong> A fixed monthly price, usage within limits. Right for employees who write, summarize and research.</li>
+<li><strong>API, pay as you go.</strong> Billed per <em>token</em> – roughly one and a half tokens per word, split into input and output. Right for everything that gets built into your own software.</li>
+</ul>
+<p>Because prices change by model and over time, I won't give you a table that's wrong tomorrow. Instead, here's what <strong>drives</strong> the bill:</p>
+<div class="tabelle"><table><thead><tr><th>Driver</th><th>Effect</th><th>Fix</th></tr></thead><tbody><tr><td>Input length</td><td>every call pays for all the text sent along</td><td>only send what's needed</td></tr><tr><td>Model choice</td><td>small and large models are often several times apart</td><td>small model for sorting, large one for thinking</td></tr><tr><td>Agent loops</td><td>every step is a new call</td><td>set a step limit, define a stop condition</td></tr><tr><td>Repeated context</td><td>the same instructions in every call</td><td>use prompt caching – the big saving</td></tr><tr><td>Output length</td><td>output costs more than input</td><td>ask for a short, fixed output format</td></tr></tbody></table></div>
+<p>A measured number from my own company instead of an estimate: two complete software jobs through my own assembly line – specification, build, tests, review – cost <strong>52 and 114 US dollars</strong> in model costs. That's the order of magnitude for cleanly scoped jobs. An agent without a step limit can blow past that in an afternoon. More in <a href="/en/guides/how-much-does-an-ai-agent-cost/">How much does an AI agent cost?</a></p>
+
+<h2 id="privacy">Data privacy: the four questions that matter</h2>
+<p>Not “is AI GDPR-compliant?”, but:</p>
+<ol>
+<li><strong>Is there a data processing agreement?</strong> For the business plans of the big providers, yes – but it has to be signed and filed, not just exist.</li>
+<li><strong>Are my inputs used for training?</strong> For business and API access, the providers say no; for free tiers it's often different. That's the point I re-read in writing for every project, because terms change.</li>
+<li><strong>Which data goes in at all?</strong> The most effective measure isn't the contract but data minimization: replace names, shorten numbers, transcribe call content locally. In my setup, transcription runs on my own machine so calls never leave the building.</li>
+<li><strong>Is it in your records of processing?</strong> A tool nobody registered is the most common real violation – not the model itself.</li>
+</ol>
+<p>I'm not a lawyer and not a data protection officer. For a binding assessment of your specific case, you need both.</p>
+
+<h2 id="german">Claude in German</h2>
+<p>A lot of my copy is written in German, and Claude works in German without restrictions – interface, input, output. The difference isn't the language but the brief: ask for “an ad text” and you get ad-speak. Give it a voice – example sentences, banned words, sentence lengths – and you get something you can read out loud. That's why my copy templates always include a list of words that must not appear.</p>
+
+<h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>Claude or ChatGPT for business?</summary><p>For software, long documents and German sales copy I use Claude; for images, voice and the broad tool selection, ChatGPT. Many businesses run both: one subscription for breadth, one API account for what gets built into their own software.</p></details><details><summary>How much does the Claude API cost?</summary><p>It's billed per token, split into input and output, and the price depends on the model you choose. The bill isn't driven by the number of users but by text length, model choice and number of steps. Two complete software jobs in my company came to 52 and 114 US dollars in model costs. Prompt caching is the biggest single saving.</p></details><details><summary>Does Claude work in German?</summary><p>Yes, fully. The quality of German copy depends less on the model than on the brief: give it example sentences, sentence lengths and a list of banned words, otherwise you get ad-speak.</p></details><details><summary>Can I put customer data into Claude?</summary><p>Only with a data processing agreement, an entry in your records of processing and as little personal data as possible. In practice that means replacing names and numbers beforehand and processing call content locally where you can. A binding assessment comes from a data protection officer, not from me.</p></details><details><summary>What is Claude Code?</summary><p>Claude in the terminal, with access to files, Git and commands. Instead of handing you code snippets, it works on a real project: multiple files, tests, an explanation of the change. That's what I used to build my CRM, my websites and my video pipeline.</p></details><details><summary>Do I need to know how to code to use Claude Code?</summary><p>To build something: no. To understand what got built: yes, at least enough to read code. If you can't, don't let it near real customer data – not because of the model, but because nobody will notice when it quietly does the wrong thing.</p></details></div>
+<div class="autor">
+  <img src="/assets/kopf-mario.webp" alt="Mario De Luca, portrait" width="56" height="56" loading="lazy">
+  <p><b>Mario De Luca</b>
+  I build sales systems and AI-powered software for businesses and founded the Clone Looping System (CLS). Every figure in these guides comes from my own projects, not from studies. Anything I haven't measured myself is labeled as an estimate. <a href="/en/about-mario-de-luca/">More about me</a> · <a href="/en/journal/">Journal</a></p>
+</div>
+<div class="cta"><h2>Who's writing this</h2><p>I'm Mario De Luca, an AI systems builder from the DACH region and founder of NextCore and the Clone Looping System. My story, my projects and the principles behind these guides are on my about page. In the <a href="/en/journal/">journal</a> I write about what I've built, tested or messed up myself.</p>
+<a class="btn" href="/en/about-mario-de-luca/">About Mario De Luca →</a></div>
+<div class="weiter"><h2>Keep reading</h2><a href="/en/guides/ai-agents-for-business/">AI Agents for Business<span>What an AI agent really takes over in a business, how it gets built, what it costs and why most projects fail.</span></a><a href="/en/guides/ai-tools-for-business/">AI Tools for Business<span>Which AI tools actually stick in a business, organized by task – with a look at GDPR, subscription costs and how the tools connect.</span></a><a href="/en/guides/how-much-does-an-ai-agent-cost/">How Much Does an AI Agent Cost?<span>The three cost blocks of an AI agent, why quotes vary so wildly and how to spot an overpriced offer.</span></a></div>
+</div></article>
+</main>
+<footer><div class="wrap">
+  <p><a href="/en/about-mario-de-luca/">About Mario De Luca</a><a href="/en/journal/">Journal</a><a href="/en/guides/">Guides</a><a href="/wissen/claude-fuer-unternehmen/" hreflang="de">Deutsch</a><a href="/impressum.html" hreflang="de">Imprint</a><a href="/datenschutz.html" hreflang="de">Privacy</a></p>
+  <p>© 2026 Mario De Luca · NextCore by M. De Luca · Last reviewed: Oct 14, 2026</p>
+</div></footer>
+</body>
+</html>
