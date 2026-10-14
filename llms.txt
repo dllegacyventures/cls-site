@@ -32,7 +32,18 @@
 - [Four failed businesses at 18](https://delucalegacy.com/en/journal/four-failed-businesses-at-18/): What Mario De Luca learned
 - [Sales](https://delucalegacy.com/en/journal/sales-emotion-beats-systems/): Why emotion beats systems
 - [Journal overview](https://delucalegacy.com/en/journal/): all English journal entries
-- Note: the homepage and the Wissen guides are German-only; CLS itself is a German-language community.
+- Note: the homepage is German-only; CLS itself is a German-language community. The guides below are English editions of the German Wissen guides (same facts and figures).
+
+## English guides (figures from his own projects)
+
+- [AI agents for business](https://delucalegacy.com/en/guides/ai-agents-for-business/): chatbot vs. assistant vs. agent, building an agent in five steps, the five mistakes that sink projects
+- [AI automation for business](https://delucalegacy.com/en/guides/ai-automation-for-business/): which process first, three types of automation (rule/model/agent), small businesses
+- [Using AI in sales](https://delucalegacy.com/en/guides/ai-in-sales/): seven places where AI carries weight; cold outreach rules in Germany (Section 7 UWG); the conversation stays with a human
+- [Claude for business](https://delucalegacy.com/en/guides/claude-for-business/): comparison with ChatGPT, Claude Code, API cost drivers, data privacy questions
+- [How much does an AI agent cost?](https://delucalegacy.com/en/guides/how-much-does-an-ai-agent-cost/): build/operation/maintenance, measured model costs (52 and 114 US dollars for two software jobs)
+- [How to start an AI agency](https://delucalegacy.com/en/guides/how-to-start-an-ai-agency/): five building blocks, legal basics, explicitly no income promises
+- [AI tools for business](https://delucalegacy.com/en/guides/ai-tools-for-business/): the stack by task, GDPR points, subscription sprawl as a cost trap
+- [Guides overview](https://delucalegacy.com/en/guides/): all English guides
 
 ## Wissen (frei lesbar, Zahlen aus eigenen Projekten)
 

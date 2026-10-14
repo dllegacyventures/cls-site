@@ -146,6 +146,7 @@ LinkedIn-Sammelseite, Telefonbuch, Musiker (YouTube/Facebook). Indexiert: ~10 Se
 - delucalegacy.com/journal/ + 5 Artikel mit dem Namen im Titel (ESIS, Jarvis, CLS-Idee, vier gescheiterte Businesses, Vertrieb)
 - nextcore-technologies.com/founder/ (EN, ProfilePage, gleiche @id #mario)
 - Navigation „Über mich / Journal“ auf allen Seiten, Bild-Alt-Texte mit Namen, GPS-EXIF aus Fotos entfernt
+- 14.10.2026: EN-Guides unter /en/guides/ (7 Anleitungen + Übersicht, hreflang-Paare zu /wissen/, x-default=en, CTAs nur auf EN-Seiten)
 
 **Offen (Mario):** mariodeluca.de und mario-deluca.de sind FREI (whois 13.10.) → kaufen; Search Console: Sitemap neu + Indexierung
 beantragen; LinkedIn-Profil reparieren (s. o.) + Journal-Artikel als LinkedIn-Artikel; einheitliche Bio mit Link auf /ueber-mario-de-luca/;
